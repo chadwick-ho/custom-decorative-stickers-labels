@@ -184,6 +184,13 @@ img {
   min-height: 560px;
 }
 
+.factory-hero {
+  min-height: calc(100vh - 68px);
+  background:
+    linear-gradient(120deg, rgba(251, 250, 246, .98), rgba(251, 250, 246, .72) 52%, rgba(238, 244, 241, .72)),
+    #f6f2ea;
+}
+
 .hero-copy {
   max-width: 700px;
 }
@@ -237,6 +244,53 @@ p {
   font-size: 14px;
 }
 
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 26px 0 18px;
+}
+
+.hero-metrics div {
+  min-height: 86px;
+  padding: 14px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(22, 35, 29, .07);
+}
+
+.hero-metrics strong {
+  display: block;
+  color: var(--pine);
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1;
+}
+
+.hero-metrics span,
+.hero-chip-row span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.hero-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.hero-chip-row span {
+  padding: 8px 10px;
+  background: #eef3ed;
+  border: 1px solid #dde8df;
+  border-radius: 999px;
+  color: #2e5d4e;
+}
+
 .hero-media,
 .product-media {
   min-height: 360px;
@@ -251,6 +305,14 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.factory-hero .hero-media {
+  min-height: 520px;
+}
+
+.factory-hero .hero-media img {
+  object-position: center center;
 }
 
 .subhero {
@@ -298,6 +360,57 @@ p {
   padding-bottom: 64px;
 }
 
+.trust-section {
+  padding: 72px clamp(18px, 5vw, 72px);
+  background: #122820;
+}
+
+.trust-section .section-head h2,
+.trust-section .eyebrow {
+  color: white;
+}
+
+.trust-section .section-head p {
+  color: #d6e3dc;
+}
+
+.trust-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.trust-logo-grid article {
+  min-height: 154px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 18px;
+  text-align: center;
+  background: rgba(255, 255, 255, .96);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 8px;
+}
+
+.trust-logo-grid strong {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  color: var(--pine);
+  border: 2px solid #d7e2dd;
+  border-radius: 50%;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.trust-logo-grid span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .section-head {
   max-width: 860px;
   margin-bottom: 26px;
@@ -307,6 +420,10 @@ p {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.product-categories .cards {
+  gap: 20px;
 }
 
 .cards.mini {
@@ -364,6 +481,10 @@ p {
   width: 100%;
   height: 210px;
   object-fit: cover;
+}
+
+.product-categories .card-img {
+  height: 240px;
 }
 
 .text-link {
@@ -426,6 +547,23 @@ p {
   color: var(--ink);
   border-color: var(--line);
   background: white;
+}
+
+.workflow-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.workflow-strip span {
+  padding: 12px 10px;
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .two-col,
@@ -631,6 +769,15 @@ details p {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hero-metrics,
+  .trust-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -679,14 +826,30 @@ details p {
     min-height: 260px;
   }
 
+  .factory-hero {
+    min-height: auto;
+  }
+
+  .factory-hero .hero-media {
+    min-height: 300px;
+  }
+
   .cards,
   .cards.mini,
   .blog-list,
   .gallery-row,
   .steps,
   .quote-form,
-  .footer-grid {
+  .footer-grid,
+  .hero-metrics,
+  .trust-logo-grid,
+  .workflow-strip {
     grid-template-columns: 1fr;
+  }
+
+  .hero-metrics div,
+  .trust-logo-grid article {
+    min-height: auto;
   }
 
   .category-card {

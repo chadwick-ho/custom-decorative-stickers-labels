@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Chemical compliance icon">
+  <rect x="14" y="16" width="68" height="64" rx="10" fill="#ffffff" stroke="#0f5b4c" stroke-width="4"/>
+  <path d="M34 28h28M34 36h16" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="38" cy="58" r="9" fill="#dff3e9" stroke="#0f5b4c" stroke-width="4"/>
+  <circle cx="58" cy="58" r="9" fill="#f4c861" stroke="#0f5b4c" stroke-width="4"/>
+  <path d="M46 58h4" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M31 71h34" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round"/>
+</svg>

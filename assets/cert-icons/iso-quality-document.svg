@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="ISO quality document icon">
+  <rect x="18" y="10" width="50" height="72" rx="6" fill="#ffffff" stroke="#0f5b4c" stroke-width="4"/>
+  <path d="M68 10v20h16" fill="#dff3e9" stroke="#0f5b4c" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="43" cy="48" r="14" fill="#f4c861" stroke="#0f5b4c" stroke-width="4"/>
+  <path d="M36 48l5 5 10-12" fill="none" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 66h28M30 73h22" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round"/>
+</svg>

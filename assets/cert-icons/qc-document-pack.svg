@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Quality control document pack icon">
+  <rect x="22" y="18" width="46" height="58" rx="6" fill="#dff3e9" stroke="#0f5b4c" stroke-width="4"/>
+  <rect x="30" y="10" width="46" height="58" rx="6" fill="#ffffff" stroke="#0f5b4c" stroke-width="4"/>
+  <path d="M40 30h22M40 39h26M40 48h16" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="63" cy="65" r="12" fill="#f4c861" stroke="#0f5b4c" stroke-width="4"/>
+  <path d="M57 65l4 4 8-10" fill="none" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

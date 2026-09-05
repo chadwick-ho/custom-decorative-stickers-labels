@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Kids safety review icon">
+  <path d="M48 12l30 12v19c0 19-11 33-30 41-19-8-30-22-30-41V24l30-12z" fill="#ffffff" stroke="#0f5b4c" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="39" cy="44" r="4" fill="#0f5b4c"/>
+  <circle cx="57" cy="44" r="4" fill="#0f5b4c"/>
+  <path d="M38 58c6 6 14 6 20 0" fill="none" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M30 28l8-8M66 28l-8-8" stroke="#f4c861" stroke-width="5" stroke-linecap="round"/>
+</svg>

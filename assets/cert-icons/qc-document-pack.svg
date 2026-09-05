@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Quality control document pack icon">
-  <rect x="22" y="18" width="46" height="58" rx="6" fill="#dff3e9" stroke="#0f5b4c" stroke-width="4"/>
-  <rect x="30" y="10" width="46" height="58" rx="6" fill="#ffffff" stroke="#0f5b4c" stroke-width="4"/>
-  <path d="M40 30h22M40 39h26M40 48h16" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="63" cy="65" r="12" fill="#f4c861" stroke="#0f5b4c" stroke-width="4"/>
-  <path d="M57 65l4 4 8-10" fill="none" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 150" role="img" aria-label="QC logo style">
+  <rect width="220" height="150" rx="18" fill="#f4f5f3"/>
+  <path d="M72 25h58l18 18v67H72z" fill="none" stroke="#0d6d5a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M130 25v21h18M87 59h42M87 74h42" stroke="#0d6d5a" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="134" cy="101" r="19" fill="#f4f5f3" stroke="#0d6d5a" stroke-width="5"/>
+  <path d="M125 101l7 7 15-18" fill="none" stroke="#d99a2b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="110" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900" fill="#007a3d">COC / QC</text>
 </svg>

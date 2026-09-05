@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Custom sticker factory icon">
+  <defs>
+    <linearGradient id="g" x1="20" y1="16" x2="112" y2="116" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#245c4a"/>
+      <stop offset=".52" stop-color="#3977bd"/>
+      <stop offset="1" stop-color="#f4c861"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="26" fill="#fbfaf6"/>
+  <path d="M24 34c0-8 6-14 14-14h38l28 28v46c0 8-6 14-14 14H38c-8 0-14-6-14-14V34z" fill="url(#g)"/>
+  <path d="M76 20v22c0 5 4 9 9 9h19L76 20z" fill="#ffffff" opacity=".9"/>
+  <path d="M42 70c0-13 10-23 23-23s23 10 23 23-10 23-23 23-23-10-23-23z" fill="#fbfaf6"/>
+  <path d="M52 70c0-7 6-13 13-13s13 6 13 13-6 13-13 13-13-6-13-13z" fill="#245c4a"/>
+  <path d="M88 89l15 15" stroke="#17211d" stroke-width="10" stroke-linecap="round"/>
+  <path d="M37 38h24M37 52h18" stroke="#fbfaf6" stroke-width="7" stroke-linecap="round"/>
+</svg>

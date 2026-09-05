@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Third party lab report icon">
-  <rect x="16" y="12" width="64" height="72" rx="8" fill="#ffffff" stroke="#0f5b4c" stroke-width="4"/>
-  <path d="M34 26h28M34 34h22" stroke="#0f5b4c" stroke-width="4" stroke-linecap="round"/>
-  <path d="M41 43v12L30 74h36L55 55V43" fill="#dff3e9" stroke="#0f5b4c" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M36 65h24" stroke="#f4c861" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="42" cy="72" r="2.5" fill="#0f5b4c"/>
-  <circle cx="54" cy="72" r="2.5" fill="#0f5b4c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 150" role="img" aria-label="SGS logo style">
+  <rect width="220" height="150" rx="18" fill="#f4f5f3"/>
+  <text x="110" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" fill="#777">SGS</text>
+  <path d="M67 86h86" stroke="#d99a2b" stroke-width="5" stroke-linecap="round"/>
+  <text x="110" y="115" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900" fill="#007a3d">SGS</text>
+  <text x="110" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#007a3d">TEST REPORT REVIEW</text>
 </svg>

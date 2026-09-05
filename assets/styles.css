@@ -313,6 +313,34 @@ p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.blog-list .category-card {
+  grid-template-rows: 1fr auto;
+  min-height: 320px;
+}
+
+.blog-list h2 {
+  font-size: 28px;
+}
+
+.blog-article {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.blog-article h2 {
+  margin-top: 34px;
+}
+
+.article-meta {
+  margin-top: 18px;
+}
+
 .category-card,
 .quote-panel {
   background: white;
@@ -535,6 +563,10 @@ details p {
   grid-column: 1 / -1;
 }
 
+.two-col > .quote-form {
+  max-width: none;
+}
+
 .contact-strip {
   margin-top: 24px;
   padding: 18px;
@@ -649,6 +681,7 @@ details p {
 
   .cards,
   .cards.mini,
+  .blog-list,
   .gallery-row,
   .steps,
   .quote-form,

@@ -364,7 +364,7 @@ img {
 }
 
 .cert-logo-grid article {
-  min-height: 176px;
+  min-height: 150px;
   display: grid;
   align-content: center;
   justify-items: center;
@@ -397,13 +397,13 @@ img {
   justify-items: center;
   align-content: center;
   text-align: center;
-  min-height: 176px;
+  min-height: 150px;
   overflow: hidden;
 }
 
 .doc-grid img {
-  width: 132px;
-  height: 90px;
+  width: 168px;
+  height: 116px;
   object-fit: contain;
 }
 
@@ -1251,6 +1251,11 @@ p {
   color: #0b3456;
   font-size: 16px;
   line-height: 1.18;
+}
+
+.product-index-catalog {
+  margin-top: 0;
+  border-top: 1px solid rgba(36, 92, 74, .16);
 }
 
 .faq {

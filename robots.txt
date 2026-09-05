@@ -1,3 +1,3 @@
 ﻿User-agent: *
-Allow: /custom-stickers-decorative-labels/
-Sitemap: https://chadwick-ho.github.io/custom-stickers-decorative-labels/sitemap.xml
+Allow: /
+Sitemap: https://www.zclabels.com/sitemap.xml

@@ -541,6 +541,10 @@ details p {
   background: white;
   border: 1px solid var(--line);
   border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
 }
 
 .site-footer {

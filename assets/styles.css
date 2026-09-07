@@ -314,6 +314,16 @@ img {
   background: #0f211c;
 }
 
+.certificate-advantage.inline-cert {
+  padding-top: 54px;
+  padding-bottom: 56px;
+}
+
+.certificate-advantage.inline-cert .cert-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .cert-bg,
 .cert-shade {
   position: absolute;

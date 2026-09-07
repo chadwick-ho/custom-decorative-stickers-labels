@@ -749,6 +749,26 @@ img {
   color: white;
 }
 
+.catalog-section-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin-top: 18px;
+  padding: 0 18px;
+  border: 1px solid #0f4938;
+  border-radius: 6px;
+  color: #0f4938;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.catalog-section-more:hover {
+  background: #0f4938;
+  color: white;
+}
+
 .hero,
 .subhero,
 .product-hero,

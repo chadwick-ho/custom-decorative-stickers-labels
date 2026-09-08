@@ -27,6 +27,8 @@ Useful buyer guides:
 - Sticker artwork file formats: https://www.zclabels.com/blog/sticker-artwork-file-formats/
 - Sticker artwork cutline planning: https://www.zclabels.com/blog/how-to-add-cutline-to-sticker-artwork/
 - Roll labels vs sheet stickers: https://www.zclabels.com/blog/roll-labels-vs-sheet-stickers/
+- HTML sitemap: https://www.zclabels.com/sitemap/
+- RSS feed: https://www.zclabels.com/feed.xml
 
 Contact:
 - Email: ruishengmao05@gmail.com

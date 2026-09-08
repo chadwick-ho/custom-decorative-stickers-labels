@@ -93,6 +93,10 @@ function Escape-Html($value) {
   return [System.Net.WebUtility]::HtmlEncode([string]$value)
 }
 
+function Escape-Xml($value) {
+  return [System.Security.SecurityElement]::Escape([string]$value)
+}
+
 function Cards {
   return ($Products | ForEach-Object {
 @"
@@ -494,6 +498,8 @@ function Footer {
     <a href="/refund-cancellation-policy/">Refund / Cancellation Policy</a>
     <a href="/privacy-policy/">Privacy Policy</a>
     <a href="/terms-of-service/">Terms of Service</a>
+    <a href="/sitemap/">HTML Sitemap</a>
+    <a href="/feed.xml">RSS Feed</a>
   </div>
 </footer>
 <div class="mobile-cta"><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="$WhatsAppUrl" target="_blank" rel="noopener">WhatsApp</a></div>
@@ -508,6 +514,7 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
   $DescHtml = Escape-Html $Desc
   $CanonicalUrlHtml = Escape-Html $CanonicalUrl
   $OgImageHtml = Escape-Html $OgImage
+  $FeedTitleHtml = Escape-Html "$Brand Blog Feed"
   $robotsTag = if ($Robots) { "<meta name=""robots"" content=""$(Escape-Html $Robots)"">" } else { "" }
   $schema = @()
   $schema += @{
@@ -557,6 +564,7 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
   <meta property="og:image" content="$OgImageHtml">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/site-icon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="$FeedTitleHtml" href="/feed.xml">
   <link rel="stylesheet" href="/assets/styles.css">
   $ld
 </head>
@@ -1028,9 +1036,49 @@ foreach ($p in $policies) {
   Page $p[0] "$($p[1])" $p[2] $body
 }
 
+$blogGuides = @(
+  @("/blog/prepare-artwork-for-custom-stickers/","How to Prepare Artwork for Custom Stickers","Artwork preparation, file format, cutline and proof review guidance for custom sticker buyers."),
+  @("/blog/sticker-sheets-vs-die-cut-stickers/","Sticker Sheets vs Die-Cut Stickers","Compare sticker sheets and die-cut stickers for stationery, packaging and promotional projects."),
+  @("/blog/custom-stickers-for-packaging-gifts-promotions/","Custom Stickers for Packaging, Gifts and Promotions","Plan sticker applications around packaging, gift, holiday and campaign use."),
+  @("/blog/how-much-do-custom-stickers-cost/","How Much Do Custom Stickers Cost?","Understand the specification factors that affect custom sticker pricing."),
+  @("/blog/vinyl-vs-paper-stickers/","Vinyl vs Paper Stickers","Compare vinyl and paper stickers for packaging, stationery, roll labels and promotional use."),
+  @("/blog/sticker-artwork-file-formats/","Sticker Artwork File Formats","Choose AI, PDF, PSD, SVG, PNG or JPG files for custom sticker artwork review."),
+  @("/blog/how-to-add-cutline-to-sticker-artwork/","How to Add a Cutline to Sticker Artwork","Plan sticker cutlines, white borders, safe spacing and proof review details."),
+  @("/blog/roll-labels-vs-sheet-stickers/","Roll Labels vs Sheet Stickers","Compare roll labels and sheet stickers for packaging workflows and retail sets.")
+)
+
+$supportPages = @(
+  @("/materials-finishes/","Materials & Finishes"),
+  @("/artwork-guidelines/","Artwork Guidelines"),
+  @("/custom-process/","Custom Process"),
+  @("/compliance-and-document-review/","Compliance & Document Review"),
+  @("/gallery-applications/","Gallery & Applications"),
+  @("/faq/","FAQ"),
+  @("/get-quote/","Get Quote"),
+  @("/contact/","Contact")
+)
+
+$sitemapProductLinks = ($Products | ForEach-Object { "<li><a href=""$($_.Url)"">$($_.Title)</a></li>" }) -join ""
+$sitemapFormatLinks = ($FormatPages | ForEach-Object { "<li><a href=""$($_.Url)"">$($_.Title)</a></li>" }) -join ""
+$sitemapBlogLinks = ($blogGuides | ForEach-Object { "<li><a href=""$($_[0])"">$($_[1])</a><p>$($_[2])</p></li>" }) -join ""
+$sitemapSupportLinks = ($supportPages | ForEach-Object { "<li><a href=""$($_[0])"">$($_[1])</a></li>" }) -join ""
+$htmlSitemapBody = @"
+<section class="subhero"><p class="eyebrow">Sitemap</p><h1>Custom Stickers Site Map</h1><p>Use this page to reach the most important product, format, buyer guide, compliance and contact pages from one crawlable HTML page.</p></section>
+<section class="section two-col sitemap-columns">
+  <div><h2>Product Categories</h2><ul class="check-list">$sitemapProductLinks</ul></div>
+  <div><h2>Production Formats</h2><ul class="check-list">$sitemapFormatLinks</ul></div>
+</section>
+<section class="section two-col sitemap-columns">
+  <div><h2>Buyer Guides</h2><ul class="check-list sitemap-list">$sitemapBlogLinks</ul></div>
+  <div><h2>Factory, Artwork and Contact Pages</h2><ul class="check-list">$sitemapSupportLinks</ul></div>
+</section>
+"@
+Page "/sitemap/" "HTML Sitemap for Custom Stickers & Decorative Labels" "Find all important custom sticker product pages, format pages, buyer guides, compliance pages and contact pages from one crawlable sitemap." $htmlSitemapBody $null @(@{ "@context"="https://schema.org"; "@type"="SiteNavigationElement"; name="HTML sitemap"; url="$BaseUrl/sitemap/" })
+
 if ($BaseUrl) {
   $lastmod = Get-Date -Format "yyyy-MM-dd"
-  $urls = Get-ChildItem -LiteralPath $Root -Recurse -Filter index.html | ForEach-Object {
+  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+  $urls = Get-ChildItem -LiteralPath $Root -Recurse -Filter index.html | Sort-Object FullName | ForEach-Object {
     $rel = $_.FullName.Substring($Root.Length).TrimStart([IO.Path]::DirectorySeparatorChar) -replace "\\","/"
     $path = if ($rel -eq "index.html") { "/" } else { "/" + ($rel -replace "/index.html$","/") }
     $priority = if ($path -eq "/") {
@@ -1041,14 +1089,52 @@ if ($BaseUrl) {
       "0.8"
     } elseif ($path.StartsWith("/blog/")) {
       "0.7"
+    } elseif ($path -eq "/sitemap/") {
+      "0.4"
     } else {
       "0.5"
     }
-    "  <url><loc>$BaseUrl$path</loc><lastmod>$lastmod</lastmod><priority>$priority</priority></url>"
+    $pageRaw = Get-Content -LiteralPath $_.FullName -Raw
+    $imageEntries = @()
+    foreach ($match in [regex]::Matches($pageRaw, '<img(?<attrs>[^>]*)>', 'IgnoreCase')) {
+      $attrs = $match.Groups["attrs"].Value
+      $srcMatch = [regex]::Match($attrs, 'src="(?<src>[^"]+)"', 'IgnoreCase')
+      if (-not $srcMatch.Success) { continue }
+      $src = $srcMatch.Groups["src"].Value
+      if (-not $src.StartsWith("/assets/")) { continue }
+      if ($src -notmatch '\.(jpg|jpeg|png|webp)$') { continue }
+      $altMatch = [regex]::Match($attrs, 'alt="(?<alt>[^"]*)"', 'IgnoreCase')
+      $alt = if ($altMatch.Success) { [System.Net.WebUtility]::HtmlDecode($altMatch.Groups["alt"].Value).Trim() } else { "" }
+      $imgXml = "    <image:image><image:loc>$(Escape-Xml "$BaseUrl$src")</image:loc>"
+      if ($alt) { $imgXml += "<image:title>$(Escape-Xml $alt)</image:title>" }
+      $imgXml += "</image:image>"
+      $imageEntries += $imgXml
+    }
+    $imageEntries = $imageEntries | Select-Object -Unique
+    $entry = @("  <url><loc>$(Escape-Xml "$BaseUrl$path")</loc><lastmod>$lastmod</lastmod><priority>$priority</priority>")
+    $entry += $imageEntries
+    $entry += "  </url>"
+    $entry -join "`n"
   }
-  $sitemap = @('<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">') + $urls + @('</urlset>')
-  Set-Content -LiteralPath (Join-Path $Root "sitemap.xml") -Value $sitemap -Encoding UTF8
+  $sitemap = @('<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">') + $urls + @('</urlset>')
+  [System.IO.File]::WriteAllLines((Join-Path $Root "sitemap.xml"), $sitemap, $utf8NoBom)
   Set-Content -LiteralPath (Join-Path $Root "robots.txt") -Value @("User-agent: *","Allow: /","Sitemap: $BaseUrl/sitemap.xml") -Encoding ASCII
+  $rssItems = $blogGuides | ForEach-Object {
+    "    <item><title>$(Escape-Xml $_[1])</title><link>$BaseUrl$($_[0])</link><guid>$BaseUrl$($_[0])</guid><description>$(Escape-Xml $_[2])</description><pubDate>$([DateTime]::UtcNow.ToString("r"))</pubDate></item>"
+  }
+  $rss = @(
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<rss version="2.0">',
+    '  <channel>',
+    "    <title>$(Escape-Xml "$Brand Blog")</title>",
+    "    <link>$BaseUrl/blog/</link>",
+    "    <description>Buyer guides for custom sticker manufacturing, artwork, materials, formats and quote preparation.</description>",
+    "    <lastBuildDate>$([DateTime]::UtcNow.ToString("r"))</lastBuildDate>"
+  ) + $rssItems + @(
+    '  </channel>',
+    '</rss>'
+  )
+  [System.IO.File]::WriteAllLines((Join-Path $Root "feed.xml"), $rss, $utf8NoBom)
   Set-Content -LiteralPath (Join-Path $Root "llms.txt") -Value @(
     "# Custom Stickers & Decorative Labels",
     "",
@@ -1079,6 +1165,8 @@ if ($BaseUrl) {
     "- Sticker artwork file formats: $BaseUrl/blog/sticker-artwork-file-formats/",
     "- Sticker artwork cutline planning: $BaseUrl/blog/how-to-add-cutline-to-sticker-artwork/",
     "- Roll labels vs sheet stickers: $BaseUrl/blog/roll-labels-vs-sheet-stickers/",
+    "- HTML sitemap: $BaseUrl/sitemap/",
+    "- RSS feed: $BaseUrl/feed.xml",
     "",
     "Contact:",
     "- Email: $ContactEmail",

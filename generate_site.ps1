@@ -708,6 +708,13 @@ foreach ($p in $Products) {
   $appList = Join-Items $p.Apps
   $faqHtml = ($p.Faq | ForEach-Object { "<details><summary>$($_[0])</summary><p>$($_[1])</p></details>" }) -join "`n"
   $related = ($p.Related | ForEach-Object { $r = $ProductByKey[$_]; "<a class=""pill-link"" href=""$($r.Url)"">$($r.Title)</a>" }) -join ""
+  $topicLink = switch ($p.Key) {
+    "stationery" { '<a class="pill-link" href="/blog/custom-planner-sticker-sheets-guide/">Planner Sticker Sheet Guide</a>' }
+    "gift" { '<a class="pill-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Choose Packaging Sticker Size</a>' }
+    "holiday" { '<a class="pill-link" href="/blog/matte-vs-glossy-stickers/">Matte vs Glossy</a>' }
+    "promotional" { '<a class="pill-link" href="/blog/matte-vs-glossy-stickers/">Matte vs Glossy</a>' }
+    default { '<a class="pill-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Choose Sticker Size</a>' }
+  }
   $gallery = ProductGallerySection $p
   $body = @"
 <section class="product-hero $($p.Accent)">
@@ -724,7 +731,7 @@ foreach ($p in $Products) {
 $gallery
 <section class="section related">
   <div class="section-head"><p class="eyebrow">Planning links</p><h2>Plan This Custom Sticker Project</h2><p>Use these pages to prepare artwork, choose the closest product format, and understand the quote workflow before sending requirements.</p></div>
-  <div class="pill-row"><a class="pill-link" href="/artwork-guidelines/">Artwork Guidelines</a><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/custom-process/">Custom Order Process</a><a class="pill-link" href="/blog/sticker-sheets-vs-die-cut-stickers/">Sticker Sheets vs Die-Cut Stickers</a></div>
+  <div class="pill-row"><a class="pill-link" href="/artwork-guidelines/">Artwork Guidelines</a><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/custom-process/">Custom Order Process</a><a class="pill-link" href="/blog/sticker-sheets-vs-die-cut-stickers/">Sticker Sheets vs Die-Cut Stickers</a>$topicLink</div>
 </section>
 <section class="section faq"><div class="section-head"><p class="eyebrow">FAQ</p><h2>$($p.Title) Questions</h2></div>$faqHtml</section>
 <section class="final-cta"><h2>Ready to Start?</h2><p>Send your artwork, reference image, or project requirements for review.</p><a class="solid-btn large" href="/get-quote/">$($p.Cta)</a></section>
@@ -747,6 +754,12 @@ foreach ($format in $FormatPages) {
   $clarifyList = Join-Items $format.Clarify
   $faqHtml = ($format.Faq | ForEach-Object { "<details><summary>$($_[0])</summary><p>$($_[1])</p></details>" }) -join "`n"
   $gallery = FormatGallerySection $format
+  $formatTopicLink = switch ($format.Key) {
+    "roll-labels" { '<a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle & Jar Roll Label Guide</a>' }
+    "sticker-sheets" { '<a class="pill-link" href="/blog/custom-planner-sticker-sheets-guide/">Planner Sticker Sheet Guide</a>' }
+    "holographic" { '<a class="pill-link" href="/blog/holographic-stickers-artwork-production-guide/">Holographic Artwork Guide</a>' }
+    default { '<a class="pill-link" href="/blog/matte-vs-glossy-stickers/">Matte vs Glossy</a>' }
+  }
   $body = @"
 <section class="product-hero $($format.Accent)">
   <div>
@@ -765,7 +778,7 @@ foreach ($format in $FormatPages) {
 $gallery
 <section class="section related">
   <div class="section-head"><p class="eyebrow">Related planning</p><h2>Choose Application and Material Together</h2><p>Format alone does not decide the final sticker. Confirm the application category, material, artwork file, cutline and packing target before production.</p></div>
-  <div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/compliance-and-document-review/">Compliance Review</a></div>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/compliance-and-document-review/">Compliance Review</a>$formatTopicLink</div>
 </section>
 <section class="section faq"><div class="section-head"><p class="eyebrow">FAQ</p><h2>$($format.Title) Questions</h2></div>$faqHtml</section>
 <section class="final-cta"><h2>Need This Format?</h2><p>Send artwork, size, quantity, application, material preference and packing target for review.</p><a class="solid-btn large" href="/get-quote/">Start a Custom Quote</a></section>
@@ -903,6 +916,26 @@ $blogBody = @"
   <article class="category-card gold">
     <div><p class="eyebrow">Bakery packaging</p><h2>Custom Bakery Box Stickers</h2><p>Choose bakery box stickers, seals and roll labels by checking box surface, grease risk, cold storage and label layout.</p></div>
     <a class="text-link" href="/blog/custom-bakery-box-stickers-guide/">Plan Bakery Stickers</a>
+  </article>
+  <article class="category-card blue">
+    <div><p class="eyebrow">Finish comparison</p><h2>Matte vs Glossy Stickers</h2><p>Compare glare, color, photography, handling and packaging presentation before choosing a sticker finish.</p></div>
+    <a class="text-link" href="/blog/matte-vs-glossy-stickers/">Compare Sticker Finishes</a>
+  </article>
+  <article class="category-card coral">
+    <div><p class="eyebrow">Packaging size</p><h2>How to Choose Sticker Size for Packaging</h2><p>Measure usable space, curves and text requirements before confirming label dimensions for a real package.</p></div>
+    <a class="text-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Plan Sticker Size</a>
+  </article>
+  <article class="category-card sage">
+    <div><p class="eyebrow">Bottle and jar labels</p><h2>Custom Roll Labels for Bottles and Jars</h2><p>Review container shape, label panel, application method, roll direction and storage conditions.</p></div>
+    <a class="text-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Plan Roll Labels</a>
+  </article>
+  <article class="category-card gold">
+    <div><p class="eyebrow">Planner collections</p><h2>Custom Planner Sticker Sheets</h2><p>Organize useful icons, readable text, kiss-cut spacing, material and retail packing before production.</p></div>
+    <a class="text-link" href="/blog/custom-planner-sticker-sheets-guide/">Plan Planner Sheets</a>
+  </article>
+  <article class="category-card rose">
+    <div><p class="eyebrow">Holographic artwork</p><h2>Holographic Sticker Production Guide</h2><p>Control reflective areas, white ink, small text, cutlines and sample expectations before printing.</p></div>
+    <a class="text-link" href="/blog/holographic-stickers-artwork-production-guide/">Plan Holographic Artwork</a>
   </article>
 </section>
 "@
@@ -1597,6 +1630,249 @@ $article20 = @"
 "@
 Page "/blog/custom-bakery-box-stickers-guide/" $article20Title $article20Desc $article20 $article20Faq (ArticleStructuredData "/blog/custom-bakery-box-stickers-guide/" $article20Title $article20Desc)
 
+$article21Title = "Matte vs Glossy Stickers: A Practical Buyer Guide"
+$article21Desc = "Compare matte and glossy stickers for color, glare, packaging, photography, handling and proof review before choosing a finish for custom production."
+$article21Faq = @(
+  @("Are matte or glossy stickers better for product packaging?","Neither finish is universally better. Matte often supports a restrained low-glare presentation, while gloss can make color and contrast feel more vivid. The package surface, artwork and handling should decide."),
+  @("Does matte or gloss change sticker durability?","Finish and lamination can affect handling, but durability also depends on the base material, adhesive, application surface and use condition. Confirm the complete construction rather than judging durability from finish alone."),
+  @("Should I request a sample before choosing a finish?","A material reference or physical sample can help when surface feel, glare or color impression is commercially important. A digital proof cannot reproduce the exact tactile or reflective effect.")
+)
+$article21 = @"
+<section class="subhero"><p class="eyebrow">Sticker finish comparison</p><h1>$article21Title</h1><p class="article-meta">A finish decision guide for packaging labels, sticker packs, promotional stickers and stationery products.</p></section>
+<article class="section blog-article">
+  <p>Matte versus glossy sounds like a simple visual choice, but it changes how artwork is read, photographed, handled and perceived on the final product. The useful question is not which finish is more premium. It is which finish supports the artwork and the way the sticker will actually be used.</p>
+  <p>Our practical view is to choose the finish after seeing the artwork and application surface together. A finish selected from a sample swatch alone can feel wrong once it sits on a kraft box, clear jar, dark mailer or retail backing card.</p>
+
+  <h2>Quick Answer: Matte or Glossy?</h2>
+  <table>
+    <thead><tr><th>Decision point</th><th>Matte direction</th><th>Glossy direction</th></tr></thead>
+    <tbody>
+      <tr><td>Visual character</td><td>Soft, restrained and low-glare</td><td>Bright, reflective and high-contrast</td></tr>
+      <tr><td>Artwork</td><td>Muted palettes, fine illustration, understated branding</td><td>Bold color, playful graphics, promotional designs</td></tr>
+      <tr><td>Photography</td><td>Easier to control reflections in many lighting setups</td><td>Can add shine but may reflect direct light</td></tr>
+      <tr><td>Handling impression</td><td>Often feels calm and tactile</td><td>Often feels smooth and visually energetic</td></tr>
+      <tr><td>Review priority</td><td>Check whether dark colors lose punch</td><td>Check glare over small text or barcodes</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What We Look at Before Recommending a Finish</h2>
+  <p>The first thing we look at is contrast. Small white text on a dark background, pale colors on clear film and thin illustrated lines can behave differently once surface reflection enters the picture. Finish does not rescue weak contrast; it can make an existing contrast problem more obvious.</p>
+  <p>The second thing is the package. A glossy sticker on a glossy pouch may blend naturally, while a matte label can create deliberate contrast. On an uncoated kraft box, matte may feel visually consistent, but a gloss label may be the stronger choice when the design needs to stand out. These are design judgments, not universal production rules.</p>
+
+  <h2>Consider Photography and Retail Lighting</h2>
+  <p>Packaging is often photographed for product listings and viewed under overhead retail lighting. Gloss can make color feel lively, but direct reflections may cross a logo, barcode or small ingredient line. Matte reduces glare, although it may make some colors feel less saturated than a glossy screen preview.</p>
+  <p>Our preference is to ask where the product will be seen. A sticker pack photographed flat, a bottle displayed under bright lights and a thank-you seal opened at home do not need the same finish logic.</p>
+
+  <h2>Finish Is Not the Same as Material</h2>
+  <p>Matte and gloss describe the surface appearance; paper, vinyl, clear film, BOPP and PET describe material directions. Buyers should confirm both. A matte paper label and a matte laminated film sticker may look similar in a photo but behave differently in handling and use.</p>
+  <p>If moisture, refrigeration, outdoor exposure or repeated handling matters, describe that condition before deciding the complete material and finish construction. Avoid assuming that every glossy sticker is waterproof or every matte sticker is writable.</p>
+
+  <h2>A Better Way to Approve the Finish</h2>
+  <ul class="check-list"><li>Review the artwork at final physical size</li><li>Share a photo of the application surface</li><li>Identify small text, QR-style graphics or barcode areas</li><li>Explain whether the product will be photographed or displayed under bright light</li><li>Confirm the base material as well as the finish</li><li>Request a material reference or sample when tactile feel is a purchase decision</li></ul>
+  <p>A digital proof is useful for artwork, size and cutline, but it cannot accurately reproduce physical glare or texture. When the finish carries the brand presentation, the physical reference matters more than another screen mockup.</p>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Choose matte when the artwork benefits from a quieter, low-glare surface. Choose gloss when strong color and visible shine support the product. When both seem plausible, compare them against the real package and the real sales environment instead of asking which finish is generally better.</p>
+  <div class="pill-row"><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/blog/vinyl-vs-paper-stickers/">Vinyl vs Paper</a><a class="pill-link" href="/products/custom-sticker-sheets/">Sticker Sheets</a><a class="pill-link" href="/get-quote/">Discuss a Finish</a></div>
+</article>
+"@
+Page "/blog/matte-vs-glossy-stickers/" $article21Title $article21Desc $article21 $article21Faq (ArticleStructuredData "/blog/matte-vs-glossy-stickers/" $article21Title $article21Desc)
+
+$article22Title = "How to Choose Sticker Size for Product Packaging"
+$article22Desc = "Choose a custom sticker size for boxes, bottles, jars, bags and mailers by measuring the usable area, checking curves, text and application workflow."
+$article22Faq = @(
+  @("How do I measure a package for a custom sticker?","Measure the flat usable area where the sticker will sit, note nearby edges or curves, and test the proposed dimensions with a paper mockup on the actual package."),
+  @("Should a packaging sticker fill the whole available area?","Not always. Leaving intentional space around the label can improve placement tolerance and visual balance. The artwork, package shape and application method should decide."),
+  @("What if I do not know the exact sticker size yet?","Send the package dimensions, a straight-on photo with a ruler or reference measurement, and the information that must fit. The size direction can then be reviewed before quotation and proof approval.")
+)
+$article22 = @"
+<section class="subhero"><p class="eyebrow">Packaging sticker sizing</p><h1>$article22Title</h1><p class="article-meta">A measurement and artwork checklist for boxes, bottles, jars, pouches, bags and shipping mailers.</p></section>
+<article class="section blog-article">
+  <p>Sticker size should be chosen on the package, not on the computer screen. A design can look balanced at 100% zoom and still feel crowded, too small or difficult to apply when it reaches a bottle, box or pouch.</p>
+  <p>The most reliable sizing habit we recommend is surprisingly simple: make a paper mockup at actual size and place it on the real package. It reveals proportion, curve problems and text readability faster than a long discussion about dimensions alone.</p>
+
+  <h2>Measure the Usable Area, Not the Whole Package</h2>
+  <p>Start with the area where a sticker can sit flat and be applied consistently. Exclude folds, seams, sharp curves, box openings, textured areas and places that may be touched repeatedly during packing. For a bottle or jar, note where the surface begins to taper.</p>
+  <table>
+    <thead><tr><th>Package</th><th>Measure first</th><th>Common sizing risk</th></tr></thead>
+    <tbody>
+      <tr><td>Box</td><td>Flat panel and distance from edges</td><td>Label crosses a fold or closure</td></tr>
+      <tr><td>Bottle</td><td>Straight wall before shoulder and base curves</td><td>Wide label lifts or wrinkles on taper</td></tr>
+      <tr><td>Jar</td><td>Usable circumference and panel height</td><td>Front artwork disappears around the side</td></tr>
+      <tr><td>Pouch</td><td>Flat filled area, zipper and seal zones</td><td>Label bends when the pouch changes shape</td></tr>
+      <tr><td>Mailer</td><td>Closure, address area and packing folds</td><td>Sticker interferes with shipping information</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Decide What the Sticker Must Communicate</h2>
+  <p>A small logo seal and a product information label have different space needs. List the elements that cannot be removed: brand name, product name, flavor, instructions, barcode, ingredients or campaign message. Then test whether they remain readable at the proposed size.</p>
+  <p>From an artwork-review perspective, the uncomfortable truth is that a larger label does not fix a crowded hierarchy. If every line is treated as equally important, the label can still feel busy. Establish the reading order before increasing dimensions.</p>
+
+  <h2>Leave Space for Real Application</h2>
+  <p>A sticker that exactly fills a panel can be difficult to align by hand. A small margin around the label gives the packing team room for normal placement variation. This matters even more when the package edge is visible or the sticker must line up with a window, closure or printed panel.</p>
+  <p>If labels are applied by equipment, share the application method before confirming size, shape, roll direction and gap. If labels are applied by hand, consider how the operator holds the label and whether the backing is easy to peel.</p>
+
+  <h2>Curved Containers Need a Physical Test</h2>
+  <p>For bottles and jars, the same width can behave differently on two containers because the diameter and taper change. A paper strip wrapped around the container helps show whether the front artwork stays visible and whether the edges enter a curved area.</p>
+  <p>Our practical preference is to receive one straight-on photo and one side photo with a known measurement. That is more useful than a close-up photo with no scale.</p>
+
+  <h2>Sticker Size Checklist</h2>
+  <ul class="check-list"><li>Package width, height and usable flat area</li><li>Photo with ruler or known reference measurement</li><li>Proposed sticker width and height</li><li>Required text, barcode or regulatory information</li><li>Surface shape: flat, cylindrical, tapered or flexible</li><li>Application method: hand or machine</li><li>Format: roll, sheet, loose die-cut or seal</li><li>Paper mockup checked on the real package</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Do not choose the biggest sticker that technically fits. Choose the size that keeps the design readable, leaves sensible placement tolerance and looks intentional on the package. Send the package photo with the artwork so the size can be discussed as part of the product, not as an isolated number.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-stickers-for-product-packaging/">Packaging Sticker Guide</a><a class="pill-link" href="/products/custom-roll-labels/">Roll Labels</a><a class="pill-link" href="/blog/white-ink-small-text-custom-stickers/">Small Text Review</a><a class="pill-link" href="/get-quote/">Review Sticker Size</a></div>
+</article>
+"@
+Page "/blog/how-to-choose-sticker-size-for-packaging/" $article22Title $article22Desc $article22 $article22Faq (ArticleStructuredData "/blog/how-to-choose-sticker-size-for-packaging/" $article22Title $article22Desc)
+
+$article23Title = "Custom Roll Labels for Bottles and Jars"
+$article23Desc = "Plan roll labels for bottles and jars by checking container shape, label size, application method, material and storage conditions."
+$article23Faq = @(
+  @("What information is needed for bottle or jar roll labels?","Send the container dimensions and photos, label size, artwork, quantity, application method, material preference, use condition and any roll direction or core requirements."),
+  @("Can the same roll label be used on bottles and jars?","Only after the actual surfaces, curves, dimensions and use conditions are compared. A label construction should be reviewed for the specific container rather than assumed to fit every package."),
+  @("Do hand-applied roll labels need roll direction?","Roll direction may be less restrictive for some hand-applied jobs, but the unwind orientation, core, label gap and packing should still be confirmed with the supplier before production.")
+)
+$article23 = @"
+<section class="subhero"><p class="eyebrow">Bottle and jar labels</p><h1>$article23Title</h1><p class="article-meta">A production-focused guide for brands using repeated labels on glass, plastic and packaged products.</p></section>
+<article class="section blog-article">
+  <p>Custom roll labels are useful when the same label is applied repeatedly during packing, but a roll is only the supply format. The label still has to fit the bottle or jar, stay readable on a curve and match the real application workflow.</p>
+  <p>In our view, the container photo is one of the most valuable parts of a roll-label inquiry. It immediately shows whether the surface is straight, tapered, deeply curved, textured or interrupted by a seam.</p>
+
+  <h2>Start With the Container Shape</h2>
+  <p>A cylindrical jar with a long straight wall is different from a bottle with shoulders, ribs or taper. Measure the straight application area and note where the surface changes. If the label enters a curve, a paper mockup can reveal edge lift or wrinkling before artwork is finalized.</p>
+  <table>
+    <thead><tr><th>Container question</th><th>Why it matters</th><th>Useful evidence</th></tr></thead>
+    <tbody>
+      <tr><td>Glass or plastic?</td><td>Surface and handling direction</td><td>Material description and clean surface photo</td></tr>
+      <tr><td>Straight or tapered?</td><td>Label fit and possible distortion</td><td>Front and side photographs</td></tr>
+      <tr><td>Dry, chilled or wet?</td><td>Material and adhesive discussion</td><td>Storage and condensation notes</td></tr>
+      <tr><td>Hand or machine applied?</td><td>Roll construction and workflow</td><td>Application method or equipment requirements</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Front Label, Back Label or Wrap Label?</h2>
+  <p>A front label keeps the main artwork visible from one viewing angle. Separate front and back labels can divide branding from product information. A wrap label provides more space but needs careful circumference, overlap and front-panel planning.</p>
+  <p>Our practical preference is to define the main viewing panel before laying out the artwork. Otherwise, a logo that looks centered in the flat file may rotate away from the shelf-facing position once wrapped around the container.</p>
+
+  <h2>Roll Direction Is a Workflow Detail</h2>
+  <p>If labels will be machine applied, roll direction can be essential. The leading edge and artwork orientation must match the application setup. Core, roll diameter, label gap and liner should also be confirmed with the applicable equipment requirements.</p>
+  <p>For hand application, the process may be more flexible, but buyers should still confirm how the rolls are packed and whether operators need a specific unwind direction. Do not wait until production is complete to ask which way the labels face on the roll.</p>
+
+  <h2>Material and Finish Must Match Use</h2>
+  <p>Paper can suit many dry packaging applications and certain visual styles. Film materials may be discussed for moisture, condensation or heavier handling. Clear film can create a minimal look, but white ink and artwork contrast may need review, especially on transparent or dark containers.</p>
+  <p>Finish also affects glare and color impression. A glossy label may look vivid on a bottle, while matte may reduce reflections around small copy. The correct choice depends on the artwork, lighting and product position.</p>
+
+  <h2>Roll Label Quote Checklist</h2>
+  <ul class="check-list"><li>Bottle or jar material and photographs</li><li>Straight panel height and usable width or circumference</li><li>Front, back or wrap label direction</li><li>Final artwork and required small text</li><li>Quantity per design and number of SKUs</li><li>Hand or machine application</li><li>Roll direction, core or equipment notes if applicable</li><li>Dry, chilled, wet, oily or repeated-handling conditions</li><li>Packing and destination market</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Treat the label, container and application process as one system. A beautiful label that is hard to align or poorly positioned on the curve is not a successful packaging decision. Send the actual container information before finalizing artwork size and roll specifications.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-roll-labels/">Custom Roll Labels</a><a class="pill-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Choose Sticker Size</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching</a><a class="pill-link" href="/get-quote/">Quote Bottle Labels</a></div>
+</article>
+"@
+Page "/blog/custom-roll-labels-for-bottles-and-jars/" $article23Title $article23Desc $article23 $article23Faq (ArticleStructuredData "/blog/custom-roll-labels-for-bottles-and-jars/" $article23Title $article23Desc)
+
+$article24Title = "Custom Planner Sticker Sheets: Production Guide"
+$article24Desc = "Plan custom planner sticker sheets by checking icon size, kiss-cut spacing, material, sheet layout and retail packing before production."
+$article24Faq = @(
+  @("What should be included on a custom planner sticker sheet?","Start with frequently used labels or icons, then add decorative elements only when they support the collection. Organize designs by function, size and visual hierarchy."),
+  @("Are planner sticker sheets die-cut or kiss-cut?","Planner sheets commonly use kiss cuts so individual stickers peel from one backing sheet. The final cut depth, spacing and sheet construction should be confirmed during proof review."),
+  @("What files should I send for planner sticker production?","Send vector artwork when available, or high-resolution files at final size, plus the intended sheet dimensions, cutline direction, quantity, material preference and packing plan.")
+)
+$article24 = @"
+<section class="subhero"><p class="eyebrow">Planner sticker sheets</p><h1>$article24Title</h1><p class="article-meta">A layout guide for stationery brands, planner shops, subscription boxes and retail sticker collections.</p></section>
+<article class="section blog-article">
+  <p>A useful planner sticker sheet is not simply a page filled with small illustrations. It needs a clear purpose, readable scale, comfortable peel spacing and a layout that still looks intentional when displayed or packed for retail.</p>
+  <p>Our strongest planning preference is to begin with how the customer will use the sheet. Appointment labels, habit trackers, flags and decorative accents should earn their space instead of being added only to fill an empty corner.</p>
+
+  <h2>Build the Sheet Around Repeated Use</h2>
+  <p>List the stickers a planner user will reach for often. Group them into functional labels, icons, headers, trackers and decorative elements. Repeated designs are not wasted space when they reflect repeated tasks.</p>
+  <table>
+    <thead><tr><th>Sticker group</th><th>Typical role</th><th>Layout concern</th></tr></thead>
+    <tbody>
+      <tr><td>Headers and labels</td><td>Dates, priorities, reminders</td><td>Text size and consistent width</td></tr>
+      <tr><td>Functional icons</td><td>Appointments, bills, meals, habits</td><td>Recognition at small scale</td></tr>
+      <tr><td>Trackers</td><td>Weekly or monthly progress</td><td>Writing space and line clarity</td></tr>
+      <tr><td>Decorative stickers</td><td>Theme and visual balance</td><td>Do not crowd functional items</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Review Every Design at Final Size</h2>
+  <p>Planner stickers are often small, so details that look clear on a large artboard may disappear in print. Check letterforms, thin lines, pale colors and tiny gaps at the intended physical dimensions. Zooming out on screen is not the same as printing a test at actual size.</p>
+  <p>From our perspective, the most convincing planner sheets usually have fewer visual hierarchies, not more. When every sticker has a different border, font and color treatment, the sheet can feel busy before the buyer even peels the first piece.</p>
+
+  <h2>Kiss-Cut Spacing and Peel Comfort</h2>
+  <p>Planner stickers are commonly kiss-cut so each design can be removed while the backing sheet stays intact. Leave enough space between cutlines for clean production and comfortable peeling. Confirm the outer sheet trim separately from the individual sticker cutlines.</p>
+  <p>A white border can help separate detailed artwork and make normal cut variation less noticeable. Borderless artwork can work too, but bleed and edge color should be reviewed carefully.</p>
+
+  <h2>Choose Material for the Intended Experience</h2>
+  <p>Paper directions can feel natural in notebooks and may suit users who want a stationery-like surface. Film or laminated directions may offer a different visual and handling experience. Matte or gloss should be selected with writing needs, artwork style and product positioning in mind.</p>
+  <p>Do not assume every matte surface is writable with every pen. If writing performance is important, state the intended use and request the relevant material discussion or sample.</p>
+
+  <h2>Plan the Retail Format Early</h2>
+  <p>If the sheet will be sold, decide whether it needs an OPP bag, backing card, header card, barcode area or bundled set. Packing changes the visible sheet area and cost structure. A beautiful layout may need adjustment when a header, hang hole or barcode is introduced.</p>
+
+  <h2>Planner Sheet Quote Checklist</h2>
+  <ul class="check-list"><li>Finished sheet width and height</li><li>Individual sticker dimensions or size range</li><li>Artwork at final scale</li><li>Kiss-cut lines and outer sheet trim</li><li>Material and finish preference</li><li>Writing requirement if applicable</li><li>Quantity per design or collection</li><li>Bag, backing card, barcode or retail packing needs</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Do not judge a planner sheet only by how full it looks. Judge it by whether the stickers are readable, useful and easy to peel. A little breathing room often makes the collection feel more deliberate and helps the buyer understand it faster.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-sticker-sheets/">Custom Sticker Sheets</a><a class="pill-link" href="/blog/white-ink-small-text-custom-stickers/">Small Text Review</a><a class="pill-link" href="/get-quote/">Plan a Planner Sheet</a></div>
+</article>
+"@
+Page "/blog/custom-planner-sticker-sheets-guide/" $article24Title $article24Desc $article24 $article24Faq (ArticleStructuredData "/blog/custom-planner-sticker-sheets-guide/" $article24Title $article24Desc)
+
+$article25Title = "Holographic Stickers: Artwork and Production Guide"
+$article25Desc = "Plan holographic sticker artwork by controlling reflective areas, white ink, small text, cutlines and proof expectations before production."
+$article25Faq = @(
+  @("What artwork works well on holographic stickers?","Bold shapes, controlled open areas and strong contrast can help the reflective effect remain intentional. Detailed artwork can also work, but small text and low-contrast areas need careful review."),
+  @("Does white ink change a holographic sticker?","White ink may be used to reduce or block the reflective effect beneath selected artwork areas, depending on the production method. Confirm the intended reflective and opaque areas during proof review."),
+  @("Is a digital proof enough for holographic stickers?","A digital proof can confirm artwork, cutline and placement, but it cannot fully reproduce movement, reflection or physical surface effect. A material reference or sample may be useful when the effect is central to the product.")
+)
+$article25 = @"
+<section class="subhero"><p class="eyebrow">Holographic sticker artwork</p><h1>$article25Title</h1><p class="article-meta">A practical guide for reflective sticker packs, decorative labels, gift packaging and promotional artwork.</p></section>
+<article class="section blog-article">
+  <p>Holographic material adds movement and reflection, but it does not automatically make every design look premium. The effect competes with color, text and fine detail, so the artwork should decide where reflection helps and where it needs control.</p>
+  <p>Our working view is that holographic stickers succeed when the reflective area feels intentional. If every part of the design reflects equally, the artwork can lose hierarchy and small information may become harder to read.</p>
+
+  <h2>Decide What Should Reflect</h2>
+  <p>Start by separating the design into areas that may show the holographic effect and areas that should remain visually solid. Open or lightly printed areas can reveal more of the film. Opaque ink or white ink directions may be discussed where stronger color and readability are needed.</p>
+  <table>
+    <thead><tr><th>Artwork area</th><th>Possible direction</th><th>Review question</th></tr></thead>
+    <tbody>
+      <tr><td>Background</td><td>Allow broad reflective movement</td><td>Will it overpower the foreground?</td></tr>
+      <tr><td>Logo or character</td><td>Use controlled opacity or white support</td><td>Must brand colors stay visually stable?</td></tr>
+      <tr><td>Small text</td><td>Increase contrast and reduce interference</td><td>Is every line readable at final size?</td></tr>
+      <tr><td>Highlights and accents</td><td>Use reflection selectively</td><td>Does the effect guide attention?</td></tr>
+    </tbody>
+  </table>
+
+  <h2>White Ink Is an Artwork Decision</h2>
+  <p>White ink can be discussed as a support layer under selected printed areas, depending on the production setup. It may help block some reflection and create a more opaque appearance. Areas without white support may interact more strongly with the holographic film.</p>
+  <p>Do not leave this decision as a vague note saying "add white." Mark which elements should be opaque, which should reflect and whether any gradient or partial effect is expected. The proof should make that production intent understandable.</p>
+
+  <h2>Small Text Needs More Restraint</h2>
+  <p>Fine type, thin outlines and pale colors can become difficult to read over a moving reflective background. Review text at final physical size and avoid relying on subtle tonal differences. If a barcode, ingredients line or essential product statement is present, readability should take priority over effect.</p>
+  <p>We often prefer a quieter area behind essential information. Holographic material is most persuasive when it creates contrast with stable artwork rather than competing with every detail.</p>
+
+  <h2>Cutline and Shape Still Matter</h2>
+  <p>The material effect does not remove normal cutline requirements. Confirm die-cut or kiss-cut direction, white border, bleed, safe spacing and backing format. Complex shapes should be reviewed for practical cutting and peeling, especially in retail sticker packs.</p>
+
+  <h2>A Screen Cannot Show the Full Effect</h2>
+  <p>A digital proof can verify artwork version, cutline and the planned white-ink areas, but a screen does not reproduce the physical movement of holographic film. If the exact effect is central to the buying decision, request a material reference or sample and view it under more than one lighting condition.</p>
+  <p>This is also why product photography matters. One still image may show only one reflection angle, so buyers should not assume every viewing angle will look identical.</p>
+
+  <h2>Holographic Sticker Quote Checklist</h2>
+  <ul class="check-list"><li>Final artwork and physical size</li><li>Areas intended to reflect</li><li>Areas that may need white or opaque support</li><li>Small text and essential information</li><li>Die-cut, kiss-cut, sheet or roll format</li><li>Finish or protective layer direction</li><li>Quantity and retail or bulk packing</li><li>Material reference or sample need</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Use holographic material as part of the composition, not as a blanket upgrade. Give reflection a job: frame the artwork, animate selected accents or create contrast with opaque areas. The strongest result is usually the one where the viewer can still understand the design before noticing the effect.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-holographic-stickers/">Custom Holographic Stickers</a><a class="pill-link" href="/blog/white-ink-small-text-custom-stickers/">White Ink and Small Text</a><a class="pill-link" href="/artwork-guidelines/">Artwork Guidelines</a><a class="pill-link" href="/get-quote/">Review Holographic Artwork</a></div>
+</article>
+"@
+Page "/blog/holographic-stickers-artwork-production-guide/" $article25Title $article25Desc $article25 $article25Faq (ArticleStructuredData "/blog/holographic-stickers-artwork-production-guide/" $article25Title $article25Desc)
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact Us About Custom Stickers</h1><p>Send your project details by email form or start a WhatsApp conversation directly. Include artwork, size, shape, quantity, application, and preferences if known.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email Us</a></div></section>
 <section class="section two-col">
@@ -1681,6 +1957,11 @@ $blogGuides = @(
   @("/blog/how-to-order-custom-stickers-from-factory/","How to Order Custom Stickers from a Factory","Prepare artwork, size, quantity, material, finish, proof, packing and shipping details before factory ordering."),
   @("/blog/custom-stickers-for-product-packaging/","Custom Stickers for Product Packaging","Plan packaging stickers for boxes, bottles, jars, bags, pouches and mailers by matching format, surface and finish."),
   @("/blog/custom-bakery-box-stickers-guide/","Custom Bakery Box Stickers Guide","Plan bakery box stickers, seals and roll labels by checking surface, grease risk, cold storage, artwork and packing needs.")
+  @("/blog/matte-vs-glossy-stickers/","Matte vs Glossy Stickers: A Practical Buyer Guide","Compare matte and glossy sticker finishes for color, glare, photography, packaging presentation and handling."),
+  @("/blog/how-to-choose-sticker-size-for-packaging/","How to Choose Sticker Size for Product Packaging","Measure boxes, bottles, jars, bags and mailers before confirming a readable, practical custom sticker size."),
+  @("/blog/custom-roll-labels-for-bottles-and-jars/","Custom Roll Labels for Bottles and Jars","Plan bottle and jar roll labels around container shape, size, application method, material and storage conditions."),
+  @("/blog/custom-planner-sticker-sheets-guide/","Custom Planner Sticker Sheets: Production Guide","Plan planner sticker sheet hierarchy, final size, kiss-cut spacing, material and retail packing."),
+  @("/blog/holographic-stickers-artwork-production-guide/","Holographic Stickers: Artwork and Production Guide","Control reflective areas, white ink, small text, cutlines and proof expectations for custom holographic stickers.")
 )
 
 $supportPages = @(

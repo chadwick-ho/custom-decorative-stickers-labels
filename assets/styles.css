@@ -1218,6 +1218,22 @@ p {
   margin-top: 18px;
 }
 
+.article-author {
+  margin: 0 0 28px;
+  padding: 12px 0;
+  color: #49645b;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.article-author a {
+  color: #153f35;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .category-card,
 .quote-panel {
   background: white;

@@ -2,11 +2,13 @@ $ErrorActionPreference = "Stop"
 
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Brand = "Custom Stickers & Decorative Labels"
+$OrganizationName = "ZC Labels"
+$ArticleAuthorName = "ZC Labels Production Team"
 $BaseUrl = "https://www.zclabels.com"
-$Asset = "/assets/products/hero-custom-sticker-factory.jpg"
-$SheetAsset = "/assets/products/sticker-sheet-gallery.jpg"
-$MaterialAsset = "/assets/products/material-finish-stickers.jpg"
-$FactoryAsset = "/assets/products/factory-workshop-background.png"
+$Asset = "/assets/products/hero-custom-sticker-factory.webp"
+$SheetAsset = "/assets/products/sticker-sheet-gallery.webp"
+$MaterialAsset = "/assets/products/material-finish-stickers.webp"
+$FactoryAsset = "/assets/products/factory-workshop-background.webp"
 $ContactEmail = "ruishengmao05@gmail.com"
 $MailtoUrl = "mailto:$ContactEmail"
 $WhatsAppUrl = "https://api.whatsapp.com/message/AWJL6N3AAGIZA1?autoload=1&amp;app_absent=0"
@@ -15,7 +17,7 @@ $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Di
 
 $Products = @(
   @{
-    Key="cartoon"; Title="Custom Cartoon Stickers"; Url="/products/custom-cartoon-stickers/"; Accent="coral"; Focus="center center"; Image="/assets/products/category-cartoon-stickers.jpg";
+    Key="cartoon"; Title="Custom Cartoon Stickers"; Url="/products/custom-cartoon-stickers/"; Accent="coral"; Focus="center center"; Image="/assets/products/category-cartoon-stickers.webp";
     Meta="Custom cartoon stickers, sticker sheets, die-cut decorative stickers, and illustrated sticker projects based on original or authorized artwork.";
     Intro="Cartoon stickers work well for creative collections, decorative sticker sheets, stationery products, gift packaging, e-commerce inserts, and promotional product projects. This page is for original or customer-authorized cartoon-style artwork, not third-party IP merchandise.";
     Types=@("Original illustrated stickers","Cartoon-style sticker sheets","Die-cut decorative stickers","Kiss-cut sticker layouts","Custom shape cartoon stickers","Decorative cartoon stickers");
@@ -26,7 +28,7 @@ $Products = @(
     Faq=@(@("Can I use customer-supplied cartoon artwork?","Yes. Artwork should be original, customer-owned, or properly authorized for reproduction."),@("Can you make cartoon sticker sheets?","Sticker sheet projects can be discussed based on your layout, size, quantity, and artwork details."),@("Can you produce famous character stickers?","Only when the customer has the legal right to reproduce the artwork. We do not claim ownership of third-party characters or brands."))
   },
   @{
-    Key="kids"; Title="Custom Kids Stickers"; Url="/products/custom-kids-stickers/"; Accent="gold"; Focus="center center"; Image="/assets/products/category-kids-stickers.jpg";
+    Key="kids"; Title="Custom Kids Stickers"; Url="/products/custom-kids-stickers/"; Accent="gold"; Focus="center center"; Image="/assets/products/category-kids-stickers.webp";
     Meta="Custom kids stickers for reward systems, classroom activities, learning projects, stationery, activity packs, crafts and children's gift packaging.";
     Intro="Kids stickers are used in activity products, reward systems, learning materials, stationery sets, gift packs, and craft projects. The page stays focused on custom sticker production and avoids unconfirmed safety or certification claims.";
     Types=@("Kids reward stickers","Classroom stickers","Learning stickers","Decorative kids stickers","Kids sticker sheets","Star and shape stickers","Cute illustrated stickers");
@@ -37,7 +39,7 @@ $Products = @(
     Faq=@(@("Can I request reward stickers?","Yes. Share your artwork, size, shape, quantity, and intended use for review."),@("Can you claim child-safe or non-toxic materials?","Any safety, compliance, or certification claim requires real documentation before it can be published or used in sales communication."),@("Can I use famous children's characters?","Only if you have the necessary legal rights to reproduce them."))
   },
   @{
-    Key="stationery"; Title="Custom Stationery Stickers"; Url="/products/custom-stationery-stickers/"; Accent="sage"; Focus="center center"; Image="/assets/products/category-stationery-stickers.jpg";
+    Key="stationery"; Title="Custom Stationery Stickers"; Url="/products/custom-stationery-stickers/"; Accent="sage"; Focus="center center"; Image="/assets/products/category-stationery-stickers.webp";
     Meta="Custom stationery stickers for planners, journals, notebooks, calendars, scrapbook projects, organization stickers, and functional sticker sheets.";
     Intro="Stationery stickers help planner, journal, notebook, calendar, and paper goods brands create organized sticker sheets and decorative product add-ons. The page supports B2B collection planning without inventing paper weights, adhesive data, or print accuracy claims.";
     Types=@("Planner stickers","Journal stickers","Notebook stickers","Calendar stickers","Organization stickers","Reminder stickers","Icon sticker sheets","Scrapbook stickers","Functional sticker sheets");
@@ -48,7 +50,7 @@ $Products = @(
     Faq=@(@("Can I create planner sticker sheets?","Yes. Send your sheet size, layout idea, artwork, and target quantity for discussion."),@("Can one sheet include multiple small stickers?","Yes, multi-design sheet layouts can be reviewed based on the artwork and spacing requirements."),@("What if my design includes tiny labels?","Small text should be checked carefully during proof review to confirm readability at the final size."))
   },
   @{
-    Key="gift"; Title="Custom Gift Stickers"; Url="/products/custom-gift-stickers/"; Accent="rose"; Focus="center center"; Image="/assets/products/category-gift-stickers.jpg";
+    Key="gift"; Title="Custom Gift Stickers"; Url="/products/custom-gift-stickers/"; Accent="rose"; Focus="center center"; Image="/assets/products/category-gift-stickers.webp";
     Meta="Custom gift stickers, thank-you stickers, decorative seals, gift box stickers, gift bag stickers, envelope seals, and packaging decoration stickers.";
     Intro="Gift stickers are packaging decoration and branding components for boxes, bags, tissue paper, envelopes, handmade product packaging, small business packaging, and event gifts. This is a manufacturing page, not a retail gift shop.";
     Types=@("Gift packaging stickers","Thank-you stickers","Decorative gift seals","Gift box stickers","Gift bag stickers","Envelope seals","Packaging decoration stickers","Custom logo stickers for gift packaging");
@@ -59,7 +61,7 @@ $Products = @(
     Faq=@(@("Can I make thank-you stickers for packaging?","Yes. Send your artwork, size, quantity, packaging application, and any special packing needs."),@("Do you sell gift boxes?","This website focuses on custom stickers and decorative labels, not finished gift box retail."),@("Can I use my logo on gift stickers?","You can submit logo artwork if you own it or are authorized to reproduce it."))
   },
   @{
-    Key="holiday"; Title="Custom Holiday Stickers"; Url="/products/custom-holiday-stickers/"; Accent="pine"; Focus="center center"; Image="/assets/products/category-holiday-stickers.jpg";
+    Key="holiday"; Title="Custom Holiday Stickers"; Url="/products/custom-holiday-stickers/"; Accent="pine"; Focus="center center"; Image="/assets/products/category-holiday-stickers.webp";
     Meta="Custom holiday stickers for Christmas, Halloween, Easter, Valentine's Day, New Year, birthdays, seasonal packaging, and celebration campaigns.";
     Intro="Holiday stickers help brands prepare seasonal packaging, themed stationery, event materials, retail promotions, gift packaging, and celebration collections. Designs should use generic holiday elements, original artwork, customer-supplied artwork, or legally authorized artwork.";
     Types=@("Christmas stickers","Halloween stickers","Easter stickers","Valentine stickers","New Year stickers","Birthday stickers","Seasonal decorative stickers","Holiday sticker sheets");
@@ -70,7 +72,7 @@ $Products = @(
     Faq=@(@("Can I order stickers for a seasonal campaign?","Yes. Share your theme, artwork, target quantity, intended use, and schedule requirements for discussion."),@("Can I make Christmas or Halloween sticker sheets?","Seasonal sticker sheet projects can be discussed based on your layout and artwork."),@("Can you reproduce famous holiday characters?","Only when the customer has the legal right to reproduce the artwork."))
   },
   @{
-    Key="promotional"; Title="Custom Promotional Stickers"; Url="/products/custom-promotional-stickers/"; Accent="blue"; Focus="center center"; Image="/assets/products/category-promotional-stickers.jpg";
+    Key="promotional"; Title="Custom Promotional Stickers"; Url="/products/custom-promotional-stickers/"; Accent="blue"; Focus="center center"; Image="/assets/products/category-promotional-stickers.webp";
     Meta="Custom promotional stickers for events, campaigns, giveaways, product launches, retail promotions, packaging inserts, and business marketing projects.";
     Intro="Promotional stickers are compact branding tools for events, campaigns, giveaways, product launches, retail promotions, customer orders, and packaging inserts. This page focuses on B2B bulk customization and project-specific quoting.";
     Types=@("Promotional stickers","Logo stickers","Event stickers","Campaign stickers","Giveaway stickers","Product launch stickers","Packaging promotional stickers","QR code campaign label concepts","Custom marketing stickers");
@@ -100,11 +102,11 @@ function Escape-Xml($value) {
 function Cards {
   return ($Products | ForEach-Object {
 @"
-<article class="category-card $($_.Accent)">
-  <img src="$($_.Image)" alt="$($_.Title) product examples for B2B buyers" class="card-img" style="object-position:$($_.Focus)" decoding="async">
+<div class="category-card $($_.Accent)">
+  <img src="$($_.Image)" alt="$($_.Title) product examples for B2B buyers" class="card-img" style="object-position:$($_.Focus)" width="1200" height="1200" loading="lazy" decoding="async">
   <div><p class="eyebrow">B2B sticker category</p><h3>$($_.Title)</h3><p>$($_.Intro)</p></div>
   <a class="text-link" href="$($_.Url)">$($_.Cta)</a>
-</article>
+</div>
 "@
   }) -join "`n"
 }
@@ -118,7 +120,7 @@ function HomeCategoryCards {
     $tags = ($p.Types | Select-Object -First 3 | ForEach-Object { "<span>$_</span>" }) -join ""
     $cards += @"
 <a class="home-product-card $($p.Accent)" href="$($p.Url)" aria-label="View $($p.Title)">
-  <img src="$($p.Image)" alt="$($p.Title) custom product examples" style="object-position:$($p.Focus)" decoding="async">
+  <img src="$($p.Image)" alt="$($p.Title) custom product examples" style="object-position:$($p.Focus)" width="1200" height="1200" loading="lazy" decoding="async">
   <span class="home-product-index">$num</span>
   <div class="home-product-body">
     <p>B2B CUSTOM GROUP</p>
@@ -182,7 +184,7 @@ foreach ($group in $HomeCatalogGroups) { $CatalogByKey[$group.Key] = $group }
 
 $FormatPages = @(
   @{
-    Key="die-cut"; Title="Custom Die-Cut Stickers"; Url="/products/custom-die-cut-stickers/"; Accent="coral"; Image="/assets/home-gallery/cartoon-01.jpg";
+    Key="die-cut"; Title="Custom Die-Cut Stickers"; Url="/products/custom-die-cut-stickers/"; Accent="coral"; Image="/assets/home-gallery/cartoon-01.webp";
     Meta="Custom die-cut stickers for brands, packaging inserts, events and retail sticker packs with artwork, cutline, material and finish review.";
     Intro="Die-cut stickers are individually cut around the artwork outline. They work well for logo stickers, character stickers, event giveaways, packaging inserts and retail sticker packs when buyers want a finished sticker shape instead of a rectangular label.";
     Buyer="Brands, agencies, event teams, e-commerce sellers and promotional product buyers who need individual stickers packed or supplied for distribution.";
@@ -191,7 +193,7 @@ $FormatPages = @(
     Faq=@(@("Can you review the cutline for die-cut stickers?","Yes. Send artwork and size details so the cutline, border width and shape can be checked before quoting."),@("Can die-cut stickers be packed individually?","Packing can be discussed by project, including loose bulk supply, OPP bags or retail sticker pack requirements."),@("Which material is best for die-cut stickers?","Material should be confirmed by application. Vinyl, paper, clear film and holographic options can be reviewed based on use and budget."))
   },
   @{
-    Key="kiss-cut"; Title="Custom Kiss-Cut Stickers"; Url="/products/custom-kiss-cut-stickers/"; Accent="sage"; Image="/assets/home-gallery/stationery-01.jpg";
+    Key="kiss-cut"; Title="Custom Kiss-Cut Stickers"; Url="/products/custom-kiss-cut-stickers/"; Accent="sage"; Image="/assets/home-gallery/stationery-01.webp";
     Meta="Custom kiss-cut stickers and sticker sheets for planners, stationery, kids rewards, retail packs and multi-design sticker layouts.";
     Intro="Kiss-cut stickers are cut through the sticker layer while leaving the backing sheet intact. This format is useful for sticker sheets, planner sets, kids reward sheets and retail collections with many small designs.";
     Buyer="Stationery brands, planner sellers, kids activity product teams and creative brands that need clean peel spacing and multi-design layouts.";
@@ -200,7 +202,7 @@ $FormatPages = @(
     Faq=@(@("What is the difference between die-cut and kiss-cut stickers?","Die-cut stickers are cut around the full sticker shape. Kiss-cut stickers remain on a backing sheet, making them useful for multi-design sheets."),@("Can one sheet include many designs?","Yes. Send the sheet size, artwork count and spacing requirements for proof review."),@("Can small text be used on kiss-cut sheets?","Small text should be checked at final size during proof review to confirm readability."))
   },
   @{
-    Key="roll-labels"; Title="Custom Roll Labels"; Url="/products/custom-roll-labels/"; Accent="blue"; Image="/assets/home-gallery/gift-01.jpg";
+    Key="roll-labels"; Title="Custom Roll Labels"; Url="/products/custom-roll-labels/"; Accent="blue"; Image="/assets/home-gallery/gift-01.webp";
     Meta="Custom roll labels for packaging, bottles, boxes, bakery packaging, product labels and brand stickers with roll direction review.";
     Intro="Roll labels are supplied on rolls for packaging, product application, sealing and repeated label use. Buyers should confirm label size, roll direction, surface, material and packing needs before production pricing.";
     Buyer="Packaging buyers, food and bakery brands, gift product sellers and businesses that need labels supplied on rolls for repeated application.";
@@ -209,7 +211,7 @@ $FormatPages = @(
     Faq=@(@("Do you offer roll direction review?","Yes. Roll direction should be confirmed when labels are used with applicators or specific packaging workflows."),@("Can roll labels be used for packaging seals?","Yes. Gift, bakery, box and envelope seal labels can be planned as roll or sheet formats depending on application."),@("Can you confirm waterproof material?","Waterproof or moisture-resistant options depend on the actual material and use condition, so they should be confirmed per project."))
   },
   @{
-    Key="sticker-sheets"; Title="Custom Sticker Sheets"; Url="/products/custom-sticker-sheets/"; Accent="gold"; Image="/assets/home-gallery/kids-08.jpg";
+    Key="sticker-sheets"; Title="Custom Sticker Sheets"; Url="/products/custom-sticker-sheets/"; Accent="gold"; Image="/assets/home-gallery/kids-08.webp";
     Meta="Custom sticker sheets for stationery, kids rewards, planner stickers, holiday collections and retail sticker packs with layout review.";
     Intro="Sticker sheets group multiple stickers on one backing sheet. They are useful for stationery collections, classroom reward products, seasonal sticker sets, kids activity packs and retail sticker products.";
     Buyer="Stationery brands, education product sellers, gift shops, craft brands and e-commerce sellers planning multi-design sticker collections.";
@@ -218,7 +220,7 @@ $FormatPages = @(
     Faq=@(@("How many stickers can fit on one sheet?","It depends on sheet size, sticker size, spacing and artwork shape. Send your artwork count and target sheet size for review."),@("Are sticker sheets good for retail packs?","Yes. Sticker sheets can be supplied as single sheets, sets or packed with header cards depending on the project."),@("Can you help arrange the sheet layout?","Layout review can be discussed after artwork, size and quantity are provided."))
   },
   @{
-    Key="holographic"; Title="Custom Holographic Stickers"; Url="/products/custom-holographic-stickers/"; Accent="rose"; Image="/assets/home-gallery/holiday-05.jpg";
+    Key="holographic"; Title="Custom Holographic Stickers"; Url="/products/custom-holographic-stickers/"; Accent="rose"; Image="/assets/home-gallery/holiday-05.webp";
     Meta="Custom holographic stickers for decorative labels, gift packaging, stationery, retail packs and promotional sticker projects.";
     Intro="Holographic stickers use reflective film or finish effects to create a stronger visual impact. They are often used for decorative labels, retail sticker packs, gift packaging, stationery collections and promotional stickers.";
     Buyer="Creative brands, gift sellers, stationery businesses and promotional buyers that need a brighter premium visual effect.";
@@ -232,11 +234,11 @@ function FormatCards {
   return ($FormatPages | ForEach-Object {
     $items = ($_.Clarify | Select-Object -First 3 | ForEach-Object { "<span>$_</span>" }) -join ""
 @"
-<article class="category-card $($_.Accent)">
-  <img src="$($_.Image)" alt="$($_.Title) production format example" class="card-img" decoding="async">
+<div class="category-card $($_.Accent)">
+  <img src="$($_.Image)" alt="$($_.Title) production format example" class="card-img" width="1200" height="1200" loading="lazy" decoding="async">
   <div><p class="eyebrow">Production format</p><h3>$($_.Title)</h3><p>$($_.Intro)</p><div class="home-product-tags">$items</div></div>
   <a class="text-link" href="$($_.Url)">View $($_.Title)</a>
-</article>
+</div>
 "@
   }) -join "`n"
 }
@@ -251,10 +253,10 @@ function HomeCatalogSections {
     $cards = @()
     for ($i = 0; $i -lt $itemCount; $i++) {
       $num = "{0:00}" -f ($i + 1)
-      $image = "/assets/home-gallery/$($group.Key)-$num.jpg"
+      $image = "/assets/home-gallery/$($group.Key)-$num.webp"
       $tagHtml = ($group.Tags | ForEach-Object { "<span>$_</span>" }) -join ""
       $cards += @"
-<article class="catalog-card">
+<div class="catalog-card">
   <a href="$($group.Url)" class="catalog-image"><img loading="lazy" decoding="async" width="900" height="900" src="$image" alt="$($group.Items[$i]) custom sticker example"></a>
   <div class="catalog-body">
     <span class="catalog-badge">$($group.Category)</span>
@@ -269,7 +271,7 @@ function HomeCatalogSections {
     </div>
     <a class="catalog-quote" href="$($group.Url)">Quote This Product</a>
   </div>
-</article>
+</div>
 "@
     }
     $moreLink = if ($MaxItemsPerGroup -gt 0 -and $MaxItemsPerGroup -lt $group.Items.Count) {
@@ -296,12 +298,12 @@ function ProductGallerySection($p) {
   $cards = @()
   for ($i = 0; $i -lt $group.Items.Count; $i++) {
     $num = "{0:00}" -f ($i + 1)
-    $image = "/assets/home-gallery/$($group.Key)-$num.jpg"
+    $image = "/assets/home-gallery/$($group.Key)-$num.webp"
     $cards += @"
-<article class="product-gallery-card">
+<div class="product-gallery-card">
   <img loading="lazy" decoding="async" width="900" height="900" src="$image" alt="$($group.Items[$i]) example for $($p.Title)">
   <div><span>$($group.Category)</span><strong>$($group.Items[$i])</strong></div>
-</article>
+</div>
 "@
   }
 @"
@@ -319,12 +321,12 @@ function ProductGallerySection($p) {
 function FormatGallerySection($format) {
   $cards = @()
   foreach ($item in $format.Images) {
-    $image = "/assets/home-gallery/$($item[0])-$($item[1]).jpg"
+    $image = "/assets/home-gallery/$($item[0])-$($item[1]).webp"
     $cards += @"
-<article class="product-gallery-card">
+<div class="product-gallery-card">
   <img loading="lazy" decoding="async" width="900" height="900" src="$image" alt="$($item[2])">
   <div><span>Production Format</span><strong>$($item[2])</strong></div>
-</article>
+</div>
 "@
   }
 @"
@@ -350,7 +352,7 @@ function ProductStructuredData($p) {
       position=($i + 1);
       name=$group.Items[$i];
       url=$canonical;
-      image="$BaseUrl/assets/home-gallery/$($p.Key)-$num.jpg"
+      image="$BaseUrl/assets/home-gallery/$($p.Key)-$num.webp"
     }
   }
   return @(
@@ -383,7 +385,7 @@ function FormatStructuredData($format) {
       position=($i + 1);
       name=$item[2];
       url="$BaseUrl$($format.Url)";
-      image="$BaseUrl/assets/home-gallery/$($item[0])-$($item[1]).jpg"
+      image="$BaseUrl/assets/home-gallery/$($item[0])-$($item[1]).webp"
     }
   }
   return @(
@@ -451,7 +453,8 @@ function ArticleStructuredData($Url, $Title, $Desc) {
       url="$BaseUrl$Url";
       inLanguage="en";
       dateModified=(Get-Date -Format "yyyy-MM-dd");
-      publisher=@{ "@type"="Organization"; name=$Brand; url=$BaseUrl }
+      author=@{ "@type"="Organization"; name=$OrganizationName; url="$BaseUrl/about-us/" };
+      publisher=@{ "@type"="Organization"; name=$OrganizationName; url=$BaseUrl }
     }
   )
 }
@@ -461,7 +464,7 @@ function Nav {
   $formatLinks = ($FormatPages | ForEach-Object { "<a href=""$($_.Url)"">$($_.Title -replace '^Custom ', '')</a>" }) -join ""
 @"
 <header class="site-header">
-  <a class="brand" href="/"><img class="brand-icon" src="/assets/site-icon.svg" alt=""><span>$Brand</span></a>
+  <a class="brand" href="/"><img class="brand-icon" src="/assets/site-icon.svg" alt="" width="128" height="128"><span>$Brand</span></a>
   <nav class="main-nav" aria-label="Primary navigation">
     <a href="/">Home</a>
     <div class="nav-group"><a href="/products/">Products</a><div class="dropdown">$productLinks$formatLinks</div></div>
@@ -487,6 +490,7 @@ function Footer {
   </div>
   <div class="footer-grid">
     <a href="/products/custom-stickers-decorative-labels/">Custom Stickers & Decorative Labels</a>
+    <a href="/about-us/">About ZC Labels</a>
     <a href="/blog/">Blog</a>
     <a href="/contact/">Contact</a>
     <a href="/compliance-and-document-review/">Compliance & Document Review</a>
@@ -517,6 +521,8 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
   $OgImageHtml = Escape-Html $OgImage
   $FeedTitleHtml = Escape-Html "$Brand Blog Feed"
   $robotsTag = if ($Robots) { "<meta name=""robots"" content=""$(Escape-Html $Robots)"">" } else { "" }
+  $hasArticleSchema = @($ExtraSchema | Where-Object { $_["@type"] -in @("Article", "BlogPosting", "NewsArticle") }).Count -gt 0
+  $authorTag = if ($hasArticleSchema) { "<meta name=""author"" content=""$(Escape-Html $ArticleAuthorName)"">" } else { "" }
   $schema = @()
   $schema += @{
     "@context"="https://schema.org"; "@type"="WebPage";
@@ -530,7 +536,7 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
     }
     $schema += @{
       "@context"="https://schema.org"; "@type"="Organization";
-      name=$Brand; url=$HomeUrl; logo="$BaseUrl/assets/site-icon.svg";
+      name=$OrganizationName; alternateName=$Brand; url=$HomeUrl; logo="$BaseUrl/assets/site-icon.svg";
       contactPoint=@{ "@type"="ContactPoint"; contactType="customer support"; email=$ContactEmail; availableLanguage=@("English") }
     }
   } else {
@@ -559,11 +565,17 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
   <title>$TitleHtml</title>
   <meta name="description" content="$DescHtml">
   $robotsTag
+  $authorTag
   <link rel="canonical" href="$CanonicalUrlHtml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="$CanonicalUrlHtml">
   <meta property="og:title" content="$TitleHtml">
   <meta property="og:description" content="$DescHtml">
   <meta property="og:image" content="$OgImageHtml">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="$TitleHtml">
+  <meta name="twitter:description" content="$DescHtml">
+  <meta name="twitter:image" content="$OgImageHtml">
   <link rel="icon" href="/assets/site-icon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="$FeedTitleHtml" href="/feed.xml">
   <link rel="stylesheet" href="/assets/styles.css">
@@ -573,10 +585,16 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
 }
 
 function Page($Url, $Title, $Desc, $Body, $Faq = $null, $ExtraSchema = @(), $Robots = $null) {
+  $hasArticleSchema = @($ExtraSchema | Where-Object { $_["@type"] -in @("Article", "BlogPosting", "NewsArticle") }).Count -gt 0
+  $pageBody = $Body
+  if ($hasArticleSchema) {
+    $byline = "<p class=""article-author"">By <a href=""/about-us/"">$ArticleAuthorName</a> <span aria-hidden=""true"">&middot;</span> Reviewed for B2B sticker sourcing.</p>"
+    $pageBody = $pageBody.Replace('<article class="section blog-article">', "<article class=""section blog-article"">`n  $byline")
+  }
   $full = (Head $Title $Desc $Url $Faq $ExtraSchema $Robots) + @"
 <body>
 $(Nav)
-<main>$Body</main>
+<main>$pageBody</main>
 $(Footer)
 <script src="/assets/main.js"></script>
 </body>
@@ -598,9 +616,9 @@ $fullCatalog = HomeCatalogSections
 $homeBody = @"
 <section class="home-hero" aria-label="Custom sticker factory introduction">
   <div class="hero-bg-stack" aria-hidden="true">
-    <img src="$FactoryAsset" alt="">
-    <img src="$FactoryAsset" alt="">
-    <img src="$FactoryAsset" alt="">
+    <img src="$FactoryAsset" alt="" width="1672" height="941" fetchpriority="high">
+    <img src="$FactoryAsset" alt="" width="1672" height="941">
+    <img src="$FactoryAsset" alt="" width="1672" height="941">
   </div>
   <div class="home-hero-shade" aria-hidden="true"></div>
   <div class="home-hero-content">
@@ -618,7 +636,7 @@ $homeBody = @"
   </div>
 </section>
 <section class="certificate-advantage" aria-label="Certificate and document support">
-  <img class="cert-bg" src="$FactoryAsset" alt="">
+  <img class="cert-bg" src="$FactoryAsset" alt="" width="1672" height="941" loading="lazy" decoding="async">
   <div class="cert-shade" aria-hidden="true"></div>
   <div class="cert-content">
     <div class="cert-copy">
@@ -627,12 +645,12 @@ $homeBody = @"
       <p>For custom stickers, packaging labels, kids reward sheets and retail packs, buyers often ask about material safety, restricted substances, paper sourcing and factory quality files. We discuss the matching document request by material, adhesive, finish and end use before production.</p>
     </div>
     <div class="cert-document-grid">
-      <article><strong>FDA</strong><span>Food Contact Material Questions</span></article>
-      <article><strong>SGS</strong><span>Third-Party Test Report Requests</span></article>
-      <article><strong>ISO 9001</strong><span>Quality Management Reference</span></article>
-      <article><strong>REACH</strong><span>EU Chemical Substance Checks</span></article>
-      <article><strong>RoHS</strong><span>Restricted Substance Checks</span></article>
-      <article><strong>FSC</strong><span>Paper and Packaging Source Requests</span></article>
+      <div><strong>FDA</strong><span>Food Contact Material Questions</span></div>
+      <div><strong>SGS</strong><span>Third-Party Test Report Requests</span></div>
+      <div><strong>ISO 9001</strong><span>Quality Management Reference</span></div>
+      <div><strong>REACH</strong><span>EU Chemical Substance Checks</span></div>
+      <div><strong>RoHS</strong><span>Restricted Substance Checks</span></div>
+      <div><strong>FSC</strong><span>Paper and Packaging Source Requests</span></div>
     </div>
     <p class="cert-note">DOCUMENTS MUST MATCH THE ACTUAL MATERIAL, ADHESIVE, FINISH AND DESTINATION MARKET.</p>
   </div>
@@ -669,7 +687,7 @@ $productsDesc = "Explore 72+ custom sticker directions for cartoon stickers, kid
 Page "/products/" $productsTitle $productsDesc $productsBody $null (ProductIndexStructuredData "/products/" $productsTitle $productsDesc)
 
 $parentBody = @"
-<section class="hero split compact"><div class="hero-copy"><p class="eyebrow">Parent Product Category</p><h1>Custom Stickers & Decorative Labels</h1><p class="lead">Custom sticker and decorative label production for creative brands, stationery products, gift packaging, seasonal campaigns, and promotional use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Start Your Custom Sticker Project</a><a class="ghost-btn large" href="/artwork-guidelines/">Prepare Artwork</a></div></div><div class="hero-media"><img src="$SheetAsset" alt="Custom stickers and decorative labels overview"></div></section>
+<section class="hero split compact"><div class="hero-copy"><p class="eyebrow">Parent Product Category</p><h1>Custom Stickers & Decorative Labels</h1><p class="lead">Custom sticker and decorative label production for creative brands, stationery products, gift packaging, seasonal campaigns, and promotional use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Start Your Custom Sticker Project</a><a class="ghost-btn large" href="/artwork-guidelines/">Prepare Artwork</a></div></div><div class="hero-media"><img src="$SheetAsset" alt="Custom stickers and decorative labels overview" width="1750" height="1750"></div></section>
 <section class="section"><div class="section-head"><h2>Six Application Categories</h2><p>Each page has its own B2B search intent and product-specific content, without adding unrelated products.</p></div><div class="cards">$cards</div></section>
 <section class="section"><div class="section-head"><h2>Five Production Format Pages</h2><p>Format pages support buyers comparing die-cut stickers, kiss-cut sticker sheets, roll labels and special finish stickers before requesting a quote.</p></div><div class="pill-row">$formatPills</div></section>
 <section class="home-products-showcase product-index-catalog" aria-label="Custom stickers and decorative labels product catalog">
@@ -700,7 +718,7 @@ foreach ($p in $Products) {
     <p class="lead">$($p.Intro)</p>
     <div class="cta-row"><a class="solid-btn large" href="/get-quote/">$($p.Cta)</a><a class="ghost-btn large" href="/get-quote/#artwork">Send Your Sticker Design</a></div>
   </div>
-  <div class="product-media"><img src="$($p.Image)" alt="$($p.Title) gallery image" style="object-position:$($p.Focus)"></div>
+  <div class="product-media"><img src="$($p.Image)" alt="$($p.Title) gallery image" style="object-position:$($p.Focus)" width="1200" height="1200"></div>
 </section>
 <section class="section two-col"><div><p class="eyebrow">Product types</p><h2>$($p.Title) Product Types</h2><ul class="check-list">$typeList</ul></div><div><p class="eyebrow">Applications</p><h2>Common Applications</h2><ul class="check-list">$appList</ul></div></section>
 $gallery
@@ -738,7 +756,7 @@ foreach ($format in $FormatPages) {
     <p class="lead">$($format.Intro)</p>
     <div class="cta-row"><a class="solid-btn large" href="/get-quote/">Quote $($format.Title)</a><a class="ghost-btn large" href="/artwork-guidelines/">Prepare Artwork</a></div>
   </div>
-  <div class="product-media"><img src="$($format.Image)" alt="$($format.Title) product example" style="object-position:center center"></div>
+  <div class="product-media"><img src="$($format.Image)" alt="$($format.Title) product example" style="object-position:center center" width="1200" height="1200"></div>
 </section>
 <section class="section two-col">
   <div><p class="eyebrow">Buyer fit</p><h2>Who This Format Fits</h2><p>$($format.Buyer)</p></div>
@@ -760,12 +778,12 @@ $complianceBody = @"
 <section class="certificate-advantage inline-cert" aria-label="Document support categories">
   <div class="cert-content">
     <div class="cert-document-grid">
-      <article><strong>FDA</strong><span>Food Contact Material Questions</span></article>
-      <article><strong>SGS</strong><span>Third-Party Test Report Requests</span></article>
-      <article><strong>ISO 9001</strong><span>Quality Management Reference</span></article>
-      <article><strong>REACH</strong><span>EU Chemical Substance Checks</span></article>
-      <article><strong>RoHS</strong><span>Restricted Substance Checks</span></article>
-      <article><strong>FSC</strong><span>Paper and Packaging Source Requests</span></article>
+      <div><strong>FDA</strong><span>Food Contact Material Questions</span></div>
+      <div><strong>SGS</strong><span>Third-Party Test Report Requests</span></div>
+      <div><strong>ISO 9001</strong><span>Quality Management Reference</span></div>
+      <div><strong>REACH</strong><span>EU Chemical Substance Checks</span></div>
+      <div><strong>RoHS</strong><span>Restricted Substance Checks</span></div>
+      <div><strong>FSC</strong><span>Paper and Packaging Source Requests</span></div>
     </div>
   </div>
 </section>
@@ -888,6 +906,7 @@ $blogBody = @"
   </article>
 </section>
 "@
+$blogBody = $blogBody.Replace('<article class="category-card', '<div class="category-card').Replace('</article>', '</div>')
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -1208,7 +1227,7 @@ $article12 = @"
 "@
 Page "/blog/waterproof-custom-stickers-buying-guide/" $article12Title $article12Desc $article12 $article12Faq (ArticleStructuredData "/blog/waterproof-custom-stickers-buying-guide/" $article12Title $article12Desc)
 
-$article13Title = "Clear Stickers vs White Vinyl Stickers: Which Should You Choose?"
+$article13Title = "Clear Stickers vs White Vinyl: A Buyer Guide"
 $article13Desc = "Compare clear stickers and white vinyl stickers for custom artwork, packaging surfaces, readability, finish choices and B2B quote preparation."
 $article13Faq = @(
   @("When should buyers choose clear stickers?","Clear stickers can work when the buyer wants the surface color or packaging to show through, but artwork contrast and white ink needs should be reviewed."),
@@ -1299,7 +1318,7 @@ $article14 = @"
 "@
 Page "/blog/how-to-plan-retail-sticker-packs/" $article14Title $article14Desc $article14 $article14Faq (ArticleStructuredData "/blog/how-to-plan-retail-sticker-packs/" $article14Title $article14Desc)
 
-$article15Title = "Custom Sticker Samples and Digital Proofs: What Buyers Should Confirm"
+$article15Title = "Custom Sticker Samples vs Digital Proofs"
 $article15Desc = "Plan custom sticker samples, digital proofs and pre-production review by confirming artwork, cutline, material, finish, size and packing details."
 $article15Faq = @(
   @("Is a digital proof the same as a physical sticker sample?","No. A digital proof helps review artwork position, cutline, size notes and layout, while a physical sample can help check material feel, finish and real-world appearance."),
@@ -1345,7 +1364,7 @@ $article15 = @"
 "@
 Page "/blog/custom-sticker-samples-and-digital-proofs/" $article15Title $article15Desc $article15 $article15Faq (ArticleStructuredData "/blog/custom-sticker-samples-and-digital-proofs/" $article15Title $article15Desc)
 
-$article16Title = "White Ink and Small Text on Custom Stickers: A Buyer Checklist"
+$article16Title = "White Ink and Small Text on Custom Stickers"
 $article16Desc = "Check white ink, artwork contrast, small text readability, clear film, dark surfaces and proof notes before ordering custom stickers."
 $article16Faq = @(
   @("Why does white ink matter for clear stickers?","Clear film lets the application surface show through, so white or pale artwork may need a white ink discussion to remain visible on some surfaces."),
@@ -1391,7 +1410,7 @@ $article16 = @"
 "@
 Page "/blog/white-ink-small-text-custom-stickers/" $article16Title $article16Desc $article16 $article16Faq (ArticleStructuredData "/blog/white-ink-small-text-custom-stickers/" $article16Title $article16Desc)
 
-$article17Title = "Sticker Adhesive and Surface Matching Guide for Packaging Buyers"
+$article17Title = "Sticker Adhesive and Surface Matching Guide"
 $article17Desc = "Match custom sticker adhesive, material and finish to glass, plastic, kraft paper, mailers, boxes, bags, bottles and retail packaging surfaces."
 $article17Faq = @(
   @("Why should buyers describe the application surface?","The same sticker can behave differently on glass, plastic, kraft paper, coated boxes, mailers or curved bottles, so the surface helps guide material and adhesive review."),
@@ -1485,7 +1504,7 @@ $article18 = @"
 "@
 Page "/blog/how-to-order-custom-stickers-from-factory/" $article18Title $article18Desc $article18 $article18Faq (ArticleStructuredData "/blog/how-to-order-custom-stickers-from-factory/" $article18Title $article18Desc)
 
-$article19Title = "Custom Stickers for Product Packaging: Boxes, Bottles, Bags and Mailers"
+$article19Title = "Custom Stickers for Product Packaging"
 $article19Desc = "Plan custom stickers for product packaging by matching boxes, bottles, jars, bags, mailers and pouches with the right format, finish and proof details."
 $article19Faq = @(
   @("What custom stickers work for product packaging?","Common directions include roll labels, packaging seals, die-cut logo stickers, clear labels, kraft-style labels, sticker sheets and retail pack inserts, depending on the package surface and workflow."),
@@ -1532,7 +1551,7 @@ $article19 = @"
 "@
 Page "/blog/custom-stickers-for-product-packaging/" $article19Title $article19Desc $article19 $article19Faq (ArticleStructuredData "/blog/custom-stickers-for-product-packaging/" $article19Title $article19Desc)
 
-$article20Title = "Custom Bakery Box Stickers: Seals, Roll Labels and Packaging Notes"
+$article20Title = "Custom Bakery Box Stickers and Seals"
 $article20Desc = "Plan custom bakery box stickers, bakery seals and roll labels by checking box surface, label size, grease risk, cold storage, artwork and packing needs."
 $article20Faq = @(
   @("What stickers are commonly used for bakery boxes?","Bakery buyers often discuss box seals, logo stickers, ingredient labels, date labels, thank-you seals, roll labels and seasonal packaging stickers."),
@@ -1735,7 +1754,17 @@ if ($BaseUrl) {
   }
   $sitemap = @('<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">') + $urls + @('</urlset>')
   [System.IO.File]::WriteAllLines((Join-Path $Root "sitemap.xml"), $sitemap, $utf8NoBom)
-  Set-Content -LiteralPath (Join-Path $Root "robots.txt") -Value @("User-agent: *","Allow: /","Sitemap: $BaseUrl/sitemap.xml") -Encoding ASCII
+  Set-Content -LiteralPath (Join-Path $Root "robots.txt") -Value @(
+    "User-agent: OAI-SearchBot","Allow: /","",
+    "User-agent: ChatGPT-User","Allow: /","",
+    "User-agent: GPTBot","Allow: /","",
+    "User-agent: ClaudeBot","Allow: /","",
+    "User-agent: PerplexityBot","Allow: /","",
+    "User-agent: Google-Extended","Allow: /","",
+    "User-agent: CCBot","Allow: /","",
+    "User-agent: *","Allow: /","",
+    "Sitemap: $BaseUrl/sitemap.xml"
+  ) -Encoding ASCII
   $rssItems = $blogGuides | ForEach-Object {
     "    <item><title>$(Escape-Xml $_[1])</title><link>$BaseUrl$($_[0])</link><guid>$BaseUrl$($_[0])</guid><description>$(Escape-Xml $_[2])</description><pubDate>$([DateTime]::UtcNow.ToString("r"))</pubDate></item>"
   }

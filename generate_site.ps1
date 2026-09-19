@@ -5,6 +5,31 @@ $Brand = "Custom Stickers & Decorative Labels"
 $OrganizationName = "ZC Labels"
 $ArticleAuthorName = "ZC Labels Production Team"
 $BaseUrl = "https://www.zclabels.com"
+$DefaultModifiedDate = "2026-09-18"
+$ModifiedDates = @{
+  "/" = "2026-09-19"
+  "/about-us/" = "2026-09-19"
+  "/artwork-guidelines/" = "2026-09-19"
+  "/contact/" = "2026-09-19"
+  "/custom-process/" = "2026-09-19"
+  "/gallery-applications/" = "2026-09-19"
+  "/materials-finishes/" = "2026-09-19"
+  "/products/custom-stickers-decorative-labels/" = "2026-09-19"
+  "/blog/prepare-artwork-for-custom-stickers/" = "2026-09-19"
+  "/blog/sticker-sheets-vs-die-cut-stickers/" = "2026-09-19"
+  "/blog/custom-stickers-for-packaging-gifts-promotions/" = "2026-09-19"
+  "/blog/how-much-do-custom-stickers-cost/" = "2026-09-19"
+  "/blog/vinyl-vs-paper-stickers/" = "2026-09-19"
+  "/blog/sticker-artwork-file-formats/" = "2026-09-19"
+  "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
+  "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
+}
+
+function PageModifiedDate([string]$Url) {
+  if ($ModifiedDates.ContainsKey($Url)) { return $ModifiedDates[$Url] }
+  return $DefaultModifiedDate
+}
+
 $Asset = "/assets/products/hero-custom-sticker-factory.webp"
 $SheetAsset = "/assets/products/sticker-sheet-gallery.webp"
 $MaterialAsset = "/assets/products/material-finish-stickers.webp"
@@ -452,7 +477,7 @@ function ArticleStructuredData($Url, $Title, $Desc) {
       description=$Desc;
       url="$BaseUrl$Url";
       inLanguage="en";
-      dateModified=(Get-Date -Format "yyyy-MM-dd");
+      dateModified=(PageModifiedDate $Url);
       author=@{ "@type"="Organization"; name=$OrganizationName; url="$BaseUrl/about-us/" };
       publisher=@{ "@type"="Organization"; name=$OrganizationName; url=$BaseUrl }
     }
@@ -2114,11 +2139,11 @@ $htmlSitemapBody = @"
 Page "/sitemap/" "HTML Sitemap for Custom Stickers & Decorative Labels" "Find all important custom sticker product pages, format pages, buyer guides, compliance pages and contact pages from one crawlable sitemap." $htmlSitemapBody $null @(@{ "@context"="https://schema.org"; "@type"="SiteNavigationElement"; name="HTML sitemap"; url="$BaseUrl/sitemap/" })
 
 if ($BaseUrl) {
-  $lastmod = Get-Date -Format "yyyy-MM-dd"
   $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
   $urls = Get-ChildItem -LiteralPath $Root -Recurse -Filter index.html | Sort-Object FullName | ForEach-Object {
     $rel = $_.FullName.Substring($Root.Length).TrimStart([IO.Path]::DirectorySeparatorChar) -replace "\\","/"
     $path = if ($rel -eq "index.html") { "/" } else { "/" + ($rel -replace "/index.html$","/") }
+    $lastmod = PageModifiedDate $path
     $priority = if ($path -eq "/") {
       "1.0"
     } elseif ($path -eq "/products/" -or $path -eq "/products/custom-stickers-decorative-labels/") {

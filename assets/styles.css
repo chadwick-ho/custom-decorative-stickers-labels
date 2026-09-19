@@ -1175,6 +1175,64 @@ p {
   font-size: 28px;
 }
 
+.home-guide-hub {
+  background: #f4f7f5;
+  border-top: 1px solid var(--line);
+}
+
+.home-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-guide-grid > a {
+  display: grid;
+  align-content: start;
+  min-height: 190px;
+  padding: 22px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  box-shadow: 0 8px 24px rgba(22, 35, 29, .05);
+}
+
+.home-guide-grid > a:hover {
+  border-color: var(--pine);
+  transform: translateY(-2px);
+}
+
+.home-guide-grid span {
+  margin-bottom: 12px;
+  color: var(--pine);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.home-guide-grid strong {
+  font-size: 21px;
+  line-height: 1.18;
+}
+
+.home-guide-grid p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.guide-hub-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.guide-hub-footer .text-link {
+  margin: 0;
+}
+
 .blog-article {
   max-width: 920px;
   margin: 0 auto;
@@ -1184,7 +1242,8 @@ p {
   margin-top: 34px;
 }
 
-.blog-article table {
+.blog-article table,
+.decision-table {
   width: 100%;
   margin: 24px 0 10px;
   border-collapse: collapse;
@@ -1196,21 +1255,25 @@ p {
 }
 
 .blog-article th,
-.blog-article td {
+.blog-article td,
+.decision-table th,
+.decision-table td {
   padding: 14px 16px;
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
 }
 
-.blog-article th {
+.blog-article th,
+.decision-table th {
   color: white;
   background: #153f35;
   font-size: 12px;
   text-transform: uppercase;
 }
 
-.blog-article tr:last-child td {
+.blog-article tr:last-child td,
+.decision-table tr:last-child td {
   border-bottom: 0;
 }
 
@@ -1712,6 +1775,7 @@ details p {
   .cards,
   .cards.mini,
   .blog-list,
+  .home-guide-grid,
   .gallery-row,
   .product-gallery-grid,
   .steps,

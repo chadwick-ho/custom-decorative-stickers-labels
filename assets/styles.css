@@ -1167,6 +1167,16 @@ p {
   gap: 20px;
 }
 
+.product-categories .category-card {
+  grid-template-rows: auto 1fr auto;
+}
+
+.product-categories .card-img {
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
 .cards.mini {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1444,10 +1454,6 @@ p {
   width: 100%;
   height: 210px;
   object-fit: cover;
-}
-
-.product-categories .card-img {
-  height: 240px;
 }
 
 .text-link {

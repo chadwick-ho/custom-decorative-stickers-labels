@@ -57,7 +57,7 @@ $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Di
 
 $Products = @(
   @{
-    Key="cartoon"; Title="Custom Cartoon Stickers"; Url="/products/custom-cartoon-stickers/"; Accent="coral"; Focus="center center"; Image="/assets/products/category-cartoon-stickers.webp";
+    Key="cartoon"; Title="Custom Cartoon Stickers"; Url="/products/custom-cartoon-stickers/"; Accent="coral"; Focus="center center"; Image="/assets/products/category-cartoon-stickers.webp"; CardImage="/assets/products/category-cartoon-stickers-v2.webp";
     Meta="Custom cartoon stickers, sticker sheets, die-cut decorative stickers, and illustrated sticker projects based on original or authorized artwork.";
     Intro="Cartoon stickers work well for creative collections, decorative sticker sheets, stationery products, gift packaging, e-commerce inserts, and promotional product projects. This page is for original or customer-authorized cartoon-style artwork, not third-party IP merchandise.";
     Types=@("Original illustrated stickers","Cartoon-style sticker sheets","Die-cut decorative stickers","Kiss-cut sticker layouts","Custom shape cartoon stickers","Decorative cartoon stickers");
@@ -68,7 +68,7 @@ $Products = @(
     Faq=@(@("Can I use customer-supplied cartoon artwork?","Yes. Artwork should be original, customer-owned, or properly authorized for reproduction."),@("Can you make cartoon sticker sheets?","Sticker sheet projects can be discussed based on your layout, size, quantity, and artwork details."),@("Can you produce famous character stickers?","Only when the customer has the legal right to reproduce the artwork. We do not claim ownership of third-party characters or brands."))
   },
   @{
-    Key="kids"; Title="Custom Kids Stickers"; Url="/products/custom-kids-stickers/"; Accent="gold"; Focus="center center"; Image="/assets/products/category-kids-stickers.webp";
+    Key="kids"; Title="Custom Kids Stickers"; Url="/products/custom-kids-stickers/"; Accent="gold"; Focus="center center"; Image="/assets/products/category-kids-stickers.webp"; CardImage="/assets/products/category-kids-stickers-v2.webp";
     Meta="Custom kids stickers for reward systems, classroom activities, learning projects, stationery, activity packs, crafts and children's gift packaging.";
     Intro="Kids stickers are used in activity products, reward systems, learning materials, stationery sets, gift packs, and craft projects. The page stays focused on custom sticker production and avoids unconfirmed safety or certification claims.";
     Types=@("Kids reward stickers","Classroom stickers","Learning stickers","Decorative kids stickers","Kids sticker sheets","Star and shape stickers","Cute illustrated stickers");
@@ -79,7 +79,7 @@ $Products = @(
     Faq=@(@("Can I request reward stickers?","Yes. Share your artwork, size, shape, quantity, and intended use for review."),@("Can you claim child-safe or non-toxic materials?","Any safety, compliance, or certification claim requires real documentation before it can be published or used in sales communication."),@("Can I use famous children's characters?","Only if you have the necessary legal rights to reproduce them."))
   },
   @{
-    Key="stationery"; Title="Custom Stationery Stickers"; Url="/products/custom-stationery-stickers/"; Accent="sage"; Focus="center center"; Image="/assets/products/category-stationery-stickers.webp";
+    Key="stationery"; Title="Custom Stationery Stickers"; Url="/products/custom-stationery-stickers/"; Accent="sage"; Focus="center center"; Image="/assets/products/category-stationery-stickers.webp"; CardImage="/assets/products/category-stationery-stickers-v2.webp";
     Meta="Custom stationery stickers for planners, journals, notebooks, calendars, scrapbook projects, organization stickers, and functional sticker sheets.";
     Intro="Stationery stickers help planner, journal, notebook, calendar, and paper goods brands create organized sticker sheets and decorative product add-ons. The page supports B2B collection planning without inventing paper weights, adhesive data, or print accuracy claims.";
     Types=@("Planner stickers","Journal stickers","Notebook stickers","Calendar stickers","Organization stickers","Reminder stickers","Icon sticker sheets","Scrapbook stickers","Functional sticker sheets");
@@ -90,7 +90,7 @@ $Products = @(
     Faq=@(@("Can I create planner sticker sheets?","Yes. Send your sheet size, layout idea, artwork, and target quantity for discussion."),@("Can one sheet include multiple small stickers?","Yes, multi-design sheet layouts can be reviewed based on the artwork and spacing requirements."),@("What if my design includes tiny labels?","Small text should be checked carefully during proof review to confirm readability at the final size."))
   },
   @{
-    Key="gift"; Title="Custom Gift Stickers"; Url="/products/custom-gift-stickers/"; Accent="rose"; Focus="center center"; Image="/assets/products/category-gift-stickers.webp";
+    Key="gift"; Title="Custom Gift Stickers"; Url="/products/custom-gift-stickers/"; Accent="rose"; Focus="center center"; Image="/assets/products/category-gift-stickers.webp"; CardImage="/assets/products/category-gift-stickers-v2.webp";
     Meta="Custom gift stickers, thank-you stickers, decorative seals, gift box stickers, gift bag stickers, envelope seals, and packaging decoration stickers.";
     Intro="Gift stickers are packaging decoration and branding components for boxes, bags, tissue paper, envelopes, handmade product packaging, small business packaging, and event gifts. This is a manufacturing page, not a retail gift shop.";
     Types=@("Gift packaging stickers","Thank-you stickers","Decorative gift seals","Gift box stickers","Gift bag stickers","Envelope seals","Packaging decoration stickers","Custom logo stickers for gift packaging");
@@ -101,7 +101,7 @@ $Products = @(
     Faq=@(@("Can I make thank-you stickers for packaging?","Yes. Send your artwork, size, quantity, packaging application, and any special packing needs."),@("Do you sell gift boxes?","This website focuses on custom stickers and decorative labels, not finished gift box retail."),@("Can I use my logo on gift stickers?","You can submit logo artwork if you own it or are authorized to reproduce it."))
   },
   @{
-    Key="holiday"; Title="Custom Holiday Stickers"; Url="/products/custom-holiday-stickers/"; Accent="pine"; Focus="center center"; Image="/assets/products/category-holiday-stickers.webp";
+    Key="holiday"; Title="Custom Holiday Stickers"; Url="/products/custom-holiday-stickers/"; Accent="pine"; Focus="center center"; Image="/assets/products/category-holiday-stickers.webp"; CardImage="/assets/products/category-holiday-stickers-v2.webp";
     Meta="Custom holiday stickers for Christmas, Halloween, Easter, Valentine's Day, New Year, birthdays, seasonal packaging, and celebration campaigns.";
     Intro="Holiday stickers help brands prepare seasonal packaging, themed stationery, event materials, retail promotions, gift packaging, and celebration collections. Designs should use generic holiday elements, original artwork, customer-supplied artwork, or legally authorized artwork.";
     Types=@("Christmas stickers","Halloween stickers","Easter stickers","Valentine stickers","New Year stickers","Birthday stickers","Seasonal decorative stickers","Holiday sticker sheets");
@@ -112,7 +112,7 @@ $Products = @(
     Faq=@(@("Can I order stickers for a seasonal campaign?","Yes. Share your theme, artwork, target quantity, intended use, and schedule requirements for discussion."),@("Can I make Christmas or Halloween sticker sheets?","Seasonal sticker sheet projects can be discussed based on your layout and artwork."),@("Can you reproduce famous holiday characters?","Only when the customer has the legal right to reproduce the artwork."))
   },
   @{
-    Key="promotional"; Title="Custom Promotional Stickers"; Url="/products/custom-promotional-stickers/"; Accent="blue"; Focus="center center"; Image="/assets/products/category-promotional-stickers.webp";
+    Key="promotional"; Title="Custom Promotional Stickers"; Url="/products/custom-promotional-stickers/"; Accent="blue"; Focus="center center"; Image="/assets/products/category-promotional-stickers.webp"; CardImage="/assets/products/category-promotional-stickers-v2.webp";
     Meta="Custom promotional stickers for events, campaigns, giveaways, product launches, retail promotions, packaging inserts, and business marketing projects.";
     Intro="Promotional stickers are compact branding tools for events, campaigns, giveaways, product launches, retail promotions, customer orders, and packaging inserts. This page focuses on B2B bulk customization and project-specific quoting.";
     Types=@("Promotional stickers","Logo stickers","Event stickers","Campaign stickers","Giveaway stickers","Product launch stickers","Packaging promotional stickers","QR code campaign label concepts","Custom marketing stickers");
@@ -141,9 +141,10 @@ function Escape-Xml($value) {
 
 function Cards {
   return ($Products | ForEach-Object {
+  $cardImage = if ($_.CardImage) { $_.CardImage } else { $_.Image }
 @"
 <div class="category-card $($_.Accent)">
-  <img src="$($_.Image)" alt="$($_.Title) product examples for B2B buyers" class="card-img" style="object-position:$($_.Focus)" width="1200" height="1200" loading="lazy" decoding="async">
+  <img src="$cardImage" alt="$($_.Title) product examples for B2B buyers" class="card-img" style="object-position:$($_.Focus)" width="1536" height="1024" loading="lazy" decoding="async">
   <div><p class="eyebrow">B2B sticker category</p><h3>$($_.Title)</h3><p>$($_.Intro)</p></div>
   <a class="text-link" href="$($_.Url)">$($_.Cta)</a>
 </div>
@@ -729,7 +730,7 @@ Page "/" $homeTitle $homeDesc $homeBody $null (ProductIndexStructuredData "/" $h
 
 $productsBody = @"
 <section class="subhero"><p class="eyebrow">Products</p><h1>Custom Sticker Products for B2B Projects</h1><p>Explore six focused sticker and decorative label directions, each built for inquiry-driven customization and artwork review.</p></section>
-<section class="section"><div class="cards">$cards</div></section>
+<section class="section product-categories"><div class="cards">$cards</div></section>
 <section class="section"><div class="section-head"><p class="eyebrow">Format pages</p><h2>Custom Sticker Formats Buyers Search For</h2><p>These pages separate production format intent from application categories, so buyers can compare die-cut, kiss-cut, roll, sheet and holographic sticker options without mixing them into every category page.</p></div><div class="pill-row">$formatPills</div></section>
 <section class="home-products-showcase product-index-catalog" aria-label="Full custom sticker product catalog">
   <div class="home-products-head">

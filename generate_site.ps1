@@ -23,6 +23,13 @@ $ModifiedDates = @{
   "/blog/sticker-artwork-file-formats/" = "2026-09-19"
   "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
+  "/blog/" = "2026-09-21"
+  "/sitemap/" = "2026-09-21"
+  "/blog/freezer-labels-for-frozen-food-packaging/" = "2026-09-21"
+  "/blog/removable-vs-permanent-stickers/" = "2026-09-21"
+  "/blog/label-roll-unwind-direction-core-size-guide/" = "2026-09-21"
+  "/blog/custom-sticker-color-matching-guide/" = "2026-09-21"
+  "/blog/outdoor-sticker-durability-guide/" = "2026-09-21"
 }
 
 function PageModifiedDate([string]$Url) {
@@ -34,6 +41,13 @@ $Asset = "/assets/products/hero-custom-sticker-factory.webp"
 $SheetAsset = "/assets/products/sticker-sheet-gallery.webp"
 $MaterialAsset = "/assets/products/material-finish-stickers.webp"
 $FactoryAsset = "/assets/products/factory-workshop-background.webp"
+$PageOgImages = @{
+  "/blog/freezer-labels-for-frozen-food-packaging/" = "/assets/blog/freezer-labels-frozen-food-packaging.webp"
+  "/blog/removable-vs-permanent-stickers/" = "/assets/blog/removable-vs-permanent-stickers.webp"
+  "/blog/label-roll-unwind-direction-core-size-guide/" = "/assets/blog/label-roll-unwind-direction-core-size.webp"
+  "/blog/custom-sticker-color-matching-guide/" = "/assets/blog/custom-sticker-color-matching.webp"
+  "/blog/outdoor-sticker-durability-guide/" = "/assets/blog/outdoor-sticker-durability.webp"
+}
 $ContactEmail = "ruishengmao05@gmail.com"
 $MailtoUrl = "mailto:$ContactEmail"
 $WhatsAppUrl = "https://api.whatsapp.com/message/AWJL6N3AAGIZA1?autoload=1&amp;app_absent=0"
@@ -469,19 +483,19 @@ function ProductIndexStructuredData($Url, $Title, $Desc) {
 }
 
 function ArticleStructuredData($Url, $Title, $Desc) {
-  return @(
-    @{
-      "@context"="https://schema.org";
-      "@type"="Article";
-      headline=$Title;
-      description=$Desc;
-      url="$BaseUrl$Url";
-      inLanguage="en";
-      dateModified=(PageModifiedDate $Url);
-      author=@{ "@type"="Organization"; name=$OrganizationName; url="$BaseUrl/about-us/" };
-      publisher=@{ "@type"="Organization"; name=$OrganizationName; url=$BaseUrl }
-    }
-  )
+  $article = @{
+    "@context"="https://schema.org";
+    "@type"="Article";
+    headline=$Title;
+    description=$Desc;
+    url="$BaseUrl$Url";
+    inLanguage="en";
+    dateModified=(PageModifiedDate $Url);
+    author=@{ "@type"="Organization"; name=$OrganizationName; url="$BaseUrl/about-us/" };
+    publisher=@{ "@type"="Organization"; name=$OrganizationName; url=$BaseUrl }
+  }
+  if ($PageOgImages.ContainsKey($Url)) { $article.image = "$BaseUrl$($PageOgImages[$Url])" }
+  return @($article)
 }
 
 function Nav {
@@ -538,7 +552,8 @@ function Footer {
 
 function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
   $CanonicalUrl = if ($BaseUrl) { "$BaseUrl$Url" } else { $Url }
-  $OgImage = if ($BaseUrl) { "$BaseUrl$Asset" } else { $Asset }
+  $PageImage = if ($PageOgImages.ContainsKey($Url)) { $PageOgImages[$Url] } else { $Asset }
+  $OgImage = if ($BaseUrl) { "$BaseUrl$PageImage" } else { $PageImage }
   $HomeUrl = if ($BaseUrl) { "$BaseUrl/" } else { "/" }
   $TitleHtml = Escape-Html $Title
   $DescHtml = Escape-Html $Desc
@@ -614,6 +629,7 @@ function Page($Url, $Title, $Desc, $Body, $Faq = $null, $ExtraSchema = @(), $Rob
   $pageBody = $Body
   if ($hasArticleSchema) {
     $byline = "<p class=""article-author"">By <a href=""/about-us/"">$ArticleAuthorName</a> <span aria-hidden=""true"">&middot;</span> Reviewed for B2B sticker sourcing.</p>"
+    $pageBody = $pageBody.Replace('<section class="subhero">', '<section class="subhero article-subhero">')
     $pageBody = $pageBody.Replace('<article class="section blog-article">', "<article class=""section blog-article"">`n  $byline")
   }
   $full = (Head $Title $Desc $Url $Faq $ExtraSchema $Robots) + @"
@@ -790,7 +806,7 @@ foreach ($format in $FormatPages) {
   $faqHtml = ($format.Faq | ForEach-Object { "<details><summary>$($_[0])</summary><p>$($_[1])</p></details>" }) -join "`n"
   $gallery = FormatGallerySection $format
   $formatTopicLink = switch ($format.Key) {
-    "roll-labels" { '<a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle & Jar Roll Label Guide</a>' }
+    "roll-labels" { '<a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle & Jar Roll Label Guide</a><a class="pill-link" href="/blog/label-roll-unwind-direction-core-size-guide/">Unwind & Core Size Guide</a>' }
     "sticker-sheets" { '<a class="pill-link" href="/blog/custom-planner-sticker-sheets-guide/">Planner Sticker Sheet Guide</a>' }
     "holographic" { '<a class="pill-link" href="/blog/holographic-stickers-artwork-production-guide/">Holographic Artwork Guide</a>' }
     default { '<a class="pill-link" href="/blog/matte-vs-glossy-stickers/">Matte vs Glossy</a>' }
@@ -847,7 +863,7 @@ $materialsBody = @"
 <section class="subhero"><p class="eyebrow">Materials &amp; finishes</p><h1>Sticker Materials and Finishes for Real Applications</h1><p>Choose material around the surface, handling and visual result rather than a product name alone. Final availability and performance should be confirmed against the actual artwork and use condition.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Application</a><a class="ghost-btn large" href="/blog/vinyl-vs-paper-stickers/">Compare Paper and Vinyl</a></div></section>
 <section class="section"><div class="section-head"><p class="eyebrow">Decision framework</p><h2>Start With the Job, Then Choose the Material</h2><p>A useful material discussion begins with what the sticker must do: seal a package, carry small text, survive handling, present artwork clearly or peel easily from a sheet.</p></div><table class="decision-table"><thead><tr><th>Material direction</th><th>Often considered for</th><th>Questions to confirm</th></tr></thead><tbody><tr><td>Paper</td><td>Indoor packaging, stationery, gift seals and writable labels</td><td>Surface texture, moisture risk, finish and peel behavior</td></tr><tr><td>White vinyl</td><td>Logo stickers, promotional pieces and durable-feel packs</td><td>Surface, flexibility, lamination and border direction</td></tr><tr><td>Clear film</td><td>Glass, transparent packaging and subtle branding</td><td>Surface color, white ink, contrast and edge visibility</td></tr><tr><td>Holographic film</td><td>Artwork stickers and special-effect promotional pieces</td><td>Reflective areas, ink coverage, small text and proof expectation</td></tr></tbody></table></section>
 <section class="section two-col"><div><p class="eyebrow">Finish choices</p><h2>Matte, Gloss and Special Effects</h2><p>Matte can reduce glare and create a quieter presentation. Gloss can increase surface shine and color impact. Holographic or transparent effects depend more heavily on artwork coverage and the application surface.</p><p>No finish is automatically premium for every project. Packaging photography, repeated handling, writing needs and brand color expectations should guide the decision.</p></div><div><p class="eyebrow">Information to send</p><h2>What Makes a Material Review Useful</h2><ul class="check-list"><li>Application surface and a photo if possible</li><li>Indoor, outdoor, wet, cold or repeated-handling conditions</li><li>Final size and smallest important text</li><li>Desired matte, gloss, clear or reflective appearance</li><li>Sheet, roll, individual piece or retail-pack format</li></ul></div></section>
-<section class="section related"><h2>Material Planning Guides</h2><div class="pill-row"><a class="pill-link" href="/blog/vinyl-vs-paper-stickers/">Vinyl vs Paper</a><a class="pill-link" href="/blog/matte-vs-glossy-stickers/">Matte vs Glossy</a><a class="pill-link" href="/blog/clear-stickers-vs-white-vinyl-stickers/">Clear vs White Vinyl</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching</a><a class="pill-link" href="/blog/holographic-stickers-artwork-production-guide/">Holographic Artwork</a></div></section>
+<section class="section related"><h2>Material Planning Guides</h2><div class="pill-row"><a class="pill-link" href="/blog/vinyl-vs-paper-stickers/">Vinyl vs Paper</a><a class="pill-link" href="/blog/matte-vs-glossy-stickers/">Matte vs Glossy</a><a class="pill-link" href="/blog/clear-stickers-vs-white-vinyl-stickers/">Clear vs White Vinyl</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching</a><a class="pill-link" href="/blog/removable-vs-permanent-stickers/">Removable vs Permanent</a><a class="pill-link" href="/blog/freezer-labels-for-frozen-food-packaging/">Freezer Labels</a><a class="pill-link" href="/blog/outdoor-sticker-durability-guide/">Outdoor Durability</a><a class="pill-link" href="/blog/holographic-stickers-artwork-production-guide/">Holographic Artwork</a></div></section>
 <section class="section two-col"><div><h2>Avoid Choosing From Appearance Alone</h2><p>A reference photo can explain a visual direction, but it does not prove how the same material will behave on another surface or in another environment. Connect every reference to the actual package, handling condition and artwork.</p></div><div><h2>Keep Unconfirmed Details Visible</h2><p>If moisture resistance, removability, cold storage, food-contact context or a regulated-market document matters, raise the question before production. The answer should be tied to the proposed construction and destination rather than a broad material label.</p></div></section>
 "@
 Page "/materials-finishes/" "Sticker Materials & Finishes" "Compare paper, vinyl, clear film, matte, gloss and holographic sticker directions by application surface, handling and artwork needs." $materialsBody
@@ -856,7 +872,7 @@ $artworkBody = @"
 <section class="subhero"><p class="eyebrow">Artwork guidelines</p><h1>Prepare Artwork for Custom Sticker Production</h1><p>A production-ready file is useful, but it is not the only acceptable starting point. Send the best artwork available together with final-size, cutline, surface and packing information so the proof review can focus on the real risks.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/#artwork">Send Artwork Details</a><a class="ghost-btn large" href="/blog/sticker-artwork-file-formats/">Compare File Formats</a></div></section>
 <section class="section two-col"><div><p class="eyebrow">File preparation</p><h2>What to Include With the Artwork</h2><ul class="check-list"><li>AI, PDF, SVG or EPS vector file when available</li><li>PSD, PNG or JPG reference when it shows the intended appearance</li><li>Final sticker size or a practical size range</li><li>Die-cut, kiss-cut, sheet or roll-label direction</li><li>Material, finish and application surface if known</li><li>Notes identifying text or details that must remain readable</li></ul></div><div><p class="eyebrow">Rights and versions</p><h2>Use the Correct, Authorized File</h2><p>Submit original, customer-owned or properly authorized artwork. Name the version that should be quoted and identify any reference image that is for direction only.</p><p>When several files are supplied without a clear final version, proof review can solve the wrong problem. A short note about the approved logo, colors and text is more useful than a folder of unexplained exports.</p></div></section>
 <section class="section"><div class="section-head"><p class="eyebrow">Proof review</p><h2>Four Areas That Deserve a Deliberate Check</h2></div><div class="process-grid"><div class="quote-panel"><h3>Cutline and border</h3><p>Confirm whether the shape follows the artwork, uses a white border or leaves extra backing around a kiss-cut sticker.</p></div><div class="quote-panel"><h3>Small text and thin details</h3><p>Judge important information at final printed size, not only while zoomed in on a screen.</p></div><div class="quote-panel"><h3>Transparent or reflective material</h3><p>Identify white ink, clear areas and holographic exposure instead of assuming the digital artwork predicts the material effect.</p></div><div class="quote-panel"><h3>Sheet and pack layout</h3><p>Confirm design count, peel spacing, backing size, sorting and any retail card or bag requirement.</p></div></div></section>
-<section class="section related"><h2>Artwork Guides</h2><div class="pill-row"><a class="pill-link" href="/blog/prepare-artwork-for-custom-stickers/">Artwork Checklist</a><a class="pill-link" href="/blog/how-to-add-cutline-to-sticker-artwork/">Cutline Guide</a><a class="pill-link" href="/blog/white-ink-small-text-custom-stickers/">White Ink and Small Text</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Proofs and Samples</a></div></section>
+<section class="section related"><h2>Artwork Guides</h2><div class="pill-row"><a class="pill-link" href="/blog/prepare-artwork-for-custom-stickers/">Artwork Checklist</a><a class="pill-link" href="/blog/how-to-add-cutline-to-sticker-artwork/">Cutline Guide</a><a class="pill-link" href="/blog/white-ink-small-text-custom-stickers/">White Ink and Small Text</a><a class="pill-link" href="/blog/custom-sticker-color-matching-guide/">Color Matching</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Proofs and Samples</a></div></section>
 <section class="section"><div class="section-head"><h2>A Useful Artwork Handoff</h2><p>Package the final source, a visual reference and a short written specification together. That gives the reviewer a way to compare the editable file with the appearance you approved and the physical result you expect. Keep old drafts out of the final handoff unless they are clearly marked as references.</p></div></section>
 "@
 Page "/artwork-guidelines/" "Artwork Guidelines for Custom Stickers" "Prepare sticker artwork, final size, cutlines, white ink, small text, sheet layout and proof notes before custom production." $artworkBody
@@ -1001,6 +1017,26 @@ $blogBody = @"
   <article class="category-card rose">
     <div><p class="eyebrow">Holographic artwork</p><h2>Holographic Sticker Production Guide</h2><p>Control reflective areas, white ink, small text, cutlines and sample expectations before printing.</p></div>
     <a class="text-link" href="/blog/holographic-stickers-artwork-production-guide/">Plan Holographic Artwork</a>
+  </article>
+  <article class="category-card blue">
+    <div><p class="eyebrow">Cold-chain packaging</p><h2>Freezer Labels for Frozen Food Packaging</h2><p>Plan the label around application temperature, frost, flexible pouches, storage and real cold-chain handling.</p></div>
+    <a class="text-link" href="/blog/freezer-labels-for-frozen-food-packaging/">Plan Freezer Labels</a>
+  </article>
+  <article class="category-card sage">
+    <div><p class="eyebrow">Adhesive choice</p><h2>Removable vs Permanent Stickers</h2><p>Choose adhesive behavior by surface, dwell time, removal expectation and residue risk instead of relying on a name alone.</p></div>
+    <a class="text-link" href="/blog/removable-vs-permanent-stickers/">Compare Adhesive Directions</a>
+  </article>
+  <article class="category-card gold">
+    <div><p class="eyebrow">Roll label setup</p><h2>Label Roll Unwind Direction and Core Size</h2><p>Confirm label orientation, inside or outside winding, core, roll diameter and applicator requirements before production.</p></div>
+    <a class="text-link" href="/blog/label-roll-unwind-direction-core-size-guide/">Check Roll Specifications</a>
+  </article>
+  <article class="category-card coral">
+    <div><p class="eyebrow">Print color</p><h2>Custom Sticker Color Matching</h2><p>Understand how files, materials, finishes, white ink, proofs and viewing light affect printed brand colors.</p></div>
+    <a class="text-link" href="/blog/custom-sticker-color-matching-guide/">Plan Color Review</a>
+  </article>
+  <article class="category-card blue">
+    <div><p class="eyebrow">Outdoor use</p><h2>Outdoor Sticker Durability</h2><p>Define exposure, surface, adhesive, print protection and expected service conditions before asking how long a sticker lasts.</p></div>
+    <a class="text-link" href="/blog/outdoor-sticker-durability-guide/">Plan Outdoor Stickers</a>
   </article>
 </section>
 "@
@@ -2033,6 +2069,238 @@ $article25 = @"
 "@
 Page "/blog/holographic-stickers-artwork-production-guide/" $article25Title $article25Desc $article25 $article25Faq (ArticleStructuredData "/blog/holographic-stickers-artwork-production-guide/" $article25Title $article25Desc)
 
+$article26Title = "Freezer Labels for Frozen Food Packaging: What to Confirm"
+$article26Desc = "Choose freezer labels for frozen food packaging by checking application temperature, frost, pouch flexibility, storage, adhesive and cold-chain handling."
+$article26Faq = @(
+  @("Can labels be applied after a package is already frozen?","Possibly, but application to a cold or frosted surface is a different adhesive challenge from applying at room temperature and freezing later. Share the actual application temperature and surface condition before material selection."),
+  @("Is a waterproof label automatically suitable for a freezer?","No. Water resistance does not by itself confirm adhesion during cold application, freeze-thaw cycles, condensation or flexing. Material, adhesive and real use conditions must be reviewed together."),
+  @("Should I test freezer labels before a bulk order?","A representative test is useful when adhesion is critical. Use the real package, filling process, application temperature, freezing cycle and storage time whenever possible.")
+)
+$article26 = @"
+<section class="subhero"><p class="eyebrow">Cold-chain packaging</p><h1>$article26Title</h1><p class="article-meta">A factory-side planning guide for frozen pouches, food containers, cartons and cold-storage packaging.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/freezer-labels-frozen-food-packaging.webp" alt="Freezer labels reviewed on frozen food pouches and a rigid container" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Freezer-label decisions begin with the real package, application temperature and storage process.</figcaption></figure>
+  <p>A buyer may ask for a freezer label as if it were one material. From the production side, that question is incomplete. The label might be applied to a clean pouch at room temperature and frozen hours later, or it might be pressed onto a frosted container inside a cold room. Those jobs can look identical in a product photo and behave very differently.</p>
+  <p>We would rather slow the quote down for one useful question than recommend a material from a keyword. The first question is simple: <strong>when and where is the label applied?</strong></p>
+
+  <h2>Application Temperature Is Not Storage Temperature</h2>
+  <p>Application temperature describes the package surface when the label is first pressed down. Service temperature describes the conditions after the bond has developed. Confusing the two is one of the easiest ways to approve the wrong specification.</p>
+  <table><thead><tr><th>Production situation</th><th>What changes</th><th>What to report</th></tr></thead><tbody>
+    <tr><td>Label first, freeze later</td><td>The adhesive may bond under warmer, cleaner conditions</td><td>Time between labeling and freezing</td></tr>
+    <tr><td>Apply to a chilled package</td><td>Condensation may interfere with initial contact</td><td>Surface temperature and visible moisture</td></tr>
+    <tr><td>Apply to a frozen package</td><td>Frost and low temperature make initial adhesion harder</td><td>Lowest application temperature and frost level</td></tr>
+    <tr><td>Repeated freeze-thaw handling</td><td>Moisture, movement and edge stress may repeat</td><td>Number of cycles and handling process</td></tr>
+  </tbody></table>
+
+  <h2>The Package Surface Still Decides the Job</h2>
+  <p>A smooth rigid food tub gives the adhesive a different contact area from a textured pouch or a carton with a coated surface. Flexible bags also move after labeling. If the film wrinkles, expands or is handled while cold, a large rigid label can lift even when its face material looks durable.</p>
+  <p>Send an unfilled package sample or clear photos of the exact label panel. Identify whether the packaging is plastic film, rigid plastic, coated board or another material. If the pouch has seams, gussets or changing curves, mark the usable flat zone instead of quoting from the total package width.</p>
+
+  <h2>Condensation Is a Process Problem, Not a Marketing Word</h2>
+  <p>Moisture can appear before application, during transfer or after a cold package enters a warmer room. A statement such as "waterproof label" does not answer whether the adhesive can make good first contact through condensation. It also does not describe edge lifting, ink protection or abrasion from cartons rubbing during transport.</p>
+  <p>This is where buyers sometimes ask for the strongest adhesive available. We understand the instinct, but stronger is not automatically better. It may create removal or recycling problems, and it still cannot compensate for heavy frost, oil, dust or an unsuitable surface.</p>
+
+  <h2>Build a Representative Freezer Test</h2>
+  <p>A useful test follows the real sequence: clean or fill the package, apply the label using the planned pressure and temperature, allow the expected dwell time, freeze it, move it through the expected handling cycle and inspect the edges. A sample tested on a warm empty container proves much less than buyers often hope.</p>
+  <p>Check adhesion after the coldest stage and again after condensation appears. Look for edge lift, tunneling, wrinkles, label cracking, ink damage and adhesive residue. The test should include the most difficult surface in the range, not only the easiest one.</p>
+
+  <h2>Freezer Label RFQ Checklist</h2>
+  <ul class="check-list"><li>Food package material and exact label area</li><li>Application temperature and surface condition</li><li>Storage temperature range</li><li>Time between labeling and freezing</li><li>Condensation or freeze-thaw exposure</li><li>Rigid container, flexible pouch or carton</li><li>Label size, shape, quantity and roll or sheet format</li><li>Direct-food-contact boundary and required documents</li><li>Expected handling, transport and retail display</li><li>Need for a representative package test</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Do not begin with "freezer grade." Begin with the labeling sequence. If the supplier understands the package, temperature, moisture and handling path, material selection becomes a production decision instead of a guess. For a critical frozen-food launch, a realistic trial on the actual package is worth more than a confident adjective in a quotation.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-roll-labels/">Custom Roll Labels</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Adhesive and Surface Matching</a><a class="pill-link" href="/blog/waterproof-custom-stickers-buying-guide/">Waterproof Sticker Guide</a><a class="pill-link" href="/get-quote/">Discuss Frozen Packaging</a></div>
+</article>
+"@
+Page "/blog/freezer-labels-for-frozen-food-packaging/" $article26Title $article26Desc $article26 $article26Faq (ArticleStructuredData "/blog/freezer-labels-for-frozen-food-packaging/" $article26Title $article26Desc)
+
+$article27Title = "Removable vs Permanent Stickers: Choose by Surface and Use"
+$article27Desc = "Compare removable and permanent stickers by surface, dwell time, residue expectations, application conditions and end-of-use removal testing."
+$article27Faq = @(
+  @("Do removable stickers always peel off without residue?","No universal result can be promised across every surface and dwell time. Surface coating, heat, pressure, age and cleaning conditions can change removal behavior, so testing on the real item is important."),
+  @("Are permanent stickers impossible to remove?","Permanent describes the intended bond direction, not an absolute guarantee that removal is impossible. Some may still be removed with effort, heat or cleaners, while the surface or label may be damaged."),
+  @("Which adhesive is better for glass jars?","The answer depends on whether the label must survive washing, cold storage or long display, and whether the jar will be reused. Confirm both the service condition and removal expectation.")
+)
+$article27 = @"
+<section class="subhero"><p class="eyebrow">Adhesive choice</p><h1>$article27Title</h1><p class="article-meta">A practical comparison for glass, plastic, boxes, event materials, reusable containers and promotional applications.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/removable-vs-permanent-stickers.webp" alt="Removable label peeled from a glass jar beside permanently labeled packaging" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Removal behavior is a relationship between adhesive, surface, time and environment.</figcaption></figure>
+  <p>The phrase "removable sticker" sounds reassuring. It suggests a label that holds when needed and disappears without residue when the job is over. Sometimes that is exactly the result. Sometimes the same label peels from one surface and clings stubbornly to another.</p>
+  <p>From a factory review perspective, removable and permanent are directions, not magic guarantees. We need to know what the sticker must survive and what should happen at the end of its use.</p>
+
+  <h2>Start With the End of the Sticker's Life</h2>
+  <p>A promotional sticker on a reusable glass jar may need clean removal after two weeks. A product label on a bottle may need to stay through transport, refrigeration and handling. A price label may need to peel without tearing a paper box. Those are three different definitions of success.</p>
+  <table><thead><tr><th>Need</th><th>Likely direction</th><th>Main risk to test</th></tr></thead><tbody>
+    <tr><td>Temporary event or window graphic</td><td>Removable adhesive direction</td><td>Edge lift during use and residue after removal</td></tr>
+    <tr><td>Reusable container identification</td><td>Removable or wash-off discussion</td><td>Heat, water and dwell time</td></tr>
+    <tr><td>Retail product label</td><td>Permanent adhesive direction</td><td>Transport, moisture and curved surfaces</td></tr>
+    <tr><td>Security or tamper indication</td><td>Application-specific construction</td><td>Visible evidence and substrate compatibility</td></tr>
+  </tbody></table>
+
+  <h2>The Surface Can Overrule the Product Name</h2>
+  <p>Smooth glass, textured plastic, coated paper, raw kraft board and low-energy plastic do not accept adhesive in the same way. Even two plastic containers that look similar may have different surface treatments. Dust, release agents, oil and cleaning chemicals add another variable.</p>
+  <p>We have learned to be cautious when a buyer sends only a product photo and asks for "easy peel." A photo can show shape and label area, but it cannot confirm the coating or surface energy. A physical sample, supplier material information or a real application test gives the discussion a firmer base.</p>
+
+  <h2>Dwell Time Changes Removal</h2>
+  <p>Adhesive behavior immediately after application may not match behavior after days or months. Pressure, heat and time can increase contact with the surface. Sunlight and cleaning products may also change the label face, adhesive or underlying item.</p>
+  <p>That means a five-minute peel test is useful but incomplete. If the planned campaign lasts three months, test removal after a representative dwell period. Include the warmest, coldest or wettest expected condition rather than testing only on a clean desk.</p>
+
+  <h2>Permanent Does Not Mean Indestructible</h2>
+  <p>Permanent adhesive is selected when reliable long-term attachment matters more than clean removal. It does not mean the label can never be peeled or that it will survive every chemical, texture or outdoor exposure. Face material, laminate, ink system and application quality still affect the finished result.</p>
+  <p>The trade-off is straightforward: a specification optimized for easy removal may give up some holding power, while a stronger bond may leave residue or damage a delicate surface. The right choice protects the buyer's actual priority, not every priority at once.</p>
+
+  <h2>Adhesive Review Checklist</h2>
+  <ul class="check-list"><li>Exact surface material and coating</li><li>Clean, dusty, oily, wet or cold application condition</li><li>Flat, curved, textured or flexible label area</li><li>Required service time</li><li>Indoor, refrigerated, wet or outdoor exposure</li><li>Whether removal must be clean</li><li>Whether the container will be reused or recycled</li><li>Risk of surface damage or staining</li><li>Real-item testing requirement</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Ask for a removal result, not just a removable material. Write the requirement in plain language: "hold on this coated box for 30 days, then peel without tearing the print," or "stay on this bottle through refrigeration and hand contact." That sentence gives the factory more useful information than an adhesive label copied from another quotation.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching Guide</a><a class="pill-link" href="/materials-finishes/">Materials and Finishes</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Samples and Proofs</a><a class="pill-link" href="/get-quote/">Discuss Adhesive Needs</a></div>
+</article>
+"@
+Page "/blog/removable-vs-permanent-stickers/" $article27Title $article27Desc $article27 $article27Faq (ArticleStructuredData "/blog/removable-vs-permanent-stickers/" $article27Title $article27Desc)
+
+$article28Title = "Label Roll Unwind Direction and Core Size Guide"
+$article28Desc = "Specify roll label unwind direction, label orientation, core size, roll diameter, gap, liner and applicator requirements before production."
+$article28Faq = @(
+  @("What is label roll unwind direction?","It describes how labels are oriented and presented as the roll unwinds. The required direction depends on the applicator and package orientation, so a diagram or machine specification is safer than a number alone."),
+  @("Why does label roll core size matter?","The core must fit the holder or spindle used in storage, dispensing or automatic application. Core size also interacts with roll diameter, label count and handling."),
+  @("Can a roll be rewound if the direction is wrong?","Rewinding may be possible in some cases, but it adds handling, time and risk. Confirming the machine requirement before production is the better approach.")
+)
+$article28 = @"
+<section class="subhero"><p class="eyebrow">Roll label setup</p><h1>$article28Title</h1><p class="article-meta">A production checklist for hand application, dispensers and automatic bottle or packaging lines.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/label-roll-unwind-direction-core-size.webp" alt="Technician measuring a label roll core beside an application setup" width="1536" height="1024" loading="eager" decoding="async"><figcaption>The applicator, not the artwork preview, decides the required roll construction.</figcaption></figure>
+  <p>Roll labels can be printed beautifully and still arrive unusable on the packing line. The usual reason is not color. It is orientation: the labels unwind from the wrong side, the top edge leads in the wrong direction, or the core does not fit the applicator.</p>
+  <p>This is one of those specifications that feels minor until production stops. We prefer to settle it with a machine diagram before the order, not with a phone call beside a waiting labeling line.</p>
+
+  <h2>Unwind Direction Has Two Parts</h2>
+  <p>First, confirm whether labels face outward or inward on the roll. Second, confirm which edge of the artwork leads as the web feeds forward: top, bottom, left or right. A numbered unwind chart can help, but numbering systems are not always used consistently between suppliers and machine teams.</p>
+  <p>The safest instruction combines a marked diagram, a photo of the roll path and an arrow showing web travel. Include a correctly applied package so the factory can see the intended final orientation.</p>
+  <table><thead><tr><th>Specification</th><th>Why it matters</th><th>Best evidence</th></tr></thead><tbody>
+    <tr><td>Labels inside or outside wound</td><td>Changes which face reaches the peel plate</td><td>Applicator diagram or sample roll</td></tr>
+    <tr><td>Leading artwork edge</td><td>Controls final package orientation</td><td>Arrow on artwork and package photo</td></tr>
+    <tr><td>Core inside diameter</td><td>Must fit the spindle or holder</td><td>Machine specification or measured core</td></tr>
+    <tr><td>Maximum roll diameter</td><td>Must fit available machine space</td><td>Equipment limit and handling preference</td></tr>
+    <tr><td>Web width and liner</td><td>Affects tracking, sensing and peeling</td><td>Machine requirement</td></tr>
+  </tbody></table>
+
+  <h2>Core Size Is More Than a Cardboard Tube</h2>
+  <p>The core inside diameter must fit the shaft, chuck or dispenser. A larger roll may reduce roll changes, but it can become heavy and may exceed the applicator's outside-diameter limit. A small core can create tighter curl near the end of the roll.</p>
+  <p>Do not select core size from the label dimensions alone. Share the machine model or technical requirement when automatic application is involved. For hand application, discuss how operators store, carry and dispense the rolls. Practical handling still matters.</p>
+
+  <h2>Gap, Liner and Sensing Belong in the Same Conversation</h2>
+  <p>Automatic equipment needs to detect where one label ends and the next begins. Label gap, liner opacity, clear material and registration marks can affect sensing. A transparent label on a transparent liner may need a different detection approach from an opaque paper label.</p>
+  <p>The die-cut shape also matters. Very irregular outlines, narrow leading edges or excess matrix removal may change how the label releases at the peel plate. The artwork and the machine setup should be reviewed together.</p>
+
+  <h2>Hand Application Is More Forgiving, Not Specification-Free</h2>
+  <p>A person can rotate a jar or turn a roll around. That flexibility does not make every layout convenient. If workers apply hundreds of labels, consistent orientation and manageable roll weight reduce unnecessary motion. Ask which hand holds the package, how the roll is dispensed and whether labels must be counted in fixed quantities.</p>
+
+  <h2>Roll Label RFQ Checklist</h2>
+  <ul class="check-list"><li>Manual, dispenser or automatic application</li><li>Machine model or written roll specification</li><li>Inside-wound or outside-wound requirement</li><li>Leading edge shown with a web-direction arrow</li><li>Core inside diameter</li><li>Maximum outside roll diameter</li><li>Label gap, web width and liner requirement</li><li>Labels per roll or maximum roll weight</li><li>Clear-label sensor requirement</li><li>Package photo showing final label orientation</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Never approve unwind direction from a number by itself. Send the number if your system uses one, then add a drawing and a machine requirement. Three minutes spent confirming the web path can prevent an entire roll order from becoming a rewinding project.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-roll-labels/">Custom Roll Labels</a><a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle and Jar Labels</a><a class="pill-link" href="/blog/roll-labels-vs-sheet-stickers/">Roll vs Sheet</a><a class="pill-link" href="/get-quote/">Send Roll Requirements</a></div>
+</article>
+"@
+Page "/blog/label-roll-unwind-direction-core-size-guide/" $article28Title $article28Desc $article28 $article28Faq (ArticleStructuredData "/blog/label-roll-unwind-direction-core-size-guide/" $article28Title $article28Desc)
+
+$article29Title = "Custom Sticker Color Matching: From Screen to Printed Proof"
+$article29Desc = "Plan custom sticker color matching across CMYK artwork, reference colors, material, white ink, finish, proofing and production tolerances."
+$article29Faq = @(
+  @("Why do printed sticker colors differ from a screen?","Screens emit RGB light while printing uses inks on a physical material. Display calibration, color conversion, substrate color, ink coverage and finish can all change appearance."),
+  @("Can a digital PDF proof confirm exact printed color?","A PDF proof is useful for artwork, content and layout, but it cannot reliably reproduce the final material, ink interaction, gloss or viewing light. Use a physical reference or printed sample when color is critical."),
+  @("Does laminate change sticker color?","It can change perceived contrast, saturation, glare and depth. Review color together with the intended finish rather than treating lamination as a separate final step.")
+)
+$article29 = @"
+<section class="subhero"><p class="eyebrow">Print color review</p><h1>$article29Title</h1><p class="article-meta">A practical guide for brand colors, repeat orders, clear labels, paper stickers and special materials.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-sticker-color-matching.webp" alt="Technician comparing printed stickers with physical color swatches under controlled light" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Useful color approval compares the printed material, reference and viewing condition together.</figcaption></figure>
+  <p>Color disputes often begin with two people looking at two different things. The buyer sees a bright logo on a phone. The production team sees converted artwork on a monitor. The press prints ink onto paper, white vinyl, clear film or holographic material. Each step changes the evidence.</p>
+  <p>Our job is not to promise that every device and material will look identical. It is to agree on a usable reference and control the variables that matter most.</p>
+
+  <h2>A Screen Is Not a Printed Substrate</h2>
+  <p>RGB screens create color with light. Printed stickers normally build color with inks, commonly through process-color combinations or a defined spot-color workflow. A vivid screen color may sit outside the printable range of a chosen process and material.</p>
+  <p>Before requesting a match, identify the source of truth. Is it a physical package, an approved previous sticker, a color reference, or only an on-screen file? If the only reference is a screenshot, expectations should stay cautious because the display settings are unknown.</p>
+  <table><thead><tr><th>Reference</th><th>Useful for</th><th>Limitation</th></tr></thead><tbody>
+    <tr><td>Artwork values</td><td>Consistent file setup and repeatable review</td><td>Do not show substrate and finish</td></tr>
+    <tr><td>Physical color reference</td><td>Target comparison under controlled light</td><td>May not reproduce identically with every print process</td></tr>
+    <tr><td>Approved printed sample</td><td>Repeat-order comparison</td><td>Age, batch and material changes can affect appearance</td></tr>
+    <tr><td>PDF digital proof</td><td>Content, position and artwork version</td><td>Not a physical color guarantee</td></tr>
+  </tbody></table>
+
+  <h2>Material Color Participates in the Result</h2>
+  <p>White paper and white film provide different surfaces. Kraft paper adds its own brown tone. Clear film allows the package color to influence the design unless white ink supports selected areas. Holographic film introduces moving reflection.</p>
+  <p>This is why copying the same file onto a new material can change the visual result. The artwork may need adjusted ink values, white support or a different expectation for unprinted areas. Material selection is part of color planning, not just a cost line.</p>
+
+  <h2>Finish Changes What the Eye Notices</h2>
+  <p>Gloss can deepen apparent contrast and create highlights. Matte can reduce glare but may make colors feel quieter. Texture, lamination and varnish can also influence perceived sharpness. If the finish is central to the product presentation, approve color with that finish included.</p>
+  <p>Lighting matters too. A label viewed under a neutral inspection lamp, retail LED lighting and warm restaurant lighting may not feel identical. When the target is sensitive, define the main viewing environment rather than chasing a universal appearance.</p>
+
+  <h2>Separate Critical Colors From Flexible Colors</h2>
+  <p>Not every color needs the same control. A primary logo color may deserve a physical reference and tighter review. A background illustration may allow more variation. Marking the critical elements helps the production team focus attention where a difference would affect brand recognition.</p>
+  <p>Repeat orders should reference the previous approved production sample and the current material specification. Even then, reasonable process variation should be discussed. "Match exactly" is not a measurement; an agreed reference and tolerance are.</p>
+
+  <h2>Color Review Checklist</h2>
+  <ul class="check-list"><li>Final color-managed artwork file</li><li>Physical or digital source of truth</li><li>Critical logo colors identified</li><li>Sticker material and its base color</li><li>White ink requirement on clear or special film</li><li>Matte, gloss or other finish</li><li>Main viewing light and application surface</li><li>Digital proof versus printed sample requirement</li><li>Approved sample retained for repeat orders</li><li>Acceptable production tolerance discussed</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>If color matters commercially, do not approve it from a phone screenshot. Send the original file and the best physical reference available, then review the color on the intended material and finish. The point is not to eliminate every difference. It is to decide which differences are acceptable before the press run.</p>
+  <div class="pill-row"><a class="pill-link" href="/artwork-guidelines/">Artwork Guidelines</a><a class="pill-link" href="/blog/sticker-artwork-file-formats/">Artwork File Formats</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Samples and Proofs</a><a class="pill-link" href="/get-quote/">Discuss Color Requirements</a></div>
+</article>
+"@
+Page "/blog/custom-sticker-color-matching-guide/" $article29Title $article29Desc $article29 $article29Faq (ArticleStructuredData "/blog/custom-sticker-color-matching-guide/" $article29Title $article29Desc)
+
+$article30Title = "Outdoor Sticker Durability: Materials, UV, Water and Testing"
+$article30Desc = "Plan outdoor sticker durability by defining UV, rain, abrasion, temperature, surface, adhesive, print protection and expected service conditions."
+$article30Faq = @(
+  @("How long do outdoor stickers last?","There is no responsible universal lifespan without a defined material, print system, surface, climate, orientation and exposure level. Share the service conditions and test critical applications."),
+  @("Are waterproof stickers suitable for outdoor use?","Water resistance is only one requirement. Outdoor use may also involve UV, heat, cold, abrasion, cleaning chemicals, edge exposure and surface movement."),
+  @("Does lamination make every sticker outdoor durable?","A suitable laminate may help protect print from moisture, handling and some exposure, but it does not correct an unsuitable adhesive, dirty surface, severe curve or unsupported lifespan claim.")
+)
+$article30 = @"
+<section class="subhero"><p class="eyebrow">Outdoor sticker planning</p><h1>$article30Title</h1><p class="article-meta">A buyer guide for equipment cases, bottles, signs, promotional stickers and exterior product identification.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/outdoor-sticker-durability.webp" alt="Outdoor vinyl stickers inspected on a bottle, equipment case and smooth panel after rain" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Outdoor performance depends on the complete system: print, film, adhesive, surface and exposure.</figcaption></figure>
+  <p>"How many years will this sticker last outdoors?" is a fair buying question and a dangerous question to answer too quickly. A north-facing sign in a mild climate, a bottle washed every day and an equipment case left in direct sun are all outdoor applications. They do not impose the same stress.</p>
+  <p>We do not think a lifespan number is useful until the exposure is described. The honest work starts with the environment, not the warranty-sounding phrase.</p>
+
+  <h2>Outdoor Exposure Is a Stack of Problems</h2>
+  <p>Rain is only one part. Ultraviolet light can fade color and affect materials. Heat and cold change stiffness and adhesive behavior. Abrasion attacks printed surfaces and edges. Cleaning fluids, salt, dust and repeated handling may matter more than occasional water.</p>
+  <table><thead><tr><th>Exposure</th><th>Possible effect</th><th>Question to answer</th></tr></thead><tbody>
+    <tr><td>Direct sunlight</td><td>Color change and material aging</td><td>Hours of sun and geographic climate</td></tr>
+    <tr><td>Rain and standing water</td><td>Edge stress and print exposure</td><td>Vertical, horizontal or immersed use</td></tr>
+    <tr><td>Abrasion</td><td>Scuffing and surface wear</td><td>Hands, tools, transport or cleaning frequency</td></tr>
+    <tr><td>Temperature cycling</td><td>Expansion, contraction and bond stress</td><td>Expected high and low temperatures</td></tr>
+    <tr><td>Chemicals</td><td>Ink, laminate or adhesive attack</td><td>Cleaner, oil, fuel or sanitizer contact</td></tr>
+  </tbody></table>
+
+  <h2>The Surface Is Part of the Sticker System</h2>
+  <p>A smooth painted panel, powder-coated case, stainless bottle and textured plastic box all create different bonding conditions. Fresh paint, wax, silicone, oil and dust can weaken adhesion. Tight curves and edges add lifting stress.</p>
+  <p>Surface preparation should follow the actual item and its manufacturer's guidance. A stronger adhesive cannot repair a contaminated surface, and a thick laminated label may not conform well to a small compound curve. Send the object or a representative sample when failure would be costly.</p>
+
+  <h2>Protect the Print, but Do Not Ignore the Edges</h2>
+  <p>A laminate or suitable protective layer may improve resistance to handling, moisture and abrasion. The exact benefit depends on the print system and construction. Protection on the face does not automatically prevent edge lift or water from reaching an exposed boundary.</p>
+  <p>Rounded corners often reduce sharp lifting points. Adequate pressure during application helps contact. Allowing the bond to develop before severe exposure may also matter. These ordinary process details are less exciting than a material name and often more useful.</p>
+
+  <h2>Define Success Before Asking for a Lifespan</h2>
+  <p>Does success mean the sticker remains attached, the barcode stays readable, the logo color stays within a brand tolerance, or the surface stays presentable? A label can remain bonded after its print has faded, or keep its color while an edge lifts.</p>
+  <p>Write the acceptance criteria and expected service period. For a short event, appearance for several days may be enough. For equipment identification, readability and adhesion may matter for a much longer period. These are different specifications and should not be priced as if they were interchangeable.</p>
+
+  <h2>Use Testing to Reduce the Unknowns</h2>
+  <p>A field test on the real surface provides the most relevant evidence. Accelerated tests can compare constructions under controlled conditions, but they should be interpreted against the actual application rather than treated as a universal calendar conversion.</p>
+  <p>Inspect color, gloss, cracking, shrinkage, edge lift, bubbling and residue. Include the harshest orientation and cleaning method expected. Keep an unexposed control sample so changes are easier to judge.</p>
+
+  <h2>Outdoor Sticker RFQ Checklist</h2>
+  <ul class="check-list"><li>Exact object and surface material</li><li>Flat, curved, textured or flexible application area</li><li>Indoor-outdoor mix and expected service period</li><li>Direct sun, shade and geographic climate</li><li>Rain, immersion or condensation exposure</li><li>Temperature range and cycling</li><li>Abrasion and cleaning process</li><li>Critical color, barcode or safety information</li><li>Finish or protective-layer requirement</li><li>Representative field-test plan</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>Be suspicious of an outdoor-life promise that arrives before the surface and environment questions. A credible specification names the conditions, chooses the full label construction and states what performance means. When the application matters, test the real object and keep the result as evidence for the next order.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-die-cut-stickers/">Custom Die-Cut Stickers</a><a class="pill-link" href="/blog/waterproof-custom-stickers-buying-guide/">Waterproof Sticker Guide</a><a class="pill-link" href="/blog/removable-vs-permanent-stickers/">Adhesive Comparison</a><a class="pill-link" href="/get-quote/">Discuss Outdoor Use</a></div>
+</article>
+"@
+Page "/blog/outdoor-sticker-durability-guide/" $article30Title $article30Desc $article30 $article30Faq (ArticleStructuredData "/blog/outdoor-sticker-durability-guide/" $article30Title $article30Desc)
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -2107,7 +2375,12 @@ $blogGuides = @(
   @("/blog/how-to-choose-sticker-size-for-packaging/","How to Choose Sticker Size for Product Packaging","Measure boxes, bottles, jars, bags and mailers before confirming a readable, practical custom sticker size."),
   @("/blog/custom-roll-labels-for-bottles-and-jars/","Custom Roll Labels for Bottles and Jars","Plan bottle and jar roll labels around container shape, size, application method, material and storage conditions."),
   @("/blog/custom-planner-sticker-sheets-guide/","Custom Planner Sticker Sheets: Production Guide","Plan planner sticker sheet hierarchy, final size, kiss-cut spacing, material and retail packing."),
-  @("/blog/holographic-stickers-artwork-production-guide/","Holographic Stickers: Artwork and Production Guide","Control reflective areas, white ink, small text, cutlines and proof expectations for custom holographic stickers.")
+  @("/blog/holographic-stickers-artwork-production-guide/","Holographic Stickers: Artwork and Production Guide","Control reflective areas, white ink, small text, cutlines and proof expectations for custom holographic stickers."),
+  @("/blog/freezer-labels-for-frozen-food-packaging/","Freezer Labels for Frozen Food Packaging","Choose freezer labels by application temperature, frost, package surface, storage and cold-chain handling."),
+  @("/blog/removable-vs-permanent-stickers/","Removable vs Permanent Stickers","Compare adhesive directions by surface, dwell time, residue expectations and end-of-use removal."),
+  @("/blog/label-roll-unwind-direction-core-size-guide/","Label Roll Unwind Direction and Core Size Guide","Specify roll direction, artwork orientation, core size, roll diameter, gap and applicator requirements."),
+  @("/blog/custom-sticker-color-matching-guide/","Custom Sticker Color Matching Guide","Plan printed sticker color across artwork, material, white ink, finish, proof and viewing conditions."),
+  @("/blog/outdoor-sticker-durability-guide/","Outdoor Sticker Durability Guide","Define UV, water, abrasion, temperature, surface and testing needs for outdoor stickers.")
 )
 
 $supportPages = @(
@@ -2193,7 +2466,8 @@ if ($BaseUrl) {
     "Sitemap: $BaseUrl/sitemap.xml"
   ) -Encoding ASCII
   $rssItems = $blogGuides | ForEach-Object {
-    "    <item><title>$(Escape-Xml $_[1])</title><link>$BaseUrl$($_[0])</link><guid>$BaseUrl$($_[0])</guid><description>$(Escape-Xml $_[2])</description><pubDate>$([DateTime]::UtcNow.ToString("r"))</pubDate></item>"
+    $published = [DateTime]::ParseExact((PageModifiedDate $_[0]), "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture).ToUniversalTime().ToString("r")
+    "    <item><title>$(Escape-Xml $_[1])</title><link>$BaseUrl$($_[0])</link><guid>$BaseUrl$($_[0])</guid><description>$(Escape-Xml $_[2])</description><pubDate>$published</pubDate></item>"
   }
   $rss = @(
     '<?xml version="1.0" encoding="UTF-8"?>',
@@ -2250,6 +2524,11 @@ if ($BaseUrl) {
     "- How to order custom stickers from a factory: $BaseUrl/blog/how-to-order-custom-stickers-from-factory/",
     "- Custom stickers for product packaging: $BaseUrl/blog/custom-stickers-for-product-packaging/",
     "- Custom bakery box stickers guide: $BaseUrl/blog/custom-bakery-box-stickers-guide/",
+    "- Freezer labels for frozen food packaging: $BaseUrl/blog/freezer-labels-for-frozen-food-packaging/",
+    "- Removable vs permanent stickers: $BaseUrl/blog/removable-vs-permanent-stickers/",
+    "- Label roll unwind direction and core size: $BaseUrl/blog/label-roll-unwind-direction-core-size-guide/",
+    "- Custom sticker color matching: $BaseUrl/blog/custom-sticker-color-matching-guide/",
+    "- Outdoor sticker durability: $BaseUrl/blog/outdoor-sticker-durability-guide/",
     "- HTML sitemap: $BaseUrl/sitemap/",
     "- RSS feed: $BaseUrl/feed.xml",
     "",

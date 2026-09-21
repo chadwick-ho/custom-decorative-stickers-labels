@@ -42,6 +42,7 @@ $SheetAsset = "/assets/products/sticker-sheet-gallery.webp"
 $MaterialAsset = "/assets/products/material-finish-stickers.webp"
 $FactoryAsset = "/assets/products/factory-workshop-background.webp"
 $PageOgImages = @{
+  "/blog/" = "/assets/blog/blog-custom-sticker-guides-hero.webp"
   "/blog/freezer-labels-for-frozen-food-packaging/" = "/assets/blog/freezer-labels-frozen-food-packaging.webp"
   "/blog/removable-vs-permanent-stickers/" = "/assets/blog/removable-vs-permanent-stickers.webp"
   "/blog/label-roll-unwind-direction-core-size-guide/" = "/assets/blog/label-roll-unwind-direction-core-size.webp"
@@ -915,8 +916,13 @@ $faqBody = @"
 Page "/faq/" "Custom Sticker FAQ" "Answers to common questions about custom sizes, shapes, artwork, digital proof, materials, sticker sheets, quotes, shipping, and artwork rights." $faqBody
 
 $blogBody = @"
-<section class="subhero"><p class="eyebrow">Blog</p><h1>Custom Sticker Blog</h1><p>Practical guides for buyers planning custom stickers, decorative labels, sticker sheets, packaging stickers, and promotional sticker projects.</p></section>
+<section class="blog-index-hero">
+  <img class="blog-index-hero-bg" src="/assets/blog/blog-custom-sticker-guides-hero.webp" alt="" width="1942" height="809" fetchpriority="high" decoding="async">
+  <div class="blog-index-hero-shade"></div>
+  <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
+</section>
 <section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a></div></section>
+<section class="section blog-list-intro"><p class="eyebrow">30 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
     <div><p class="eyebrow">Artwork guide</p><h2>How to Prepare Artwork for Custom Sticker Production</h2><p>Learn what information to send before requesting a custom sticker quote, including artwork, size, shape, quantity, and intended application.</p></div>
@@ -1040,6 +1046,54 @@ $blogBody = @"
   </article>
 </section>
 "@
+$blogCoverMap = [ordered]@{
+  "/blog/prepare-artwork-for-custom-stickers/" = "/assets/home-gallery/stationery-01.webp"
+  "/blog/sticker-sheets-vs-die-cut-stickers/" = "/assets/home-gallery/cartoon-02.webp"
+  "/blog/custom-stickers-for-packaging-gifts-promotions/" = "/assets/home-gallery/gift-01.webp"
+  "/blog/how-much-do-custom-stickers-cost/" = "/assets/home-gallery/promotional-02.webp"
+  "/blog/vinyl-vs-paper-stickers/" = "/assets/home-gallery/stationery-03.webp"
+  "/blog/sticker-artwork-file-formats/" = "/assets/home-gallery/promotional-04.webp"
+  "/blog/how-to-add-cutline-to-sticker-artwork/" = "/assets/home-gallery/cartoon-04.webp"
+  "/blog/roll-labels-vs-sheet-stickers/" = "/assets/home-gallery/gift-02.webp"
+  "/blog/custom-sticker-printing-for-small-businesses/" = "/assets/home-gallery/gift-03.webp"
+  "/blog/low-moq-custom-sticker-manufacturer-guide/" = "/assets/home-gallery/promotional-05.webp"
+  "/blog/custom-sticker-packaging-and-packing-options/" = "/assets/home-gallery/gift-04.webp"
+  "/blog/waterproof-custom-stickers-buying-guide/" = "/assets/home-gallery/promotional-06.webp"
+  "/blog/clear-stickers-vs-white-vinyl-stickers/" = "/assets/home-gallery/stationery-05.webp"
+  "/blog/how-to-plan-retail-sticker-packs/" = "/assets/home-gallery/gift-05.webp"
+  "/blog/custom-sticker-samples-and-digital-proofs/" = "/assets/home-gallery/promotional-07.webp"
+  "/blog/white-ink-small-text-custom-stickers/" = "/assets/home-gallery/promotional-08.webp"
+  "/blog/sticker-adhesive-surface-matching-guide/" = "/assets/home-gallery/gift-06.webp"
+  "/blog/how-to-order-custom-stickers-from-factory/" = "/assets/home-gallery/promotional-09.webp"
+  "/blog/custom-stickers-for-product-packaging/" = "/assets/home-gallery/gift-07.webp"
+  "/blog/custom-bakery-box-stickers-guide/" = "/assets/home-gallery/holiday-01.webp"
+  "/blog/matte-vs-glossy-stickers/" = "/assets/home-gallery/promotional-10.webp"
+  "/blog/how-to-choose-sticker-size-for-packaging/" = "/assets/home-gallery/gift-08.webp"
+  "/blog/custom-roll-labels-for-bottles-and-jars/" = "/assets/home-gallery/gift-09.webp"
+  "/blog/custom-planner-sticker-sheets-guide/" = "/assets/home-gallery/stationery-10.webp"
+  "/blog/holographic-stickers-artwork-production-guide/" = "/assets/home-gallery/promotional-11.webp"
+  "/blog/freezer-labels-for-frozen-food-packaging/" = "/assets/blog/freezer-labels-frozen-food-packaging.webp"
+  "/blog/removable-vs-permanent-stickers/" = "/assets/blog/removable-vs-permanent-stickers.webp"
+  "/blog/label-roll-unwind-direction-core-size-guide/" = "/assets/blog/label-roll-unwind-direction-core-size.webp"
+  "/blog/custom-sticker-color-matching-guide/" = "/assets/blog/custom-sticker-color-matching.webp"
+  "/blog/outdoor-sticker-durability-guide/" = "/assets/blog/outdoor-sticker-durability.webp"
+}
+foreach ($entry in $blogCoverMap.GetEnumerator()) {
+  $urlPattern = [regex]::Escape($entry.Key)
+  $cardPattern = "(?s)<article class=""category-card(?<class>[^""]*)"">(?<content>.*?<a class=""text-link"" href=""$urlPattern"">.*?</a>)\s*</article>"
+  $coverPath = $entry.Value
+  $blogBody = [regex]::Replace($blogBody, $cardPattern, {
+    param($match)
+    return '<article class="category-card' + $match.Groups['class'].Value + '" style="--cover:url(''' + $coverPath + ''')">' + $match.Groups['content'].Value + '</article>'
+  })
+}
+$blogListPattern = '(?s)<section class="section blog-list">(?<cards>.*?)</section>'
+$blogBody = [regex]::Replace($blogBody, $blogListPattern, {
+  param($match)
+  $cards = @([regex]::Matches($match.Groups['cards'].Value, '(?s)<article class="category-card.*?</article>') | ForEach-Object { $_.Value })
+  $orderedCards = @($cards[25..29]) + @($cards[0..24])
+  return '<section class="section blog-list">' + [Environment]::NewLine + ($orderedCards -join [Environment]::NewLine) + [Environment]::NewLine + '</section>'
+})
 $blogBody = $blogBody.Replace('<article class="category-card', '<div class="category-card').Replace('</article>', '</div>')
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."

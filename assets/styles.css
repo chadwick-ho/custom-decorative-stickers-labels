@@ -1178,12 +1178,105 @@ p {
 }
 
 .blog-list .category-card {
-  grid-template-rows: 1fr auto;
-  min-height: 320px;
+  --cover: url('/assets/products/sticker-sheet-gallery.webp');
+  position: relative;
+  grid-template-rows: 190px 1fr auto;
+  min-height: 500px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.blog-list .category-card::before {
+  content: "";
+  display: block;
+  grid-row: 1;
+  background-image: linear-gradient(180deg, transparent 68%, rgba(8, 30, 24, .18)), var(--cover);
+  background-position: center;
+  background-size: cover;
+}
+
+.blog-list .category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(22, 35, 29, .12);
+}
+
+.blog-list .category-card > div {
+  grid-row: 2;
+}
+
+.blog-list .category-card > .text-link {
+  grid-row: 3;
 }
 
 .blog-list h2 {
-  font-size: 28px;
+  font-size: 25px;
+}
+
+.blog-list-intro {
+  padding-bottom: 22px;
+}
+
+.blog-list-intro h2 {
+  font-size: 40px;
+}
+
+.blog-list-intro p:last-child {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.blog-index-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 64px clamp(18px, 5vw, 72px);
+  color: white;
+  background: #10251f;
+}
+
+.blog-index-hero-bg,
+.blog-index-hero-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.blog-index-hero-bg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-index-hero-shade {
+  background: linear-gradient(90deg, rgba(7, 24, 20, .95) 0%, rgba(7, 24, 20, .83) 36%, rgba(7, 24, 20, .28) 66%, rgba(7, 24, 20, .08) 100%);
+}
+
+.blog-index-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.blog-index-hero .eyebrow {
+  color: #f4c861;
+}
+
+.blog-index-hero h1 {
+  font-size: 68px;
+}
+
+.blog-index-hero-copy > p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 20px 0 26px;
+  color: #e8f0ed;
+  font-size: 20px;
+}
+
+.blog-index-hero .ghost-btn {
+  border-color: rgba(255, 255, 255, .6);
+  color: white;
+  background: rgba(255, 255, 255, .08);
 }
 
 .home-guide-hub {
@@ -1787,6 +1880,32 @@ details p {
     min-height: auto;
     padding-top: 62px;
     padding-bottom: 54px;
+  }
+
+  .blog-index-hero {
+    min-height: 500px;
+    padding: 52px 16px;
+  }
+
+  .blog-index-hero-bg {
+    object-position: 66% center;
+  }
+
+  .blog-index-hero-shade {
+    background: linear-gradient(90deg, rgba(7, 24, 20, .96) 0%, rgba(7, 24, 20, .83) 72%, rgba(7, 24, 20, .52) 100%);
+  }
+
+  .blog-index-hero h1 {
+    font-size: 42px;
+  }
+
+  .blog-index-hero-copy > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+
+  .blog-list .category-card {
+    grid-template-rows: 210px 1fr auto;
+    min-height: 500px;
   }
 
   .home-hero h1 {

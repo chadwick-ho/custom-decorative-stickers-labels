@@ -1184,24 +1184,34 @@ p {
 .blog-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 22px;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blog-list .category-card {
-  --cover: url('/assets/products/sticker-sheet-gallery.webp');
   position: relative;
-  grid-template-rows: 190px 1fr auto;
+  grid-template-rows: auto 1fr auto;
   min-height: 500px;
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.blog-list .category-card::before {
-  content: "";
+.blog-card-image {
   display: block;
   grid-row: 1;
-  background-image: linear-gradient(180deg, transparent 68%, rgba(8, 30, 24, .18)), var(--cover);
-  background-position: center;
-  background-size: cover;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  background: #f2f5f2;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-card-image.square-source {
+  object-fit: contain;
 }
 
 .blog-list .category-card:hover {
@@ -1223,6 +1233,10 @@ p {
 
 .blog-list-intro {
   padding-bottom: 22px;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blog-list-intro h2 {
@@ -1910,8 +1924,8 @@ details p {
   }
 
   .blog-list .category-card {
-    grid-template-rows: 210px 1fr auto;
-    min-height: 500px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 0;
   }
 
   .home-hero h1 {

@@ -1117,11 +1117,13 @@ $blogCoverMap = [ordered]@{
 }
 foreach ($entry in $blogCoverMap.GetEnumerator()) {
   $urlPattern = [regex]::Escape($entry.Key)
-  $cardPattern = "(?s)<article class=""category-card(?<class>[^""]*)"">(?<content>.*?<a class=""text-link"" href=""$urlPattern"">.*?</a>)\s*</article>"
+  $cardPattern = "(?s)<article class=""category-card(?<class>[^""]*)"">(?<content>(?:(?!</article>).)*?<a class=""text-link"" href=""$urlPattern"">(?:(?!</a>).)*?</a>)\s*</article>"
   $coverPath = $entry.Value
   $blogBody = [regex]::Replace($blogBody, $cardPattern, {
     param($match)
-    return '<article class="category-card' + $match.Groups['class'].Value + '" style="--cover:url(''' + $coverPath + ''')">' + $match.Groups['content'].Value + '</article>'
+    $sourceClass = if ($coverPath -like '/assets/home-gallery/*') { ' square-source' } else { '' }
+    $coverImage = '<img class="blog-card-image' + $sourceClass + '" src="' + $coverPath + '" alt="" width="1536" height="1024" loading="lazy" decoding="async">'
+    return '<article class="category-card' + $match.Groups['class'].Value + '">' + $coverImage + $match.Groups['content'].Value + '</article>'
   })
 }
 $blogListPattern = '(?s)<section class="section blog-list">(?<cards>.*?)</section>'

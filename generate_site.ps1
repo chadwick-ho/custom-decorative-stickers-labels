@@ -30,6 +30,11 @@ $ModifiedDates = @{
   "/blog/label-roll-unwind-direction-core-size-guide/" = "2026-09-21"
   "/blog/custom-sticker-color-matching-guide/" = "2026-09-21"
   "/blog/outdoor-sticker-durability-guide/" = "2026-09-21"
+  "/blog/custom-candle-labels-guide/" = "2026-09-22"
+  "/blog/custom-cosmetic-labels-guide/" = "2026-09-22"
+  "/blog/qr-code-stickers-scan-testing-guide/" = "2026-09-22"
+  "/blog/how-to-apply-stickers-without-bubbles/" = "2026-09-22"
+  "/blog/custom-sticker-reorder-checklist/" = "2026-09-22"
 }
 
 function PageModifiedDate([string]$Url) {
@@ -48,6 +53,11 @@ $PageOgImages = @{
   "/blog/label-roll-unwind-direction-core-size-guide/" = "/assets/blog/label-roll-unwind-direction-core-size.webp"
   "/blog/custom-sticker-color-matching-guide/" = "/assets/blog/custom-sticker-color-matching.webp"
   "/blog/outdoor-sticker-durability-guide/" = "/assets/blog/outdoor-sticker-durability.webp"
+  "/blog/custom-candle-labels-guide/" = "/assets/blog/custom-candle-labels-guide.webp"
+  "/blog/custom-cosmetic-labels-guide/" = "/assets/blog/custom-cosmetic-labels-guide.webp"
+  "/blog/qr-code-stickers-scan-testing-guide/" = "/assets/blog/qr-code-stickers-scan-testing.webp"
+  "/blog/how-to-apply-stickers-without-bubbles/" = "/assets/blog/apply-stickers-without-bubbles.webp"
+  "/blog/custom-sticker-reorder-checklist/" = "/assets/blog/custom-sticker-reorder-checklist.webp"
 }
 $ContactEmail = "ruishengmao05@gmail.com"
 $MailtoUrl = "mailto:$ContactEmail"
@@ -923,7 +933,7 @@ $blogBody = @"
   <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
 </section>
 <section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a></div></section>
-<section class="section blog-list-intro"><p class="eyebrow">30 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
+<section class="section blog-list-intro"><p class="eyebrow">35 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
     <div><p class="eyebrow">Artwork guide</p><h2>How to Prepare Artwork for Custom Sticker Production</h2><p>Learn what information to send before requesting a custom sticker quote, including artwork, size, shape, quantity, and intended application.</p></div>
@@ -1045,6 +1055,26 @@ $blogBody = @"
     <div><p class="eyebrow">Outdoor use</p><h2>Outdoor Sticker Durability</h2><p>Define exposure, surface, adhesive, print protection and expected service conditions before asking how long a sticker lasts.</p></div>
     <a class="text-link" href="/blog/outdoor-sticker-durability-guide/">Plan Outdoor Stickers</a>
   </article>
+  <article class="category-card rose">
+    <div><p class="eyebrow">Candle packaging</p><h2>Custom Candle Labels: Heat, Oil and Jar Surface Guide</h2><p>Plan candle jar labels around container finish, label size, heat, fragrance oil, handling and batch consistency.</p></div>
+    <a class="text-link" href="/blog/custom-candle-labels-guide/">Plan Candle Labels</a>
+  </article>
+  <article class="category-card sage">
+    <div><p class="eyebrow">Cosmetic packaging</p><h2>Custom Cosmetic Labels for Bottles, Jars and Tubes</h2><p>Match label construction to curved containers, moisture, oils, squeezable packs, small text and retail presentation.</p></div>
+    <a class="text-link" href="/blog/custom-cosmetic-labels-guide/">Plan Cosmetic Labels</a>
+  </article>
+  <article class="category-card gold">
+    <div><p class="eyebrow">QR code testing</p><h2>QR Code Stickers: Size, Contrast and Scan Testing</h2><p>Keep QR labels useful by controlling code source, quiet zone, contrast, material, curve and final-size verification.</p></div>
+    <a class="text-link" href="/blog/qr-code-stickers-scan-testing-guide/">Test QR Code Stickers</a>
+  </article>
+  <article class="category-card coral">
+    <div><p class="eyebrow">Application method</p><h2>How to Apply Stickers Without Bubbles or Edge Lift</h2><p>Prepare the surface, align the label and control pressure so an application problem does not look like a printing problem.</p></div>
+    <a class="text-link" href="/blog/how-to-apply-stickers-without-bubbles/">Improve Sticker Application</a>
+  </article>
+  <article class="category-card blue">
+    <div><p class="eyebrow">Repeat orders</p><h2>Custom Sticker Reorder Checklist</h2><p>Control artwork versions, color references, materials, finish, packing and approval records before repeating production.</p></div>
+    <a class="text-link" href="/blog/custom-sticker-reorder-checklist/">Prepare a Reorder</a>
+  </article>
 </section>
 "@
 $blogCoverMap = [ordered]@{
@@ -1078,6 +1108,11 @@ $blogCoverMap = [ordered]@{
   "/blog/label-roll-unwind-direction-core-size-guide/" = "/assets/blog/label-roll-unwind-direction-core-size.webp"
   "/blog/custom-sticker-color-matching-guide/" = "/assets/blog/custom-sticker-color-matching.webp"
   "/blog/outdoor-sticker-durability-guide/" = "/assets/blog/outdoor-sticker-durability.webp"
+  "/blog/custom-candle-labels-guide/" = "/assets/blog/custom-candle-labels-guide.webp"
+  "/blog/custom-cosmetic-labels-guide/" = "/assets/blog/custom-cosmetic-labels-guide.webp"
+  "/blog/qr-code-stickers-scan-testing-guide/" = "/assets/blog/qr-code-stickers-scan-testing.webp"
+  "/blog/how-to-apply-stickers-without-bubbles/" = "/assets/blog/apply-stickers-without-bubbles.webp"
+  "/blog/custom-sticker-reorder-checklist/" = "/assets/blog/custom-sticker-reorder-checklist.webp"
 }
 foreach ($entry in $blogCoverMap.GetEnumerator()) {
   $urlPattern = [regex]::Escape($entry.Key)
@@ -1092,7 +1127,7 @@ $blogListPattern = '(?s)<section class="section blog-list">(?<cards>.*?)</sectio
 $blogBody = [regex]::Replace($blogBody, $blogListPattern, {
   param($match)
   $cards = @([regex]::Matches($match.Groups['cards'].Value, '(?s)<article class="category-card.*?</article>') | ForEach-Object { $_.Value })
-  $orderedCards = @($cards[25..29]) + @($cards[0..24])
+  $orderedCards = @($cards[30..34]) + @($cards[25..29]) + @($cards[0..24])
   return '<section class="section blog-list">' + [Environment]::NewLine + ($orderedCards -join [Environment]::NewLine) + [Environment]::NewLine + '</section>'
 })
 $blogBody = $blogBody.Replace('<article class="category-card', '<div class="category-card').Replace('</article>', '</div>')
@@ -2356,6 +2391,253 @@ $article30 = @"
 "@
 Page "/blog/outdoor-sticker-durability-guide/" $article30Title $article30Desc $article30 $article30Faq (ArticleStructuredData "/blog/outdoor-sticker-durability-guide/" $article30Title $article30Desc)
 
+$article31Title = "Custom Candle Labels: Heat, Oil and Jar Surface Guide"
+$article31Desc = "Plan custom candle labels for glass and metal containers by checking jar finish, heat, fragrance oil, label size, adhesive, finish and application testing."
+$article31Faq = @(
+  @("What material is best for candle jar labels?","There is no single best material for every candle. The useful choice depends on the jar surface, oil and moisture exposure, desired finish, label size and how the candle is handled. Test the intended construction on the real container."),
+  @("Will candle heat make a label peel?","Heat can affect the container, adhesive and label construction, but the result depends on label position, jar design, burn conditions and surface preparation. Keep labels away from unsafe areas and validate the finished product under the brand's actual use conditions."),
+  @("Can I use paper labels on candle jars?","Paper may suit dry, decorative indoor packaging, while film can be easier to consider when moisture, oil or frequent handling is expected. The application should decide the material rather than appearance alone.")
+)
+$article31 = @"
+<section class="subhero"><p class="eyebrow">Candle packaging</p><h1>$article31Title</h1><p class="article-meta">Published September 22, 2026. A factory-side guide for candle makers, gift brands and packaging buyers.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-candle-labels-guide.webp" alt="Candle jars and a roll of botanical labels reviewed on a packaging worktable" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A candle label is judged on the real jar, not on a flat artwork preview.</figcaption></figure>
+  <p>A familiar candle-label request begins with three words: premium, waterproof and strong. They sound decisive, but they do not tell us what the label must survive. The first useful picture is usually not the logo. It is the actual jar.</p>
+  <p>From the production side, we want to see whether the container is smooth glass, frosted glass, coated metal or a textured vessel. We also want to know where the label sits, how large it is, whether fragrance oil reaches the outside and whether the product moves from a cool filling room into warm retail or shipping conditions. The jar has more authority than the mood board.</p>
+
+  <h2>Start With the Container, Not the Material Name</h2>
+  <p>A clear glass jar offers a different bonding surface from powder-coated metal or heavily frosted glass. A small flat front panel is easier than a wrap that crosses a taper. If the label approaches a shoulder, base radius or seam, the material may keep trying to return to its flat state.</p>
+  <p>Send a straight-on photo, a side photo and the usable label area. If possible, provide an empty production jar. A dimension copied from a supplier drawing is useful, but a physical fit test reveals how the label looks after the glass curve, border and visual center are considered together.</p>
+  <table><thead><tr><th>Question</th><th>Why it changes the label</th><th>What to confirm</th></tr></thead><tbody>
+    <tr><td>Jar surface</td><td>Texture and coatings affect contact</td><td>Glass, frosted glass, painted metal or another finish</td></tr>
+    <tr><td>Label position</td><td>Curves and heat exposure are not equal everywhere</td><td>Front panel, base label, lid seal or wrap</td></tr>
+    <tr><td>Handling</td><td>Oil, moisture and rubbing attack different parts</td><td>Filling, wiping, packing, retail and consumer use</td></tr>
+    <tr><td>Presentation</td><td>Paper, clear film and textured stocks create different signals</td><td>Natural, glossy, transparent, metallic or matte direction</td></tr>
+  </tbody></table>
+
+  <h2>Heat Is a Use Condition, Not a Marketing Claim</h2>
+  <p>A candle container becomes warm, but the exact temperature at the label depends on the vessel, wax, wick, fill level, burn time and label location. A factory should not invent one universal heat-safe number for every candle project. The brand responsible for the finished candle should define the test conditions and confirm that the complete product is safe and fit for sale.</p>
+  <p>Our narrower job is to help compare label constructions under the stated conditions. Watch for edge lift, shrinkage, adhesive movement, discoloration and finish change. Test more than one jar and include the intended burn cycle. A beautiful sample that is never warmed answers the wrong question.</p>
+
+  <h2>Fragrance Oil and Cleaning Can Reach the Outside</h2>
+  <p>Oil may appear during filling, from a spill or through repeated handling. Wiping the jar with an unsuitable cleaner can leave residue before application. Even a durable face material can fail if the adhesive meets oil instead of the container.</p>
+  <p>Apply labels to clean, dry jars using the same preparation method planned for production. If oil resistance matters, expose a finished label, not only a loose printed sample. Check the face, print, laminate, edges and bond after the contact and wiping routine.</p>
+
+  <h2>Choose Paper or Film by the Real Trade-Off</h2>
+  <p>Paper can give a tactile, crafted appearance and may suit dry indoor products. Film is often considered when moisture, oil, scuffing or a clear-label effect matters. Neither choice wins automatically. A thick textured paper may look excellent and resist a tight curve; a thin film may conform better but show every bubble or speck beneath it.</p>
+  <p>Matte and gloss also change the result. Matte can soften glare in product photography. Gloss can deepen color and make wiping easier depending on the construction. Review the finish on the jar under the lighting used for retail photos, not only beneath a desk lamp.</p>
+
+  <h2>A Practical Candle Label Test</h2>
+  <ul class="check-list"><li>Use the final jar from the intended supplier</li><li>Prepare the surface with the real cleaning process</li><li>Apply at the expected room and container temperature</li><li>Check label alignment, curve and edge contact after application</li><li>Allow the adhesive to develop before severe handling</li><li>Run the brand's controlled heat and burn evaluation</li><li>Test fragrance oil, wiping and packing abrasion if relevant</li><li>Photograph and retain the approved sample for reorders</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send the jar material and finish, usable label area, artwork, quantity per design, paper or film preference, matte or gloss direction, application method and packing requirement. If the same collection includes lid seals or base warning labels, list them separately. They do not necessarily need the same construction.</p>
+  <p>The expensive mistake is choosing a material from a screen and discovering the physical conflict after every scent has been printed. Test the jar first. Then let the artwork become beautiful inside a specification that can actually hold it.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-gift-stickers/">Custom Gift Stickers</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Adhesive and Surface Guide</a><a class="pill-link" href="/blog/matte-vs-glossy-stickers/">Matte vs Glossy</a><a class="pill-link" href="/get-quote/">Request Candle Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-candle-labels-guide/" $article31Title $article31Desc $article31 $article31Faq (ArticleStructuredData "/blog/custom-candle-labels-guide/" $article31Title $article31Desc)
+
+$article32Title = "Custom Cosmetic Labels for Bottles, Jars and Tubes"
+$article32Desc = "Plan custom cosmetic labels for pump bottles, dropper bottles, jars and tubes by checking curves, moisture, oils, squeeze, small text and application workflow."
+$article32Faq = @(
+  @("What label material works for cosmetic bottles?","Material should be selected around the container, moisture, oils, handling, desired appearance and application method. Test the proposed label on the actual filled or representative package."),
+  @("Why do labels lift from cosmetic tubes?","Flexible tubes bend and recover during use. A label that is too stiff, too large or poorly matched to the surface can experience repeated edge stress. The tube, label size and construction should be tested together."),
+  @("Can the label factory approve cosmetic ingredient text?","The brand is responsible for required content, legal review and destination-market compliance. The label producer can review print size and production clarity but should not replace regulatory advice.")
+)
+$article32 = @"
+<section class="subhero"><p class="eyebrow">Cosmetic packaging</p><h1>$article32Title</h1><p class="article-meta">Published September 22, 2026. A packaging guide for skincare, beauty and personal-care label projects.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-cosmetic-labels-guide.webp" alt="Cosmetic bottles jars and tubes with coordinated labels under factory review" width="1536" height="1024" loading="eager" decoding="async"><figcaption>One cosmetic collection can contain four containers and four different labeling problems.</figcaption></figure>
+  <p>A cosmetic buyer often sends one artwork system and four containers: pump bottle, dropper, jar and soft tube. On the presentation board they are a family. On the production table they are four separate jobs.</p>
+  <p>The rigid jar gives the label a stable wall. The small dropper bottle limits readable space. The pump bottle may meet wet hands. The tube is squeezed until every weakness becomes visible. Treating them as one SKU with four sizes is tidy for the spreadsheet and careless for the package.</p>
+
+  <h2>Map the Container Family Before Designing Labels</h2>
+  <p>Measure the usable panel on each item. Record diameter, taper, seam, shoulder and the area touched during use. A label should not bridge a strong curve simply because the front artwork needs more room. If mandatory information cannot fit, the packaging architecture may need a back label, carton or different label shape.</p>
+  <table><thead><tr><th>Container</th><th>Main production concern</th><th>Useful first test</th></tr></thead><tbody>
+    <tr><td>Pump bottle</td><td>Wet handling, curve and product drips</td><td>Filled-bottle use and wiping test</td></tr>
+    <tr><td>Dropper bottle</td><td>Small diameter and limited text area</td><td>Final-size readability and edge test</td></tr>
+    <tr><td>Cosmetic jar</td><td>Short panel, lid handling and oil contact</td><td>Open-close cycle and product-contact simulation</td></tr>
+    <tr><td>Flexible tube</td><td>Squeeze, recovery and repeated bending</td><td>Compression cycle on the actual tube</td></tr>
+  </tbody></table>
+
+  <h2>Water Resistance Is Only One Line on the Brief</h2>
+  <p>Bathroom use may involve condensation, wet hands, surfactants, oils and repeated rubbing. A buyer who asks only for waterproof labels can still receive a construction that dislikes face oil or a tube that flexes. Define the contact instead: occasional splash, daily shower storage, oily formula, alcohol-based cleaner or travel abrasion.</p>
+  <p>The test should include the print and finish as well as the adhesive. Look for smearing, color change, scuffing, edge lift and trapped moisture. If a transparent label is used, watch how product color and bottle color change readability.</p>
+
+  <h2>Small Text Needs a Hierarchy, Not a Miracle</h2>
+  <p>Cosmetic artwork can become crowded with product name, directions, ingredients, quantity, symbols, company details and batch information. The label producer can flag text that appears too small or too light at final size, but the brand must decide what content is required and obtain appropriate regulatory review.</p>
+  <p>Prioritize legally and commercially important information. Use the original vector text where possible. Avoid relying on a pale hairline font over clear film or a patterned background. Print a paper-size mockup at 100 percent and wrap it around the container before proof approval.</p>
+
+  <h2>Clear Labels Demand More Decisions</h2>
+  <p>Clear film can make decoration appear printed directly on the package. It can also allow dark liquid, colored plastic and the back label to interfere with the design. White ink may be needed beneath important elements, while selected transparent zones remain open.</p>
+  <p>Tell the factory which areas should be opaque, translucent or clear. A digital proof should show the white-ink layer separately. Then test the label on the actual filled container, because an empty transparent bottle is a poor substitute for the final product.</p>
+
+  <h2>Application Method Changes the Specification</h2>
+  <p>Hand application can tolerate a different roll setup from a labeling machine. Automatic or semi-automatic application may require confirmed roll direction, core size, gap, liner and maximum roll diameter. Even hand application benefits from a consistent orientation and a simple alignment reference.</p>
+  <p>If the package supplier changes the bottle coating or mold, repeat the adhesion and fit test. The label file may be unchanged while the surface underneath it is no longer the same.</p>
+
+  <h2>Cosmetic Label RFQ Checklist</h2>
+  <ul class="check-list"><li>Container type, material, coating and supplier sample</li><li>Usable label area and exact dimensions</li><li>Filled-product color and contact risks</li><li>Rigid, tapered or flexible package behavior</li><li>Required text supplied and approved by the brand</li><li>Clear, white, paper or special-material direction</li><li>White ink and opacity requirements</li><li>Matte, gloss and scuff-resistance expectations</li><li>Hand or machine application details</li><li>Quantity per SKU and packing sequence</li></ul>
+
+  <h2>Our Practical Recommendation</h2>
+  <p>Approve the collection container by container. Keep the visual system consistent, but allow the construction and layout to solve each package honestly. The best-looking cosmetic range is not the one with four identical label files. It is the one where every bottle still looks intentional after somebody has actually used it.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-roll-labels/">Custom Roll Labels</a><a class="pill-link" href="/blog/clear-stickers-vs-white-vinyl-stickers/">Clear vs White Labels</a><a class="pill-link" href="/blog/label-roll-unwind-direction-core-size-guide/">Roll Setup Guide</a><a class="pill-link" href="/get-quote/">Discuss Cosmetic Labels</a></div>
+</article>
+"@
+Page "/blog/custom-cosmetic-labels-guide/" $article32Title $article32Desc $article32 $article32Faq (ArticleStructuredData "/blog/custom-cosmetic-labels-guide/" $article32Title $article32Desc)
+
+$article33Title = "QR Code Stickers: Size, Contrast and Scan Testing"
+$article33Desc = "Plan QR code stickers by confirming the destination, code file, quiet zone, final size, contrast, material, surface curve and real-device scan testing."
+$article33Faq = @(
+  @("How small can a QR code sticker be?","There is no responsible universal minimum because module count, printing, viewing distance, camera, surface curve and lighting all matter. Generate the final code, place it at the intended size and test printed samples with multiple devices."),
+  @("Can QR codes be printed on clear or glossy stickers?","They can be considered, but background interference, glare and contrast can reduce reliability. Use an opaque support area when needed and test the finished label on the real package."),
+  @("Should I use a static or dynamic QR code?","That is a campaign and platform decision. Confirm who controls the destination, how long the redirect service will remain active and what happens if the URL changes before printing bulk labels.")
+)
+$article33 = @"
+<section class="subhero"><p class="eyebrow">QR code labels</p><h1>$article33Title</h1><p class="article-meta">Published September 22, 2026. A production guide for packaging, events, instructions and promotional campaigns.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/qr-code-stickers-scan-testing.webp" alt="QR code stickers being scan tested on boxes and a bottle at a quality bench" width="1536" height="1024" loading="eager" decoding="async"><figcaption>The final printed code on the final package is the version that must work.</figcaption></figure>
+  <p>QR code projects often arrive late in the artwork process. The packaging is approved, the campaign is almost live, and somebody drops a small black square into the remaining corner. Then the code is reduced again because the legal copy also needs room.</p>
+  <p>From a production point of view, the QR code is not decoration. It is a machine-readable component with a destination, a physical size and a failure consequence. We treat it more like a barcode than a logo.</p>
+
+  <h2>Confirm the Destination Before You Discuss Print</h2>
+  <p>Scan the source file and confirm the exact destination. Check spelling, protocol, redirects, mobile behavior and ownership. If a third-party dynamic-code service is involved, verify the account, subscription and redirect policy. A perfectly printed code cannot rescue an expired destination.</p>
+  <p>Keep a record connecting the code file to the SKU and URL. File names such as final-2-new.png create avoidable risk. A useful name includes the product, destination version and approval date.</p>
+
+  <h2>Use a Clean Source File and Protect the Quiet Zone</h2>
+  <p>Generate the code from the final data rather than taking a screenshot. Vector artwork is useful when available because edges remain clean during scaling. Preserve the blank quiet zone around the code. Do not let borders, text, patterns or cutlines crowd it.</p>
+  <p>Decorative recoloring can work only when contrast remains strong and the scanner can distinguish modules from background. Dark modules on a light, stable field are the cautious starting point. Reversed, metallic, transparent or low-contrast treatments deserve extra testing.</p>
+  <table><thead><tr><th>Risk</th><th>What it looks like</th><th>Production response</th></tr></thead><tbody>
+    <tr><td>Too small</td><td>Modules lose definition after printing</td><td>Test the final code at final physical size</td></tr>
+    <tr><td>Insufficient quiet zone</td><td>Nearby graphics interfere with detection</td><td>Reserve clear space in the artwork</td></tr>
+    <tr><td>Low contrast</td><td>Background or material shows through</td><td>Add opaque support and simplify color</td></tr>
+    <tr><td>Curved surface</td><td>Code geometry bends away from the camera</td><td>Reduce width or choose a flatter panel</td></tr>
+    <tr><td>Gloss and glare</td><td>Reflection hides part of the pattern</td><td>Review finish and test under use lighting</td></tr>
+  </tbody></table>
+
+  <h2>Size Depends on More Than One Number</h2>
+  <p>A dense code containing more data has smaller modules at the same overall size. Printing process, viewing distance, camera quality and expected light also matter. This is why copying a minimum size from a generic chart can create false confidence.</p>
+  <p>Print the real code at several candidate sizes with the intended material and finish. Test at normal distance rather than pressing the phone against the label. Include older and newer phones if the audience is broad.</p>
+
+  <h2>Package Shape Can Break a Good Flat Test</h2>
+  <p>A code that scans on a proof sheet may struggle after wrapping around a narrow bottle. The camera sees only part of the pattern at once, and highlights move across glossy film. Place the code on the flattest practical panel and keep it away from seams, shoulders and strong tapers.</p>
+  <p>Clear labels introduce the color behind the code. Metallic or holographic materials introduce reflection. If scanning matters more than the special effect, give the code its own opaque light panel instead of forcing the scanner to admire the finish.</p>
+
+  <h2>Run a Small but Real Test Matrix</h2>
+  <ul class="check-list"><li>Scan the approved source file before printing</li><li>Print at final size on the intended material and finish</li><li>Apply to the real box, bottle, pouch or event item</li><li>Test multiple phone models and camera apps</li><li>Test bright, normal and low indoor light</li><li>Test normal viewing distance and approach angle</li><li>Confirm the mobile landing page loads correctly</li><li>Repeat after lamination, varnish or package filling</li><li>Retain the approved printed sample with the URL record</li></ul>
+
+  <h2>Who Owns the Last Check?</h2>
+  <p>The printer can check reproduction and perform agreed sample scans. The buyer must own the destination, content and long-term availability of the link. Both sides should scan the approved production sample before bulk release.</p>
+  <p>A QR sticker earns its space only when a customer can use it. Give it enough contrast, enough room and one final test after it reaches the package. That last scan is cheaper than explaining a dead campaign to a warehouse full of finished stock.</p>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Choose Sticker Size</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Samples and Proofs</a><a class="pill-link" href="/get-quote/">Review a QR Label Project</a></div>
+</article>
+"@
+Page "/blog/qr-code-stickers-scan-testing-guide/" $article33Title $article33Desc $article33 $article33Faq (ArticleStructuredData "/blog/qr-code-stickers-scan-testing-guide/" $article33Title $article33Desc)
+
+$article34Title = "How to Apply Stickers Without Bubbles or Edge Lift"
+$article34Desc = "Apply stickers consistently by cleaning the surface, controlling temperature, aligning the label, using even pressure and diagnosing bubbles or edge lift."
+$article34Faq = @(
+  @("Why do bubbles appear under stickers?","Bubbles can come from trapped air, surface dust, fast application, deep texture or outgassing from some plastics and coatings. Diagnose the surface and process before changing material."),
+  @("Can I use water to apply every sticker?","No. Wet application is not suitable for every adhesive, material or surface and can trap moisture. Use it only when the label supplier confirms the construction and application method are compatible."),
+  @("Why do sticker edges lift after application?","Common causes include contamination, tight curves, insufficient pressure, low application temperature, oversized labels, incompatible surfaces or exposure before the bond develops.")
+)
+$article34 = @"
+<section class="subhero"><p class="eyebrow">Sticker application</p><h1>$article34Title</h1><p class="article-meta">Published September 22, 2026. A practical application guide for boxes, bottles, mailers and rigid product surfaces.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/apply-stickers-without-bubbles.webp" alt="Hands applying a large label to a clean mailer box with a felt squeegee" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Good application is controlled contact from one edge to the other, not a last-second press in the center.</figcaption></figure>
+  <p>When a label bubbles, the first argument is usually about the material. Sometimes the material is wrong. Sometimes the label was laid down like a tablecloth and asked to sort itself out.</p>
+  <p>The useful approach is less dramatic: inspect the surface, temperature, label shape and application motion in order. A repeatable process can improve an ordinary label. A careless process can make an expensive one look cheap.</p>
+
+  <h2>Clean Means More Than Visibly Clean</h2>
+  <p>Dust creates points and bubbles. Oil, wax, silicone and release agents can weaken the bond without being obvious. Cardboard may carry paper fibers. Fresh paint or molded plastic may need special review before labeling.</p>
+  <p>Use a preparation method suitable for the object and follow the container or surface manufacturer's guidance. Let the surface dry completely. Do not assume a strong-smelling cleaner is better; residue can become the new contamination.</p>
+
+  <h2>Control the Temperature of the Label and Surface</h2>
+  <p>Cold labels can become stiff, and some adhesives develop contact more slowly at low temperature. A bottle taken from refrigeration may also carry condensation. Hot surfaces can create a different set of problems.</p>
+  <p>Bring labels and products into the agreed application environment before work begins. Record that temperature for important jobs. If application happens in a cold warehouse but testing happened in a warm office, the test did not represent production.</p>
+
+  <h2>Use a Hinge and Apply From One Direction</h2>
+  <p>For a large hand-applied label, align the piece and create a controlled starting edge. Peel only part of the liner. Anchor the label, then remove the liner gradually while pressing across the face with fingers, a roller or a clean felt-edged squeegee appropriate for the material.</p>
+  <p>Move pressure from the applied area toward the open edge. Avoid touching the adhesive. Dropping the whole label at once traps air and makes correction harder. On bottles, use a fixture or clear reference point so every operator begins in the same place.</p>
+  <table><thead><tr><th>Symptom</th><th>Likely questions</th><th>First adjustment</th></tr></thead><tbody>
+    <tr><td>Small random bubbles</td><td>Dust, rushed application or uneven pressure?</td><td>Improve cleaning and directional pressure</td></tr>
+    <tr><td>Long wrinkle</td><td>Misalignment or label stretched during application?</td><td>Use a hinge, fixture and slower liner removal</td></tr>
+    <tr><td>Edge lift</td><td>Curve, contamination, cold surface or low pressure?</td><td>Check fit, surface prep and application conditions</td></tr>
+    <tr><td>Repeated center channel</td><td>Compound curve or trapped air path?</td><td>Reduce label size or revise construction</td></tr>
+    <tr><td>Lift after one day</td><td>Exposure before bond development?</td><td>Allow suitable dwell time before packing or washing</td></tr>
+  </tbody></table>
+
+  <h2>Curves Need a Label Designed for Curves</h2>
+  <p>A flat rectangular label can wrap a straight cylinder. A tapered cup, shoulder or compound curve asks the material to bend in more than one direction. No amount of squeegee technique can fully remove a geometric conflict.</p>
+  <p>Use a paper mockup to check fit. Narrow the label, change the shape or move it to a flatter panel if wrinkles repeat in the same place. A thinner or more conformable construction may help, but shape correction is often the cleaner solution.</p>
+
+  <h2>Pressure and Dwell Time Matter After the Label Looks Finished</h2>
+  <p>Apply firm, even pressure across the whole label, especially the perimeter. Then give the bond time to develop before severe flexing, chilling, washing or transport. The required time depends on the adhesive and conditions, so confirm it for the chosen construction.</p>
+  <p>For production, inspect the first pieces before continuing. It is easier to stop after ten labels than to discover the alignment drift after ten cartons.</p>
+
+  <h2>Build a Simple Application Standard</h2>
+  <ul class="check-list"><li>Approved product surface and cleaning method</li><li>Application temperature and dry-surface requirement</li><li>Label orientation and visual alignment reference</li><li>Start edge and liner-removal direction</li><li>Approved hand tool, roller or fixture</li><li>Pressure across center and edges</li><li>Dwell time before packing or exposure</li><li>First-piece approval and periodic inspection</li><li>Reject examples for bubbles, wrinkles and misalignment</li></ul>
+
+  <h2>Our Honest Recommendation</h2>
+  <p>If failure repeats in the same position, stop blaming the operator and inspect geometry. If failure appears randomly, inspect cleaning and process discipline. The best result comes when the label construction and the application method are designed together, before the packing team has to improvise with a thumbnail and ten seconds.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching Guide</a><a class="pill-link" href="/blog/removable-vs-permanent-stickers/">Adhesive Comparison</a><a class="pill-link" href="/products/custom-roll-labels/">Custom Roll Labels</a><a class="pill-link" href="/get-quote/">Discuss Application Conditions</a></div>
+</article>
+"@
+Page "/blog/how-to-apply-stickers-without-bubbles/" $article34Title $article34Desc $article34 $article34Faq (ArticleStructuredData "/blog/how-to-apply-stickers-without-bubbles/" $article34Title $article34Desc)
+
+$article35Title = "Custom Sticker Reorder Checklist: Keep the Right Version"
+$article35Desc = "Prepare a custom sticker reorder by confirming artwork, dimensions, material, finish, color reference, roll setup, packing and approval records."
+$article35Faq = @(
+  @("Is an old invoice enough to reorder stickers?","It is a useful reference but may not contain the approved artwork, material revision, color target, roll construction or packing notes. Confirm the complete specification before production."),
+  @("Will a repeat sticker order match the previous batch exactly?","An approved sample and controlled specification improve consistency, but materials and print processes have tolerances. Discuss critical colors and acceptable variation, especially after supplier or specification changes."),
+  @("What should I send when reordering labels?","Send the previous order reference, approved artwork version, retained physical sample, current quantity by SKU and written confirmation of any changes to material, finish, adhesive, roll setup or packing.")
+)
+$article35 = @"
+<section class="subhero"><p class="eyebrow">Repeat production</p><h1>$article35Title</h1><p class="article-meta">Published September 22, 2026. A version-control guide for repeat sticker and roll-label orders.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-sticker-reorder-checklist.webp" alt="Technician comparing previous approved stickers with a new production batch" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A retained approved sample gives a reorder more evidence than the phrase same as last time.</figcaption></figure>
+  <p>The shortest reorder email is also the one that makes production teams nervous: same as last time, please.</p>
+  <p>It sounds efficient because both sides remember the product. They may not remember the same product. The buyer remembers the finished label on a box. The artwork folder contains three finals. The invoice lists a material name but not the white-ink layer. Packing changed in a message thread. Everybody is confident until the new roll reaches the applicator.</p>
+
+  <h2>Treat a Reorder as a Controlled Comparison</h2>
+  <p>Start with the previous order number, but do not stop there. Retrieve the approved artwork, proof, specification and physical retain sample. Then compare them with the new request. The aim is to identify what stays fixed and what has changed.</p>
+  <p>A repeat order is not automatically lower risk. The brand may have updated a URL, ingredient line or color. The package supplier may have changed a coating. A new quantity may require different roll or packing decisions. Familiarity can hide these changes better than a new-project checklist.</p>
+  <table><thead><tr><th>Reorder item</th><th>Evidence to check</th><th>Typical hidden change</th></tr></thead><tbody>
+    <tr><td>Artwork</td><td>Approved file and proof version</td><td>Text, QR destination, color or cutline revision</td></tr>
+    <tr><td>Construction</td><td>Material, adhesive and finish record</td><td>Supplier substitution or new application surface</td></tr>
+    <tr><td>Dimensions</td><td>Finished size and shape drawing</td><td>New bottle, box or jar tolerance</td></tr>
+    <tr><td>Roll setup</td><td>Core, unwind, gap and roll diameter</td><td>Different labeling machine or co-packer</td></tr>
+    <tr><td>Packing</td><td>Count, sequence, bagging and carton marks</td><td>New warehouse or mixed-SKU requirement</td></tr>
+  </tbody></table>
+
+  <h2>Lock the Artwork Version Before Price Becomes the Conversation</h2>
+  <p>Buyers often request price first and promise to send the updated file later. That is reasonable for budgeting, but production approval must use a named final version. Record the file name, dimensions, cutline and approval date. For variable SKUs, keep a list showing quantity and file version for each design.</p>
+  <p>Re-scan QR codes and recheck barcodes when present. Proofread dates, URLs and regulated content. The previous batch can confirm construction; it cannot confirm that current information is still correct.</p>
+
+  <h2>Use the Physical Sample for Color and Finish</h2>
+  <p>A screenshot of the old label is weak color evidence. Retain several clean samples from an approved batch and store them away from strong light, heat and contamination. Compare the new proof or sample under consistent lighting.</p>
+  <p>Even with a retain sample, print and material processes have tolerances. Decide which colors are critical and what level of variation is commercially acceptable. If a material, finish or print route changes, treat the reorder as a new comparison rather than promising an invisible transition.</p>
+
+  <h2>Confirm the Package Has Not Quietly Changed</h2>
+  <p>A label that worked on the old jar may lift from a new coated jar. A wrap designed for one bottle diameter may overlap on another. Ask whether the container supplier, mold, coating, filling process, storage temperature or cleaning routine has changed.</p>
+  <p>This question feels excessive until it finds the one change that matters. Then it is the cheapest sentence in the order.</p>
+
+  <h2>Roll Labels Need Machine Memory</h2>
+  <p>For hand-applied stickers, the finished piece may be enough to identify orientation. For machine-applied roll labels, retain the core size, unwind direction, label orientation, gap, liner, maximum diameter and labels per roll. Confirm whether the co-packer or applicator has changed.</p>
+  <p>Do not infer unwind direction from a photo alone. Use a written diagram or approved roll sample. Rewinding a completed job consumes time and introduces handling that nobody wanted to buy.</p>
+
+  <h2>Reorder Approval Checklist</h2>
+  <ul class="check-list"><li>Previous purchase order and factory job reference</li><li>Approved artwork file and proof version</li><li>Finished size, shape and cutline</li><li>Material, adhesive, white ink and finish</li><li>Critical color reference and retained sample</li><li>Current container or application surface</li><li>Quantity by SKU or artwork</li><li>Roll core, unwind, gap and labels per roll</li><li>Bagging, sequence, carton and warehouse requirements</li><li>Written list of every intentional change</li></ul>
+
+  <h2>Our Practical Recommendation</h2>
+  <p>Create one reorder sheet for each recurring product family. Update it only after an approved change and keep the retired version. The sheet does not replace a proof, but it stops memory from becoming a production specification.</p>
+  <p>The experienced buyer is not the one who says same as last time with confidence. It is the one who can show exactly what last time was.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-sticker-color-matching-guide/">Color Matching Guide</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Samples and Proofs</a><a class="pill-link" href="/blog/label-roll-unwind-direction-core-size-guide/">Roll Specifications</a><a class="pill-link" href="/get-quote/">Request a Repeat-Order Review</a></div>
+</article>
+"@
+Page "/blog/custom-sticker-reorder-checklist/" $article35Title $article35Desc $article35 $article35Faq (ArticleStructuredData "/blog/custom-sticker-reorder-checklist/" $article35Title $article35Desc)
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -2406,6 +2688,11 @@ foreach ($p in $policies) {
 }
 
 $blogGuides = @(
+  @("/blog/custom-candle-labels-guide/","Custom Candle Labels Guide","Plan candle jar labels around glass or metal surfaces, heat, fragrance oil, material, finish and real-container testing."),
+  @("/blog/custom-cosmetic-labels-guide/","Custom Cosmetic Labels for Bottles, Jars and Tubes","Plan cosmetic labels around package curves, moisture, oils, squeeze, small text, clear film and application workflow."),
+  @("/blog/qr-code-stickers-scan-testing-guide/","QR Code Stickers and Scan Testing","Plan QR code labels around destination control, quiet zone, final size, contrast, package curve and real-device testing."),
+  @("/blog/how-to-apply-stickers-without-bubbles/","How to Apply Stickers Without Bubbles","Improve sticker application with surface preparation, temperature control, alignment, pressure and failure diagnosis."),
+  @("/blog/custom-sticker-reorder-checklist/","Custom Sticker Reorder Checklist","Control artwork version, material, finish, color, roll setup, packing and approval records for repeat orders."),
   @("/blog/prepare-artwork-for-custom-stickers/","How to Prepare Artwork for Custom Stickers","Artwork preparation, file format, cutline and proof review guidance for custom sticker buyers."),
   @("/blog/sticker-sheets-vs-die-cut-stickers/","Sticker Sheets vs Die-Cut Stickers","Compare sticker sheets and die-cut stickers for stationery, packaging and promotional projects."),
   @("/blog/custom-stickers-for-packaging-gifts-promotions/","Custom Stickers for Packaging, Gifts and Promotions","Plan sticker applications around packaging, gift, holiday and campaign use."),

@@ -23,8 +23,8 @@ $ModifiedDates = @{
   "/blog/sticker-artwork-file-formats/" = "2026-09-19"
   "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
-  "/blog/" = "2026-09-23"
-  "/sitemap/" = "2026-09-23"
+  "/blog/" = "2026-09-25"
+  "/sitemap/" = "2026-09-25"
   "/blog/freezer-labels-for-frozen-food-packaging/" = "2026-09-21"
   "/blog/removable-vs-permanent-stickers/" = "2026-09-21"
   "/blog/label-roll-unwind-direction-core-size-guide/" = "2026-09-21"
@@ -40,6 +40,11 @@ $ModifiedDates = @{
   "/blog/custom-lip-balm-labels-guide/" = "2026-09-23"
   "/blog/custom-soap-labels-guide/" = "2026-09-23"
   "/blog/tamper-evident-labels-guide/" = "2026-09-23"
+  "/blog/custom-hot-sauce-bottle-labels-guide/" = "2026-09-25"
+  "/blog/custom-essential-oil-labels-guide/" = "2026-09-25"
+  "/blog/custom-spice-jar-labels-guide/" = "2026-09-25"
+  "/blog/custom-tea-packaging-labels-guide/" = "2026-09-25"
+  "/blog/custom-pet-treat-bag-labels-guide/" = "2026-09-25"
 }
 
 function PageModifiedDate([string]$Url) {
@@ -68,10 +73,15 @@ $PageOgImages = @{
   "/blog/custom-lip-balm-labels-guide/" = "/assets/blog/custom-lip-balm-labels-guide.webp"
   "/blog/custom-soap-labels-guide/" = "/assets/blog/custom-soap-labels-guide.webp"
   "/blog/tamper-evident-labels-guide/" = "/assets/blog/tamper-evident-labels-guide.webp"
+  "/blog/custom-hot-sauce-bottle-labels-guide/" = "/assets/blog/custom-hot-sauce-bottle-labels-guide.webp"
+  "/blog/custom-essential-oil-labels-guide/" = "/assets/blog/custom-essential-oil-labels-guide.webp"
+  "/blog/custom-spice-jar-labels-guide/" = "/assets/blog/custom-spice-jar-labels-guide.webp"
+  "/blog/custom-tea-packaging-labels-guide/" = "/assets/blog/custom-tea-packaging-labels-guide.webp"
+  "/blog/custom-pet-treat-bag-labels-guide/" = "/assets/blog/custom-pet-treat-bag-labels-guide.webp"
 }
 $ContactEmail = "ruishengmao05@gmail.com"
 $MailtoUrl = "mailto:$ContactEmail"
-$WhatsAppUrl = "https://api.whatsapp.com/message/AWJL6N3AAGIZA1?autoload=1&amp;app_absent=0"
+$WhatsAppUrl = "https://api.whatsapp.com/message/LXEW2FWSFWGPJ1?autoload=1&amp;app_absent=0"
 $StickerTypeOptions = "<option>Cartoon Stickers</option><option>Kids Stickers</option><option>Stationery Stickers</option><option>Gift Stickers</option><option>Holiday Stickers</option><option>Promotional Stickers</option><option>Die-Cut Stickers</option><option>Kiss-Cut Stickers</option><option>Roll Labels</option><option>Sticker Sheets</option><option>Holographic Stickers</option><option>Not Sure -- Please Recommend</option>"
 $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Die-cut stickers</option><option>Kiss-cut stickers</option><option>Roll labels</option><option>Sticker sheets</option><option>Retail sticker packs</option><option>Mixed formats</option>"
 
@@ -944,7 +954,7 @@ $blogBody = @"
   <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
 </section>
 <section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/gallery-applications/">Application Gallery</a></div></section>
-<section class="section blog-list-intro"><p class="eyebrow">40 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
+<section class="section blog-list-intro"><p class="eyebrow">45 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
     <div><p class="eyebrow">Artwork guide</p><h2>How to Prepare Artwork for Custom Sticker Production</h2><p>Learn what information to send before requesting a custom sticker quote, including artwork, size, shape, quantity, and intended application.</p></div>
@@ -1106,6 +1116,26 @@ $blogBody = @"
     <div><p class="eyebrow">Closure control</p><h2>Tamper-Evident Labels for Jars and Boxes</h2><p>Choose a seal structure by opening point, surface, evidence goal, artwork, application and test method.</p></div>
     <a class="text-link" href="/blog/tamper-evident-labels-guide/">Plan Tamper Seals</a>
   </article>
+  <article class="category-card coral">
+    <div><p class="eyebrow">Hot sauce packaging</p><h2>Custom Hot Sauce Labels: Oil, Heat and Small Batches</h2><p>Plan sauce bottle labels around usable glass panels, oily handling, condensation, heat-level SKUs and the real filling workflow.</p></div>
+    <a class="text-link" href="/blog/custom-hot-sauce-bottle-labels-guide/">Plan Hot Sauce Labels</a>
+  </article>
+  <article class="category-card sage">
+    <div><p class="eyebrow">Small amber bottles</p><h2>Custom Essential Oil Labels</h2><p>Control wrap height, seams, tiny text, oil exposure and botanical SKU recognition on 10 ml and 15 ml bottles.</p></div>
+    <a class="text-link" href="/blog/custom-essential-oil-labels-guide/">Plan Essential Oil Labels</a>
+  </article>
+  <article class="category-card gold">
+    <div><p class="eyebrow">Spice packaging</p><h2>Custom Spice Jar Labels</h2><p>Build a clear front, back and lid-label system for growing spice ranges, pantry handling and gift sets.</p></div>
+    <a class="text-link" href="/blog/custom-spice-jar-labels-guide/">Plan Spice Jar Labels</a>
+  </article>
+  <article class="category-card blue">
+    <div><p class="eyebrow">Tea packaging</p><h2>Custom Tea Labels for Tins and Pouches</h2><p>Match original botanical artwork and brewing information to rigid tins, filled pouches and gift collections.</p></div>
+    <a class="text-link" href="/blog/custom-tea-packaging-labels-guide/">Plan Tea Packaging Labels</a>
+  </article>
+  <article class="category-card rose">
+    <div><p class="eyebrow">Pet treat packaging</p><h2>Custom Pet Treat Bag Labels</h2><p>Plan filled-pouch labels with original animal and ingredient graphics, clear SKU cues and honest claim boundaries.</p></div>
+    <a class="text-link" href="/blog/custom-pet-treat-bag-labels-guide/">Plan Pet Treat Labels</a>
+  </article>
 </section>
 "@
 $blogCoverMap = [ordered]@{
@@ -1149,6 +1179,11 @@ $blogCoverMap = [ordered]@{
   "/blog/custom-lip-balm-labels-guide/" = "/assets/blog/custom-lip-balm-labels-guide.webp"
   "/blog/custom-soap-labels-guide/" = "/assets/blog/custom-soap-labels-guide.webp"
   "/blog/tamper-evident-labels-guide/" = "/assets/blog/tamper-evident-labels-guide.webp"
+  "/blog/custom-hot-sauce-bottle-labels-guide/" = "/assets/blog/custom-hot-sauce-bottle-labels-guide.webp"
+  "/blog/custom-essential-oil-labels-guide/" = "/assets/blog/custom-essential-oil-labels-guide.webp"
+  "/blog/custom-spice-jar-labels-guide/" = "/assets/blog/custom-spice-jar-labels-guide.webp"
+  "/blog/custom-tea-packaging-labels-guide/" = "/assets/blog/custom-tea-packaging-labels-guide.webp"
+  "/blog/custom-pet-treat-bag-labels-guide/" = "/assets/blog/custom-pet-treat-bag-labels-guide.webp"
 }
 foreach ($entry in $blogCoverMap.GetEnumerator()) {
   $urlPattern = [regex]::Escape($entry.Key)
@@ -1165,7 +1200,7 @@ $blogListPattern = '(?s)<section class="section blog-list">(?<cards>.*?)</sectio
 $blogBody = [regex]::Replace($blogBody, $blogListPattern, {
   param($match)
   $cards = @([regex]::Matches($match.Groups['cards'].Value, '(?s)<article class="category-card.*?</article>') | ForEach-Object { $_.Value })
-  $orderedCards = @($cards[35..39]) + @($cards[30..34]) + @($cards[25..29]) + @($cards[0..24])
+  $orderedCards = @($cards[40..44]) + @($cards[35..39]) + @($cards[30..34]) + @($cards[25..29]) + @($cards[0..24])
   return '<section class="section blog-list">' + [Environment]::NewLine + ($orderedCards -join [Environment]::NewLine) + [Environment]::NewLine + '</section>'
 })
 $blogBody = $blogBody.Replace('<article class="category-card', '<div class="category-card').Replace('</article>', '</div>')
@@ -2911,6 +2946,241 @@ $article40 = @"
 "@
 Page "/blog/tamper-evident-labels-guide/" $article40Title $article40Desc $article40 $article40Faq (ArticleStructuredData "/blog/tamper-evident-labels-guide/" $article40Title $article40Desc)
 
+$article41Title = "Custom Hot Sauce Labels: Oil, Heat and Small Batches"
+$article41Desc = "Plan custom hot sauce bottle labels around glass or plastic containers, oily handling, condensation, heat levels, small-batch SKUs and real filling-line tests."
+$article41Faq = @(
+  @("What label material works for hot sauce bottles?","The useful choice depends on bottle material, surface finish, application temperature, condensation, oil exposure and storage. Test the proposed construction on the final filled bottle instead of choosing from a material name alone."),
+  @("Can one artwork system cover several heat levels?","Yes. Keep the brand hierarchy and required information consistent, then use original pepper illustrations, accent colors and clear flavor names to separate each SKU."),
+  @("Can the label claim a sauce is organic or certified?","Only when the responsible business has current documentation and the wording meets the destination market's requirements. A label printer should not invent or imply certification through artwork.")
+)
+$article41 = @"
+<section class="subhero"><p class="eyebrow">Food bottle labels</p><h1>$article41Title</h1><p class="article-meta">Published September 25, 2026. A factory-side guide for sauce makers, co-packers and growing food brands.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-hot-sauce-bottle-labels-guide.webp" alt="Hot sauce bottles with original illustrated pepper labels being checked on a packaging bench" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A useful hot sauce label separates the flavor first and survives the filling workflow second.</figcaption></figure>
+  <p>When a hot sauce project reaches our artwork desk, the first question is rarely whether the label should look bold. Most founders already know that. The useful question is what the bottle will look like after filling, wiping, capping, boxing and several rounds of handling.</p>
+  <p>Sauce can reach the outside of a bottle. Glass can arrive cold and collect condensation. Plastic bottles may flex when squeezed. A label that looked excellent on a clean empty sample can show edge lift, staining or trapped moisture in normal production. We therefore start with the filled package and work backward.</p>
+
+  <h2>Map the Bottle Before Designing the Label</h2>
+  <p>Measure the straight, usable panel rather than the full bottle circumference. Many woozy bottles narrow near the shoulder and curve toward the base. Extending a wrap into those areas asks a flat label to follow a changing diameter. The usual result is a lifting edge or a seam that refuses to stay flat.</p>
+  <p>For a full wrap, make a plain paper strip at the proposed size and place it on several bottles from the actual supply. Mark the front center, seam and any embossed glass. For front-and-back labels, check whether both panels can be applied consistently when the bottle is already filled.</p>
+  <table><thead><tr><th>Production condition</th><th>What can go wrong</th><th>What we ask buyers to test</th></tr></thead><tbody>
+    <tr><td>Cold-filled glass</td><td>Condensation under the label</td><td>Application temperature, dry-down time and edge bond</td></tr>
+    <tr><td>Oily sauce handling</td><td>Staining, slip or weak adhesion</td><td>Wiped bottle versus realistic production residue</td></tr>
+    <tr><td>Squeezable plastic</td><td>Wrinkles or edge stress</td><td>Repeated squeeze and recovery on a filled bottle</td></tr>
+    <tr><td>Retail shelf lighting</td><td>Glare hides the heat level</td><td>Readability at arm's length under store lighting</td></tr>
+  </tbody></table>
+
+  <h2>Use Illustration to Make the SKU Obvious</h2>
+  <p>Hot sauce is a category where original graphics should do real work. A green jalapeno leaf, orange habanero flame, red chili cluster or yellow pineapple-and-pepper illustration can separate varieties before the shopper reads fine text. Avoiding copied mascots does not mean using empty white labels.</p>
+  <p>We prefer a controlled family: one logo position, one heat-scale location and one information grid, with a different original ingredient illustration and accent color for each sauce. That structure makes the range feel related and reduces artwork-version errors when a small producer adds a new flavor.</p>
+
+  <h2>Do Not Let the Heat Scale Become Decoration</h2>
+  <p>If the front says mild, hot or extra hot, the wording should be deliberate and consistent with the product owner's decision. Pepper icons can support that message, but an unlabeled row of flames may confuse customers. The same applies to claims such as all natural, preservative free or award winning. They need business evidence and market review, not a visual shortcut.</p>
+  <p>Ingredient, allergen, net-content, manufacturer and date-code requirements vary by market and product. We can reserve space and check print readability, but the responsible seller or regulatory adviser must approve the final content.</p>
+
+  <h2>Finish Should Support the Way the Bottle Is Sold</h2>
+  <p>A gloss surface can make reds and oranges feel saturated and is easy to wipe in many packaging situations. A matte surface can reduce glare and give an illustrated craft range a quieter look. Neither finish automatically solves oil, moisture or abrasion. Those results come from the complete face material, print protection, adhesive, bottle and application process.</p>
+  <p>Before bulk production, apply labels using the same wipe procedure and timing planned for the line. Put finished bottles in dividers or cartons, handle them with slightly wet hands and inspect the seam after storage. That small trial tells us more than a request for a generic waterproof label.</p>
+
+  <h2>Our Hot Sauce Label Test List</h2>
+  <ul class="check-list"><li>Measure the straight label panel on several bottles</li><li>Confirm glass or plastic and any surface coating</li><li>Test on filled bottles at the real application temperature</li><li>Simulate sauce, oil and condensation exposure</li><li>Check front hierarchy and heat level from shelf distance</li><li>Confirm every flavor name, color and illustration version</li><li>Review seam position, date-code area and carton rubbing</li><li>Keep an approved filled bottle as the reorder reference</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send bottle photos and dimensions, label panel size, glass or plastic type, filling and application temperature, sauce varieties, quantities by SKU, artwork, finish direction, date-coding method and packing method. Mention any oil, refrigeration or condensation that the bottle will meet.</p>
+  <p>The best hot sauce label is not the loudest design on a clean mockup. It is the one customers can recognize quickly and the packing team can apply repeatedly without fighting the bottle.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle Label Guide</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching</a><a class="pill-link" href="/materials-finishes/">Materials and Finishes</a><a class="pill-link" href="/get-quote/">Request Hot Sauce Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-hot-sauce-bottle-labels-guide/" $article41Title $article41Desc $article41 $article41Faq (ArticleStructuredData "/blog/custom-hot-sauce-bottle-labels-guide/" $article41Title $article41Desc)
+
+$article42Title = "Custom Essential Oil Labels for Small Amber Bottles"
+$article42Desc = "Plan custom essential oil bottle labels around small amber glass, tight curves, tiny text, oil exposure, SKU artwork, seams and real filled-bottle testing."
+$article42Faq = @(
+  @("Why do essential oil labels lift at the seam?","Common causes include a label that extends into a changing bottle curve, oil residue, insufficient overlap or a construction that does not suit the bottle and application process. Test the final size on filled bottles."),
+  @("How can small essential oil bottles show different scents clearly?","Use a consistent label system with original botanical or ingredient illustrations, strong color coding and a readable product name. Do not shrink every message onto the front panel."),
+  @("Can a printer approve aromatherapy or health claims?","No. The responsible brand must review claims, ingredients and required statements for the destination market. The printer can check available space and legibility, not authorize medical or regulatory language.")
+)
+$article42 = @"
+<section class="subhero"><p class="eyebrow">Small bottle production</p><h1>$article42Title</h1><p class="article-meta">Published September 25, 2026. A practical guide for essential oil brands, gift sets and contract fillers.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-essential-oil-labels-guide.webp" alt="Amber essential oil bottles with original lavender citrus and eucalyptus label illustrations on a production table" width="1536" height="1024" loading="eager" decoding="async"><figcaption>On a 10 ml bottle, every millimeter of usable label panel has a job.</figcaption></figure>
+  <p>Small amber bottles make artwork look easy on a screen. The designer sees a neat rectangle. At the packing table, we see a narrow cylinder, a shoulder that starts early, a base curve, a label seam and fingers that may carry oil.</p>
+  <p>That difference matters. Most essential oil label problems are not caused by a lack of decorative ideas. They come from trying to fit too much information onto too little straight glass, or from treating an oil-handled bottle like a dry stationery product.</p>
+
+  <h2>Find the Usable Height, Not the Bottle Height</h2>
+  <p>Measure from the point below the shoulder where the diameter becomes consistent to the point above the lower curve. That is the label's working area. A wrap that reaches into either transition can wrinkle or lift. Check several bottles because molded glass and supplier tolerances are not perfectly identical.</p>
+  <p>Wrap a paper prototype around the bottle and mark where the seam lands when the product name faces forward. Keep the seam away from the main botanical illustration and any required text. If a barcode or batch field is part of the job, confirm whether it remains readable on the curve.</p>
+  <table><thead><tr><th>Design pressure</th><th>Factory-side concern</th><th>Better decision</th></tr></thead><tbody>
+    <tr><td>Long product story</td><td>Text becomes too small</td><td>Move secondary content to a carton or insert</td></tr>
+    <tr><td>Full-height wrap</td><td>Label enters shoulder and base curves</td><td>Use the measured straight panel</td></tr>
+    <tr><td>Oil on hands</td><td>Surface contamination and print wear</td><td>Clean application plus realistic handling test</td></tr>
+    <tr><td>Many similar oils</td><td>Picking and packing errors</td><td>Consistent layout with strong visual SKU cues</td></tr>
+  </tbody></table>
+
+  <h2>Small Does Not Need to Mean Blank</h2>
+  <p>A tiny bottle can still carry useful original graphics. A line-drawn lavender stem, citrus slice, eucalyptus branch or cedar ring can identify the oil faster than a paragraph. The illustration should remain simple enough to survive reduction and should not compete with the product name.</p>
+  <p>We usually favor one visual system across the range: botanical illustration in the same zone, one strong accent color, consistent type hierarchy and a stable back-information grid. This looks intentional in a gift set and helps the packing team distinguish similar amber bottles.</p>
+
+  <h2>Oil Resistance Begins Before Application</h2>
+  <p>No label performs well when it is applied over oil. Bottles should be clean and dry, and the filling workflow should prevent drips from reaching the label panel. After application, test the bottle with the actual oil and cap system. Tip it, handle it and wipe it using the real routine.</p>
+  <p>Material and finish can help with occasional contact, but they do not replace clean filling. A protected film label may suit frequent handling. A paper direction may suit a boxed, dry-use presentation. The choice should follow the product route and desired appearance rather than a broad claim such as oil proof.</p>
+
+  <h2>Keep Claims Separate From Decoration</h2>
+  <p>Botanical pictures show identity; they do not prove therapeutic performance. Avoid using medical symbols, approval seals or language that implies a treatment unless the responsible brand has completed the necessary review. The same restraint applies to organic, pure and certified wording.</p>
+  <p>Required content varies by market and how the product is classified. We can flag text that is visibly too small or too close to the cut, but final legal content remains the brand owner's responsibility.</p>
+
+  <h2>Our Small-Bottle Test List</h2>
+  <ul class="check-list"><li>Measure straight-panel height and circumference on several bottles</li><li>Make a paper wrap and mark the final seam</li><li>Print artwork at 100 percent and judge actual text size</li><li>Apply labels to clean bottles using the real workflow</li><li>Fill, cap, tip and handle with the actual oil</li><li>Inspect seam lift, staining, abrasion and readability</li><li>Compare every scent color and botanical illustration</li><li>Test the complete gift box if bottles are packed together</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send the bottle and closure specification, usable label dimensions, bottle quantity, SKU count, quantity by oil, artwork, expected oil contact, application method, finish direction and any carton or gift-set layout. Include the smallest text at final size, not only an enlarged screenshot.</p>
+  <p>A strong essential oil label respects the container. It uses compact original art to create recognition, leaves breathing room for the information that matters and proves its construction on a bottle that has actually been filled.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-lip-balm-labels-guide/">Small Tube Labels</a><a class="pill-link" href="/blog/white-ink-small-text-custom-stickers/">Small Text Guide</a><a class="pill-link" href="/blog/custom-cosmetic-labels-guide/">Cosmetic Label Guide</a><a class="pill-link" href="/get-quote/">Request Essential Oil Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-essential-oil-labels-guide/" $article42Title $article42Desc $article42 $article42Faq (ArticleStructuredData "/blog/custom-essential-oil-labels-guide/" $article42Title $article42Desc)
+
+$article43Title = "Custom Spice Jar Labels for Clear, Useful SKU Systems"
+$article43Desc = "Plan custom spice jar labels for glass or plastic containers, small panels, lid identification, pantry handling, ingredient artwork and growing SKU ranges."
+$article43Faq = @(
+  @("Should spice jars use front labels, lid labels or full wraps?","Choose according to how the jars are displayed and picked. Front labels support shelf-facing retail, lid labels help drawer storage, and wraps provide more space but need careful curve and seam control."),
+  @("How should a growing spice range stay consistent?","Keep the information grid, logo position and type hierarchy stable. Change original ingredient illustrations, accent colors and spice names while controlling artwork versions."),
+  @("Can the label carry food or origin claims?","Only when the responsible seller has evidence and has reviewed the wording for the destination market. The printer can reproduce approved information but should not invent claims.")
+)
+$article43 = @"
+<section class="subhero"><p class="eyebrow">Pantry packaging</p><h1>$article43Title</h1><p class="article-meta">Published September 25, 2026. A production guide for spice brands, refill shops and food gift sets.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-spice-jar-labels-guide.webp" alt="Glass spice jars with original turmeric chili cumin and rosemary label illustrations arranged for packaging review" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A spice range is easier to buy and pack when the visual system remains consistent.</figcaption></figure>
+  <p>A spice jar label has two customers. The shopper wants to recognize the product quickly. The person filling and packing the range wants to pick the right artwork without reading six nearly identical files three times.</p>
+  <p>That is why we treat spice labels as a system, not a collection of isolated mini posters. The system has to survive small panels, repeated handling, changing ingredients and new SKUs that may be added months later.</p>
+
+  <h2>Design for the Way the Jar Is Seen</h2>
+  <p>A jar on a retail shelf is read from the front. A jar stored in a drawer is often read from the lid. A refill pouch may be read while lying flat. Before selecting a label format, ask how the customer and packing team will physically find the product.</p>
+  <p>Front-and-back labels leave the spice visible and can work well on straight-sided jars. A wrap provides more information space but introduces a seam and may hide the product. A lid label adds useful identification but should not repeat every detail from the body.</p>
+  <table><thead><tr><th>Label position</th><th>Best use</th><th>Production detail to confirm</th></tr></thead><tbody>
+    <tr><td>Front panel</td><td>Retail recognition</td><td>Straight glass area and centered application</td></tr>
+    <tr><td>Back panel</td><td>Ingredients and business information</td><td>Readable size and relation to the front</td></tr>
+    <tr><td>Lid top</td><td>Drawer storage or gift sets</td><td>Usable diameter and cap texture</td></tr>
+    <tr><td>Full wrap</td><td>More content or opaque jars</td><td>Seam, overlap and changing circumference</td></tr>
+  </tbody></table>
+
+  <h2>Ingredient Illustration Is Functional, Not Filler</h2>
+  <p>Spices give us a rich visual language without borrowing anyone else's brand. Original turmeric roots, red chilies, cumin seeds, rosemary sprigs and star anise can make each SKU visible from a distance. The drawing style should stay consistent even when the ingredient shape changes.</p>
+  <p>Color helps, but do not rely on color alone. Similar yellow labels for turmeric, curry and mustard can become a picking problem. Pair each accent with a large spice name and a distinct ingredient illustration. For wholesale cases or gift sets, repeat that cue on the lid or outer pack.</p>
+
+  <h2>Plan the Information Hierarchy Before Shrinking Type</h2>
+  <p>Small jars tempt designers to reduce everything. We prefer to decide what the front must communicate, what belongs on the back and what can move to an outer carton or insert. A readable spice name and product identity usually matter more than a long brand story.</p>
+  <p>Ingredient, allergen, weight, origin and business statements depend on the product and target market. The brand should supply approved wording. We check whether it fits, whether the contrast is practical and whether the cut or curve threatens readability.</p>
+
+  <h2>Test the Label Around Real Pantry Handling</h2>
+  <p>Spice jars meet dry dust, oily fingers, cabinet abrasion and repeated lid turning. Powders can reach the container during filling and weaken adhesion if the jar is not cleaned. Some plastic jars also present a different surface from glass even when they look identical in a photograph.</p>
+  <p>Apply production-size samples after the normal cleaning step. Fill the jars, pack them together and handle them over several days. Inspect corners, seams, scuffing and lid labels. If the product enters a gift box, test removal from the insert so labels do not scrape against dividers.</p>
+
+  <h2>Our Spice Label Test List</h2>
+  <ul class="check-list"><li>Confirm glass or plastic and cap material</li><li>Measure the straight body panel and lid diameter</li><li>Choose front, back, lid or wrap positions by display method</li><li>Print every SKU at actual size</li><li>Check spice name and illustration at shelf distance</li><li>Apply after the real filling and cleaning sequence</li><li>Simulate dust, hand oil, carton rubbing and repeated opening</li><li>Lock a naming and artwork-version system for reorders</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send jar and lid dimensions, container material, photos, label positions, artwork, total quantity, quantities by spice, application method, information fields, finish direction and gift-set or case-packing details. Explain whether customers view the jars from the front, top or both.</p>
+  <p>A spice label range feels professional when a customer can find cumin in one glance and the packing team can find the right file just as quickly. Original ingredient artwork is part of that operating system, not decoration added at the end.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Jar Label Guide</a><a class="pill-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Label Size Guide</a><a class="pill-link" href="/blog/custom-sticker-reorder-checklist/">Reorder Control</a><a class="pill-link" href="/get-quote/">Request Spice Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-spice-jar-labels-guide/" $article43Title $article43Desc $article43 $article43Faq (ArticleStructuredData "/blog/custom-spice-jar-labels-guide/" $article43Title $article43Desc)
+
+$article44Title = "Custom Tea Packaging Labels for Tins and Pouches"
+$article44Desc = "Plan custom tea packaging labels for tins and pouches with original botanical artwork, clear SKU structure, curved surfaces, handling and packing tests."
+$article44Faq = @(
+  @("Are labels suitable for both tea tins and pouches?","They can be, but the structures should be reviewed separately. A rigid tin, coated paper pouch and flexible film pouch have different surfaces, curves and handling behavior."),
+  @("How can tea labels feel distinctive without copying established brands?","Build an original system from tea leaves, flowers, fruit, landscapes, brewing objects, typography and color. Keep the illustration and information hierarchy consistent across the range."),
+  @("Does the label protect tea aroma?","No. Aroma and moisture protection come primarily from the complete package and closure. A label identifies and decorates the pack unless a specific tested function is documented.")
+)
+$article44 = @"
+<section class="subhero"><p class="eyebrow">Tea packaging</p><h1>$article44Title</h1><p class="article-meta">Published September 25, 2026. A factory-side guide for loose-leaf tea, sachet and gift-collection projects.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-tea-packaging-labels-guide.webp" alt="Tea tins and stand-up pouches with original leaf jasmine citrus and mountain label illustrations" width="1536" height="1024" loading="eager" decoding="async"><figcaption>The package protects the tea; the label helps customers understand which tea is inside.</figcaption></figure>
+  <p>Tea packaging often begins with mood: quiet mountains, garden flowers, bright citrus or a traditional brewing ritual. That is useful creative material, but the production conversation begins somewhere more ordinary. Is the label going onto a rigid tin, a paper pouch, a laminated stand-up bag or a box?</p>
+  <p>The same artwork can behave very differently on those surfaces. A beautiful wide label may bridge a pouch gusset. A small round seal may sit well on a tin lid but add little information to the body. We first match the label structure to the pack, then let the visual story grow inside that boundary.</p>
+
+  <h2>Tins and Pouches Need Separate Decisions</h2>
+  <p>A cylindrical tin needs a measured straight wall and a deliberate seam. A rectangular tin needs corner clearance. A flexible pouch changes shape when filled, and its zipper, seal area, folds and gussets should stay clear. Measure the filled pouch rather than an empty flat film sample.</p>
+  <p>If the pouch already has a high-barrier construction, the label should not be described as the reason the tea stays fresh. The package and closure do that work. The label provides identification, information and presentation.</p>
+  <table><thead><tr><th>Package</th><th>Label opportunity</th><th>Common mistake</th></tr></thead><tbody>
+    <tr><td>Round metal tin</td><td>Body wrap plus lid identifier</td><td>Entering the top or bottom roll edge</td></tr>
+    <tr><td>Rectangular tin</td><td>Front panel and small back panel</td><td>Placing corners too close to tin edges</td></tr>
+    <tr><td>Stand-up pouch</td><td>Large front story and back information</td><td>Crossing zipper, seal or expanding gusset</td></tr>
+    <tr><td>Tea gift box</td><td>Collection label or closure seal</td><td>Using the seal as an unsupported quality mark</td></tr>
+  </tbody></table>
+
+  <h2>Original Artwork Can Carry Origin and Flavor</h2>
+  <p>Tea does not need blank labels to avoid infringement. Original jasmine flowers, bergamot fruit, mint leaves, tea terraces, ceramic cups and abstract steam patterns can give a range a clear visual voice. These elements should describe the specific product honestly rather than imitate the symbols or layout of a famous tea house.</p>
+  <p>We like to keep the brand block, tea name, type and net-content area stable. Illustration and accent color can change by SKU. A mountain black tea can use deep green and a ridge drawing; a citrus blend can use warm yellow and an original peel illustration. The range stays related without becoming repetitive.</p>
+
+  <h2>Make Brewing Information Easy to Use</h2>
+  <p>Brewing guidance is practical content, not a decorative paragraph. Temperature, amount and time should be readable and grouped. Simple original icons can help, but the numbers need enough contrast and size to work on the final package.</p>
+  <p>Ingredient, allergen, origin, organic and certification statements require brand-side approval and appropriate records. A landscape illustration can express place as a design theme; it should not become an unsupported geographic or certification claim.</p>
+
+  <h2>Test the Label on a Filled Pack</h2>
+  <p>Fill the pouch or tin to its normal volume. Apply the label using the planned hand or machine method. Open and close the package repeatedly, stack it with neighboring packs and place it in the intended gift box or shipping carton. Watch for edge lift, wrinkles, abrasion and information hidden by the expanded shape.</p>
+  <p>For paper-like materials, also consider how the surface responds to kitchen moisture and hand oils. For high-gloss film, check whether shelf glare hides the tea name. The finish should support both the story and the use environment.</p>
+
+  <h2>Our Tea Packaging Test List</h2>
+  <ul class="check-list"><li>Identify the exact tin, pouch or carton construction</li><li>Measure usable space on a filled package</li><li>Keep clear of zippers, seals, folds, gussets and tin edges</li><li>Print the tea name and brewing guide at actual size</li><li>Compare every botanical illustration and SKU color</li><li>Apply labels with the planned packing workflow</li><li>Run opening, closing, stacking and carton-abrasion checks</li><li>Confirm all ingredient, origin and certification wording</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send the final package or specification, filled dimensions, surface description, label position, artwork, number of teas, quantities by SKU, application method, finish direction and gift-box or carton requirements. Tell us which information changes between blends.</p>
+  <p>A useful tea label gives the blend a visual world while keeping the buying decision simple. The package protects aroma; the label earns recognition through clear information and original, relevant artwork.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-coffee-bag-labels-guide/">Flexible Bag Labels</a><a class="pill-link" href="/blog/custom-stickers-for-product-packaging/">Packaging Sticker Guide</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Packaging Stickers</a><a class="pill-link" href="/get-quote/">Request Tea Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-tea-packaging-labels-guide/" $article44Title $article44Desc $article44 $article44Faq (ArticleStructuredData "/blog/custom-tea-packaging-labels-guide/" $article44Title $article44Desc)
+
+$article45Title = "Custom Pet Treat Bag Labels for Growing Product Ranges"
+$article45Desc = "Plan custom pet treat bag labels around flexible pouches, ingredient illustrations, dog and cat SKU cues, required text, repeated handling and packing tests."
+$article45Faq = @(
+  @("Can pet treat labels use dog, cat, paw or bone graphics?","Yes. Original generic animal, paw, bone, fish, carrot and ingredient illustrations are useful product cues. Avoid copied characters, false endorsements and artwork that implies unsupported health claims."),
+  @("Should the label be tested on an empty or filled pouch?","Use a filled pouch at the normal product weight. Filling changes the front panel, gusset and zipper area and shows whether label edges wrinkle or cross moving folds."),
+  @("Who approves feeding, ingredient and health information?","The responsible seller must supply and approve the content for the destination market. The label producer can check layout and legibility but cannot validate veterinary, nutritional or regulatory claims.")
+)
+$article45 = @"
+<section class="subhero"><p class="eyebrow">Pet product packaging</p><h1>$article45Title</h1><p class="article-meta">Published September 25, 2026. A practical production guide for pet bakeries, treat brands and subscription boxes.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-pet-treat-bag-labels-guide.webp" alt="Pet treat pouches with original dog cat paw bone fish and carrot label illustrations on a packing table" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Original animal and ingredient graphics should help identify the treat, not hide missing information.</figcaption></figure>
+  <p>Pet treat packaging has a natural reason to be visual. Customers want to see whether the product is for a dog or cat, what flavor it is and how the treat fits into daily use. A white label with only a name throws away that advantage.</p>
+  <p>At the same time, a cheerful dog illustration cannot solve a label that wrinkles over a pouch gusset or a flavor name buried under claims. We build these projects from the physical bag outward: filled shape, zipper, seal, folds, information and then the illustration system.</p>
+
+  <h2>Measure the Filled Pouch, Not the Flat Bag</h2>
+  <p>A stand-up pouch changes when treats are added. The front bows, side gussets open and the bottom expands. Place the intended weight inside before selecting the label dimensions. Keep the label away from the top heat seal, zipper track and areas that fold repeatedly.</p>
+  <p>If the treats leave oil or crumbs inside the pack, also examine the outside filling workflow. A label applied after oily product dust reaches the panel may fail even when the material performed well on a clean sample.</p>
+  <table><thead><tr><th>Package decision</th><th>Buyer question</th><th>Production check</th></tr></thead><tbody>
+    <tr><td>Front label size</td><td>What must be noticed first?</td><td>Filled shape, fold clearance and shelf readability</td></tr>
+    <tr><td>Back information label</td><td>How much approved text is required?</td><td>Final-size legibility and seal clearance</td></tr>
+    <tr><td>Species and flavor cues</td><td>Dog, cat or both; which ingredient?</td><td>Distinct original icons plus clear words</td></tr>
+    <tr><td>Application sequence</td><td>Before or after filling?</td><td>Clean panel, pressure and repeatable placement</td></tr>
+  </tbody></table>
+
+  <h2>Original Graphics Should Answer Real Questions</h2>
+  <p>A generic original dog profile, cat face, paw, bone, fish, chicken, pumpkin or carrot can make the product easy to sort without copying an entertainment character. Use the animal cue to identify the intended pet and the ingredient cue to identify the flavor. Keep both secondary to a readable product name.</p>
+  <p>For a growing range, keep the drawing style and layout fixed. Change the animal or ingredient illustration and accent color in a controlled way. This avoids the two common extremes: every SKU looking identical, or every SKU looking as though it came from a different company.</p>
+
+  <h2>Friendly Artwork Must Not Turn Into a Health Claim</h2>
+  <p>A smiling pet, heart or active pose can make packaging welcoming, but wording such as calming, dental, joint support or vet approved needs evidence and market review. Do not create fake medical badges or certification marks to make the pack look established.</p>
+  <p>Ingredients, feeding guidance, net quantity, analysis and business information vary by product and market. The responsible brand should provide approved content. Our production role is to preserve space, contrast and print clarity and to flag obvious legibility risks.</p>
+
+  <h2>Choose Finish for Handling and Merchandising</h2>
+  <p>Pet treat bags are opened, closed, carried and sometimes stored near food bowls or outdoor gear. The label may meet hand oils, crumbs and abrasion. A protected film construction can support frequent handling; a paper direction may work for a dry bakery pouch with a shorter, controlled route. Test the actual pack instead of applying a broad waterproof promise.</p>
+  <p>Also check photography. Matte can reduce glare in marketplace images, while gloss can add color intensity. The right answer depends on the artwork, pouch and sales channel. Product recognition should remain strong under both camera light and ordinary shelf light.</p>
+
+  <h2>Our Pet Treat Label Test List</h2>
+  <ul class="check-list"><li>Fill the final pouch to the intended product weight</li><li>Mark zipper, seal, fold and gusset exclusion zones</li><li>Confirm whether labels are applied before or after filling</li><li>Print all required text and feeding content at actual size</li><li>Check species, flavor and product name from shelf distance</li><li>Handle the pack with realistic oil, crumbs and repeated opening</li><li>Run carton, subscription-box or retail-hook packing tests</li><li>Review every claim and document request before approval</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send the final pouch specification, filled dimensions and weight, surface type, label positions, animal and flavor SKUs, quantities, artwork, approved text, application sequence, finish direction and outer packing. Mention oily treats, frozen storage or other unusual conditions.</p>
+  <p>A good pet treat label can be warm, colorful and full of recognizable graphics without borrowing a famous character or hiding behind blank packaging. The test is simple: customers should understand the product quickly, and the finished label should still look deliberate after the pouch has been handled.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-stickers-for-product-packaging/">Product Packaging Guide</a><a class="pill-link" href="/blog/custom-sticker-packaging-and-packing-options/">Packing Options</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching</a><a class="pill-link" href="/get-quote/">Request Pet Treat Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-pet-treat-bag-labels-guide/" $article45Title $article45Desc $article45 $article45Faq (ArticleStructuredData "/blog/custom-pet-treat-bag-labels-guide/" $article45Title $article45Desc)
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -2961,6 +3231,11 @@ foreach ($p in $policies) {
 }
 
 $blogGuides = @(
+  @("/blog/custom-hot-sauce-bottle-labels-guide/","Custom Hot Sauce Labels: Oil, Heat and Small Batches","Plan sauce bottle labels around usable glass or plastic panels, oily handling, condensation, heat-level SKUs and filling-line tests."),
+  @("/blog/custom-essential-oil-labels-guide/","Custom Essential Oil Labels for Small Amber Bottles","Plan small amber bottle labels around usable height, tight curves, tiny text, oil exposure, botanical SKU artwork and seams."),
+  @("/blog/custom-spice-jar-labels-guide/","Custom Spice Jar Labels for Clear SKU Systems","Plan front, back and lid labels around glass or plastic jars, pantry handling, ingredient illustrations and growing SKU ranges."),
+  @("/blog/custom-tea-packaging-labels-guide/","Custom Tea Packaging Labels for Tins and Pouches","Plan tea labels for rigid tins and filled pouches with original botanical artwork, brewing information and packing tests."),
+  @("/blog/custom-pet-treat-bag-labels-guide/","Custom Pet Treat Bag Labels for Growing Product Ranges","Plan pet treat pouch labels with original animal and ingredient graphics, clear SKU cues, required text and handling tests."),
   @("/blog/custom-coffee-bag-labels-guide/","Custom Coffee Bag Labels Guide","Plan coffee bag labels around flexible pouches, valves, roast SKUs, date coding, oil, handling and application."),
   @("/blog/custom-honey-jar-labels-guide/","Custom Honey Jar Labels Guide","Plan honey labels around glass jars, squeeze bottles, curved panels, sticky handling, illustrated artwork and lid seals."),
   @("/blog/custom-lip-balm-labels-guide/","Custom Lip Balm Labels for Small Tubes","Plan narrow tube wraps around usable height, seam position, tiny artwork, oil exposure, SKU recognition and application."),

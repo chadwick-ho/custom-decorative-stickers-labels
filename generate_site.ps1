@@ -23,8 +23,8 @@ $ModifiedDates = @{
   "/blog/sticker-artwork-file-formats/" = "2026-09-19"
   "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
-  "/blog/" = "2026-09-25"
-  "/sitemap/" = "2026-09-25"
+  "/blog/" = "2026-09-26"
+  "/sitemap/" = "2026-09-26"
   "/blog/freezer-labels-for-frozen-food-packaging/" = "2026-09-21"
   "/blog/removable-vs-permanent-stickers/" = "2026-09-21"
   "/blog/label-roll-unwind-direction-core-size-guide/" = "2026-09-21"
@@ -45,6 +45,11 @@ $ModifiedDates = @{
   "/blog/custom-spice-jar-labels-guide/" = "2026-09-25"
   "/blog/custom-tea-packaging-labels-guide/" = "2026-09-25"
   "/blog/custom-pet-treat-bag-labels-guide/" = "2026-09-25"
+  "/blog/custom-jam-jar-labels-guide/" = "2026-09-26"
+  "/blog/custom-craft-beer-labels-guide/" = "2026-09-26"
+  "/blog/custom-shampoo-bottle-labels-guide/" = "2026-09-26"
+  "/blog/custom-supplement-bottle-labels-guide/" = "2026-09-26"
+  "/blog/custom-wine-bottle-labels-guide/" = "2026-09-26"
 }
 
 function PageModifiedDate([string]$Url) {
@@ -78,6 +83,11 @@ $PageOgImages = @{
   "/blog/custom-spice-jar-labels-guide/" = "/assets/blog/custom-spice-jar-labels-guide.webp"
   "/blog/custom-tea-packaging-labels-guide/" = "/assets/blog/custom-tea-packaging-labels-guide.webp"
   "/blog/custom-pet-treat-bag-labels-guide/" = "/assets/blog/custom-pet-treat-bag-labels-guide.webp"
+  "/blog/custom-jam-jar-labels-guide/" = "/assets/blog/custom-jam-jar-labels-guide.webp"
+  "/blog/custom-craft-beer-labels-guide/" = "/assets/blog/custom-craft-beer-labels-guide.webp"
+  "/blog/custom-shampoo-bottle-labels-guide/" = "/assets/blog/custom-shampoo-bottle-labels-guide.webp"
+  "/blog/custom-supplement-bottle-labels-guide/" = "/assets/blog/custom-supplement-bottle-labels-guide.webp"
+  "/blog/custom-wine-bottle-labels-guide/" = "/assets/blog/custom-wine-bottle-labels-guide.webp"
 }
 $ContactEmail = "ruishengmao05@gmail.com"
 $MailtoUrl = "mailto:$ContactEmail"
@@ -954,7 +964,7 @@ $blogBody = @"
   <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
 </section>
 <section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/gallery-applications/">Application Gallery</a></div></section>
-<section class="section blog-list-intro"><p class="eyebrow">45 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
+<section class="section blog-list-intro"><p class="eyebrow">50 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
     <div><p class="eyebrow">Artwork guide</p><h2>How to Prepare Artwork for Custom Sticker Production</h2><p>Learn what information to send before requesting a custom sticker quote, including artwork, size, shape, quantity, and intended application.</p></div>
@@ -1136,6 +1146,26 @@ $blogBody = @"
     <div><p class="eyebrow">Pet treat packaging</p><h2>Custom Pet Treat Bag Labels</h2><p>Plan filled-pouch labels with original animal and ingredient graphics, clear SKU cues and honest claim boundaries.</p></div>
     <a class="text-link" href="/blog/custom-pet-treat-bag-labels-guide/">Plan Pet Treat Labels</a>
   </article>
+  <article class="category-card coral">
+    <div><p class="eyebrow">Preserve packaging</p><h2>Custom Jam Jar Labels</h2><p>Plan fruit-rich jar labels around glass curves, sticky filling, refrigeration, lid identification and opening seals.</p></div>
+    <a class="text-link" href="/blog/custom-jam-jar-labels-guide/">Plan Jam Jar Labels</a>
+  </article>
+  <article class="category-card blue">
+    <div><p class="eyebrow">Craft beverage labels</p><h2>Custom Craft Beer Labels</h2><p>Match bold original artwork to wet bottles, chilled cans, condensation, small runs, date coding and case packing.</p></div>
+    <a class="text-link" href="/blog/custom-craft-beer-labels-guide/">Plan Beer Labels</a>
+  </article>
+  <article class="category-card sage">
+    <div><p class="eyebrow">Wet bathroom packaging</p><h2>Custom Shampoo Labels</h2><p>Plan botanical labels around PET or HDPE bottles, curved panels, water, formula contact and repeated squeeze.</p></div>
+    <a class="text-link" href="/blog/custom-shampoo-bottle-labels-guide/">Plan Shampoo Labels</a>
+  </article>
+  <article class="category-card gold">
+    <div><p class="eyebrow">Controlled information</p><h2>Custom Supplement Bottle Labels</h2><p>Control small text, lot and expiry codes, curved containers, SKU graphics and approved artwork versions.</p></div>
+    <a class="text-link" href="/blog/custom-supplement-bottle-labels-guide/">Plan Supplement Labels</a>
+  </article>
+  <article class="category-card rose">
+    <div><p class="eyebrow">Wine packaging</p><h2>Custom Wine Bottle Labels</h2><p>Match original vineyard artwork and tactile paper to bottle shapes, cellars, condensation and vintage changes.</p></div>
+    <a class="text-link" href="/blog/custom-wine-bottle-labels-guide/">Plan Wine Labels</a>
+  </article>
 </section>
 "@
 $blogCoverMap = [ordered]@{
@@ -1184,6 +1214,11 @@ $blogCoverMap = [ordered]@{
   "/blog/custom-spice-jar-labels-guide/" = "/assets/blog/custom-spice-jar-labels-guide.webp"
   "/blog/custom-tea-packaging-labels-guide/" = "/assets/blog/custom-tea-packaging-labels-guide.webp"
   "/blog/custom-pet-treat-bag-labels-guide/" = "/assets/blog/custom-pet-treat-bag-labels-guide.webp"
+  "/blog/custom-jam-jar-labels-guide/" = "/assets/blog/custom-jam-jar-labels-guide.webp"
+  "/blog/custom-craft-beer-labels-guide/" = "/assets/blog/custom-craft-beer-labels-guide.webp"
+  "/blog/custom-shampoo-bottle-labels-guide/" = "/assets/blog/custom-shampoo-bottle-labels-guide.webp"
+  "/blog/custom-supplement-bottle-labels-guide/" = "/assets/blog/custom-supplement-bottle-labels-guide.webp"
+  "/blog/custom-wine-bottle-labels-guide/" = "/assets/blog/custom-wine-bottle-labels-guide.webp"
 }
 foreach ($entry in $blogCoverMap.GetEnumerator()) {
   $urlPattern = [regex]::Escape($entry.Key)
@@ -1200,7 +1235,7 @@ $blogListPattern = '(?s)<section class="section blog-list">(?<cards>.*?)</sectio
 $blogBody = [regex]::Replace($blogBody, $blogListPattern, {
   param($match)
   $cards = @([regex]::Matches($match.Groups['cards'].Value, '(?s)<article class="category-card.*?</article>') | ForEach-Object { $_.Value })
-  $orderedCards = @($cards[40..44]) + @($cards[35..39]) + @($cards[30..34]) + @($cards[25..29]) + @($cards[0..24])
+  $orderedCards = @($cards[45..49]) + @($cards[40..44]) + @($cards[35..39]) + @($cards[30..34]) + @($cards[25..29]) + @($cards[0..24])
   return '<section class="section blog-list">' + [Environment]::NewLine + ($orderedCards -join [Environment]::NewLine) + [Environment]::NewLine + '</section>'
 })
 $blogBody = $blogBody.Replace('<article class="category-card', '<div class="category-card').Replace('</article>', '</div>')
@@ -3181,6 +3216,241 @@ $article45 = @"
 "@
 Page "/blog/custom-pet-treat-bag-labels-guide/" $article45Title $article45Desc $article45 $article45Faq (ArticleStructuredData "/blog/custom-pet-treat-bag-labels-guide/" $article45Title $article45Desc)
 
+$article46Title = "Custom Jam Jar Labels: Glass, Sugar and Lid Seals"
+$article46Desc = "Plan custom jam jar labels around glass curves, sticky filling, refrigeration, flavor artwork, lid seals, small batches and real filled-jar testing."
+$article46Faq = @(
+  @("What label material works on jam jars?","The useful choice depends on the glass finish, application temperature, refrigeration, condensation, wiping and desired appearance. Test the proposed label on the final filled jar rather than selecting by material name alone."),
+  @("Can jam labels use fruit illustrations without looking generic?","Yes. Original fruit, leaf, flower and preserve-jar illustrations can distinguish flavors. Keep the brand hierarchy consistent, then vary the ingredient artwork and accent color by SKU."),
+  @("Does a lid seal make a jam jar tamper evident?","Not automatically. The seal position, material, package surfaces and opening behavior must be tested together. Any tamper-evident or compliance claim requires project-specific confirmation.")
+)
+$article46 = @"
+<section class="subhero"><p class="eyebrow">Preserve packaging</p><h1>$article46Title</h1><p class="article-meta">Published September 26, 2026. A factory-side guide for preserve makers, farm shops and food gift ranges.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-jam-jar-labels-guide.webp" alt="Filled jam jars with original strawberry apricot blueberry and fig label illustrations being checked on a packing bench" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A good jam label survives the sticky work and still makes the flavor obvious.</figcaption></figure>
+  <p>Jam labels often arrive at our desk looking finished. The fruit illustration is charming, the script is carefully chosen and every flavor has a color. Then we ask for the actual jar, and the useful conversation starts.</p>
+  <p>Glass jars are not just cylinders. They have shoulders, heel curves, mold seams and sometimes embossed panels. Filling adds heat, sugar residue and wiping. Refrigeration may add condensation later. A label that wins on the artwork screen can still lose on the packing table.</p>
+
+  <h2>Start With the Filled Jar and the Wiping Routine</h2>
+  <p>Measure the straight body panel on several jars, not the overall height. If the label enters a changing curve, its corners or seam may lift. Make a paper sample at the proposed size and place it on warm, room-temperature and chilled jars according to the real process.</p>
+  <p>Sticky residue is a separate issue. The best adhesive cannot compensate for syrup under the label. Ask when the jar is labeled, how the outside is cleaned and how long it dries before packing. We would rather reduce label size slightly than let the edge sit in the area operators struggle to wipe.</p>
+  <table><thead><tr><th>Jar condition</th><th>Common failure</th><th>Useful test</th></tr></thead><tbody>
+    <tr><td>Warm after filling</td><td>Moisture or weak initial bond</td><td>Apply at real temperature and inspect after cooling</td></tr>
+    <tr><td>Sugar residue</td><td>Edge lift and staining</td><td>Compare normal wiping with a clean control jar</td></tr>
+    <tr><td>Refrigerated storage</td><td>Condensation and paper change</td><td>Chill, remove, handle and repeat</td></tr>
+    <tr><td>Gift-box packing</td><td>Scuffing against dividers</td><td>Pack, transport and unpack filled jars</td></tr>
+  </tbody></table>
+
+  <h2>Fruit Artwork Should Separate Flavors at a Glance</h2>
+  <p>Jam is one of the easiest categories to make visually rich without copying anyone. Original strawberry leaves, apricot halves, blueberry clusters, fig cross-sections and citrus blossoms give each flavor a useful identity. Blank labels are not a compliance strategy.</p>
+  <p>The discipline is keeping the family together. Use one logo position, one product-name hierarchy and one back-information grid. Change the fruit illustration and accent color. This makes a mixed gift box lively while reducing the chance that a raspberry label is packed onto strawberry jars.</p>
+
+  <h2>Use the Lid, but Give It One Clear Job</h2>
+  <p>A round lid label helps products stored or displayed from above. A narrow bridge seal can connect the lid and body. Those are different jobs. If opening evidence matters, define what the seal should do after the lid turns and test it on the exact lid coating and glass.</p>
+  <p>Do not add fake inspection badges or country-of-origin seals just to fill the lid. A small original fruit mark, flavor name or batch field is more honest and more useful. Certification, organic, origin and award statements need current evidence and market approval.</p>
+
+  <h2>Keep Required Information Readable</h2>
+  <p>Ingredients, allergens, net quantity, storage, date coding and responsible-business information vary by market. The brand supplies approved wording; our job is to preserve space and point out when the final size becomes unrealistic.</p>
+  <p>Print the complete label at 100 percent. Put it on the jar and read it under shop lighting, not only at 300 percent zoom. If the story no longer fits, move secondary copy to a neck tag, carton or website rather than shrinking everything.</p>
+
+  <h2>Our Jam Label Test List</h2>
+  <ul class="check-list"><li>Measure several final jars and lids</li><li>Mark the straight glass panel and mold seams</li><li>Apply labels at the real production temperature</li><li>Test normal wiping, sugar residue and refrigeration</li><li>Check every flavor illustration and accent color</li><li>Confirm lid-label or bridge-seal purpose</li><li>Run gift-box, carton and shelf-rub tests</li><li>Keep an approved filled jar for reorders</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send jar and lid dimensions, glass photos, filling temperature, labeling point, wiping routine, storage conditions, flavors, quantities by SKU, artwork, date-code area, lid-label needs and final packing. State whether any seal has a defined opening-evidence requirement.</p>
+  <p>The label does not need to be quiet to be responsible. It can carry a generous original fruit illustration and still respect the curve, the sticky process and the information customers actually need.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-honey-jar-labels-guide/">Honey Jar Labels</a><a class="pill-link" href="/blog/tamper-evident-labels-guide/">Tamper Seal Guide</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching</a><a class="pill-link" href="/get-quote/">Request Jam Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-jam-jar-labels-guide/" $article46Title $article46Desc $article46 $article46Faq (ArticleStructuredData "/blog/custom-jam-jar-labels-guide/" $article46Title $article46Desc)
+
+$article47Title = "Custom Craft Beer Labels for Bottles and Cans"
+$article47Desc = "Plan custom craft beer labels around wet glass, chilled cans, condensation, illustration systems, small runs, date coding and real packaging-line tests."
+$article47Faq = @(
+  @("Can the same label construction work on beer bottles and cans?","Not automatically. Glass and aluminum, dry and chilled application, curves and packing abrasion differ. Review and test each package separately."),
+  @("How can a beer range use bold artwork without copying another brewery?","Build an original visual system from ingredients, landscapes, abstract shapes, tools and custom typography. Keep the layout family consistent while changing illustration and color by beer style."),
+  @("Can a label printer approve alcohol statements or awards?","No. The responsible producer must approve alcohol content, required statements, origin, health warnings and awards for the destination market. The printer checks reproduction and legibility, not legal validity.")
+)
+$article47 = @"
+<section class="subhero"><p class="eyebrow">Beverage packaging</p><h1>$article47Title</h1><p class="article-meta">Published September 26, 2026. A practical production guide for breweries, taprooms and seasonal beverage launches.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-craft-beer-labels-guide.webp" alt="Craft beer bottles and cans with original hop citrus mountain and geometric label artwork on a brewery packing line" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Beer labels can be loud on the shelf and disciplined on the packaging line.</figcaption></figure>
+  <p>Craft beer buyers rarely ask us for a label that disappears. They want color, attitude and a story that can be recognized from the refrigerator door. Fair enough. The problem comes when the artwork is designed for a dry mockup and the package is labeled cold, carried wet and rubbed inside a carton.</p>
+  <p>We start by separating the bottle job from the can job. They may share a campaign, but they do not share the same surface or production behavior.</p>
+
+  <h2>Ask Whether the Container Is Dry, Cold or Wet at Application</h2>
+  <p>A clean dry bottle at room temperature is one application. A chilled can carrying condensation is another. Record the container material, temperature, surface treatment and the point in the line where the label is applied.</p>
+  <p>For glass bottles, check the body curve, mold seams and label panel. For cans, check diameter, top and bottom transitions and whether the label is a partial panel or wrap. If a wrap enters the shoulder or base curve, the edge may lift even when the main panel bonds well.</p>
+  <table><thead><tr><th>Package condition</th><th>Risk</th><th>Review focus</th></tr></thead><tbody>
+    <tr><td>Dry glass bottle</td><td>Mold seam and curved panel</td><td>Size, seam position and carton rubbing</td></tr>
+    <tr><td>Chilled glass bottle</td><td>Condensation before application</td><td>Surface dryness and initial bond</td></tr>
+    <tr><td>Aluminum can</td><td>Full circumference and top curve</td><td>Wrap height, overlap and wrinkle control</td></tr>
+    <tr><td>Ice-bucket service</td><td>Water, abrasion and handling</td><td>Finished pack test under realistic exposure</td></tr>
+  </tbody></table>
+
+  <h2>Bold Artwork Still Needs a Range System</h2>
+  <p>Original hops, citrus, grain, mountains, brewing tools and geometric characters give a beer range plenty of visual material. There is no reason to retreat to blank labels because copyrighted mascots are off limits.</p>
+  <p>What matters is control. Keep the brewery name, beer style, volume and required information in stable locations. Change the central illustration, style color and batch name. On a busy shelf, the customer should see both the individual beer and the family it belongs to.</p>
+
+  <h2>Finish Changes Both Shelf Impact and Handling</h2>
+  <p>Gloss can deepen color and suit bright illustrated work. Matte can reduce refrigerator glare and give detailed line art a quieter surface. Metallic or clear areas can create useful contrast, but only if the artwork is planned around the substrate and any white ink.</p>
+  <p>Finish names do not answer the durability question. Put labeled bottles or cans through chilling, condensation, case packing, transport and hand service. Inspect seams, edges, scuffing and ink protection after the full cycle.</p>
+
+  <h2>Leave Operational Space in the Artwork</h2>
+  <p>Small runs often need a date, batch, flavor or barcode change. Reserve a predictable code area instead of dropping a sticker over the main illustration at the last minute. If multiple variants share a base design, define exactly which fields change and who controls the final file names.</p>
+  <p>Alcohol statements, government warnings, deposit marks and business details depend on the destination market. Awards and competition medals need evidence. We can protect readability and print contrast, but the producer owns content approval.</p>
+
+  <h2>Our Beer Label Test List</h2>
+  <ul class="check-list"><li>Separate bottle and can specifications</li><li>Record container temperature at application</li><li>Measure the true straight panel and wrap seam</li><li>Print all required statements at actual size</li><li>Check SKU recognition in a mixed refrigerator display</li><li>Run condensation, ice-bucket and wet-hand tests</li><li>Pack into the real carton and inspect abrasion</li><li>Control date, batch and artwork versions</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send bottle or can specifications, filled photos, application temperature, labeling method, package quantities, beer styles, quantities by SKU, artwork, finish direction, date-code method, destination market and carton details. Mention refrigeration, ice-bucket service or other wet-use conditions.</p>
+  <p>The best craft beer artwork earns attention. The best craft beer label keeps that artwork attached and readable after the customer has pulled the package from a cold, crowded refrigerator.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle and Jar Labels</a><a class="pill-link" href="/blog/waterproof-custom-stickers-buying-guide/">Wet-Use Guide</a><a class="pill-link" href="/blog/custom-sticker-color-matching-guide/">Color Matching</a><a class="pill-link" href="/get-quote/">Request Beer Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-craft-beer-labels-guide/" $article47Title $article47Desc $article47 $article47Faq (ArticleStructuredData "/blog/custom-craft-beer-labels-guide/" $article47Title $article47Desc)
+
+$article48Title = "Custom Shampoo Labels: Wet Use, Curves and Squeeze"
+$article48Desc = "Plan custom shampoo and conditioner labels around PET or HDPE bottles, wet bathrooms, curved panels, squeeze, oily formulas, SKU artwork and application tests."
+$article48Faq = @(
+  @("What label material works for shampoo bottles?","The choice depends on PET or HDPE, bottle finish, squeeze, application temperature, bathroom moisture, formula contact and desired appearance. Test the complete construction on the final filled bottle."),
+  @("Can shampoo labels use colorful ingredient graphics?","Yes. Original coconut, aloe, rosemary, citrus, flower and botanical illustrations can separate formulas. Pair the artwork with clear product names and a consistent range structure."),
+  @("Can the label claim repair, growth or medical results?","Only the responsible brand can approve claims after evidence and market review. The label producer should not invent clinical badges, dermatologist endorsements or medical language.")
+)
+$article48 = @"
+<section class="subhero"><p class="eyebrow">Wet bathroom packaging</p><h1>$article48Title</h1><p class="article-meta">Published September 26, 2026. A factory-side guide for hair-care brands, salons and private-label projects.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-shampoo-bottle-labels-guide.webp" alt="Shampoo and conditioner bottles with original aloe coconut rosemary and citrus label illustrations under wet-use testing" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A bathroom label has to stay readable after water, squeezing and formula handling.</figcaption></figure>
+  <p>Shampoo packaging looks simple until someone squeezes it. The bottle wall moves, the wet hand turns the product, and conditioner or oil can run across the front. A rigid mockup does not show any of that.</p>
+  <p>When we review these jobs, the first question is the bottle material and shape, not whether the brand prefers matte. PET, HDPE and coated bottles can look similar in a photograph and behave differently during labeling and use.</p>
+
+  <h2>Measure the Panel While the Bottle Is Filled</h2>
+  <p>Some shampoo bottles bow outward when filled. Others have a recessed label panel or compound curves near the shoulder. Use the final filled package to measure straight usable space. A front label that crosses a recessed edge can trap air; a wrap that enters the shoulder can wrinkle.</p>
+  <p>Mark how customers hold and squeeze the bottle. If repeated pressure lands directly on the label edge, include that in the test. A construction that looks perfect on a rigid glass jar may not be right for a flexible HDPE bottle.</p>
+  <table><thead><tr><th>Bottle condition</th><th>Likely stress</th><th>Test method</th></tr></thead><tbody>
+    <tr><td>Rigid PET</td><td>Curves, wet handling and glare</td><td>Filled-bottle shower and rub test</td></tr>
+    <tr><td>Squeezable HDPE</td><td>Flexing and edge stress</td><td>Repeated squeeze and recovery</td></tr>
+    <tr><td>Oily conditioner</td><td>Formula contact and slip</td><td>Controlled spill, wipe and handling</td></tr>
+    <tr><td>Pump bottle</td><td>Rotation and front alignment</td><td>Check label-to-pump orientation after capping</td></tr>
+  </tbody></table>
+
+  <h2>Ingredient Artwork Can Do More Than Fill Space</h2>
+  <p>Original aloe leaves, coconut halves, rosemary sprigs, citrus peel and flowers can make shampoo and conditioner pairs easier to recognize. A customer should not have to read tiny text to avoid grabbing conditioner when they wanted shampoo.</p>
+  <p>Use a stable layout and vary the botanical, accent color and a clear product-type word. If the range includes both shampoo and conditioner, create a deliberate difference stronger than one small line of copy. Useful design saves the customer a second look.</p>
+
+  <h2>Water Resistance and Formula Resistance Are Different Questions</h2>
+  <p>A label may survive clean water yet change after contact with fragrance oil, surfactant or conditioner. Test the actual formula when possible. Apply it to the face and edges, allow realistic contact time, wipe it and inspect print, finish and adhesion.</p>
+  <p>The application surface must also be clean. Residue from molding, filling or handling can create early edge lift. Define who wipes the bottle, with what and how long it rests before the label is applied.</p>
+
+  <h2>Claims Need Evidence, Not Clinical-Looking Decoration</h2>
+  <p>Botanical artwork identifies a formula; it does not prove hair growth, repair or medical performance. Avoid fake laboratory seals, dermatologist badges and before-and-after promises unless the responsible brand has substantiation and approved wording.</p>
+  <p>Ingredient naming, warnings, net content and responsible-business information vary by market. We can check final-size legibility and reserve code space. Product and legal approval remain with the brand.</p>
+
+  <h2>Our Shampoo Label Test List</h2>
+  <ul class="check-list"><li>Confirm PET, HDPE or other bottle material</li><li>Measure the final filled and capped bottle</li><li>Mark curves, recesses and squeeze zones</li><li>Apply using the planned cleaning workflow</li><li>Run water, steam, wet-hand and rub tests</li><li>Test controlled contact with the actual formula</li><li>Check shampoo and conditioner recognition together</li><li>Inspect labels after repeated squeezing and storage</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send bottle material, dimensions, filled photos, label panel, application method, formulas, expected spills, product types, quantities by SKU, artwork, finish direction, batch-code area and outer packing. State whether the bottle is rigid, squeezable or used with a pump.</p>
+  <p>A colorful shampoo label is not the risky choice. An untested label is. Give the packaging original visual identity, then make it prove itself in the wet, flexible environment where customers actually use it.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-cosmetic-labels-guide/">Cosmetic Label Guide</a><a class="pill-link" href="/blog/waterproof-custom-stickers-buying-guide/">Waterproof Planning</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching</a><a class="pill-link" href="/get-quote/">Request Shampoo Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-shampoo-bottle-labels-guide/" $article48Title $article48Desc $article48 $article48Faq (ArticleStructuredData "/blog/custom-shampoo-bottle-labels-guide/" $article48Title $article48Desc)
+
+$article49Title = "Custom Supplement Bottle Labels: Small Text and Control"
+$article49Desc = "Plan custom supplement bottle labels around small text, curved containers, lot and expiry coding, SKU graphics, document review and controlled artwork approval."
+$article49Faq = @(
+  @("Can a label printer approve supplement facts or dosage text?","No. The responsible brand and qualified regulatory adviser must approve facts, dosage, ingredients, warnings and claims for the destination market. The printer checks reproduction, space and legibility."),
+  @("How can supplement bottles look distinctive without fake medical badges?","Use original ingredient, botanical, geometric and lifestyle graphics with a controlled color system. Avoid invented approvals, doctor endorsements and certification marks."),
+  @("Why are lot and expiry areas important in artwork planning?","They reserve a predictable location for variable production information and help prevent codes from covering required text or major graphics. Confirm the coding method and contrast before production.")
+)
+$article49 = @"
+<section class="subhero"><p class="eyebrow">Controlled information</p><h1>$article49Title</h1><p class="article-meta">Published September 26, 2026. A practical guide for supplement brands, contract packers and private-label buyers.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-supplement-bottle-labels-guide.webp" alt="Supplement bottles with original botanical vitamin mineral and geometric label graphics under text and code review" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Distinctive artwork belongs on supplement packaging; invented authority does not.</figcaption></figure>
+  <p>Supplement label projects usually arrive with two competing requests: make the bottle look clean, and fit a large amount of information onto it. The container does not care about either request. It has a fixed circumference, a curve and a cap that may cover more usable height than the artwork assumed.</p>
+  <p>Our role is not to decide whether a claim is allowed. Our role is to make the approved content printable, readable and controlled from proof through reorder.</p>
+
+  <h2>Lock the Content Before Polishing the Front</h2>
+  <p>Start with the final approved information set, bottle specification and destination market. Separate fixed text from variable fields such as lot, expiry, flavor or count. If the content is still changing, treat the layout as a working proof, not finished artwork.</p>
+  <p>Print at actual size early. A panel that feels spacious on a large monitor can become a wall of tiny text on a 60 cc bottle. Decide what must remain on the label and what belongs on an outer carton or insert before reducing type beyond practical reading.</p>
+  <table><thead><tr><th>Control point</th><th>Production risk</th><th>Useful action</th></tr></thead><tbody>
+    <tr><td>Approved text version</td><td>Old facts or warnings reach print</td><td>Use one named approval file and date</td></tr>
+    <tr><td>Lot and expiry area</td><td>Code covers text or lacks contrast</td><td>Test the real coding method and position</td></tr>
+    <tr><td>Bottle curve</td><td>Small text wraps out of view</td><td>Review the label on the final container</td></tr>
+    <tr><td>SKU color system</td><td>Similar formulas are picked incorrectly</td><td>Pair color with clear name and original graphic</td></tr>
+  </tbody></table>
+
+  <h2>Visual Authority Is Not Regulatory Authority</h2>
+  <p>A supplement bottle can use rich original graphics. Botanical leaves, citrus, berries, mineral shapes, capsules, sun forms and abstract movement can distinguish products without borrowing a medical cross or fake laboratory seal.</p>
+  <p>The line is straightforward. Graphics can communicate category and energy. They cannot manufacture approval. Do not add doctor recommended, clinically proven, organic or certified marks unless the responsible brand has evidence and approved use.</p>
+
+  <h2>Build a System That Prevents Picking Errors</h2>
+  <p>A growing range often includes similar white bottles with similar caps. Use a stable brand block and information layout, then give each SKU a distinct original ingredient illustration, accent color and large product name. Color alone is not enough, especially when cartons are packed under warehouse lighting.</p>
+  <p>Keep the SKU name visible from the front and consider a top or neck cue if bottles are stored in trays. File names, proof names and packing lists should use the same SKU language. Artwork control is not glamorous, but it prevents expensive mistakes.</p>
+
+  <h2>Test the Complete Coding and Packing Workflow</h2>
+  <p>Apply labels to filled bottles using the planned hand or machine process. Add lot and expiry codes with the real equipment. Rub the code, inspect contrast and pack bottles into the final carton. Check whether dividers or neighboring bottles scuff the print.</p>
+  <p>If the package includes a tamper band, neck seal or carton, review the whole presentation together. Do not let one component hide another component's required information.</p>
+
+  <h2>Our Supplement Label Test List</h2>
+  <ul class="check-list"><li>Confirm bottle, cap and any outer carton</li><li>Use one approved content version</li><li>Print the complete label at actual size</li><li>Check reading on the curved container</li><li>Test lot and expiry coding for position and rub</li><li>Compare every SKU name, graphic and color</li><li>Run application and carton-abrasion checks</li><li>Archive the approved proof and production reference</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send bottle dimensions and material, label panel, approved artwork, quantities by SKU, application method, variable-code method, finish direction, destination market, document requests and packing configuration. Identify which content has regulatory approval and which fields remain temporary.</p>
+  <p>The professional look does not come from making the bottle sterile or filling it with badges. It comes from original visual identity, readable information and disciplined version control.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/white-ink-small-text-custom-stickers/">Small Text Guide</a><a class="pill-link" href="/blog/custom-sticker-reorder-checklist/">Reorder Control</a><a class="pill-link" href="/compliance-and-document-review/">Document Review</a><a class="pill-link" href="/get-quote/">Request Supplement Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-supplement-bottle-labels-guide/" $article49Title $article49Desc $article49 $article49Faq (ArticleStructuredData "/blog/custom-supplement-bottle-labels-guide/" $article49Title $article49Desc)
+
+$article50Title = "Custom Wine Bottle Labels: Glass, Paper and Cellars"
+$article50Desc = "Plan custom wine bottle labels around glass shape, paper texture, condensation, cellar handling, vineyard artwork, vintage changes and bottle tests."
+$article50Faq = @(
+  @("Can textured paper labels work on wine bottles?","They can suit some dry, controlled applications, but performance depends on paper, adhesive, bottle surface, application and moisture exposure. Test the final construction on filled bottles."),
+  @("How can a wine label feel premium without copying another winery?","Use original vineyard, grape, landscape, botanical, geometric or typographic artwork. Build hierarchy and material contrast around the specific brand rather than imitating a recognizable estate layout."),
+  @("Can a printer approve vintage, origin or award statements?","No. The responsible producer must substantiate and approve vintage, geographic, alcohol, award and required market statements. The printer checks reproduction and legibility.")
+)
+$article50 = @"
+<section class="subhero"><p class="eyebrow">Wine packaging</p><h1>$article50Title</h1><p class="article-meta">Published September 26, 2026. A factory-side guide for wineries, importers, gift ranges and limited releases.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="/assets/blog/custom-wine-bottle-labels-guide.webp" alt="Wine bottles with original vineyard grape botanical and geometric label artwork being inspected in a bottling room" width="1536" height="1024" loading="eager" decoding="async"><figcaption>The label should respect the bottle, the cellar and the way the wine range changes over time.</figcaption></figure>
+  <p>Wine labels invite people to talk about paper, foil and restraint. Those choices matter, but the first production question is less romantic: which bottle is actually being used?</p>
+  <p>Burgundy, Bordeaux, sparkling and specialty bottles offer different straight panels, shoulders and diameters. A front label designed before the bottle is locked can end up climbing a curve or sitting too close to the base.</p>
+
+  <h2>Build the Dieline Around the Bottle, Not the Rendering</h2>
+  <p>Measure several final bottles and mark the usable front, back and neck areas. If the bottle has a strong mold seam, decide whether the front label centers between seams. Apply paper prototypes and view the bottle upright, in a case and on a shelf.</p>
+  <p>For front-and-back sets, define spacing and alignment. For wraps, decide where the seam or overlap lands. A millimeter that looks trivial on screen can become obvious when twelve bottles stand in a carton.</p>
+  <table><thead><tr><th>Presentation choice</th><th>Production question</th><th>Test focus</th></tr></thead><tbody>
+    <tr><td>Textured paper</td><td>How much moisture and abrasion?</td><td>Application, cellar storage and handling</td></tr>
+    <tr><td>Gloss or film</td><td>How will glare affect the artwork?</td><td>Shelf and photography readability</td></tr>
+    <tr><td>Foil or metallic detail</td><td>Which areas need contrast?</td><td>Proof, fine lines and bottle viewing angle</td></tr>
+    <tr><td>Front and back labels</td><td>How are they aligned?</td><td>Applicator setup and visual spacing</td></tr>
+  </tbody></table>
+
+  <h2>Premium Does Not Mean Empty</h2>
+  <p>Original vineyard rows, grape clusters, local plants, birds, hills, cellar tools and geometric maps can give wine packaging real character. Avoiding a copied château crest does not require a plain white rectangle with one word in the center.</p>
+  <p>Decide what the illustration contributes. It might separate grape varieties, distinguish a reserve line or express landscape. Keep the producer name and wine type readable. The artwork should reward a closer look without hiding the buying decision.</p>
+
+  <h2>Paper Texture Has a Real Handling Cost</h2>
+  <p>An uncoated or textured paper can feel warm and tactile. It may also react differently to condensation, wet ice service, abrasion or adhesive squeeze-out. A protected construction can improve resistance and change the feel. There is no universal premium material.</p>
+  <p>Test labeled bottles through the actual route: application, case packing, cellar or refrigerated storage, transport, retail handling and service. If the wine enters an ice bucket, say so before material selection, not after the first complaint.</p>
+
+  <h2>Plan for Vintage and Market Changes</h2>
+  <p>Vintage, alcohol content, importer details, geographic statements, barcodes and awards can change. Separate stable artwork from controlled variable fields. Name files so the vintage and market are visible before anyone opens them.</p>
+  <p>Do not print an award medallion, appellation symbol or sustainability mark without permission and evidence. Original visual authority is welcome; invented official authority is not.</p>
+
+  <h2>Our Wine Label Test List</h2>
+  <ul class="check-list"><li>Confirm the exact bottle family and color</li><li>Measure straight panels on several bottles</li><li>Apply front, back and neck paper prototypes</li><li>Check artwork contrast against dark or clear glass</li><li>Run cellar, condensation and ice-service tests as relevant</li><li>Pack into the final case and inspect scuffing</li><li>Verify vintage, market and award versions</li><li>Keep an approved filled bottle for reorders</li></ul>
+
+  <h2>What We Would Put in the Quote Request</h2>
+  <p>Send bottle specifications, filled photos, label dimensions, front/back/neck arrangement, wine varieties, vintages, quantities, artwork, material and finish direction, storage and service conditions, application method, destination markets and case packing.</p>
+  <p>A wine label earns its quiet confidence after the production details are settled. Then the paper, illustration and finish can speak without asking the customer to ignore a lifting corner.</p>
+  <div class="pill-row"><a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle Label Guide</a><a class="pill-link" href="/blog/matte-vs-glossy-stickers/">Finish Comparison</a><a class="pill-link" href="/blog/custom-sticker-color-matching-guide/">Color Matching</a><a class="pill-link" href="/get-quote/">Request Wine Label Review</a></div>
+</article>
+"@
+Page "/blog/custom-wine-bottle-labels-guide/" $article50Title $article50Desc $article50 $article50Faq (ArticleStructuredData "/blog/custom-wine-bottle-labels-guide/" $article50Title $article50Desc)
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -3231,6 +3501,11 @@ foreach ($p in $policies) {
 }
 
 $blogGuides = @(
+  @("/blog/custom-jam-jar-labels-guide/","Custom Jam Jar Labels: Glass, Sugar and Lid Seals","Plan jam jar labels around glass curves, sticky filling, refrigeration, flavor artwork, lid seals and filled-jar testing."),
+  @("/blog/custom-craft-beer-labels-guide/","Custom Craft Beer Labels for Bottles and Cans","Plan craft beer labels around wet glass, chilled cans, condensation, illustration systems, small runs and date coding."),
+  @("/blog/custom-shampoo-bottle-labels-guide/","Custom Shampoo Labels: Wet Use, Curves and Squeeze","Plan shampoo and conditioner labels around PET or HDPE, wet use, curved panels, squeeze, formula contact and SKU artwork."),
+  @("/blog/custom-supplement-bottle-labels-guide/","Custom Supplement Bottle Labels: Small Text and Control","Plan supplement labels around small text, curved containers, lot and expiry coding, SKU graphics and controlled approval."),
+  @("/blog/custom-wine-bottle-labels-guide/","Custom Wine Bottle Labels: Glass, Paper and Cellars","Plan wine labels around bottle shape, paper texture, condensation, cellar handling, original artwork and vintage changes."),
   @("/blog/custom-hot-sauce-bottle-labels-guide/","Custom Hot Sauce Labels: Oil, Heat and Small Batches","Plan sauce bottle labels around usable glass or plastic panels, oily handling, condensation, heat-level SKUs and filling-line tests."),
   @("/blog/custom-essential-oil-labels-guide/","Custom Essential Oil Labels for Small Amber Bottles","Plan small amber bottle labels around usable height, tight curves, tiny text, oil exposure, botanical SKU artwork and seams."),
   @("/blog/custom-spice-jar-labels-guide/","Custom Spice Jar Labels for Clear SKU Systems","Plan front, back and lid labels around glass or plastic jars, pantry handling, ingredient illustrations and growing SKU ranges."),

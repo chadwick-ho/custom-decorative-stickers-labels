@@ -7,7 +7,7 @@ $ArticleAuthorName = "ZC Labels Production Team"
 $BaseUrl = "https://www.zclabels.com"
 $DefaultModifiedDate = "2026-09-18"
 $ModifiedDates = @{
-  "/" = "2026-09-19"
+  "/" = "2026-09-26"
   "/about-us/" = "2026-09-19"
   "/artwork-guidelines/" = "2026-09-19"
   "/contact/" = "2026-09-19"
@@ -25,6 +25,20 @@ $ModifiedDates = @{
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
   "/blog/" = "2026-09-26"
   "/sitemap/" = "2026-09-26"
+  "/label-specification-planner/" = "2026-09-26"
+  "/products/" = "2026-09-26"
+  "/get-quote/" = "2026-09-26"
+  "/products/custom-cartoon-stickers/" = "2026-09-26"
+  "/products/custom-kids-stickers/" = "2026-09-26"
+  "/products/custom-stationery-stickers/" = "2026-09-26"
+  "/products/custom-gift-stickers/" = "2026-09-26"
+  "/products/custom-holiday-stickers/" = "2026-09-26"
+  "/products/custom-promotional-stickers/" = "2026-09-26"
+  "/products/custom-die-cut-stickers/" = "2026-09-26"
+  "/products/custom-kiss-cut-stickers/" = "2026-09-26"
+  "/products/custom-sticker-sheets/" = "2026-09-26"
+  "/products/custom-roll-labels/" = "2026-09-26"
+  "/products/custom-holographic-stickers/" = "2026-09-26"
   "/blog/freezer-labels-for-frozen-food-packaging/" = "2026-09-21"
   "/blog/removable-vs-permanent-stickers/" = "2026-09-21"
   "/blog/label-roll-unwind-direction-core-size-guide/" = "2026-09-21"
@@ -577,6 +591,7 @@ function Footer {
     <a href="/compliance-and-document-review/">Compliance & Document Review</a>
     $formatFooterLinks
     <a href="/materials-finishes/">Materials & Finishes</a>
+    <a href="/label-specification-planner/">Label Specification Planner</a>
     <a href="/artwork-guidelines/">Artwork Guidelines</a>
     <a href="/custom-process/">Custom Process</a>
     <a href="/shipping-information/">Shipping Information</a>
@@ -761,7 +776,7 @@ $homeBody = @"
     <a href="/blog/custom-sticker-samples-and-digital-proofs/"><span>05 / PROOF REVIEW</span><strong>Digital Proof or Physical Sample?</strong><p>Use the review step that matches the real production risk.</p></a>
     <a href="/blog/custom-roll-labels-for-bottles-and-jars/"><span>06 / ROLL LABELS</span><strong>Plan Labels for Bottles and Jars</strong><p>Confirm container shape, application method and storage conditions.</p></a>
   </div>
-  <div class="guide-hub-footer"><a class="text-link" href="/blog/">VIEW ALL BUYER GUIDES</a><a class="solid-btn" href="/get-quote/">START WITH YOUR PROJECT</a></div>
+  <div class="guide-hub-footer"><a class="text-link" href="/blog/">VIEW ALL BUYER GUIDES</a><a class="text-link" href="/label-specification-planner/">BUILD A LABEL SPECIFICATION</a><a class="solid-btn" href="/get-quote/">START WITH YOUR PROJECT</a></div>
 </section>
 "@
 $homeTitle = "Custom Stickers Manufacturer | B2B Labels Factory"
@@ -790,12 +805,158 @@ $parentBody = @"
 <section class="hero split compact"><div class="hero-copy"><p class="eyebrow">Parent Product Category</p><h1>Custom Stickers & Decorative Labels</h1><p class="lead">Custom sticker and decorative label production for creative brands, stationery products, gift packaging, seasonal campaigns, and promotional use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Start Your Custom Sticker Project</a><a class="ghost-btn large" href="/artwork-guidelines/">Prepare Artwork</a></div></div><div class="hero-media"><img src="$SheetAsset" alt="Custom stickers and decorative labels overview" width="1750" height="1750"></div></section>
 <section class="section two-col"><div><p class="eyebrow">Choose by application</p><h2>Start With Where the Sticker Will Be Used</h2><p>A decorative sticker for a retail pack and a roll label for a bottle may use similar artwork, but they create different questions about material, cutline, application and packing.</p><ul class="check-list"><li><a href="/products/custom-cartoon-stickers/">Original artwork and cartoon sticker packs</a></li><li><a href="/products/custom-kids-stickers/">Reward sheets and kids activity stickers</a></li><li><a href="/products/custom-stationery-stickers/">Planner, journal and stationery sheets</a></li><li><a href="/products/custom-gift-stickers/">Gift seals and packaging stickers</a></li><li><a href="/products/custom-holiday-stickers/">Seasonal and holiday collections</a></li><li><a href="/products/custom-promotional-stickers/">Logo, event and promotional stickers</a></li></ul></div><div><p class="eyebrow">Choose by production format</p><h2>Then Confirm How It Should Be Supplied</h2><p>The production format affects cutline review, backing construction, roll direction and how the buyer applies or sells the stickers.</p><ul class="check-list"><li><a href="/products/custom-die-cut-stickers/">Individual die-cut stickers</a></li><li><a href="/products/custom-kiss-cut-stickers/">Kiss-cut stickers with backing area</a></li><li><a href="/products/custom-sticker-sheets/">Multiple designs on sticker sheets</a></li><li><a href="/products/custom-roll-labels/">Roll labels for repeated application</a></li><li><a href="/products/custom-holographic-stickers/">Holographic special-effect stickers</a></li></ul></div></section>
 <section class="section"><div class="section-head"><p class="eyebrow">Production planning</p><h2>Four Decisions That Prevent an Unclear Quote</h2><p>A useful inquiry connects the artwork to the physical job. The factory can then review trade-offs instead of guessing from a product name.</p></div><div class="process-grid"><div class="quote-panel"><h3>1. Application</h3><p>Describe the surface, handling, storage and whether the sticker is applied by hand or in a repeated workflow.</p></div><div class="quote-panel"><h3>2. Finished structure</h3><p>Confirm individual pieces, sheets, rolls or retail packs before discussing material and packing.</p></div><div class="quote-panel"><h3>3. Visual priority</h3><p>Identify important color, small text, white ink, transparency, border and special-finish expectations.</p></div><div class="quote-panel"><h3>4. Delivery format</h3><p>Clarify quantity, sorting, bagging, backing cards, roll direction and destination market.</p></div></div></section>
-<section class="section related"><h2>Continue Planning</h2><div class="pill-row"><a class="pill-link" href="/materials-finishes/">Compare Materials</a><a class="pill-link" href="/artwork-guidelines/">Prepare Artwork</a><a class="pill-link" href="/custom-process/">Review the Order Process</a><a class="pill-link" href="/blog/how-to-order-custom-stickers-from-factory/">Factory Ordering Guide</a><a class="pill-link" href="/get-quote/">Request a Quote</a></div></section>
+<section class="section related"><h2>Continue Planning</h2><div class="pill-row"><a class="pill-link" href="/materials-finishes/">Compare Materials</a><a class="pill-link" href="/artwork-guidelines/">Prepare Artwork</a><a class="pill-link" href="/custom-process/">Review the Order Process</a><a class="pill-link" href="/blog/how-to-order-custom-stickers-from-factory/">Factory Ordering Guide</a><a class="pill-link" href="/label-specification-planner/">Build a Label Specification</a><a class="pill-link" href="/get-quote/">Request a Quote</a></div></section>
 <section class="section"><div class="section-head"><h2>Use This Page as a Decision Map</h2><p>If the project is still broad, start with the application category and format links above. If artwork and dimensions are already ready, move directly to the quote page. If the uncertainty is material, proof or packing, use the linked buyer guide first and send the remaining question with the inquiry.</p></div></section>
 "@
 $parentTitle = "Custom Stickers & Decorative Labels Manufacturer"
 $parentDesc = "Custom stickers and decorative labels for B2B brands, stationery collections, gift packaging, holiday campaigns and promotional product projects."
 Page "/products/custom-stickers-decorative-labels/" $parentTitle $parentDesc $parentBody $null (ProductIndexStructuredData "/products/custom-stickers-decorative-labels/" $parentTitle $parentDesc)
+
+$plannerTitle = "Custom Label Specification Planner | Sticker Quote Checklist"
+$plannerDesc = "Build a clear custom sticker or roll label specification. Record dimensions, quantity, surface, format, artwork and packing before requesting a factory quote."
+$plannerFaq = @(
+  @("Does this planner calculate a sticker price?","No. It organizes project inputs for a quote. Final pricing depends on reviewed artwork, material, size, quantity, finish, packing and delivery terms."),
+  @("Which dimensions should I enter?","Enter finished sticker width and height in millimeters. For bottles and jars, measure the usable flat or gently curved label panel on the actual container."),
+  @("Can I request a quote without every field?","Yes. Leave unknown fields blank and mark them for review. Send a package photo or artwork reference with the brief when available.")
+)
+$plannerBody = @"
+<section class="subhero spec-hero"><p class="eyebrow">Buyer specification tool</p><h1>Custom Label Specification Planner</h1><p>Turn a product idea into a production brief. Enter what you know, keep the unknowns visible, then send the brief with your artwork or a package photo.</p><p class="spec-date">Last reviewed: September 26, 2026 <span aria-hidden="true">/</span> Units: mm and pieces</p></section>
+<section class="section spec-workspace" aria-labelledby="spec-tool-title">
+  <div class="section-head"><p class="eyebrow">Build your brief</p><h2 id="spec-tool-title">One Clear Starting Point for a Custom Quote</h2><p>This tool prepares an inquiry. It does not calculate a price or confirm manufacturing limits.</p></div>
+  <div class="spec-layout">
+    <form id="spec-planner" class="spec-form" autocomplete="on">
+      <fieldset><legend>01 / Product and size</legend><div class="spec-fields">
+        <label>Product or application<input name="product" placeholder="e.g. shampoo bottle, jam jar, sticker pack"></label>
+        <label>Finished format<select name="format"><option value="">To confirm</option><option>Individual die-cut stickers</option><option>Kiss-cut stickers</option><option>Sticker sheets</option><option>Roll labels</option><option>Retail sticker packs</option></select></label>
+        <label>Width (mm)<input name="width" type="number" min="1" max="10000" step="0.1" inputmode="decimal" placeholder="e.g. 70"></label>
+        <label>Height (mm)<input name="height" type="number" min="1" max="10000" step="0.1" inputmode="decimal" placeholder="e.g. 45"></label>
+        <label>Container diameter (mm)<input name="diameter" type="number" min="1" max="10000" step="0.1" inputmode="decimal" placeholder="At label height, if applicable"></label>
+        <label>Wrap gap or overlap (mm)<input name="seam" type="number" min="0" max="10000" step="0.1" inputmode="decimal" placeholder="For wrap labels"></label>
+        <label>Finished shape<select name="shape"><option value="">To confirm</option><option>Rectangle</option><option>Round</option><option>Oval</option><option>Custom contour</option></select></label>
+        <label>Total quantity (pieces)<input name="quantity" type="number" min="1" max="100000000" step="1" inputmode="numeric" placeholder="e.g. 2000"></label>
+        <label>Artwork versions / SKUs<input name="designs" type="number" min="1" max="100000" step="1" inputmode="numeric" placeholder="e.g. 4"></label>
+        <label>Backing sheet size (mm x mm)<input name="sheet" placeholder="If supplied on a sheet"></label>
+        <label>Application surface<input name="surface" placeholder="e.g. glass, PET, kraft box"></label>
+      </div></fieldset>
+      <fieldset><legend>02 / Material and handling</legend><div class="spec-fields">
+        <label>Material direction<select name="material"><option value="">To confirm</option><option>Paper</option><option>White film</option><option>Clear film</option><option>Holographic film</option><option>Need recommendation</option></select></label>
+        <label>Finish direction<select name="finish"><option value="">To confirm</option><option>Matte</option><option>Gloss</option><option>Special effect to discuss</option><option>Need recommendation</option></select></label>
+        <label>Use conditions<input name="conditions" placeholder="e.g. condensation, oil, freezer, outdoor sun"></label>
+        <label>Application method<select name="application"><option value="">To confirm</option><option>By hand</option><option>With a label applicator</option><option>Applied by supplier</option></select></label>
+        <label>Roll core inner diameter (mm)<input name="core" type="number" min="1" max="1000" step="0.1" inputmode="decimal" placeholder="If using an applicator"></label>
+        <label>Maximum roll outer diameter (mm)<input name="roll_outer" type="number" min="1" max="10000" step="0.1" inputmode="decimal" placeholder="From applicator specification"></label>
+        <label>Roll unwind direction<input name="unwind" placeholder="Use applicator diagram or sample photo"></label>
+        <label>Packing format<input name="packing" placeholder="e.g. rolls, loose, 6 pieces per bag"></label>
+        <label>Destination market<input name="market" placeholder="Country and any document request"></label>
+        <label>Artwork status<select name="artwork"><option value="">To confirm</option><option>Final file ready</option><option>Draft file ready</option><option>Reference image only</option><option>Artwork support needed</option></select></label>
+        <label class="spec-wide">Other requirements<textarea name="notes" rows="3" placeholder="Sheet size, white ink, proof, coding area or target date"></textarea></label>
+      </div></fieldset>
+    </form>
+    <aside class="spec-output" aria-labelledby="spec-output-title"><p class="eyebrow">Live project brief</p><h3 id="spec-output-title">Ready to discuss</h3><p id="spec-progress">Complete the fields you know.</p><pre id="spec-brief" aria-live="polite"></pre><div class="spec-actions"><button type="button" class="solid-btn" id="spec-copy">Copy brief</button><a class="ghost-btn" id="spec-email" href="$MailtoUrl">Email brief</a><a class="ghost-btn" href="$WhatsAppUrl" target="_blank" rel="noopener">Open WhatsApp</a></div><p id="spec-status" class="spec-status" role="status"></p><p class="spec-hint">For WhatsApp, copy the brief first and paste it into your chat. Attach artwork or a container photo separately.</p></aside>
+  </div>
+</section>
+<section class="section spec-reference" aria-labelledby="spec-reference-title"><div class="section-head"><p class="eyebrow">Measurement reference</p><h2 id="spec-reference-title">What the Factory Needs to Check</h2><p>These are inquiry fields and measurement methods, not guaranteed production specifications. Confirm tolerances, materials and test results for the actual job.</p></div>
+  <div class="table-scroll"><table><thead><tr><th>Input</th><th>Unit or format</th><th>What to measure or clarify</th></tr></thead><tbody>
+    <tr><td>Finished width</td><td>mm</td><td>Measure the intended front-to-back label width at final size.</td></tr>
+    <tr><td>Finished height</td><td>mm</td><td>Measure the usable straight or gently curved panel, away from shoulders and seams.</td></tr>
+    <tr><td>Container diameter</td><td>mm</td><td>Measure at the exact height where the label sits; a tapered bottle needs a physical wrap test.</td></tr>
+    <tr><td>Label gap or seam</td><td>mm</td><td>Show the desired gap between wrap ends or the required overlap.</td></tr>
+    <tr><td>Total quantity</td><td>pieces</td><td>State the total finished units, not only the number of sheets or rolls.</td></tr>
+    <tr><td>Artwork versions</td><td>count</td><td>List each SKU and the quantity required for that design.</td></tr>
+    <tr><td>Sheet dimensions</td><td>mm x mm</td><td>Give the overall backing size as well as the individual sticker sizes.</td></tr>
+    <tr><td>Roll core</td><td>inner diameter in mm</td><td>Read the applicator specification or measure a sample core, including unit.</td></tr>
+    <tr><td>Roll outer diameter</td><td>maximum mm</td><td>Ask the applicator owner for the largest roll it can accept.</td></tr>
+    <tr><td>Unwind direction</td><td>diagram or photo</td><td>Show whether labels face inward or outward and which edge leads.</td></tr>
+    <tr><td>Application method</td><td>hand / applicator</td><td>Machine application needs the applicator model and setup details.</td></tr>
+    <tr><td>Surface material</td><td>material name</td><td>Name the actual glass, plastic, coated paper or other contact surface.</td></tr>
+    <tr><td>Application condition</td><td>temperature / moisture</td><td>Report whether the surface is cold, wet, oily or recently filled when the label is applied.</td></tr>
+    <tr><td>Storage condition</td><td>temperature / duration</td><td>Describe refrigeration, freezing, sunlight, abrasion or squeezing after application.</td></tr>
+    <tr><td>Ink and finish</td><td>artwork note</td><td>Mark white ink, clear areas, foil or special effects on the proof.</td></tr>
+    <tr><td>Packing</td><td>pieces per pack</td><td>State how pieces are counted, bagged, carded, sheeted or wound.</td></tr>
+    <tr><td>Destination</td><td>country / market</td><td>List any buyer-requested material, chemical, food-contact or child-market documents.</td></tr>
+  </tbody></table></div>
+  <div class="pill-row"><a class="pill-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Choose Label Size</a><a class="pill-link" href="/blog/label-roll-unwind-direction-core-size-guide/">Roll Direction and Core</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface and Adhesive</a><a class="pill-link" href="/compliance-and-document-review/">Document Review</a></div>
+</section>
+<section class="section faq"><div class="section-head"><p class="eyebrow">FAQ</p><h2>Specification Questions</h2></div><details><summary>Does this planner calculate a sticker price?</summary><p>No. It organizes project inputs for a quote. Final pricing depends on reviewed artwork, material, size, quantity, finish, packing and delivery terms.</p></details><details><summary>Which dimensions should I enter?</summary><p>Enter finished sticker width and height in millimeters. For bottles and jars, measure the usable flat or gently curved label panel on the actual container.</p></details><details><summary>Can I request a quote without every field?</summary><p>Yes. Leave unknown fields blank and mark them for review. Send a package photo or artwork reference with the brief when available.</p></details></section>
+<script src="/assets/spec-planner.js" defer></script>
+"@
+Page "/label-specification-planner/" $plannerTitle $plannerDesc $plannerBody $plannerFaq @(@{ "@context"="https://schema.org"; "@type"="WebApplication"; name="Custom Label Specification Planner"; url="$BaseUrl/label-specification-planner/"; applicationCategory="BusinessApplication"; operatingSystem="Web"; isAccessibleForFree=$true; description=$plannerDesc })
+
+function ProjectSpecSection([string]$Key) {
+  $rows = switch ($Key) {
+    "cartoon" { @(
+      @("Finished sticker size", "width x height, mm", "Measure the intended size of each illustrated piece."),
+      @("Artwork versions", "design count", "List each character or design and its quantity."),
+      @("Cutline and border", "file or marked proof", "Show narrow details and the intended border around artwork."),
+      @("Retail packing", "pieces per pack", "State whether pieces are loose, sorted or bagged with a backing card.")
+    ); break }
+    "kids" { @(
+      @("Backing sheet size", "width x height, mm", "Measure the complete sheet, not only the peelable stickers."),
+      @("Rewards per sheet", "design count", "List repeated icons and the number of each design."),
+      @("Peel spacing", "mm or marked layout", "Show the gap around small shapes for easy removal."),
+      @("Pack structure", "sheets per pack", "Confirm whether sheets are bundled, bagged or sold individually.")
+    ); break }
+    "stationery" { @(
+      @("Sheet and planner size", "width x height, mm", "Confirm the backing size and any planner page it must fit."),
+      @("Individual icon sizes", "width x height, mm", "Check readability at actual printed size."),
+      @("Design count", "artworks per sheet", "Map repeated icons, headings and functional labels."),
+      @("Writing or handling", "use description", "Explain whether customers write on, reposition or layer the stickers.")
+    ); break }
+    "gift" { @(
+      @("Seal or label size", "width x height, mm", "Measure the visible panel and any fold the seal crosses."),
+      @("Package surface", "material name", "Name the box, tissue, bag or ribbon contact surface."),
+      @("Artwork variants", "design count", "List occasions, colors or recipient names as separate SKUs."),
+      @("Packing", "pieces per set", "Specify rolls, sheets or ready-to-gift sets.")
+    ); break }
+    "holiday" { @(
+      @("Seasonal designs", "SKU count", "List each holiday artwork and its required quantity."),
+      @("Finished size", "width x height, mm", "Measure the actual gift box, card, bag or product surface."),
+      @("Pack format", "pieces per pack", "Confirm mixed sets, sheet sets or individual seals."),
+      @("Required arrival", "calendar date", "Share the destination and deadline for production planning.")
+    ); break }
+    "promotional" { @(
+      @("Distribution quantity", "pieces", "Estimate the total handouts or inserts required."),
+      @("Finished dimensions", "width x height, mm", "Confirm a size suitable for the intended surface."),
+      @("Campaign versions", "design count", "List logo, event, language and QR variations."),
+      @("Distribution packing", "pieces per bundle", "Tell us whether teams need counted bundles or retail packs.")
+    ); break }
+    "die-cut" { @(
+      @("Finished outline", "cutline file", "Show the outer contour, white border and narrow protrusions."),
+      @("Finished dimensions", "width x height, mm", "Measure the complete cut piece at final size."),
+      @("Design count", "artwork versions", "Assign a quantity to each outline and design."),
+      @("Packing", "pieces per pack", "Specify loose pieces, sorted packs or backing cards.")
+    ); break }
+    "kiss-cut" { @(
+      @("Peel shape", "cutline file", "Show the cut that releases the sticker from its backing."),
+      @("Backing dimensions", "width x height, mm", "Measure the backing separately from the peelable artwork."),
+      @("Border and spacing", "mm or proof markup", "Mark the visible border and any grip or peel area."),
+      @("Packing", "pieces per pack", "Confirm whether singles or sets need bagging.")
+    ); break }
+    "roll-labels" { @(
+      @("Label dimensions", "width x height, mm", "Measure the usable panel on the actual container."),
+      @("Core inner diameter", "mm", "Read the applicator specification or measure a sample core."),
+      @("Roll outer diameter", "maximum mm", "Confirm the machine's allowed roll size."),
+      @("Unwind and leading edge", "diagram or photo", "Show orientation and whether labels face inward or outward.")
+    ); break }
+    "sticker-sheets" { @(
+      @("Backing sheet", "width x height, mm", "Measure the full sheet including printed header and margins."),
+      @("Peelable pieces", "size and count", "List the dimensions and quantity of each sticker design."),
+      @("Kiss-cut layout", "proof file", "Mark cutlines and spacing around small icons."),
+      @("Retail packing", "sheets per pack", "Specify the set count and bag or backing requirements.")
+    ); break }
+    "holographic" { @(
+      @("Finished size", "width x height, mm", "Review fine detail at final printed size."),
+      @("Reflective areas", "marked artwork", "Mark where the holographic film should remain visible."),
+      @("White ink areas", "separate artwork note", "Identify where opaque color or readable text is needed."),
+      @("Proof target", "reference or sample", "Agree what should be checked in a digital proof versus a material sample.")
+    ); break }
+  }
+  if (-not $rows) { return "" }
+  $bodyRows = ($rows | ForEach-Object { "<tr><td>$(Escape-Html $_[0])</td><td>$(Escape-Html $_[1])</td><td>$(Escape-Html $_[2])</td></tr>" }) -join "`n"
+  return @"
+<section class="section product-specs"><div class="section-head"><p class="eyebrow">Specification reference</p><h2>Details to Confirm for This Project</h2><p>Last reviewed: September 26, 2026. These are buyer inputs for production review, not fixed manufacturing limits.</p></div><div class="table-scroll"><table><thead><tr><th>Specification</th><th>Unit or format</th><th>What to check</th></tr></thead><tbody>$bodyRows</tbody></table></div><a class="text-link" href="/label-specification-planner/">Build a complete project brief</a></section>
+"@
+}
 
 foreach ($p in $Products) {
   $typeList = Join-Items $p.Types
@@ -810,6 +971,7 @@ foreach ($p in $Products) {
     default { '<a class="pill-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Choose Sticker Size</a>' }
   }
   $gallery = ProductGallerySection $p
+  $specSection = ProjectSpecSection $p.Key
   $body = @"
 <section class="product-hero $($p.Accent)">
   <div>
@@ -822,10 +984,11 @@ foreach ($p in $Products) {
   <div class="product-media"><img src="$($p.Image)" alt="$($p.Title) gallery image" style="object-position:$($p.Focus)" width="1200" height="1200"></div>
 </section>
 <section class="section two-col"><div><p class="eyebrow">Product types</p><h2>$($p.Title) Product Types</h2><ul class="check-list">$typeList</ul></div><div><p class="eyebrow">Applications</p><h2>Common Applications</h2><ul class="check-list">$appList</ul></div></section>
+$specSection
 $gallery
 <section class="section related">
   <div class="section-head"><p class="eyebrow">Planning links</p><h2>Plan This Custom Sticker Project</h2><p>Use these pages to prepare artwork, choose the closest product format, and understand the quote workflow before sending requirements.</p></div>
-  <div class="pill-row"><a class="pill-link" href="/artwork-guidelines/">Artwork Guidelines</a><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/custom-process/">Custom Order Process</a><a class="pill-link" href="/blog/sticker-sheets-vs-die-cut-stickers/">Sticker Sheets vs Die-Cut Stickers</a>$topicLink</div>
+  <div class="pill-row"><a class="pill-link" href="/artwork-guidelines/">Artwork Guidelines</a><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/custom-process/">Custom Order Process</a><a class="pill-link" href="/label-specification-planner/">Build a Project Brief</a><a class="pill-link" href="/blog/sticker-sheets-vs-die-cut-stickers/">Sticker Sheets vs Die-Cut Stickers</a>$topicLink</div>
 </section>
 <section class="section faq"><div class="section-head"><p class="eyebrow">FAQ</p><h2>$($p.Title) Questions</h2></div>$faqHtml</section>
 <section class="final-cta"><h2>Ready to Start?</h2><p>Send your artwork, reference image, or project requirements for review.</p><a class="solid-btn large" href="/get-quote/">$($p.Cta)</a></section>
@@ -848,6 +1011,7 @@ foreach ($format in $FormatPages) {
   $clarifyList = Join-Items $format.Clarify
   $faqHtml = ($format.Faq | ForEach-Object { "<details><summary>$($_[0])</summary><p>$($_[1])</p></details>" }) -join "`n"
   $gallery = FormatGallerySection $format
+  $specSection = ProjectSpecSection $format.Key
   $formatTopicLink = switch ($format.Key) {
     "roll-labels" { '<a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle & Jar Roll Label Guide</a><a class="pill-link" href="/blog/label-roll-unwind-direction-core-size-guide/">Unwind & Core Size Guide</a>' }
     "sticker-sheets" { '<a class="pill-link" href="/blog/custom-planner-sticker-sheets-guide/">Planner Sticker Sheet Guide</a>' }
@@ -869,10 +1033,11 @@ foreach ($format in $FormatPages) {
   <div><p class="eyebrow">Buyer fit</p><h2>Who This Format Fits</h2><p>$($format.Buyer)</p></div>
   <div><p class="eyebrow">Quote inputs</p><h2>Information to Clarify</h2><ul class="check-list">$clarifyList</ul></div>
 </section>
+$specSection
 $gallery
 <section class="section related">
   <div class="section-head"><p class="eyebrow">Related planning</p><h2>Choose Application and Material Together</h2><p>Format alone does not decide the final sticker. Confirm the application category, material, artwork file, cutline and packing target before production.</p></div>
-  <div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/compliance-and-document-review/">Compliance Review</a>$formatTopicLink</div>
+  <div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/materials-finishes/">Materials & Finishes</a><a class="pill-link" href="/label-specification-planner/">Build a Project Brief</a><a class="pill-link" href="/compliance-and-document-review/">Compliance Review</a>$formatTopicLink</div>
 </section>
 <section class="section faq"><div class="section-head"><p class="eyebrow">FAQ</p><h2>$($format.Title) Questions</h2></div>$faqHtml</section>
 <section class="final-cta"><h2>Need This Format?</h2><p>Send artwork, size, quantity, application, material preference and packing target for review.</p><a class="solid-btn large" href="/get-quote/">Start a Custom Quote</a></section>
@@ -963,7 +1128,7 @@ $blogBody = @"
   <div class="blog-index-hero-shade"></div>
   <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
 </section>
-<section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/gallery-applications/">Application Gallery</a></div></section>
+<section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/gallery-applications/">Application Gallery</a><a class="pill-link" href="/label-specification-planner/">Specification Planner</a></div></section>
 <section class="section blog-list-intro"><p class="eyebrow">50 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
@@ -1267,7 +1432,7 @@ $article1 = @"
   <p>Compare the proof with your original request, not only with the artwork image. Verify the correct version, dimensions, cutline, border, orientation, design count and packing notes. A digital proof can confirm structure and placement, but it cannot fully reproduce material feel, adhesive behavior or every special-finish effect.</p>
   <h2>Artwork Rights</h2>
   <p>Submitted artwork should be original, customer-owned or properly authorized for reproduction. A reference image can explain style or application, but it should not be treated as permission to copy protected characters, logos or another artist's work.</p>
-  <div class="pill-row"><a class="pill-link" href="/artwork-guidelines/">Artwork Guidelines</a><a class="pill-link" href="/blog/sticker-artwork-file-formats/">File Format Guide</a><a class="pill-link" href="/blog/how-to-add-cutline-to-sticker-artwork/">Cutline Guide</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Proofs and Samples</a><a class="pill-link" href="/get-quote/">Send Artwork Details</a></div>
+  <div class="pill-row"><a class="pill-link" href="/artwork-guidelines/">Artwork Guidelines</a><a class="pill-link" href="/blog/sticker-artwork-file-formats/">File Format Guide</a><a class="pill-link" href="/blog/how-to-add-cutline-to-sticker-artwork/">Cutline Guide</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Proofs and Samples</a><a class="pill-link" href="/label-specification-planner/">Build a Project Brief</a><a class="pill-link" href="/get-quote/">Send Artwork Details</a></div>
 </article>
 "@
 Page "/blog/prepare-artwork-for-custom-stickers/" $article1Title $article1Desc $article1 $article1Faq (ArticleStructuredData "/blog/prepare-artwork-for-custom-stickers/" $article1Title $article1Desc)
@@ -3467,7 +3632,7 @@ Page "/contact/" "Contact Custom Stickers & Decorative Labels" "Contact Custom S
 
 $quoteBody = @"
 <section class="subhero"><p class="eyebrow">Contact / Get Quote</p><h1>Get a Custom Sticker Quote</h1><p>Tell us what you want to create. The more details you provide, the easier it is to review your project and confirm the next steps.</p></section>
-<section class="section"><form class="quote-form" id="artwork">
+<section class="section"><p class="quote-planner-link">Need to sort out size, surface or roll setup first? <a href="/label-specification-planner/">Build a label specification</a> and bring the brief back here.</p><form class="quote-form" id="artwork">
   <label>Sticker Type<select name="sticker_type">$StickerTypeOptions</select></label>
   <label>Sticker Format<select name="sticker_format">$StickerFormatOptions</select></label>
   <label>Your Email<input name="email" type="email" placeholder="Your business email"></label>
@@ -3561,6 +3726,7 @@ $supportPages = @(
   @("/gallery-applications/","Gallery & Applications"),
   @("/faq/","FAQ"),
   @("/get-quote/","Get Quote"),
+  @("/label-specification-planner/","Label Specification Planner"),
   @("/contact/","Contact")
 )
 
@@ -3630,6 +3796,7 @@ if ($BaseUrl) {
     "User-agent: GPTBot","Allow: /","",
     "User-agent: ClaudeBot","Allow: /","",
     "User-agent: PerplexityBot","Allow: /","",
+    "User-agent: Perplexity-User","Allow: /","",
     "User-agent: Google-Extended","Allow: /","",
     "User-agent: CCBot","Allow: /","",
     "User-agent: *","Allow: /","",
@@ -3655,6 +3822,8 @@ if ($BaseUrl) {
   Set-Content -LiteralPath (Join-Path $Root "llms.txt") -Value @(
     "# Custom Stickers & Decorative Labels",
     "",
+    "Last reviewed: September 26, 2026",
+    "",
     "Custom Stickers & Decorative Labels is a B2B custom sticker and decorative label website focused on inquiry-based manufacturing support.",
     "",
     "Primary product categories:",
@@ -3672,6 +3841,7 @@ if ($BaseUrl) {
     "",
     "Trust and compliance review:",
     "- Compliance and document review: $BaseUrl/compliance-and-document-review/",
+    "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
     "- Artwork preparation: $BaseUrl/blog/prepare-artwork-for-custom-stickers/",
@@ -3704,6 +3874,7 @@ if ($BaseUrl) {
     "",
     "Contact:",
     "- Email: $ContactEmail",
+    "- WhatsApp: https://api.whatsapp.com/message/LXEW2FWSFWGPJ1?autoload=1&app_absent=0",
     "- Quote page: $BaseUrl/get-quote/",
     "",
     "Notes: product specifications, pricing, compliance files, shipping and lead times should be confirmed per project. The site does not claim unverified certifications, prices, test results or customer case data."

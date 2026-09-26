@@ -1696,6 +1696,44 @@ details p {
   font-weight: 720;
 }
 
+.spec-hero { padding-bottom: 42px; }
+.spec-date { margin-top: 22px; color: var(--pine); font-size: 13px !important; font-weight: 700; }
+.spec-workspace { background: #f4f8f5; }
+.spec-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(300px, .9fr); gap: 30px; align-items: start; }
+.spec-form { display: grid; gap: 22px; min-width: 0; }
+.spec-form fieldset { min-width: 0; margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+.spec-form legend { padding: 0 8px; font-weight: 800; color: var(--pine); }
+.spec-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+.spec-fields label { display: grid; gap: 7px; min-width: 0; font-size: 13px; font-weight: 700; }
+.spec-fields input, .spec-fields select, .spec-fields textarea { width: 100%; min-width: 0; padding: 10px 12px; border: 1px solid #cad9cf; border-radius: 5px; background: white; color: var(--ink); font: inherit; font-weight: 400; }
+.spec-fields input, .spec-fields select { min-height: 44px; }
+.spec-fields textarea { resize: vertical; }
+.spec-wide { grid-column: 1 / -1; }
+.spec-output { position: sticky; top: 90px; padding: 25px; border: 1px solid var(--line); border-radius: 8px; background: white; box-shadow: 0 12px 28px rgba(22, 35, 29, .07); min-width: 0; }
+.spec-output h3 { margin: 0 0 8px; font-size: 25px; }
+.spec-output > p { color: var(--muted); }
+.spec-output pre { max-height: 480px; overflow: auto; padding: 16px; background: #f6f8f5; border: 1px solid var(--line); border-radius: 5px; white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; color: var(--ink); }
+.spec-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+.spec-actions .solid-btn, .spec-actions .ghost-btn { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; padding: 9px 13px; font-size: 13px; }
+.spec-status { min-height: 24px; margin-bottom: 0; color: var(--pine) !important; }
+.spec-hint { font-size: 13px; }
+.spec-reference .table-scroll, .product-specs .table-scroll { overflow-x: auto; margin: 24px 0; }
+.spec-reference table, .product-specs table { width: 100%; min-width: 650px; }
+.spec-reference th, .product-specs th { text-align: left; }
+.quote-planner-link { margin: 0 0 20px; }
+.quote-planner-link a { color: var(--pine); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .spec-layout { grid-template-columns: 1fr; }
+  .spec-output { position: static; }
+}
+
+@media (max-width: 560px) {
+  .spec-fields { grid-template-columns: 1fr; }
+  .spec-form fieldset, .spec-output { padding: 18px; }
+  .spec-reference table, .product-specs table { font-size: 13px; }
+}
+
 .quote-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1860,7 +1898,14 @@ details p {
   .main-nav {
     gap: 2px;
     font-size: 13px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow: visible;
+    padding-bottom: 0;
   }
+
+  .main-nav > a,
+  .nav-group > a { padding: 7px 8px; }
 
   .dropdown {
     display: none !important;

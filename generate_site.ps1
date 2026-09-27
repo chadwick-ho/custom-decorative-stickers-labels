@@ -23,8 +23,8 @@ $ModifiedDates = @{
   "/blog/sticker-artwork-file-formats/" = "2026-09-19"
   "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
-  "/blog/" = "2026-09-26"
-  "/sitemap/" = "2026-09-26"
+  "/blog/" = "2026-09-27"
+  "/sitemap/" = "2026-09-27"
   "/label-specification-planner/" = "2026-09-26"
   "/products/" = "2026-09-26"
   "/get-quote/" = "2026-09-26"
@@ -108,6 +108,14 @@ $MailtoUrl = "mailto:$ContactEmail"
 $WhatsAppUrl = "https://api.whatsapp.com/message/LXEW2FWSFWGPJ1?autoload=1&amp;app_absent=0"
 $StickerTypeOptions = "<option>Cartoon Stickers</option><option>Kids Stickers</option><option>Stationery Stickers</option><option>Gift Stickers</option><option>Holiday Stickers</option><option>Promotional Stickers</option><option>Die-Cut Stickers</option><option>Kiss-Cut Stickers</option><option>Roll Labels</option><option>Sticker Sheets</option><option>Holographic Stickers</option><option>Not Sure -- Please Recommend</option>"
 $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Die-cut stickers</option><option>Kiss-cut stickers</option><option>Roll labels</option><option>Sticker sheets</option><option>Retail sticker packs</option><option>Mixed formats</option>"
+
+. (Join-Path $Root 'content/blog-2026-09-27.ps1')
+foreach ($article in $NewArticles) {
+  $article.Url = "/blog/$($article.Slug)/"
+  $article.Image = "/assets/blog/$($article.Slug).webp"
+  $ModifiedDates[$article.Url] = '2026-09-27'
+  $PageOgImages[$article.Url] = $article.Image
+}
 
 $Products = @(
   @{
@@ -1129,7 +1137,7 @@ $blogBody = @"
   <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
 </section>
 <section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/gallery-applications/">Application Gallery</a><a class="pill-link" href="/label-specification-planner/">Specification Planner</a></div></section>
-<section class="section blog-list-intro"><p class="eyebrow">50 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
+<section class="section blog-list-intro"><p class="eyebrow">55 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
     <div><p class="eyebrow">Artwork guide</p><h2>How to Prepare Artwork for Custom Sticker Production</h2><p>Learn what information to send before requesting a custom sticker quote, including artwork, size, shape, quantity, and intended application.</p></div>
@@ -1404,6 +1412,10 @@ $blogBody = [regex]::Replace($blogBody, $blogListPattern, {
   return '<section class="section blog-list">' + [Environment]::NewLine + ($orderedCards -join [Environment]::NewLine) + [Environment]::NewLine + '</section>'
 })
 $blogBody = $blogBody.Replace('<article class="category-card', '<div class="category-card').Replace('</article>', '</div>')
+$newBlogCards = ($NewArticles | ForEach-Object {
+  '<div class="category-card sage"><img class="blog-card-image" src="' + $_.Image + '" alt="' + (Escape-Html $_.Alt) + '" width="1536" height="1024" loading="lazy" decoding="async"><div><p class="eyebrow">' + (Escape-Html $_.Category) + '</p><h2>' + (Escape-Html $_.Title) + '</h2><p>' + (Escape-Html $_.CardDescription) + '</p></div><a class="text-link" href="' + $_.Url + '">Read the Buyer Guide</a></div>'
+}) -join "`n"
+$blogBody = $blogBody.Replace('<section class="section blog-list">', '<section class="section blog-list">' + "`n" + $newBlogCards)
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3616,6 +3628,23 @@ $article50 = @"
 "@
 Page "/blog/custom-wine-bottle-labels-guide/" $article50Title $article50Desc $article50 $article50Faq (ArticleStructuredData "/blog/custom-wine-bottle-labels-guide/" $article50Title $article50Desc)
 
+foreach ($article in $NewArticles) {
+  $faqHtml = ($article.Faq | ForEach-Object { '<details><summary>' + (Escape-Html $_[0]) + '</summary><p>' + (Escape-Html $_[1]) + '</p></details>' }) -join "`n"
+  $newBody = @"
+<section class="subhero"><p class="eyebrow">$(Escape-Html $article.Category)</p><h1>$(Escape-Html $article.Title)</h1><p class="article-meta">Published September 27, 2026. Practical production planning for custom sticker buyers.</p></section>
+<article class="section blog-article">
+  <figure class="article-hero-photo"><img src="$($article.Image)" alt="$(Escape-Html $article.Alt)" width="1536" height="1024" loading="eager" decoding="async"><figcaption>$(Escape-Html $article.Caption)</figcaption></figure>
+  $($article.Body)
+  <h2>Questions Before You Order</h2>
+  $faqHtml
+  <div class="pill-row"><a class="pill-link" href="/label-specification-planner/">Build a Label Brief</a><a class="pill-link" href="/get-quote/">Request Project Review</a><a class="pill-link" href="/blog/">More Buyer Guides</a></div>
+</article>
+"@
+  $articleSchema = @(ArticleStructuredData $article.Url $article.Title $article.Description)
+  $articleSchema[0].datePublished = '2026-09-27'
+  Page $article.Url $article.Title $article.Description $newBody $article.Faq $articleSchema
+}
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -3717,6 +3746,9 @@ $blogGuides = @(
   @("/blog/custom-sticker-color-matching-guide/","Custom Sticker Color Matching Guide","Plan printed sticker color across artwork, material, white ink, finish, proof and viewing conditions."),
   @("/blog/outdoor-sticker-durability-guide/","Outdoor Sticker Durability Guide","Define UV, water, abrasion, temperature, surface and testing needs for outdoor stickers.")
 )
+
+$newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
+$blogGuides = @($newGuideEntries) + @($blogGuides)
 
 $supportPages = @(
   @("/materials-finishes/","Materials & Finishes"),

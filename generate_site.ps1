@@ -23,8 +23,8 @@ $ModifiedDates = @{
   "/blog/sticker-artwork-file-formats/" = "2026-09-19"
   "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
-  "/blog/" = "2026-09-27"
-  "/sitemap/" = "2026-09-27"
+  "/blog/" = "2026-09-28"
+  "/sitemap/" = "2026-09-28"
   "/label-specification-planner/" = "2026-09-26"
   "/products/" = "2026-09-26"
   "/get-quote/" = "2026-09-26"
@@ -110,10 +110,14 @@ $StickerTypeOptions = "<option>Cartoon Stickers</option><option>Kids Stickers</o
 $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Die-cut stickers</option><option>Kiss-cut stickers</option><option>Roll labels</option><option>Sticker sheets</option><option>Retail sticker packs</option><option>Mixed formats</option>"
 
 . (Join-Path $Root 'content/blog-2026-09-27.ps1')
+. (Join-Path $Root 'content/blog-2026-09-28.ps1')
+$NewArticles = @($NextArticles) + @($NewArticles)
+$GuideCount = 50 + $NewArticles.Count
 foreach ($article in $NewArticles) {
+  $published = if ($article.Published) { $article.Published } else { '2026-09-27' }
   $article.Url = "/blog/$($article.Slug)/"
   $article.Image = "/assets/blog/$($article.Slug).webp"
-  $ModifiedDates[$article.Url] = '2026-09-27'
+  $ModifiedDates[$article.Url] = $published
   $PageOgImages[$article.Url] = $article.Image
 }
 
@@ -1137,7 +1141,7 @@ $blogBody = @"
   <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
 </section>
 <section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/gallery-applications/">Application Gallery</a><a class="pill-link" href="/label-specification-planner/">Specification Planner</a></div></section>
-<section class="section blog-list-intro"><p class="eyebrow">55 production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
+<section class="section blog-list-intro"><p class="eyebrow">$GuideCount production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
     <div><p class="eyebrow">Artwork guide</p><h2>How to Prepare Artwork for Custom Sticker Production</h2><p>Learn what information to send before requesting a custom sticker quote, including artwork, size, shape, quantity, and intended application.</p></div>
@@ -3629,9 +3633,11 @@ $article50 = @"
 Page "/blog/custom-wine-bottle-labels-guide/" $article50Title $article50Desc $article50 $article50Faq (ArticleStructuredData "/blog/custom-wine-bottle-labels-guide/" $article50Title $article50Desc)
 
 foreach ($article in $NewArticles) {
+  $published = if ($article.Published) { $article.Published } else { '2026-09-27' }
+  $publishedLabel = [DateTime]::ParseExact($published, 'yyyy-MM-dd', [Globalization.CultureInfo]::InvariantCulture).ToString('MMMM d, yyyy', [Globalization.CultureInfo]::InvariantCulture)
   $faqHtml = ($article.Faq | ForEach-Object { '<details><summary>' + (Escape-Html $_[0]) + '</summary><p>' + (Escape-Html $_[1]) + '</p></details>' }) -join "`n"
   $newBody = @"
-<section class="subhero"><p class="eyebrow">$(Escape-Html $article.Category)</p><h1>$(Escape-Html $article.Title)</h1><p class="article-meta">Published September 27, 2026. Practical production planning for custom sticker buyers.</p></section>
+<section class="subhero"><p class="eyebrow">$(Escape-Html $article.Category)</p><h1>$(Escape-Html $article.Title)</h1><p class="article-meta">Published $publishedLabel. Practical production planning for custom sticker buyers.</p></section>
 <article class="section blog-article">
   <figure class="article-hero-photo"><img src="$($article.Image)" alt="$(Escape-Html $article.Alt)" width="1536" height="1024" loading="eager" decoding="async"><figcaption>$(Escape-Html $article.Caption)</figcaption></figure>
   $($article.Body)
@@ -3641,7 +3647,7 @@ foreach ($article in $NewArticles) {
 </article>
 "@
   $articleSchema = @(ArticleStructuredData $article.Url $article.Title $article.Description)
-  $articleSchema[0].datePublished = '2026-09-27'
+  $articleSchema[0].datePublished = $published
   Page $article.Url $article.Title $article.Description $newBody $article.Faq $articleSchema
 }
 
@@ -3854,7 +3860,7 @@ if ($BaseUrl) {
   Set-Content -LiteralPath (Join-Path $Root "llms.txt") -Value @(
     "# Custom Stickers & Decorative Labels",
     "",
-    "Last reviewed: September 26, 2026",
+    "Last reviewed: September 28, 2026",
     "",
     "Custom Stickers & Decorative Labels is a B2B custom sticker and decorative label website focused on inquiry-based manufacturing support.",
     "",
@@ -3876,6 +3882,11 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Bread bag labels: $BaseUrl/blog/custom-bread-bag-labels-guide/",
+    "- Bouquet wrap stickers: $BaseUrl/blog/custom-bouquet-wrap-stickers-guide/",
+    "- Seed packet labels: $BaseUrl/blog/custom-seed-packet-labels-guide/",
+    "- Pet shampoo labels: $BaseUrl/blog/custom-pet-shampoo-labels-guide/",
+    "- Takeaway coffee cup stickers: $BaseUrl/blog/custom-takeaway-coffee-cup-stickers-guide/",
     "- Artwork preparation: $BaseUrl/blog/prepare-artwork-for-custom-stickers/",
     "- Sticker sheets vs die-cut stickers: $BaseUrl/blog/sticker-sheets-vs-die-cut-stickers/",
     "- Packaging, gift and promotional sticker planning: $BaseUrl/blog/custom-stickers-for-packaging-gifts-promotions/",

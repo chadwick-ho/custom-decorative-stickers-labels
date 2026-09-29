@@ -105,7 +105,7 @@ $PageOgImages = @{
 }
 $ContactEmail = "ruishengmao05@gmail.com"
 $MailtoUrl = "mailto:$ContactEmail"
-$WhatsAppUrl = "https://api.whatsapp.com/message/LXEW2FWSFWGPJ1?autoload=1&amp;app_absent=0"
+$WhatsAppUrl = "https://api.whatsapp.com/message/VLGQGDJCIUFAF1?autoload=1&amp;app_absent=0"
 $StickerTypeOptions = "<option>Cartoon Stickers</option><option>Kids Stickers</option><option>Stationery Stickers</option><option>Gift Stickers</option><option>Holiday Stickers</option><option>Promotional Stickers</option><option>Die-Cut Stickers</option><option>Kiss-Cut Stickers</option><option>Roll Labels</option><option>Sticker Sheets</option><option>Holographic Stickers</option><option>Not Sure -- Please Recommend</option>"
 $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Die-cut stickers</option><option>Kiss-cut stickers</option><option>Roll labels</option><option>Sticker sheets</option><option>Retail sticker packs</option><option>Mixed formats</option>"
 
@@ -3917,7 +3917,7 @@ if ($BaseUrl) {
     "",
     "Contact:",
     "- Email: $ContactEmail",
-    "- WhatsApp: https://api.whatsapp.com/message/LXEW2FWSFWGPJ1?autoload=1&app_absent=0",
+    "- WhatsApp: https://api.whatsapp.com/message/VLGQGDJCIUFAF1?autoload=1&app_absent=0",
     "- Quote page: $BaseUrl/get-quote/",
     "",
     "Notes: product specifications, pricing, compliance files, shipping and lead times should be confirmed per project. The site does not claim unverified certifications, prices, test results or customer case data."

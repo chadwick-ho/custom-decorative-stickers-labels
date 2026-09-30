@@ -1924,6 +1924,17 @@ details p {
     font-size: 36px;
   }
 
+  .blog-article table {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .blog-article th,
+  .blog-article td {
+    min-width: 160px;
+  }
+
   h2 {
     font-size: 30px;
   }

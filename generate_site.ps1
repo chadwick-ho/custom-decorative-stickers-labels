@@ -23,8 +23,8 @@ $ModifiedDates = @{
   "/blog/sticker-artwork-file-formats/" = "2026-09-19"
   "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
-  "/blog/" = "2026-09-28"
-  "/sitemap/" = "2026-09-28"
+  "/blog/" = "2026-09-30"
+  "/sitemap/" = "2026-09-30"
   "/label-specification-planner/" = "2026-09-26"
   "/products/" = "2026-09-26"
   "/get-quote/" = "2026-09-26"
@@ -111,7 +111,8 @@ $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Di
 
 . (Join-Path $Root 'content/blog-2026-09-27.ps1')
 . (Join-Path $Root 'content/blog-2026-09-28.ps1')
-$NewArticles = @($NextArticles) + @($NewArticles)
+. (Join-Path $Root 'content/blog-2026-09-30.ps1')
+$NewArticles = @($LatestArticles) + @($NextArticles) + @($NewArticles)
 $GuideCount = 50 + $NewArticles.Count
 foreach ($article in $NewArticles) {
   $published = if ($article.Published) { $article.Published } else { '2026-09-27' }
@@ -3860,7 +3861,7 @@ if ($BaseUrl) {
   Set-Content -LiteralPath (Join-Path $Root "llms.txt") -Value @(
     "# Custom Stickers & Decorative Labels",
     "",
-    "Last reviewed: September 28, 2026",
+    "Last reviewed: September 30, 2026",
     "",
     "Custom Stickers & Decorative Labels is a B2B custom sticker and decorative label website focused on inquiry-based manufacturing support.",
     "",
@@ -3882,6 +3883,11 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Perfume bottle labels: $BaseUrl/blog/custom-perfume-bottle-labels-guide/",
+    "- Granola pouch labels: $BaseUrl/blog/custom-granola-pouch-labels-guide/",
+    "- Mailer seal stickers: $BaseUrl/blog/custom-shipping-mailer-seal-stickers-guide/",
+    "- Ice cream tub labels: $BaseUrl/blog/custom-ice-cream-tub-labels-guide/",
+    "- Takeout container labels: $BaseUrl/blog/custom-takeout-container-labels-guide/",
     "- Bread bag labels: $BaseUrl/blog/custom-bread-bag-labels-guide/",
     "- Bouquet wrap stickers: $BaseUrl/blog/custom-bouquet-wrap-stickers-guide/",
     "- Seed packet labels: $BaseUrl/blog/custom-seed-packet-labels-guide/",

@@ -23,8 +23,8 @@ $ModifiedDates = @{
   "/blog/sticker-artwork-file-formats/" = "2026-09-19"
   "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
-  "/blog/" = "2026-09-30"
-  "/sitemap/" = "2026-09-30"
+  "/blog/" = "2026-10-01"
+  "/sitemap/" = "2026-10-01"
   "/label-specification-planner/" = "2026-09-26"
   "/products/" = "2026-09-26"
   "/get-quote/" = "2026-09-26"
@@ -112,7 +112,8 @@ $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Di
 . (Join-Path $Root 'content/blog-2026-09-27.ps1')
 . (Join-Path $Root 'content/blog-2026-09-28.ps1')
 . (Join-Path $Root 'content/blog-2026-09-30.ps1')
-$NewArticles = @($LatestArticles) + @($NextArticles) + @($NewArticles)
+. (Join-Path $Root 'content/blog-2026-10-01.ps1')
+$NewArticles = @($CurrentArticles) + @($LatestArticles) + @($NextArticles) + @($NewArticles)
 $GuideCount = 50 + $NewArticles.Count
 foreach ($article in $NewArticles) {
   $published = if ($article.Published) { $article.Published } else { '2026-09-27' }

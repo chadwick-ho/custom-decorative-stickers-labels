@@ -7,7 +7,7 @@ $ArticleAuthorName = "ZC Labels Production Team"
 $BaseUrl = "https://www.zclabels.com"
 $DefaultModifiedDate = "2026-09-18"
 $ModifiedDates = @{
-  "/" = "2026-09-26"
+  "/" = "2026-10-02"
   "/about-us/" = "2026-09-19"
   "/artwork-guidelines/" = "2026-09-19"
   "/contact/" = "2026-09-19"
@@ -23,7 +23,7 @@ $ModifiedDates = @{
   "/blog/sticker-artwork-file-formats/" = "2026-09-19"
   "/blog/how-to-add-cutline-to-sticker-artwork/" = "2026-09-19"
   "/blog/roll-labels-vs-sheet-stickers/" = "2026-09-19"
-  "/blog/" = "2026-10-01"
+  "/blog/" = "2026-10-02"
   "/sitemap/" = "2026-10-01"
   "/label-specification-planner/" = "2026-09-26"
   "/products/" = "2026-09-26"
@@ -591,7 +591,7 @@ function Footer {
   $formatFooterLinks = ($FormatPages | ForEach-Object { "<a href=""$($_.Url)"">$($_.Title)</a>" }) -join "`n    "
 @"
 <footer class="site-footer">
-  <div><strong>Custom Stickers & Decorative Labels</strong><p>B2B custom sticker and decorative label pages for project-specific inquiries. No retail checkout, no fake pricing, no unconfirmed claims.</p></div>
+  <div><strong>Custom Stickers & Decorative Labels</strong><p>Custom sticker and label project support for B2B artwork, materials, proofing and packing.</p></div>
   <div class="footer-contact">
     <strong>Direct Contact</strong>
     <a href="$MailtoUrl">$ContactEmail</a>
@@ -633,6 +633,7 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
   $FeedTitleHtml = Escape-Html "$Brand Blog Feed"
   $robotsTag = if ($Robots) { "<meta name=""robots"" content=""$(Escape-Html $Robots)"">" } else { "" }
   $hasArticleSchema = @($ExtraSchema | Where-Object { $_["@type"] -in @("Article", "BlogPosting", "NewsArticle") }).Count -gt 0
+  $ogType = if ($hasArticleSchema) { "article" } else { "website" }
   $authorTag = if ($hasArticleSchema) { "<meta name=""author"" content=""$(Escape-Html $ArticleAuthorName)"">" } else { "" }
   $schema = @()
   $schema += @{
@@ -651,12 +652,16 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
       contactPoint=@{ "@type"="ContactPoint"; contactType="customer support"; email=$ContactEmail; availableLanguage=@("English") }
     }
   } else {
+    $breadcrumbItems = @(@{ "@type"="ListItem"; position=1; name="Home"; item=$HomeUrl })
+    if ($Url -like "/blog/*/" -and $Url -ne "/blog/") {
+      $breadcrumbItems += @{ "@type"="ListItem"; position=2; name="Blog"; item="$BaseUrl/blog/" }
+    } elseif ($Url -like "/products/*/" -and $Url -ne "/products/") {
+      $breadcrumbItems += @{ "@type"="ListItem"; position=2; name="Products"; item="$BaseUrl/products/" }
+    }
+    $breadcrumbItems += @{ "@type"="ListItem"; position=($breadcrumbItems.Count + 1); name=$Title; item=$CanonicalUrl }
     $schema += @{
       "@context"="https://schema.org"; "@type"="BreadcrumbList";
-      itemListElement=@(
-        @{ "@type"="ListItem"; position=1; name="Home"; item=$HomeUrl },
-        @{ "@type"="ListItem"; position=2; name=$Title; item=$CanonicalUrl }
-      )
+      itemListElement=$breadcrumbItems
     }
   }
   if ($Faq) {
@@ -678,7 +683,7 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
   $robotsTag
   $authorTag
   <link rel="canonical" href="$CanonicalUrlHtml">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="$ogType">
   <meta property="og:url" content="$CanonicalUrlHtml">
   <meta property="og:title" content="$TitleHtml">
   <meta property="og:description" content="$DescHtml">
@@ -698,6 +703,11 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
 function Page($Url, $Title, $Desc, $Body, $Faq = $null, $ExtraSchema = @(), $Robots = $null) {
   $hasArticleSchema = @($ExtraSchema | Where-Object { $_["@type"] -in @("Article", "BlogPosting", "NewsArticle") }).Count -gt 0
   $pageBody = $Body
+  $breadcrumbParent = if ($Url -like "/blog/*/" -and $Url -ne "/blog/") { @{ Name="Blog"; Url="/blog/" } } else { $null }
+  if ($breadcrumbParent) {
+    $breadcrumb = '<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="' + $breadcrumbParent.Url + '">' + $breadcrumbParent.Name + '</a><span aria-hidden="true">/</span><span aria-current="page">' + (Escape-Html $Title) + '</span></nav>'
+    $pageBody = "$breadcrumb`n$pageBody"
+  }
   if ($hasArticleSchema) {
     $byline = "<p class=""article-author"">By <a href=""/about-us/"">$ArticleAuthorName</a> <span aria-hidden=""true"">&middot;</span> Reviewed for B2B sticker sourcing.</p>"
     $pageBody = $pageBody.Replace('<section class="subhero">', '<section class="subhero article-subhero">')
@@ -724,6 +734,9 @@ $homeCards = HomeCategoryCards
 $homeCatalog = HomeCatalogSections -CleanHomepageTitles -MaxItemsPerGroup 4
 $homeCatalogNav = ($HomeCatalogGroups | ForEach-Object { "<a href=""#$($_.Key)-styles""><span>$($_.Key.ToUpperInvariant())</span>$($_.Category)</a>" }) -join ""
 $fullCatalog = HomeCatalogSections
+$recentGuideLinks = (@($NewArticles | Select-Object -First 3) | ForEach-Object {
+  '<a href="' + $_.Url + '"><span>' + (Escape-Html $_.Category) + '</span><strong>' + (Escape-Html $_.Title) + '</strong><span aria-hidden="true">&rarr;</span></a>'
+}) -join "`n"
 
 $homeBody = @"
 <section class="home-hero" aria-label="Custom sticker factory introduction">
@@ -790,6 +803,7 @@ $homeBody = @"
     <a href="/blog/custom-sticker-samples-and-digital-proofs/"><span>05 / PROOF REVIEW</span><strong>Digital Proof or Physical Sample?</strong><p>Use the review step that matches the real production risk.</p></a>
     <a href="/blog/custom-roll-labels-for-bottles-and-jars/"><span>06 / ROLL LABELS</span><strong>Plan Labels for Bottles and Jars</strong><p>Confirm container shape, application method and storage conditions.</p></a>
   </div>
+  <div class="recent-guides"><h3>Recently Added Guides</h3><div class="recent-guide-list">$recentGuideLinks</div></div>
   <div class="guide-hub-footer"><a class="text-link" href="/blog/">VIEW ALL BUYER GUIDES</a><a class="text-link" href="/label-specification-planner/">BUILD A LABEL SPECIFICATION</a><a class="solid-btn" href="/get-quote/">START WITH YOUR PROJECT</a></div>
 </section>
 "@
@@ -1419,7 +1433,7 @@ $blogBody = [regex]::Replace($blogBody, $blogListPattern, {
 })
 $blogBody = $blogBody.Replace('<article class="category-card', '<div class="category-card').Replace('</article>', '</div>')
 $newBlogCards = ($NewArticles | ForEach-Object {
-  '<div class="category-card sage"><img class="blog-card-image" src="' + $_.Image + '" alt="' + (Escape-Html $_.Alt) + '" width="1536" height="1024" loading="lazy" decoding="async"><div><p class="eyebrow">' + (Escape-Html $_.Category) + '</p><h2>' + (Escape-Html $_.Title) + '</h2><p>' + (Escape-Html $_.CardDescription) + '</p></div><a class="text-link" href="' + $_.Url + '">Read the Buyer Guide</a></div>'
+  '<div class="category-card sage"><img class="blog-card-image" src="' + $_.Image + '" alt="' + (Escape-Html $_.Alt) + '" width="1536" height="1024" loading="lazy" decoding="async"><div><p class="eyebrow">' + (Escape-Html $_.Category) + '</p><h2><a href="' + $_.Url + '">' + (Escape-Html $_.Title) + '</a></h2><p>' + (Escape-Html $_.CardDescription) + '</p></div><a class="text-link" href="' + $_.Url + '">Read the Buyer Guide</a></div>'
 }) -join "`n"
 $blogBody = $blogBody.Replace('<section class="section blog-list">', '<section class="section blog-list">' + "`n" + $newBlogCards)
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
@@ -3846,6 +3860,8 @@ if ($BaseUrl) {
     $published = [DateTime]::ParseExact((PageModifiedDate $_[0]), "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture).ToUniversalTime().ToString("r")
     "    <item><title>$(Escape-Xml $_[1])</title><link>$BaseUrl$($_[0])</link><guid>$BaseUrl$($_[0])</guid><description>$(Escape-Xml $_[2])</description><pubDate>$published</pubDate></item>"
   }
+  $latestGuideDate = @($blogGuides | ForEach-Object { PageModifiedDate $_[0] } | Sort-Object -Descending)[0]
+  $rssLastBuildDate = [DateTime]::SpecifyKind([DateTime]::ParseExact($latestGuideDate, "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture), [DateTimeKind]::Utc).ToString("r")
   $rss = @(
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<rss version="2.0">',
@@ -3853,16 +3869,17 @@ if ($BaseUrl) {
     "    <title>$(Escape-Xml "$Brand Blog")</title>",
     "    <link>$BaseUrl/blog/</link>",
     "    <description>Buyer guides for custom sticker manufacturing, artwork, materials, formats and quote preparation.</description>",
-    "    <lastBuildDate>$([DateTime]::UtcNow.ToString("r"))</lastBuildDate>"
+    "    <lastBuildDate>$rssLastBuildDate</lastBuildDate>"
   ) + $rssItems + @(
     '  </channel>',
     '</rss>'
   )
   [System.IO.File]::WriteAllLines((Join-Path $Root "feed.xml"), $rss, $utf8NoBom)
-  Set-Content -LiteralPath (Join-Path $Root "llms.txt") -Value @(
+  $llmsUpdated = [DateTime]::ParseExact((PageModifiedDate "/blog/"), "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture).ToString("MMMM d, yyyy", [Globalization.CultureInfo]::InvariantCulture)
+  $llms = @(
     "# Custom Stickers & Decorative Labels",
     "",
-    "Last reviewed: September 30, 2026",
+    "Content updated: $llmsUpdated",
     "",
     "Custom Stickers & Decorative Labels is a B2B custom sticker and decorative label website focused on inquiry-based manufacturing support.",
     "",
@@ -3883,17 +3900,8 @@ if ($BaseUrl) {
     "- Compliance and document review: $BaseUrl/compliance-and-document-review/",
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
-    "Useful buyer guides:",
-    "- Perfume bottle labels: $BaseUrl/blog/custom-perfume-bottle-labels-guide/",
-    "- Granola pouch labels: $BaseUrl/blog/custom-granola-pouch-labels-guide/",
-    "- Mailer seal stickers: $BaseUrl/blog/custom-shipping-mailer-seal-stickers-guide/",
-    "- Ice cream tub labels: $BaseUrl/blog/custom-ice-cream-tub-labels-guide/",
-    "- Takeout container labels: $BaseUrl/blog/custom-takeout-container-labels-guide/",
-    "- Bread bag labels: $BaseUrl/blog/custom-bread-bag-labels-guide/",
-    "- Bouquet wrap stickers: $BaseUrl/blog/custom-bouquet-wrap-stickers-guide/",
-    "- Seed packet labels: $BaseUrl/blog/custom-seed-packet-labels-guide/",
-    "- Pet shampoo labels: $BaseUrl/blog/custom-pet-shampoo-labels-guide/",
-    "- Takeaway coffee cup stickers: $BaseUrl/blog/custom-takeaway-coffee-cup-stickers-guide/",
+    "Useful buyer guides:"
+  ) + @($NewArticles | ForEach-Object { "- $($_.Title): $BaseUrl$($_.Url)" }) + @(
     "- Artwork preparation: $BaseUrl/blog/prepare-artwork-for-custom-stickers/",
     "- Sticker sheets vs die-cut stickers: $BaseUrl/blog/sticker-sheets-vs-die-cut-stickers/",
     "- Packaging, gift and promotional sticker planning: $BaseUrl/blog/custom-stickers-for-packaging-gifts-promotions/",
@@ -3928,7 +3936,8 @@ if ($BaseUrl) {
     "- Quote page: $BaseUrl/get-quote/",
     "",
     "Notes: product specifications, pricing, compliance files, shipping and lead times should be confirmed per project. The site does not claim unverified certifications, prices, test results or customer case data."
-  ) -Encoding UTF8
+  )
+  Set-Content -LiteralPath (Join-Path $Root "llms.txt") -Value $llms -Encoding UTF8
 }
 
 Write-Host "Generated static custom stickers site"

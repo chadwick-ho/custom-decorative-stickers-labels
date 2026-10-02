@@ -1357,6 +1357,52 @@ p {
   margin-top: 24px;
 }
 
+.recent-guides {
+  margin-top: 32px;
+}
+
+.recent-guides h3 {
+  margin: 0 0 12px;
+  font-size: 21px;
+}
+
+.recent-guide-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.recent-guide-list a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5px 10px;
+  align-content: center;
+  min-width: 0;
+  min-height: 108px;
+  padding: 18px;
+}
+
+.recent-guide-list a + a { border-left: 1px solid var(--line); }
+.recent-guide-list a:hover { background: #e9f0eb; }
+.recent-guide-list a span:first-child { grid-column: 1 / -1; color: var(--pine); font-size: 12px; font-weight: 750; text-transform: uppercase; }
+.recent-guide-list a strong { line-height: 1.3; }
+.recent-guide-list a span:last-child { align-self: center; color: var(--pine); }
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 9px;
+  padding: 11px clamp(18px, 5vw, 72px);
+  color: var(--muted);
+  font-size: 13px;
+  background: #f4f7f5;
+}
+
+.breadcrumbs a { color: var(--pine); }
+.breadcrumbs a:hover { text-decoration: underline; }
+.breadcrumbs [aria-current] { min-width: 0; overflow-wrap: anywhere; }
+
 .guide-hub-footer .text-link {
   margin: 0;
 }
@@ -1882,6 +1928,9 @@ details p {
 }
 
 @media (max-width: 720px) {
+  .recent-guide-list { grid-template-columns: 1fr; }
+  .recent-guide-list a + a { border-left: 0; border-top: 1px solid var(--line); }
+  .breadcrumbs { padding-left: 16px; padding-right: 16px; }
   body {
     padding-bottom: 58px;
   }

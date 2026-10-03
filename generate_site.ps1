@@ -114,7 +114,8 @@ $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Di
 . (Join-Path $Root 'content/blog-2026-09-30.ps1')
 . (Join-Path $Root 'content/blog-2026-10-01.ps1')
 . (Join-Path $Root 'content/blog-2026-10-02.ps1')
-$NewArticles = @($OctTwoArticles) + @($CurrentArticles) + @($LatestArticles) + @($NextArticles) + @($NewArticles)
+. (Join-Path $Root 'content/blog-2026-10-03.ps1')
+$NewArticles = @($OctThreeArticles) + @($OctTwoArticles) + @($CurrentArticles) + @($LatestArticles) + @($NextArticles) + @($NewArticles)
 $GuideCount = 50 + $NewArticles.Count
 foreach ($article in $NewArticles) {
   $published = if ($article.Published) { $article.Published } else { '2026-09-27' }

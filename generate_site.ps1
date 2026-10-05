@@ -116,7 +116,8 @@ $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Di
 . (Join-Path $Root 'content/blog-2026-10-02.ps1')
 . (Join-Path $Root 'content/blog-2026-10-03.ps1')
 . (Join-Path $Root 'content/blog-2026-10-04.ps1')
-$NewArticles = @($OctFourArticles) + @($OctThreeArticles) + @($OctTwoArticles) + @($CurrentArticles) + @($LatestArticles) + @($NextArticles) + @($NewArticles)
+. (Join-Path $Root 'content/blog-2026-10-05.ps1')
+$NewArticles = @($OctFiveArticles) + @($OctFourArticles) + @($OctThreeArticles) + @($OctTwoArticles) + @($CurrentArticles) + @($LatestArticles) + @($NextArticles) + @($NewArticles)
 $NewestGuideDate = @($NewArticles | ForEach-Object { $_.Published } | Where-Object { $_ } | Sort-Object -Descending)[0]
 foreach ($updatedUrl in @('/', '/blog/', '/sitemap/')) { $ModifiedDates[$updatedUrl] = $NewestGuideDate }
 $GuideCount = 50 + $NewArticles.Count

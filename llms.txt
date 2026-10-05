@@ -1,6 +1,6 @@
 ﻿# Custom Stickers & Decorative Labels
 
-Content updated: October 4, 2026
+Content updated: October 5, 2026
 
 Custom Stickers & Decorative Labels is a B2B custom sticker and decorative label website focused on inquiry-based manufacturing support.
 
@@ -22,6 +22,11 @@ Trust and compliance review:
 - Custom label specification planner: https://www.zclabels.com/label-specification-planner/
 
 Useful buyer guides:
+- Resealable Wipes Pouch Labels: Test Every Open and Close: https://www.zclabels.com/blog/resealable-wipes-pouch-labels-guide/
+- Opaque Correction Labels for Packaging Changes: https://www.zclabels.com/blog/opaque-correction-labels-packaging-guide/
+- Custom Event Name Badge Stickers People Can Actually Read: https://www.zclabels.com/blog/custom-event-name-badge-stickers-guide/
+- Returnable Tote ID Labels for Repeated Warehouse Trips: https://www.zclabels.com/blog/returnable-tote-identification-labels-guide/
+- Custom Refill Pouch Labels: Design for a Pack That Bends: https://www.zclabels.com/blog/custom-refill-pouch-labels-guide/
 - Writable Food Prep Labels for Real Kitchen Shifts: https://www.zclabels.com/blog/writable-food-prep-labels-guide/
 - Labels on Recycled Kraft Cartons: Test the Surface: https://www.zclabels.com/blog/labels-for-recycled-kraft-cartons-guide/
 - Automatic Label Applicator Setup: First-Run Checklist: https://www.zclabels.com/blog/automatic-label-applicator-first-run-guide/

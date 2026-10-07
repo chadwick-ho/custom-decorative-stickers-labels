@@ -129,6 +129,11 @@ foreach ($article in $NewArticles) {
   $ModifiedDates[$article.Url] = $published
   $PageOgImages[$article.Url] = $article.Image
 }
+$ModifiedDates['/'] = '2026-10-07'
+$ModifiedDates['/blog/'] = '2026-10-07'
+$ModifiedDates['/blog/tamper-evident-labels-guide/'] = '2026-10-07'
+$ModifiedDates['/blog/custom-shampoo-bottle-labels-guide/'] = '2026-10-07'
+$ModifiedDates['/blog/sticker-artwork-file-formats/'] = '2026-10-07'
 
 $Products = @(
   @{
@@ -810,6 +815,7 @@ $homeBody = @"
     <a href="/blog/custom-sticker-samples-and-digital-proofs/"><span>05 / PROOF REVIEW</span><strong>Digital Proof or Physical Sample?</strong><p>Use the review step that matches the real production risk.</p></a>
     <a href="/blog/custom-roll-labels-for-bottles-and-jars/"><span>06 / ROLL LABELS</span><strong>Plan Labels for Bottles and Jars</strong><p>Confirm container shape, application method and storage conditions.</p></a>
   </div>
+  <div class="pill-row"><a class="pill-link" href="/blog/tamper-evident-labels-guide/">Tamper-Evident Jar and Box Seals</a><a class="pill-link" href="/blog/custom-shampoo-bottle-labels-guide/">Custom Shampoo Bottle Labels</a><a class="pill-link" href="/blog/sticker-artwork-file-formats/">Sticker Artwork File Formats</a></div>
   <div class="recent-guides"><h3>Recently Added Guides</h3><div class="recent-guide-list">$recentGuideLinks</div></div>
   <div class="guide-hub-footer"><a class="text-link" href="/blog/">VIEW ALL BUYER GUIDES</a><a class="text-link" href="/label-specification-planner/">BUILD A LABEL SPECIFICATION</a><a class="solid-btn" href="/get-quote/">START WITH YOUR PROJECT</a></div>
 </section>
@@ -1164,6 +1170,7 @@ $blogBody = @"
   <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
 </section>
 <section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/gallery-applications/">Application Gallery</a><a class="pill-link" href="/label-specification-planner/">Specification Planner</a></div></section>
+<section class="section related"><div class="section-head"><p class="eyebrow">Packaging and artwork</p><h2>Answers for Specific Label Decisions</h2><p>Choose the guide that matches the package or file you are working with.</p></div><div class="pill-row"><a class="pill-link" href="/blog/tamper-evident-labels-guide/">How Tamper-Evident Seals Work</a><a class="pill-link" href="/blog/custom-shampoo-bottle-labels-guide/">Shampoo Bottle Label Planning</a><a class="pill-link" href="/blog/sticker-artwork-file-formats/">Which Artwork File to Send</a></div></section>
 <section class="section blog-list-intro"><p class="eyebrow">$GuideCount production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
@@ -1323,7 +1330,7 @@ $blogBody = @"
     <a class="text-link" href="/blog/custom-soap-labels-guide/">Plan Soap Labels</a>
   </article>
   <article class="category-card pine">
-    <div><p class="eyebrow">Closure control</p><h2>Tamper-Evident Labels for Jars and Boxes</h2><p>Choose a seal structure by opening point, surface, evidence goal, artwork, application and test method.</p></div>
+    <div><p class="eyebrow">Closure control</p><h2>Tamper-Evident Labels: How Jar and Box Seals Work</h2><p>Compare visible opening evidence, construction layers, seal placement and package tests.</p></div>
     <a class="text-link" href="/blog/tamper-evident-labels-guide/">Plan Tamper Seals</a>
   </article>
   <article class="category-card coral">
@@ -1587,8 +1594,8 @@ $article5 = @"
 "@
 Page "/blog/vinyl-vs-paper-stickers/" $article5Title $article5Desc $article5 $article5Faq (ArticleStructuredData "/blog/vinyl-vs-paper-stickers/" $article5Title $article5Desc)
 
-$article6Title = "Sticker Artwork File Formats: AI, PDF, PSD, SVG, PNG or JPG"
-$article6Desc = "Choose useful file formats for custom sticker artwork, proof review, cutline checking and sticker sheet layout planning."
+$article6Title = "Sticker Artwork File Formats: What to Send for Printing"
+$article6Desc = "Which sticker file format should you send? Compare AI, PDF, SVG, PSD, PNG and JPG for print artwork, cutlines, proof review and final-size resolution."
 $article6Faq = @(
   @("What is the best file format for custom sticker printing?","An editable vector file is often the most flexible, but the best package may include a vector source, a PDF proof reference and any linked images or fonts needed for review."),
   @("Can PNG or JPG artwork be used for stickers?","Raster artwork can be reviewed when resolution is suitable at final size. It may be less flexible for cutline, text and color adjustments."),
@@ -1598,6 +1605,7 @@ $article6 = @"
 <section class="subhero"><p class="eyebrow">Artwork files</p><h1>$article6Title</h1><p class="article-meta">A file preparation guide before custom sticker proof review.</p></section>
 <article class="section blog-article">
   <p>The best sticker artwork package makes three things clear: what should print, where it should cut and how large the finished product should be. File extensions matter, but a perfectly named file can still be unusable if the artwork version, fonts, linked images or final dimensions are unclear.</p>
+  <p>For most custom sticker orders, send the editable source when you have it, plus a PDF that shows the approved appearance at final size. If you only have PNG or JPG, send the highest-resolution original and state the intended printed dimensions. The production team can then tell you whether cutline or text work is needed before proof approval.</p>
   <h2>Vector and Raster Files Solve Different Problems</h2>
   <table><thead><tr><th>Format</th><th>Useful for</th><th>Review concern</th></tr></thead><tbody><tr><td>AI / EPS</td><td>Editable vector artwork and cut paths</td><td>Linked images, fonts and version compatibility</td></tr><tr><td>PDF</td><td>Portable review file with size and vector data</td><td>Confirm it contains the final artwork, not only a preview</td></tr><tr><td>SVG</td><td>Simple vector logos and illustrations</td><td>Check effects, fonts and export accuracy</td></tr><tr><td>PSD</td><td>Layered raster artwork and image editing</td><td>Resolution, color setup and flattened reference</td></tr><tr><td>PNG</td><td>Transparent-background artwork and visual reference</td><td>Pixel dimensions at final printed size</td></tr><tr><td>JPG</td><td>Photos and quick visual references</td><td>Compression, missing transparency and edge quality</td></tr></tbody></table>
   <h2>A Practical File Package</h2>
@@ -3138,10 +3146,11 @@ $article39 = @"
 "@
 Page "/blog/custom-soap-labels-guide/" $article39Title $article39Desc $article39 $article39Faq (ArticleStructuredData "/blog/custom-soap-labels-guide/" $article39Title $article39Desc)
 
-$article40Title = "Tamper-Evident Labels for Jars and Boxes"
-$article40Desc = "Plan tamper-evident labels for jars and boxes by defining the opening point, evidence goal, surfaces, seal shape, artwork, application and package testing."
+$article40Title = "Tamper-Evident Labels: How Jar and Box Seals Work"
+$article40Desc = "What makes a label tamper evident? Compare jar and box seals, their construction layers, visible opening evidence and the package tests to request."
 $article40Faq = @(
   @("What makes a label tamper evident?","A tamper-evident feature is intended to provide visible evidence that a package has been opened or disturbed. The result depends on the complete seal construction, package surfaces, placement and opening method, so test the finished pack and confirm market requirements."),
+  @("What layers make up a tamper-evident label?","A proposed construction may include a printable face material, ink or protective finish, an adhesive, and a release liner before application. Some designs also use a destructible face, perforation or transfer layer. The actual layer stack and opening behavior must be confirmed for the package and supplier."),
   @("Can one seal work on both a jar lid and a carton?","Not automatically. A jar seal bridges lid, edge and container, while a carton seal crosses folds or coated board. Surface energy, curvature and opening forces differ, so treat them as separate applications."),
   @("Does a security-looking icon prove compliance?","No. Artwork, shield icons or serial-style graphics do not create certification or regulated performance. Use original graphics for identification, but base claims on documented testing and applicable requirements.")
 )
@@ -3151,6 +3160,19 @@ $article40 = @"
   <figure class="article-hero-photo"><img src="/assets/blog/tamper-evident-labels-guide.webp" alt="Packaging technician reviewing illustrated tamper seals on jars and kraft boxes" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A tamper seal should show what happened at the real opening point.</figcaption></figure>
   <p>The phrase tamper evident is often used as if it described one sticker material. It does not. It describes an intended result on a complete package: after someone disturbs the closure, the package should show evidence that can be noticed.</p>
   <p>That result depends on where the package opens, which surfaces the seal touches and how a customer removes it. A decorative round sticker on a box flap can be useful, but it should not inherit a security promise simply because the artwork includes a shield.</p>
+
+  <h2>What Does Tamper Evident Mean?</h2>
+  <p>A tamper-evident label is intended to leave visible evidence when the protected opening is disturbed. It is not automatically tamper-proof: a seal may discourage casual opening or reveal it, but it cannot guarantee that nobody can access the contents. A plain closure sticker may hold a flap shut without showing a clear change after removal. Specify the evidence you expect before choosing a label.</p>
+
+  <h2>Which Layers Create the Opening Evidence?</h2>
+  <p>A typical self-adhesive label starts with a printable face material, print or protective finish, adhesive and a release liner that is removed during application. That basic stack alone does not prove tamper evidence. Depending on the intended result, the proposed construction may add a destructible face, perforation or pattern-transfer layer. Ask for a cross-section or material specification for the exact sample, not a generic security label name.</p>
+  <table><thead><tr><th>Part of the seal</th><th>Question to check</th></tr></thead><tbody>
+    <tr><td>Face material and print</td><td>Does the label tear, split or stay intact when lifted?</td></tr>
+    <tr><td>Adhesive and contacted surface</td><td>Does it bond to both sides of the opening without unwanted edge lift?</td></tr>
+    <tr><td>Perforation or transfer feature, if used</td><td>Is the change visible after normal opening and after an attempted peel?</td></tr>
+    <tr><td>Release liner before application</td><td>Can operators peel and place the seal consistently?</td></tr>
+  </tbody></table>
+  <p>The answer changes with glass, metal, plastic, coated board, storage and opening force. Do not infer a particular layer stack or regulated performance from an illustration or product photo.</p>
 
   <h2>Begin With the Opening Path</h2>
   <p>Place the unopened package on the table and open it normally. Watch the first point that moves. A jar lid rotates. A tuck carton flap lifts. A mailer tears along a strip. A clamshell separates at an edge. The seal should bridge the actual opening path rather than decorate a nearby area.</p>
@@ -3514,8 +3536,8 @@ $article47 = @"
 "@
 Page "/blog/custom-craft-beer-labels-guide/" $article47Title $article47Desc $article47 $article47Faq (ArticleStructuredData "/blog/custom-craft-beer-labels-guide/" $article47Title $article47Desc)
 
-$article48Title = "Custom Shampoo Labels: Wet Use, Curves and Squeeze"
-$article48Desc = "Plan custom shampoo and conditioner labels around PET or HDPE bottles, wet bathrooms, curved panels, squeeze, oily formulas, SKU artwork and application tests."
+$article48Title = "Custom Shampoo Bottle Labels: Materials, Wet Use and Design"
+$article48Desc = "Ordering custom shampoo bottle labels? Compare PET and HDPE bottle fit, wet-use and squeeze tests, formula contact, label artwork and quote details."
 $article48Faq = @(
   @("What label material works for shampoo bottles?","The choice depends on PET or HDPE, bottle finish, squeeze, application temperature, bathroom moisture, formula contact and desired appearance. Test the complete construction on the final filled bottle."),
   @("Can shampoo labels use colorful ingredient graphics?","Yes. Original coconut, aloe, rosemary, citrus, flower and botanical illustrations can separate formulas. Pair the artwork with clear product names and a consistent range structure."),
@@ -3527,6 +3549,7 @@ $article48 = @"
   <figure class="article-hero-photo"><img src="/assets/blog/custom-shampoo-bottle-labels-guide.webp" alt="Shampoo and conditioner bottles with original aloe coconut rosemary and citrus label illustrations under wet-use testing" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A bathroom label has to stay readable after water, squeezing and formula handling.</figcaption></figure>
   <p>Shampoo packaging looks simple until someone squeezes it. The bottle wall moves, the wet hand turns the product, and conditioner or oil can run across the front. A rigid mockup does not show any of that.</p>
   <p>When we review these jobs, the first question is the bottle material and shape, not whether the brand prefers matte. PET, HDPE and coated bottles can look similar in a photograph and behave differently during labeling and use.</p>
+  <p>If you are ordering custom shampoo labels, send a filled bottle photo and its material, the usable label panel, the number of shampoo and conditioner variants, and the expected water or formula contact. Those details help narrow the material and adhesive discussion before anyone promises that a finish is suitable.</p>
 
   <h2>Measure the Panel While the Bottle Is Filled</h2>
   <p>Some shampoo bottles bow outward when filled. Others have a recessed label panel or compound curves near the shoulder. Use the final filled package to measure straight usable space. A front label that crosses a recessed edge can trap air; a wrap that enters the shoulder can wrinkle.</p>
@@ -3726,7 +3749,7 @@ foreach ($p in $policies) {
 $blogGuides = @(
   @("/blog/custom-jam-jar-labels-guide/","Custom Jam Jar Labels: Glass, Sugar and Lid Seals","Plan jam jar labels around glass curves, sticky filling, refrigeration, flavor artwork, lid seals and filled-jar testing."),
   @("/blog/custom-craft-beer-labels-guide/","Custom Craft Beer Labels for Bottles and Cans","Plan craft beer labels around wet glass, chilled cans, condensation, illustration systems, small runs and date coding."),
-  @("/blog/custom-shampoo-bottle-labels-guide/","Custom Shampoo Labels: Wet Use, Curves and Squeeze","Plan shampoo and conditioner labels around PET or HDPE, wet use, curved panels, squeeze, formula contact and SKU artwork."),
+  @("/blog/custom-shampoo-bottle-labels-guide/","Custom Shampoo Bottle Labels: Materials, Wet Use and Design","Plan shampoo and conditioner labels around PET or HDPE bottles, wet use, squeeze, formula contact and SKU artwork."),
   @("/blog/custom-supplement-bottle-labels-guide/","Custom Supplement Bottle Labels: Small Text and Control","Plan supplement labels around small text, curved containers, lot and expiry coding, SKU graphics and controlled approval."),
   @("/blog/custom-wine-bottle-labels-guide/","Custom Wine Bottle Labels: Glass, Paper and Cellars","Plan wine labels around bottle shape, paper texture, condensation, cellar handling, original artwork and vintage changes."),
   @("/blog/custom-hot-sauce-bottle-labels-guide/","Custom Hot Sauce Labels: Oil, Heat and Small Batches","Plan sauce bottle labels around usable glass or plastic panels, oily handling, condensation, heat-level SKUs and filling-line tests."),
@@ -3738,7 +3761,7 @@ $blogGuides = @(
   @("/blog/custom-honey-jar-labels-guide/","Custom Honey Jar Labels Guide","Plan honey labels around glass jars, squeeze bottles, curved panels, sticky handling, illustrated artwork and lid seals."),
   @("/blog/custom-lip-balm-labels-guide/","Custom Lip Balm Labels for Small Tubes","Plan narrow tube wraps around usable height, seam position, tiny artwork, oil exposure, SKU recognition and application."),
   @("/blog/custom-soap-labels-guide/","Custom Soap Labels and Belly Bands","Compare illustrated belly bands, adhesive labels, tissue seals and box seals for handmade soap packaging."),
-  @("/blog/tamper-evident-labels-guide/","Tamper-Evident Labels for Jars and Boxes","Define the opening point, evidence goal, surfaces, seal structure, artwork, application and package test."),
+  @("/blog/tamper-evident-labels-guide/","Tamper-Evident Labels: How Jar and Box Seals Work","Define opening evidence, construction layers, surfaces, seal placement and package tests."),
   @("/blog/custom-candle-labels-guide/","Custom Candle Labels Guide","Plan candle jar labels around glass or metal surfaces, heat, fragrance oil, material, finish and real-container testing."),
   @("/blog/custom-cosmetic-labels-guide/","Custom Cosmetic Labels for Bottles, Jars and Tubes","Plan cosmetic labels around package curves, moisture, oils, squeeze, small text, clear film and application workflow."),
   @("/blog/qr-code-stickers-scan-testing-guide/","QR Code Stickers and Scan Testing","Plan QR code labels around destination control, quiet zone, final size, contrast, package curve and real-device testing."),
@@ -3749,7 +3772,7 @@ $blogGuides = @(
   @("/blog/custom-stickers-for-packaging-gifts-promotions/","Custom Stickers for Packaging, Gifts and Promotions","Plan sticker applications around packaging, gift, holiday and campaign use."),
   @("/blog/how-much-do-custom-stickers-cost/","How Much Do Custom Stickers Cost?","Understand the specification factors that affect custom sticker pricing."),
   @("/blog/vinyl-vs-paper-stickers/","Vinyl vs Paper Stickers","Compare vinyl and paper stickers for packaging, stationery, roll labels and promotional use."),
-  @("/blog/sticker-artwork-file-formats/","Sticker Artwork File Formats","Choose AI, PDF, PSD, SVG, PNG or JPG files for custom sticker artwork review."),
+  @("/blog/sticker-artwork-file-formats/","Sticker Artwork File Formats: What to Send for Printing","Choose AI, PDF, PSD, SVG, PNG or JPG files for custom sticker artwork review."),
   @("/blog/how-to-add-cutline-to-sticker-artwork/","How to Add a Cutline to Sticker Artwork","Plan sticker cutlines, white borders, safe spacing and proof review details."),
   @("/blog/roll-labels-vs-sheet-stickers/","Roll Labels vs Sheet Stickers","Compare roll labels and sheet stickers for packaging workflows and retail sets."),
   @("/blog/custom-sticker-printing-for-small-businesses/","Custom Sticker Printing for Small Businesses","Plan packaging stickers, thank-you labels, retail sticker packs and brand inserts before asking a factory for a quote."),

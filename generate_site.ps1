@@ -105,7 +105,9 @@ $PageOgImages = @{
 }
 $ContactEmail = "ruishengmao05@gmail.com"
 $MailtoUrl = "mailto:$ContactEmail"
-$WhatsAppUrl = "https://api.whatsapp.com/message/VLGQGDJCIUFAF1?autoload=1&amp;app_absent=0"
+$WhatsAppMessage = "Hi, I found your custom labels and stickers on zclabels.com. I'd like a quote for my project. Can we chat?"
+$WhatsAppUrlRaw = "https://api.whatsapp.com/send?phone=8613285455519&text=$([uri]::EscapeDataString($WhatsAppMessage))"
+$WhatsAppUrl = $WhatsAppUrlRaw.Replace('&', '&amp;')
 $StickerTypeOptions = "<option>Cartoon Stickers</option><option>Kids Stickers</option><option>Stationery Stickers</option><option>Gift Stickers</option><option>Holiday Stickers</option><option>Promotional Stickers</option><option>Die-Cut Stickers</option><option>Kiss-Cut Stickers</option><option>Roll Labels</option><option>Sticker Sheets</option><option>Holographic Stickers</option><option>Not Sure -- Please Recommend</option>"
 $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Die-cut stickers</option><option>Kiss-cut stickers</option><option>Roll labels</option><option>Sticker sheets</option><option>Retail sticker packs</option><option>Mixed formats</option>"
 
@@ -3963,7 +3965,7 @@ if ($BaseUrl) {
     "",
     "Contact:",
     "- Email: $ContactEmail",
-    "- WhatsApp: https://api.whatsapp.com/message/VLGQGDJCIUFAF1?autoload=1&app_absent=0",
+    "- WhatsApp: $WhatsAppUrlRaw",
     "- Quote page: $BaseUrl/get-quote/",
     "",
     "Notes: product specifications, pricing, compliance files, shipping and lead times should be confirmed per project. The site does not claim unverified certifications, prices, test results or customer case data."

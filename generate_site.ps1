@@ -122,7 +122,8 @@ $StickerFormatOptions = "<option>Not Sure -- Please Recommend</option><option>Di
 . (Join-Path $Root 'content/blog-2026-10-06.ps1')
 . (Join-Path $Root 'content/blog-2026-10-07.ps1')
 . (Join-Path $Root 'content/blog-2026-10-08.ps1')
-$NewArticles = @($OctEightArticles) + @($OctSevenArticles) + @($OctSixArticles) + @($OctFiveArticles) + @($OctFourArticles) + @($OctThreeArticles) + @($OctTwoArticles) + @($CurrentArticles) + @($LatestArticles) + @($NextArticles) + @($NewArticles)
+. (Join-Path $Root 'content/blog-2026-10-16.ps1')
+$NewArticles = @($OctSixteenArticles) + @($OctEightArticles) + @($OctSevenArticles) + @($OctSixArticles) + @($OctFiveArticles) + @($OctFourArticles) + @($OctThreeArticles) + @($OctTwoArticles) + @($CurrentArticles) + @($LatestArticles) + @($NextArticles) + @($NewArticles)
 $NewestGuideDate = @($NewArticles | ForEach-Object { $_.Published } | Where-Object { $_ } | Sort-Object -Descending)[0]
 foreach ($updatedUrl in @('/', '/blog/', '/sitemap/')) { $ModifiedDates[$updatedUrl] = $NewestGuideDate }
 $GuideCount = 50 + $NewArticles.Count
@@ -133,8 +134,8 @@ foreach ($article in $NewArticles) {
   $ModifiedDates[$article.Url] = $published
   $PageOgImages[$article.Url] = $article.Image
 }
-$ModifiedDates['/'] = '2026-10-08'
-$ModifiedDates['/blog/'] = '2026-10-08'
+$ModifiedDates['/'] = $NewestGuideDate
+$ModifiedDates['/blog/'] = $NewestGuideDate
 $ModifiedDates['/blog/tamper-evident-labels-guide/'] = '2026-10-07'
 $ModifiedDates['/blog/custom-shampoo-bottle-labels-guide/'] = '2026-10-07'
 $ModifiedDates['/blog/sticker-artwork-file-formats/'] = '2026-10-07'

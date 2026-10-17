@@ -1248,6 +1248,80 @@ p {
   color: var(--muted);
 }
 
+.guide-paths {
+  background: #f4f7f5;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  max-width: 1400px;
+  margin: 24px auto 0;
+}
+
+.guide-path-grid > div {
+  border-top: 2px solid #235b49;
+  padding-top: 17px;
+}
+
+.guide-path-grid h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.guide-path-grid p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.guide-path-grid ul,
+.guide-directory-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guide-path-grid li {
+  border-top: 1px solid var(--line);
+}
+
+.guide-path-grid li a {
+  display: block;
+  padding: 11px 0;
+  color: #174f3d;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.guide-path-grid li a:hover,
+.guide-directory-list a:hover {
+  text-decoration: underline;
+}
+
+.guide-directory {
+  max-width: 1400px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.guide-directory-list {
+  columns: 3;
+  column-gap: 34px;
+}
+
+.guide-directory-list li {
+  break-inside: avoid;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-directory-list a {
+  color: #174f3d;
+  text-decoration: none;
+}
+
 .blog-index-hero {
   position: relative;
   min-height: 480px;
@@ -2031,6 +2105,15 @@ details p {
   .blog-list .category-card {
     grid-template-rows: auto 1fr auto;
     min-height: 0;
+  }
+
+  .guide-path-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .guide-directory-list {
+    columns: 1;
   }
 
   .home-hero h1 {

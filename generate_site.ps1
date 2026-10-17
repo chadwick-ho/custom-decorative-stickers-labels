@@ -65,6 +65,12 @@ $ModifiedDates = @{
   "/blog/custom-supplement-bottle-labels-guide/" = "2026-09-26"
   "/blog/custom-wine-bottle-labels-guide/" = "2026-09-26"
 }
+$FirstPublishedDates = @{
+  "/blog/tamper-evident-labels-guide/" = "2026-09-23"
+  "/blog/custom-tea-packaging-labels-guide/" = "2026-09-25"
+  "/blog/custom-craft-beer-labels-guide/" = "2026-09-26"
+  "/blog/custom-shampoo-bottle-labels-guide/" = "2026-09-26"
+}
 
 function PageModifiedDate([string]$Url) {
   if ($ModifiedDates.ContainsKey($Url)) { return $ModifiedDates[$Url] }
@@ -133,13 +139,16 @@ foreach ($article in $NewArticles) {
   $article.Url = "/blog/$($article.Slug)/"
   $article.Image = "/assets/blog/$($article.Slug).webp"
   $ModifiedDates[$article.Url] = $published
+  if ($article.Published) { $FirstPublishedDates[$article.Url] = $article.Published }
   $PageOgImages[$article.Url] = $article.Image
 }
 $ModifiedDates['/'] = $NewestGuideDate
 $ModifiedDates['/blog/'] = $NewestGuideDate
-$ModifiedDates['/blog/tamper-evident-labels-guide/'] = '2026-10-07'
-$ModifiedDates['/blog/custom-shampoo-bottle-labels-guide/'] = '2026-10-07'
 $ModifiedDates['/blog/sticker-artwork-file-formats/'] = '2026-10-07'
+$ModifiedDates['/blog/custom-craft-beer-labels-guide/'] = '2026-10-17'
+$ModifiedDates['/blog/custom-tea-packaging-labels-guide/'] = '2026-10-17'
+$ModifiedDates['/blog/tamper-evident-labels-guide/'] = '2026-10-17'
+$ModifiedDates['/blog/custom-shampoo-bottle-labels-guide/'] = '2026-10-17'
 
 $Products = @(
   @{
@@ -582,6 +591,7 @@ function ArticleStructuredData($Url, $Title, $Desc) {
     author=@{ "@type"="Organization"; name=$OrganizationName; url="$BaseUrl/about-us/" };
     publisher=@{ "@type"="Organization"; name=$OrganizationName; url=$BaseUrl }
   }
+  if ($FirstPublishedDates.ContainsKey($Url)) { $article.datePublished = $FirstPublishedDates[$Url] }
   if ($PageOgImages.ContainsKey($Url)) { $article.image = "$BaseUrl$($PageOgImages[$Url])" }
   return @($article)
 }
@@ -815,13 +825,13 @@ $homeBody = @"
   </div>
   <div class="home-guide-grid">
     <a href="/blog/how-to-order-custom-stickers-from-factory/"><span>01 / FACTORY ORDERING</span><strong>How to Order Custom Stickers from a Factory</strong><p>Prepare artwork, quantity, material, proof and packing details.</p></a>
-    <a href="/blog/how-to-choose-sticker-size-for-packaging/"><span>02 / SIZE PLANNING</span><strong>Choose a Sticker Size for Real Packaging</strong><p>Measure boxes, bottles, jars, bags and curved label panels.</p></a>
-    <a href="/blog/sticker-adhesive-surface-matching-guide/"><span>03 / SURFACE FIT</span><strong>Match Adhesive Direction to the Surface</strong><p>Review glass, plastic, kraft paper, boxes, bags and bottles.</p></a>
+    <a href="/blog/tamper-evident-labels-guide/"><span>02 / CLOSURE EVIDENCE</span><strong>Choose a Tamper-Evident Seal</strong><p>Define visible opening evidence on the actual jar or carton.</p></a>
+    <a href="/blog/custom-shampoo-bottle-labels-guide/"><span>03 / BOTTLE LABELS</span><strong>Plan Shampoo Labels for Wet Use</strong><p>Check bottle fit, squeeze, water and formula contact.</p></a>
     <a href="/blog/matte-vs-glossy-stickers/"><span>04 / FINISH</span><strong>Compare Matte and Glossy Stickers</strong><p>Choose around glare, color, handling and packaging presentation.</p></a>
-    <a href="/blog/custom-sticker-samples-and-digital-proofs/"><span>05 / PROOF REVIEW</span><strong>Digital Proof or Physical Sample?</strong><p>Use the review step that matches the real production risk.</p></a>
-    <a href="/blog/custom-roll-labels-for-bottles-and-jars/"><span>06 / ROLL LABELS</span><strong>Plan Labels for Bottles and Jars</strong><p>Confirm container shape, application method and storage conditions.</p></a>
+    <a href="/blog/sticker-artwork-file-formats/"><span>05 / ARTWORK FILES</span><strong>Send the Right Artwork Files</strong><p>Prepare editable art, a reference proof and cutline notes.</p></a>
+    <a href="/blog/sticker-adhesive-surface-matching-guide/"><span>06 / SURFACE FIT</span><strong>Match Adhesive to the Package</strong><p>Review glass, plastic, kraft paper, boxes and bags.</p></a>
   </div>
-  <div class="pill-row"><a class="pill-link" href="/blog/tamper-evident-labels-guide/">Tamper-Evident Jar and Box Seals</a><a class="pill-link" href="/blog/custom-shampoo-bottle-labels-guide/">Custom Shampoo Bottle Labels</a><a class="pill-link" href="/blog/sticker-artwork-file-formats/">Sticker Artwork File Formats</a></div>
+  <div class="pill-row"><a class="pill-link" href="/blog/how-to-choose-sticker-size-for-packaging/">Sticker Size Planning</a><a class="pill-link" href="/blog/custom-sticker-samples-and-digital-proofs/">Proof and Sample Review</a><a class="pill-link" href="/blog/custom-roll-labels-for-bottles-and-jars/">Bottle and Jar Roll Labels</a></div>
   <div class="recent-guides"><h3>Recently Added Guides</h3><div class="recent-guide-list">$recentGuideLinks</div></div>
   <div class="guide-hub-footer"><a class="text-link" href="/blog/">VIEW ALL BUYER GUIDES</a><a class="text-link" href="/label-specification-planner/">BUILD A LABEL SPECIFICATION</a><a class="solid-btn" href="/get-quote/">START WITH YOUR PROJECT</a></div>
 </section>
@@ -1175,9 +1185,15 @@ $blogBody = @"
   <div class="blog-index-hero-shade"></div>
   <div class="blog-index-hero-copy"><p class="eyebrow">Factory buyer guides</p><h1>Custom Sticker Blog</h1><p>Practical decisions from artwork and adhesive to roll setup, cold-chain packaging and outdoor use.</p><div class="cta-row"><a class="solid-btn large" href="/get-quote/">Discuss Your Project</a><a class="ghost-btn large" href="/products/">Browse Products</a></div></div>
 </section>
-<section class="section related"><div class="section-head"><p class="eyebrow">Topic clusters</p><h2>Start With the Sticker Type You Need</h2><p>Each guide links back to the product category it supports, so buyers can move from research to a quote request without guessing the next step.</p></div><div class="pill-row"><a class="pill-link" href="/products/custom-cartoon-stickers/">Cartoon Stickers</a><a class="pill-link" href="/products/custom-kids-stickers/">Kids Stickers</a><a class="pill-link" href="/products/custom-stationery-stickers/">Stationery Stickers</a><a class="pill-link" href="/products/custom-gift-stickers/">Gift Stickers</a><a class="pill-link" href="/products/custom-holiday-stickers/">Holiday Stickers</a><a class="pill-link" href="/products/custom-promotional-stickers/">Promotional Stickers</a><a class="pill-link" href="/gallery-applications/">Application Gallery</a><a class="pill-link" href="/label-specification-planner/">Specification Planner</a></div></section>
-<section class="section related"><div class="section-head"><p class="eyebrow">Packaging and artwork</p><h2>Answers for Specific Label Decisions</h2><p>Choose the guide that matches the package or file you are working with.</p></div><div class="pill-row"><a class="pill-link" href="/blog/tamper-evident-labels-guide/">How Tamper-Evident Seals Work</a><a class="pill-link" href="/blog/custom-shampoo-bottle-labels-guide/">Shampoo Bottle Label Planning</a><a class="pill-link" href="/blog/sticker-artwork-file-formats/">Which Artwork File to Send</a></div></section>
-<section class="section blog-list-intro"><p class="eyebrow">$GuideCount production guides</p><h2>Choose the Decision You Need to Make</h2><p>Start with the newest factory-side guides, then continue into artwork, materials, packaging, formats and proof review.</p></section>
+<section class="section guide-paths" aria-labelledby="guide-paths-title">
+  <div class="section-head"><p class="eyebrow">Choose by buying task</p><h2 id="guide-paths-title">Choose a Buyer Guide</h2><p>Start with the package or production question in front of you. Each route leads to a focused guide and a way to request a project review.</p></div>
+  <div class="guide-path-grid">
+    <div><h3>Package and application</h3><p>Fit the label to the container and the conditions in which it is applied.</p><ul><li><a href="/blog/custom-shampoo-bottle-labels-guide/">Shampoo bottles and wet handling</a></li><li><a href="/blog/freezer-labels-for-frozen-food-packaging/">Frozen food and cold surfaces</a></li><li><a href="/blog/custom-craft-beer-labels-guide/">Craft beer bottles and cans</a></li><li><a href="/blog/how-to-choose-sticker-size-for-packaging/">Package label sizing</a></li></ul></div>
+    <div><h3>Materials and evidence</h3><p>Choose a construction for the real surface, opening path and finish.</p><ul><li><a href="/blog/tamper-evident-labels-guide/">Tamper-evident closure labels</a></li><li><a href="/blog/sticker-adhesive-surface-matching-guide/">Adhesive and surface matching</a></li><li><a href="/blog/matte-vs-glossy-stickers/">Matte versus glossy finish</a></li><li><a href="/blog/vinyl-vs-paper-stickers/">Paper versus film</a></li></ul></div>
+    <div><h3>Artwork and production</h3><p>Prepare files and approvals before a bulk run or reorder.</p><ul><li><a href="/blog/sticker-artwork-file-formats/">Artwork file formats</a></li><li><a href="/blog/how-to-add-cutline-to-sticker-artwork/">Cutlines and safe margins</a></li><li><a href="/blog/label-roll-unwind-direction-core-size-guide/">Roll setup and unwind</a></li><li><a href="/blog/custom-sticker-samples-and-digital-proofs/">Digital proofs and physical samples</a></li></ul></div>
+  </div>
+</section>
+<section class="section blog-list-intro"><p class="eyebrow">$GuideCount buyer guides</p><h2>Featured Buyer Guides</h2><p>Recent guides and the core questions buyers have already searched for. The full directory follows below.</p></section>
 <section class="section blog-list">
   <article class="category-card sage">
     <div><p class="eyebrow">Artwork guide</p><h2>How to Prepare Artwork for Custom Sticker Production</h2><p>Learn what information to send before requesting a custom sticker quote, including artwork, size, shape, quantity, and intended application.</p></div>
@@ -1456,6 +1472,22 @@ $newBlogCards = ($NewArticles | ForEach-Object {
   '<div class="category-card sage"><img class="blog-card-image" src="' + $_.Image + '" alt="' + (Escape-Html $_.Alt) + '" width="1536" height="1024" loading="lazy" decoding="async"><div><p class="eyebrow">' + (Escape-Html $_.Category) + '</p><h2><a href="' + $_.Url + '">' + (Escape-Html $_.Title) + '</a></h2><p>' + (Escape-Html $_.CardDescription) + '</p></div><a class="text-link" href="' + $_.Url + '">Read the Buyer Guide</a></div>'
 }) -join "`n"
 $blogBody = $blogBody.Replace('<section class="section blog-list">', '<section class="section blog-list">' + "`n" + $newBlogCards)
+$listMatch = [regex]::Match($blogBody, '(?s)<section class="section blog-list">(?<cards>.*?)</section>')
+$cardMatches = [regex]::Matches($listMatch.Groups['cards'].Value, '(?s)<div class="category-card[^\"]*">.*?<a class="text-link" href="[^"]+">.*?</a></div>')
+$cardEntries = @($cardMatches | ForEach-Object {
+  $html = $_.Value
+  $url = [regex]::Match($html, '<a class="text-link" href="([^"]+)"').Groups[1].Value
+  $heading = [regex]::Match($html, '(?s)<h2>(.*?)</h2>').Groups[1].Value
+  $title = [System.Net.WebUtility]::HtmlDecode(([regex]::Replace($heading, '<[^>]+>', '')).Trim())
+  @{ Html=$html; Url=$url; Title=$title }
+})
+if ($cardEntries.Count -ne $GuideCount) { throw "Blog index cards: expected $GuideCount, found $($cardEntries.Count)" }
+$featuredUrls = @($cardEntries | Select-Object -First 9 | ForEach-Object { $_.Url }) + @('/blog/tamper-evident-labels-guide/', '/blog/custom-shampoo-bottle-labels-guide/', '/blog/matte-vs-glossy-stickers/')
+$featured = @($cardEntries | Where-Object { $featuredUrls -contains $_.Url })
+$archive = @($cardEntries | Where-Object { $featuredUrls -notcontains $_.Url } | Sort-Object { $_.Title })
+$archiveLinks = ($archive | ForEach-Object { '<li><a href="' + $_.Url + '">' + (Escape-Html $_.Title) + '</a></li>' }) -join "`n"
+$indexSections = '<section class="section blog-list">' + "`n" + (($featured | ForEach-Object { $_.Html }) -join "`n") + "`n</section>`n" + '<section class="section guide-directory" aria-labelledby="guide-directory-title"><div class="section-head"><p class="eyebrow">All buyer guides</p><h2 id="guide-directory-title">Browse the Full Guide Directory</h2><p>Explore the remaining packaging, artwork, material and production guides by title.</p></div><ul class="guide-directory-list">' + "`n" + $archiveLinks + "`n</ul></section>"
+$blogBody = $blogBody.Replace($listMatch.Value, $indexSections)
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3166,6 +3198,7 @@ $article40 = @"
   <figure class="article-hero-photo"><img src="/assets/blog/tamper-evident-labels-guide.webp" alt="Packaging technician reviewing illustrated tamper seals on jars and kraft boxes" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A tamper seal should show what happened at the real opening point.</figcaption></figure>
   <p>The phrase tamper evident is often used as if it described one sticker material. It does not. It describes an intended result on a complete package: after someone disturbs the closure, the package should show evidence that can be noticed.</p>
   <p>That result depends on where the package opens, which surfaces the seal touches and how a customer removes it. A decorative round sticker on a box flap can be useful, but it should not inherit a security promise simply because the artwork includes a shield.</p>
+  <p><strong>Choose the next test by the opening path:</strong> if the question is what a lifted seal should leave behind, use our <a href="/blog/void-vs-destructible-security-labels/">VOID versus destructible label comparison</a>. If a jar lid or neck is involved, compare <a href="/blog/jar-lid-tamper-seals-vs-shrink-bands/">jar seals and shrink bands</a>. This page remains the overview of evidence, construction and package testing.</p>
 
   <h2>What Does Tamper Evident Mean?</h2>
   <p>A tamper-evident label is intended to leave visible evidence when the protected opening is disturbed. It is not automatically tamper-proof: a seal may discourage casual opening or reveal it, but it cannot guarantee that nobody can access the contents. A plain closure sticker may hold a flap shut without showing a clear change after removal. Specify the evidence you expect before choosing a label.</p>
@@ -3367,6 +3400,7 @@ $article44 = @"
   <figure class="article-hero-photo"><img src="/assets/blog/custom-tea-packaging-labels-guide.webp" alt="Tea tins and stand-up pouches with original leaf jasmine citrus and mountain label illustrations" width="1536" height="1024" loading="eager" decoding="async"><figcaption>The package protects the tea; the label helps customers understand which tea is inside.</figcaption></figure>
   <p>Tea packaging often begins with mood: quiet mountains, garden flowers, bright citrus or a traditional brewing ritual. That is useful creative material, but the production conversation begins somewhere more ordinary. Is the label going onto a rigid tin, a paper pouch, a laminated stand-up bag or a box?</p>
   <p>The same artwork can behave very differently on those surfaces. A beautiful wide label may bridge a pouch gusset. A small round seal may sit well on a tin lid but add little information to the body. We first match the label structure to the pack, then let the visual story grow inside that boundary.</p>
+  <p>This is the tin-versus-pouch overview. If the buyer has already chosen a tin and needs to decide what goes on the lid, what stays on the body and what changes at refill, use the focused <a href="/blog/custom-tea-tin-labels-guide/">tea tin label guide</a>. For a flexible pouch, keep the zipper, seals and filled shape in the brief below.</p>
 
   <h2>Tins and Pouches Need Separate Decisions</h2>
   <p>A cylindrical tin needs a measured straight wall and a deliberate seam. A rectangular tin needs corner clearance. A flexible pouch changes shape when filled, and its zipper, seal area, folds and gussets should stay clear. Measure the filled pouch rather than an empty flat film sample.</p>
@@ -3508,6 +3542,7 @@ $article47 = @"
   <figure class="article-hero-photo"><img src="/assets/blog/custom-craft-beer-labels-guide.webp" alt="Craft beer bottles and cans with original hop citrus mountain and geometric label artwork on a brewery packing line" width="1536" height="1024" loading="eager" decoding="async"><figcaption>Beer labels can be loud on the shelf and disciplined on the packaging line.</figcaption></figure>
   <p>Craft beer buyers rarely ask us for a label that disappears. They want color, attitude and a story that can be recognized from the refrigerator door. Fair enough. The problem comes when the artwork is designed for a dry mockup and the package is labeled cold, carried wet and rubbed inside a carton.</p>
   <p>We start by separating the bottle job from the can job. They may share a campaign, but they do not share the same surface or production behavior.</p>
+  <p>This page compares the two package types and the visual system they can share. If the can format is already fixed, follow the dedicated <a href="/blog/craft-beer-can-labels-guide/">craft beer can label guide</a> for wrap width, seam placement, condensation and seasonal SKU changeovers. Bottle projects can use the glass-panel checks below without borrowing a can dieline.</p>
 
   <h2>Ask Whether the Container Is Dry, Cold or Wet at Application</h2>
   <p>A clean dry bottle at room temperature is one application. A chilled can carrying condensation is another. Record the container material, temperature, surface treatment and the point in the line where the label is applied.</p>
@@ -3556,6 +3591,7 @@ $article48 = @"
   <p>Shampoo packaging looks simple until someone squeezes it. The bottle wall moves, the wet hand turns the product, and conditioner or oil can run across the front. A rigid mockup does not show any of that.</p>
   <p>When we review these jobs, the first question is the bottle material and shape, not whether the brand prefers matte. PET, HDPE and coated bottles can look similar in a photograph and behave differently during labeling and use.</p>
   <p>If you are ordering custom shampoo labels, send a filled bottle photo and its material, the usable label panel, the number of shampoo and conditioner variants, and the expected water or formula contact. Those details help narrow the material and adhesive discussion before anyone promises that a finish is suitable.</p>
+  <p>If the immediate difficulty is fitting two languages onto one bottle, start with the <a href="/blog/multilingual-shampoo-bottle-labels/">multilingual shampoo label guide</a> after measuring the usable panel. The brand still needs to approve every market's wording; this page focuses on bottle fit, wet handling and formula exposure.</p>
 
   <h2>Measure the Panel While the Bottle Is Filled</h2>
   <p>Some shampoo bottles bow outward when filled. Others have a recessed label panel or compound curves near the shoulder. Use the final filled package to measure straight usable space. A front label that crosses a recessed edge can trap air; a wrap that enters the shoulder can wrinkle.</p>
@@ -3893,7 +3929,8 @@ if ($BaseUrl) {
     "Sitemap: $BaseUrl/sitemap.xml"
   ) -Encoding ASCII
   $rssItems = $blogGuides | ForEach-Object {
-    $published = [DateTime]::ParseExact((PageModifiedDate $_[0]), "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture).ToUniversalTime().ToString("r")
+    $publicationDate = if ($FirstPublishedDates.ContainsKey($_[0])) { $FirstPublishedDates[$_[0]] } else { PageModifiedDate $_[0] }
+    $published = [DateTime]::SpecifyKind([DateTime]::ParseExact($publicationDate, "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture), [DateTimeKind]::Utc).ToString("r")
     "    <item><title>$(Escape-Xml $_[1])</title><link>$BaseUrl$($_[0])</link><guid>$BaseUrl$($_[0])</guid><description>$(Escape-Xml $_[2])</description><pubDate>$published</pubDate></item>"
   }
   $latestGuideDate = @($blogGuides | ForEach-Object { PageModifiedDate $_[0] } | Sort-Object -Descending)[0]

@@ -1,6 +1,6 @@
 ﻿# Custom Stickers & Decorative Labels
 
-Content updated: October 16, 2026
+Content updated: October 17, 2026
 
 Custom Stickers & Decorative Labels is a B2B custom sticker and decorative label website focused on inquiry-based manufacturing support.
 
@@ -22,6 +22,11 @@ Trust and compliance review:
 - Custom label specification planner: https://www.zclabels.com/label-specification-planner/
 
 Useful buyer guides:
+- Craft Beer Can Labels: Plan the Seam, Condensation and Small Runs: https://www.zclabels.com/blog/craft-beer-can-labels-guide/
+- Small Sample Vial Labels: Keep the Name Readable on a Tiny Curve: https://www.zclabels.com/blog/small-sample-vial-labels-guide/
+- Custom Tea Tin Labels: Make the Lid, Body and Refill Work Together: https://www.zclabels.com/blog/custom-tea-tin-labels-guide/
+- Labels for Textured Plastic Pails: Test the Surface Before Printing: https://www.zclabels.com/blog/labels-for-textured-plastic-pails/
+- Warehouse Shelf and Bin Labels: Design for the Picker, Not the Proof: https://www.zclabels.com/blog/warehouse-shelf-bin-labels-guide/
 - VOID vs Destructible Security Labels: Choose the Evidence You Need: https://www.zclabels.com/blog/void-vs-destructible-security-labels/
 - Applying Labels to Frozen Packaging: Label Before or After Freezing?: https://www.zclabels.com/blog/applying-labels-to-frozen-packaging/
 - Multilingual Shampoo Bottle Labels: Make Room Without Shrinking the Type: https://www.zclabels.com/blog/multilingual-shampoo-bottle-labels/

@@ -105,7 +105,7 @@ $PageOgImages = @{
   "/blog/custom-pet-treat-bag-labels-guide/" = "/assets/blog/custom-pet-treat-bag-labels-guide.webp"
   "/blog/custom-jam-jar-labels-guide/" = "/assets/blog/custom-jam-jar-labels-guide.webp"
   "/blog/custom-craft-beer-labels-guide/" = "/assets/blog/custom-craft-beer-labels-guide.webp"
-  "/blog/custom-shampoo-bottle-labels-guide/" = "/assets/blog/custom-shampoo-bottle-labels-guide.webp"
+  "/blog/custom-shampoo-bottle-labels-guide/" = "/assets/blog/custom-shampoo-bottle-labels-2026-10-19.webp"
   "/blog/custom-supplement-bottle-labels-guide/" = "/assets/blog/custom-supplement-bottle-labels-guide.webp"
   "/blog/custom-wine-bottle-labels-guide/" = "/assets/blog/custom-wine-bottle-labels-guide.webp"
 }
@@ -148,7 +148,9 @@ $ModifiedDates['/blog/sticker-artwork-file-formats/'] = '2026-10-07'
 $ModifiedDates['/blog/custom-craft-beer-labels-guide/'] = '2026-10-17'
 $ModifiedDates['/blog/custom-tea-packaging-labels-guide/'] = '2026-10-17'
 $ModifiedDates['/blog/tamper-evident-labels-guide/'] = '2026-10-17'
-$ModifiedDates['/blog/custom-shampoo-bottle-labels-guide/'] = '2026-10-17'
+$ModifiedDates['/blog/custom-shampoo-bottle-labels-guide/'] = '2026-10-19'
+$ModifiedDates['/blog/'] = '2026-10-19'
+$ModifiedDates['/sitemap/'] = '2026-10-19'
 
 $Products = @(
   @{
@@ -1384,7 +1386,7 @@ $blogBody = @"
     <a class="text-link" href="/blog/custom-craft-beer-labels-guide/">Plan Beer Labels</a>
   </article>
   <article class="category-card sage">
-    <div><p class="eyebrow">Wet bathroom packaging</p><h2>Custom Shampoo Labels</h2><p>Plan botanical labels around PET or HDPE bottles, curved panels, water, formula contact and repeated squeeze.</p></div>
+    <div><p class="eyebrow">Shampoo label procurement</p><h2>Custom Shampoo Labels: Approve Wet Use Before the Bulk Run</h2><p>Approve bottle fit, application, water and formula contact with a clear sample-review plan before bulk printing.</p></div>
     <a class="text-link" href="/blog/custom-shampoo-bottle-labels-guide/">Plan Shampoo Labels</a>
   </article>
   <article class="category-card gold">
@@ -1445,7 +1447,7 @@ $blogCoverMap = [ordered]@{
   "/blog/custom-pet-treat-bag-labels-guide/" = "/assets/blog/custom-pet-treat-bag-labels-guide.webp"
   "/blog/custom-jam-jar-labels-guide/" = "/assets/blog/custom-jam-jar-labels-guide.webp"
   "/blog/custom-craft-beer-labels-guide/" = "/assets/blog/custom-craft-beer-labels-guide.webp"
-  "/blog/custom-shampoo-bottle-labels-guide/" = "/assets/blog/custom-shampoo-bottle-labels-guide.webp"
+  "/blog/custom-shampoo-bottle-labels-guide/" = "/assets/blog/custom-shampoo-bottle-labels-2026-10-19.webp"
   "/blog/custom-supplement-bottle-labels-guide/" = "/assets/blog/custom-supplement-bottle-labels-guide.webp"
   "/blog/custom-wine-bottle-labels-guide/" = "/assets/blog/custom-wine-bottle-labels-guide.webp"
 }
@@ -3577,53 +3579,7 @@ $article47 = @"
 "@
 Page "/blog/custom-craft-beer-labels-guide/" $article47Title $article47Desc $article47 $article47Faq (ArticleStructuredData "/blog/custom-craft-beer-labels-guide/" $article47Title $article47Desc)
 
-$article48Title = "Custom Shampoo Bottle Labels: Materials, Wet Use and Design"
-$article48Desc = "Ordering custom shampoo bottle labels? Compare PET and HDPE bottle fit, wet-use and squeeze tests, formula contact, label artwork and quote details."
-$article48Faq = @(
-  @("What label material works for shampoo bottles?","The choice depends on PET or HDPE, bottle finish, squeeze, application temperature, bathroom moisture, formula contact and desired appearance. Test the complete construction on the final filled bottle."),
-  @("Can shampoo labels use colorful ingredient graphics?","Yes. Original coconut, aloe, rosemary, citrus, flower and botanical illustrations can separate formulas. Pair the artwork with clear product names and a consistent range structure."),
-  @("Can the label claim repair, growth or medical results?","Only the responsible brand can approve claims after evidence and market review. The label producer should not invent clinical badges, dermatologist endorsements or medical language.")
-)
-$article48 = @"
-<section class="subhero"><p class="eyebrow">Wet bathroom packaging</p><h1>$article48Title</h1><p class="article-meta">Published September 26, 2026. A factory-side guide for hair-care brands, salons and private-label projects.</p></section>
-<article class="section blog-article">
-  <figure class="article-hero-photo"><img src="/assets/blog/custom-shampoo-bottle-labels-guide.webp" alt="Shampoo and conditioner bottles with original aloe coconut rosemary and citrus label illustrations under wet-use testing" width="1536" height="1024" loading="eager" decoding="async"><figcaption>A bathroom label has to stay readable after water, squeezing and formula handling.</figcaption></figure>
-  <p>Shampoo packaging looks simple until someone squeezes it. The bottle wall moves, the wet hand turns the product, and conditioner or oil can run across the front. A rigid mockup does not show any of that.</p>
-  <p>When we review these jobs, the first question is the bottle material and shape, not whether the brand prefers matte. PET, HDPE and coated bottles can look similar in a photograph and behave differently during labeling and use.</p>
-  <p>If you are ordering custom shampoo labels, send a filled bottle photo and its material, the usable label panel, the number of shampoo and conditioner variants, and the expected water or formula contact. Those details help narrow the material and adhesive discussion before anyone promises that a finish is suitable.</p>
-  <p>If the immediate difficulty is fitting two languages onto one bottle, start with the <a href="/blog/multilingual-shampoo-bottle-labels/">multilingual shampoo label guide</a> after measuring the usable panel. The brand still needs to approve every market's wording; this page focuses on bottle fit, wet handling and formula exposure.</p>
-
-  <h2>Measure the Panel While the Bottle Is Filled</h2>
-  <p>Some shampoo bottles bow outward when filled. Others have a recessed label panel or compound curves near the shoulder. Use the final filled package to measure straight usable space. A front label that crosses a recessed edge can trap air; a wrap that enters the shoulder can wrinkle.</p>
-  <p>Mark how customers hold and squeeze the bottle. If repeated pressure lands directly on the label edge, include that in the test. A construction that looks perfect on a rigid glass jar may not be right for a flexible HDPE bottle.</p>
-  <table><thead><tr><th>Bottle condition</th><th>Likely stress</th><th>Test method</th></tr></thead><tbody>
-    <tr><td>Rigid PET</td><td>Curves, wet handling and glare</td><td>Filled-bottle shower and rub test</td></tr>
-    <tr><td>Squeezable HDPE</td><td>Flexing and edge stress</td><td>Repeated squeeze and recovery</td></tr>
-    <tr><td>Oily conditioner</td><td>Formula contact and slip</td><td>Controlled spill, wipe and handling</td></tr>
-    <tr><td>Pump bottle</td><td>Rotation and front alignment</td><td>Check label-to-pump orientation after capping</td></tr>
-  </tbody></table>
-
-  <h2>Ingredient Artwork Can Do More Than Fill Space</h2>
-  <p>Original aloe leaves, coconut halves, rosemary sprigs, citrus peel and flowers can make shampoo and conditioner pairs easier to recognize. A customer should not have to read tiny text to avoid grabbing conditioner when they wanted shampoo.</p>
-  <p>Use a stable layout and vary the botanical, accent color and a clear product-type word. If the range includes both shampoo and conditioner, create a deliberate difference stronger than one small line of copy. Useful design saves the customer a second look.</p>
-
-  <h2>Water Resistance and Formula Resistance Are Different Questions</h2>
-  <p>A label may survive clean water yet change after contact with fragrance oil, surfactant or conditioner. Test the actual formula when possible. Apply it to the face and edges, allow realistic contact time, wipe it and inspect print, finish and adhesion.</p>
-  <p>The application surface must also be clean. Residue from molding, filling or handling can create early edge lift. Define who wipes the bottle, with what and how long it rests before the label is applied.</p>
-
-  <h2>Claims Need Evidence, Not Clinical-Looking Decoration</h2>
-  <p>Botanical artwork identifies a formula; it does not prove hair growth, repair or medical performance. Avoid fake laboratory seals, dermatologist badges and before-and-after promises unless the responsible brand has substantiation and approved wording.</p>
-  <p>Ingredient naming, warnings, net content and responsible-business information vary by market. We can check final-size legibility and reserve code space. Product and legal approval remain with the brand.</p>
-
-  <h2>Our Shampoo Label Test List</h2>
-  <ul class="check-list"><li>Confirm PET, HDPE or other bottle material</li><li>Measure the final filled and capped bottle</li><li>Mark curves, recesses and squeeze zones</li><li>Apply using the planned cleaning workflow</li><li>Run water, steam, wet-hand and rub tests</li><li>Test controlled contact with the actual formula</li><li>Check shampoo and conditioner recognition together</li><li>Inspect labels after repeated squeezing and storage</li></ul>
-
-  <h2>What We Would Put in the Quote Request</h2>
-  <p>Send bottle material, dimensions, filled photos, label panel, application method, formulas, expected spills, product types, quantities by SKU, artwork, finish direction, batch-code area and outer packing. State whether the bottle is rigid, squeezable or used with a pump.</p>
-  <p>A colorful shampoo label is not the risky choice. An untested label is. Give the packaging original visual identity, then make it prove itself in the wet, flexible environment where customers actually use it.</p>
-  <div class="pill-row"><a class="pill-link" href="/blog/custom-cosmetic-labels-guide/">Cosmetic Label Guide</a><a class="pill-link" href="/blog/waterproof-custom-stickers-buying-guide/">Waterproof Planning</a><a class="pill-link" href="/blog/sticker-adhesive-surface-matching-guide/">Surface Matching</a><a class="pill-link" href="/get-quote/">Request Shampoo Label Review</a></div>
-</article>
-"@
+. (Join-Path $Root 'content/shampoo-labels-update-2026-10-19.ps1')
 Page "/blog/custom-shampoo-bottle-labels-guide/" $article48Title $article48Desc $article48 $article48Faq (ArticleStructuredData "/blog/custom-shampoo-bottle-labels-guide/" $article48Title $article48Desc)
 
 $article49Title = "Custom Supplement Bottle Labels: Small Text and Control"
@@ -3791,7 +3747,7 @@ foreach ($p in $policies) {
 $blogGuides = @(
   @("/blog/custom-jam-jar-labels-guide/","Custom Jam Jar Labels: Glass, Sugar and Lid Seals","Plan jam jar labels around glass curves, sticky filling, refrigeration, flavor artwork, lid seals and filled-jar testing."),
   @("/blog/custom-craft-beer-labels-guide/","Custom Craft Beer Labels for Bottles and Cans","Plan craft beer labels around wet glass, chilled cans, condensation, illustration systems, small runs and date coding."),
-  @("/blog/custom-shampoo-bottle-labels-guide/","Custom Shampoo Bottle Labels: Materials, Wet Use and Design","Plan shampoo and conditioner labels around PET or HDPE bottles, wet use, squeeze, formula contact and SKU artwork."),
+  @("/blog/custom-shampoo-bottle-labels-guide/","Custom Shampoo Labels: Approve Wet Use Before the Bulk Run","Plan custom shampoo labels around bottle material, wet handling, formula contact and squeezing. Build a clear sample brief before approving bulk printing."),
   @("/blog/custom-supplement-bottle-labels-guide/","Custom Supplement Bottle Labels: Small Text and Control","Plan supplement labels around small text, curved containers, lot and expiry coding, SKU graphics and controlled approval."),
   @("/blog/custom-wine-bottle-labels-guide/","Custom Wine Bottle Labels: Glass, Paper and Cellars","Plan wine labels around bottle shape, paper texture, condensation, cellar handling, original artwork and vintage changes."),
   @("/blog/custom-hot-sauce-bottle-labels-guide/","Custom Hot Sauce Labels: Oil, Heat and Small Batches","Plan sauce bottle labels around usable glass or plastic panels, oily handling, condensation, heat-level SKUs and filling-line tests."),

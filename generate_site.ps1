@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Brand = "Custom Stickers & Decorative Labels"
@@ -151,6 +151,30 @@ $ModifiedDates['/blog/tamper-evident-labels-guide/'] = '2026-10-17'
 $ModifiedDates['/blog/custom-shampoo-bottle-labels-guide/'] = '2026-10-19'
 $ModifiedDates['/blog/'] = '2026-10-19'
 $ModifiedDates['/sitemap/'] = '2026-10-19'
+
+# Daily editorial update registry: approved source content, not post-generated patches.
+$EditorialUpdates = @{}
+$editorialFile = Join-Path $Root 'content/editorial-updates-2026-10-21.json'
+if (Test-Path -LiteralPath $editorialFile) {
+  $editorialData = Get-Content -LiteralPath $editorialFile -Raw -Encoding UTF8 | ConvertFrom-Json
+  foreach ($property in $editorialData.PSObject.Properties) {
+    $EditorialUpdates[$property.Name] = $property.Value
+    $ModifiedDates[$property.Name] = $property.Value.Modified
+    $PageOgImages[$property.Name] = $property.Value.Image
+  }
+  foreach ($article in $NewArticles) {
+    if ($EditorialUpdates.ContainsKey($article.Url)) {
+      $update = $EditorialUpdates[$article.Url]
+      $article.Title = $update.H1
+      $article.Description = $update.Description
+      $article.CardDescription = $update.Description
+      $article.Image = $update.Image
+      $article.Alt = $update.Alt
+    }
+  }
+  $ModifiedDates['/blog/'] = '2026-10-21'
+  $ModifiedDates['/sitemap/'] = '2026-10-21'
+}
 
 $Products = @(
   @{
@@ -731,6 +755,14 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
 }
 
 function Page($Url, $Title, $Desc, $Body, $Faq = $null, $ExtraSchema = @(), $Robots = $null) {
+  if ($EditorialUpdates.ContainsKey($Url)) {
+    $update = $EditorialUpdates[$Url]
+    $Title = $update.Title
+    $Desc = $update.Description
+    $Body = $update.Body
+    $Faq = $null
+    $ExtraSchema = @(ArticleStructuredData $Url $Title $Desc)
+  }
   $hasArticleSchema = @($ExtraSchema | Where-Object { $_["@type"] -in @("Article", "BlogPosting", "NewsArticle") }).Count -gt 0
   $pageBody = $Body
   $breadcrumbParent = if ($Url -like "/blog/*/" -and $Url -ne "/blog/") { @{ Name="Blog"; Url="/blog/" } } else { $null }
@@ -1450,6 +1482,17 @@ $blogCoverMap = [ordered]@{
   "/blog/custom-shampoo-bottle-labels-guide/" = "/assets/blog/custom-shampoo-bottle-labels-2026-10-19.webp"
   "/blog/custom-supplement-bottle-labels-guide/" = "/assets/blog/custom-supplement-bottle-labels-guide.webp"
   "/blog/custom-wine-bottle-labels-guide/" = "/assets/blog/custom-wine-bottle-labels-guide.webp"
+}
+foreach ($key in $EditorialUpdates.Keys) {
+  $blogCoverMap[$key] = $EditorialUpdates[$key].Image
+  $update = $EditorialUpdates[$key]
+  $urlPattern = [regex]::Escape($key)
+  $pattern = "(?s)<article class=""category-card(?<class>[^""]*)"">(?<content>(?:(?!</article>).)*?<a class=""text-link"" href=""$urlPattern"">(?:(?!</a>).)*?</a>)\s*</article>"
+  $blogBody = [regex]::Replace($blogBody, $pattern, {
+    param($match)
+    $card = [regex]::Replace($match.Value, '(?s)<h2>.*?</h2>', '<h2>' + (Escape-Html $update.H1) + '</h2>')
+    return [regex]::Replace($card, '(?s)(</h2>\s*)<p>.*?</p>', '$1<p>' + (Escape-Html $update.Description) + '</p>')
+  })
 }
 foreach ($entry in $blogCoverMap.GetEnumerator()) {
   $urlPattern = [regex]::Escape($entry.Key)
@@ -3800,6 +3843,13 @@ $blogGuides = @(
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
+foreach ($guide in $blogGuides) {
+  if ($EditorialUpdates.ContainsKey($guide[0])) {
+    $guide[1] = $EditorialUpdates[$guide[0]].H1
+    $guide[2] = $EditorialUpdates[$guide[0]].Description
+  }
+}
+
 $supportPages = @(
   @("/materials-finishes/","Materials & Finishes"),
   @("/artwork-guidelines/","Artwork Guidelines"),
@@ -3887,6 +3937,7 @@ if ($BaseUrl) {
   $rssItems = $blogGuides | ForEach-Object {
     $publicationDate = if ($FirstPublishedDates.ContainsKey($_[0])) { $FirstPublishedDates[$_[0]] } else { PageModifiedDate $_[0] }
     $published = [DateTime]::SpecifyKind([DateTime]::ParseExact($publicationDate, "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture), [DateTimeKind]::Utc).ToString("r")
+    if ($EditorialUpdates.ContainsKey($_[0])) { $published = $EditorialUpdates[$_[0]].FeedPubDate }
     "    <item><title>$(Escape-Xml $_[1])</title><link>$BaseUrl$($_[0])</link><guid>$BaseUrl$($_[0])</guid><description>$(Escape-Xml $_[2])</description><pubDate>$published</pubDate></item>"
   }
   $latestGuideDate = @($blogGuides | ForEach-Object { PageModifiedDate $_[0] } | Sort-Object -Descending)[0]

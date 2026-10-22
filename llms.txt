@@ -1,6 +1,6 @@
 ﻿# ZC Labels - Custom Stickers & Decorative Labels
 
-Content updated: October 22, 2026
+Content updated: October 23, 2026
 
 ZC Labels publishes this B2B custom sticker and decorative label website for artwork, format, material, proof and packing decisions. Final specifications and availability require project-specific confirmation.
 
@@ -35,7 +35,7 @@ Useful buyer guides:
 - VOID vs Destructible Security Labels: Choose the Evidence You Need: https://www.zclabels.com/blog/void-vs-destructible-security-labels/
 - Applying Labels to Frozen Packaging: Label Before or After Freezing?: https://www.zclabels.com/blog/applying-labels-to-frozen-packaging/
 - Multilingual Shampoo Bottle Labels: Make Room Without Shrinking the Type: https://www.zclabels.com/blog/multilingual-shampoo-bottle-labels/
-- Variable-Data Batch Labels for Small Runs: Keep Every SKU Traceable: https://www.zclabels.com/blog/variable-data-batch-labels-small-runs/
+- Variable Data Labels: Release the File and Reconcile the Run: https://www.zclabels.com/blog/variable-data-batch-labels-small-runs/
 - Refillable Glass Bottle Labels: Design for Washing and Relabeling: https://www.zclabels.com/blog/refillable-glass-bottle-labels-guide/
 - Custom Yogurt Cup Labels: Fit the Lid, Chill and Flavor Change: https://www.zclabels.com/blog/custom-yogurt-cup-labels-guide/
 - Board Game Component Stickers: Cut, Sort and Pack Without Confusion: https://www.zclabels.com/blog/board-game-component-stickers-guide/
@@ -43,8 +43,8 @@ Useful buyer guides:
 - Labels for Powder-Coated Metal Equipment: Test the Surface First: https://www.zclabels.com/blog/labels-for-powder-coated-metal-equipment/
 - Hotel Amenity Bottle Labels: Make Small Type Work in a Wet Bathroom: https://www.zclabels.com/blog/custom-hotel-amenity-bottle-labels/
 - Jar Lid Tamper Seals vs Shrink Bands: Which Fits Your Pack?: https://www.zclabels.com/blog/jar-lid-tamper-seals-vs-shrink-bands/
-- Custom Squeeze Tube Labels: Make Flex, Seams and Wet Use Work: https://www.zclabels.com/blog/custom-squeeze-tube-labels-guide/
-- Retail Barcode Labels: Scan the Finished Pack, Not the Proof: https://www.zclabels.com/blog/retail-barcode-labels-for-product-packaging/
+- Squeeze Tube Labels: Review Full and Used Tube States: https://www.zclabels.com/blog/custom-squeeze-tube-labels-guide/
+- Retail Barcode Labels: Decide What Evidence Counts as Approval: https://www.zclabels.com/blog/retail-barcode-labels-for-product-packaging/
 - Cold Brew Bottle Labels: Condensation, Curves and Batch Dates: https://www.zclabels.com/blog/cold-brew-bottle-labels-guide/
 - Product Instruction Stickers: Put the First Step Where It Is Needed: https://www.zclabels.com/blog/product-instruction-stickers-guide/
 - Custom Shoe Box Size Labels: Make the Right Pair Easy to Pick: https://www.zclabels.com/blog/custom-shoe-box-size-labels-guide/
@@ -66,16 +66,16 @@ Useful buyer guides:
 - Tapered Bottle Labels: Approve the Dieline on the Actual Container: https://www.zclabels.com/blog/tapered-bottle-label-sizing-guide/
 - Retail Price Stickers: Change the Price, Keep the Pack: https://www.zclabels.com/blog/retail-price-stickers-markdown-guide/
 - Cosmetic Sample Sachet Labels: Small Pack, Full Job: https://www.zclabels.com/blog/cosmetic-sample-sachet-labels-guide/
-- Hot Foil vs Metallic Ink for Custom Labels: https://www.zclabels.com/blog/hot-foil-vs-metallic-ink-labels-guide/
+- Foil vs Metallic Ink Labels: Set a Physical Finish Reference: https://www.zclabels.com/blog/hot-foil-vs-metallic-ink-labels-guide/
 - Reverse-Printed Window Stickers: Readable From Outside: https://www.zclabels.com/blog/reverse-printed-window-stickers-guide/
 - Easy-Peel Stickers: Decide Where the Buyer Can Lift the Edge: https://www.zclabels.com/blog/easy-peel-tab-stickers-guide/
 - Paper vs Film Label Liners: Specify Release and Handling Together: https://www.zclabels.com/blog/label-liner-choice-guide/
-- Thermal-Transfer Printable Labels: Plan the Overprint: https://www.zclabels.com/blog/thermal-transfer-printable-labels-guide/
+- Thermal Transfer Labels: Approve the Coding Combination: https://www.zclabels.com/blog/thermal-transfer-printable-labels-guide/
 - Custom Egg Carton Labels: Fit the Lid and the Data: https://www.zclabels.com/blog/custom-egg-carton-labels-guide/
 - Custom Apparel Size Stickers for Faster Packing: https://www.zclabels.com/blog/custom-apparel-size-stickers-guide/
 - Custom Produce Clamshell Labels: Vent, View and Lot: https://www.zclabels.com/blog/custom-produce-clamshell-labels-guide/
 - Custom Refill Jar Labels: Removal and Reuse: https://www.zclabels.com/blog/custom-refill-jar-labels-guide/
-- Custom Electronics Serial Labels: Data and Placement: https://www.zclabels.com/blog/custom-electronics-serial-number-labels-guide/
+- Serial Number Labels: Control Reprints and Unused IDs: https://www.zclabels.com/blog/custom-electronics-serial-number-labels-guide/
 - Custom Bicycle Frame Decals: Curves and Clearcoat: https://www.zclabels.com/blog/custom-bicycle-frame-decals-guide/
 - Custom Perfume Bottle Labels: Glass, Oil and Small Type: https://www.zclabels.com/blog/custom-perfume-bottle-labels-guide/
 - Custom Granola Pouch Labels: Windows and SKU Changes: https://www.zclabels.com/blog/custom-granola-pouch-labels-guide/

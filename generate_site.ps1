@@ -172,8 +172,9 @@ if (Test-Path -LiteralPath $editorialFile) {
       $article.Alt = $update.Alt
     }
   }
-  $ModifiedDates['/blog/'] = '2026-10-22'
-  $ModifiedDates['/sitemap/'] = '2026-10-22'
+  $editorialLatestDate = ($EditorialUpdates.Values | ForEach-Object { $_.Modified } | Sort-Object -Descending | Select-Object -First 1)
+  $ModifiedDates['/blog/'] = $editorialLatestDate
+  $ModifiedDates['/sitemap/'] = $editorialLatestDate
 }
 
 $Products = @(

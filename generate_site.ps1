@@ -172,8 +172,8 @@ if (Test-Path -LiteralPath $editorialFile) {
       $article.Alt = $update.Alt
     }
   }
-  $ModifiedDates['/blog/'] = '2026-10-21'
-  $ModifiedDates['/sitemap/'] = '2026-10-21'
+  $ModifiedDates['/blog/'] = '2026-10-22'
+  $ModifiedDates['/sitemap/'] = '2026-10-22'
 }
 
 $Products = @(

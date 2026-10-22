@@ -3,7 +3,7 @@
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Brand = "Custom Stickers & Decorative Labels"
 $OrganizationName = "ZC Labels"
-$ArticleAuthorName = "ZC Labels Production Team"
+$ArticleAuthorName = "ZC Labels"
 $BaseUrl = "https://www.zclabels.com"
 $DefaultModifiedDate = "2026-09-18"
 $ModifiedDates = @{
@@ -609,13 +609,15 @@ function ArticleStructuredData($Url, $Title, $Desc) {
   $article = @{
     "@context"="https://schema.org";
     "@type"="Article";
+    "@id"="$BaseUrl${Url}#article";
     headline=$Title;
     description=$Desc;
     url="$BaseUrl$Url";
     inLanguage="en";
     dateModified=(PageModifiedDate $Url);
-    author=@{ "@type"="Organization"; name=$OrganizationName; url="$BaseUrl/about-us/" };
-    publisher=@{ "@type"="Organization"; name=$OrganizationName; url=$BaseUrl }
+    author=(OrganizationReference);
+    publisher=(OrganizationReference);
+    mainEntityOfPage=@{ "@id"="$BaseUrl${Url}#webpage" }
   }
   if ($FirstPublishedDates.ContainsKey($Url)) { $article.datePublished = $FirstPublishedDates[$Url] }
   if ($PageOgImages.ContainsKey($Url)) { $article.image = "$BaseUrl$($PageOgImages[$Url])" }
@@ -690,20 +692,33 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
   $ogType = if ($hasArticleSchema) { "article" } else { "website" }
   $authorTag = if ($hasArticleSchema) { "<meta name=""author"" content=""$(Escape-Html $ArticleAuthorName)"">" } else { "" }
   $schema = @()
-  $schema += @{
-    "@context"="https://schema.org"; "@type"="WebPage";
-    name=$Title; description=$Desc; url=$CanonicalUrl; inLanguage="en";
-    isPartOf=@{ "@type"="WebSite"; name=$Brand; url=$HomeUrl }
+  $pageType = switch ($Url) {
+    '/about-us/' { 'AboutPage' }
+    '/contact/' { 'ContactPage' }
+    '/blog/' { 'CollectionPage' }
+    default { 'WebPage' }
   }
+  $webPage = @{
+    "@context"="https://schema.org"; "@type"=$pageType; "@id"="$CanonicalUrl#webpage";
+    name=$Title; description=$Desc; url=$CanonicalUrl; inLanguage="en";
+    isPartOf=@{ "@id"="$BaseUrl/#website"; "@type"="WebSite"; name=$OrganizationName; url=$HomeUrl };
+    publisher=(OrganizationReference)
+  }
+  if ($Url -eq '/about-us/') { $webPage.mainEntity = @{ "@id"="$BaseUrl/#organization" } }
+  if ($Url -eq '/contact/') { $webPage.about = @{ "@id"="$BaseUrl/#organization" } }
+  if ($hasArticleSchema) { $webPage.mainEntity = @{ "@id"="$CanonicalUrl#article" } }
+  # Merge collection metadata into the same page node instead of describing two page entities.
+  $pageCollections = @($ExtraSchema | Where-Object { $_["@type"] -in @('CollectionPage','ContactPage','AboutPage','WebPage') -and $_.url -eq $CanonicalUrl })
+  foreach ($collection in $pageCollections) {
+    $webPage["@type"] = $collection["@type"]
+    if ($collection.ContainsKey('mainEntity')) { $webPage.mainEntity = $collection.mainEntity }
+  }
+  $schema += $webPage
   if ($Url -eq "/") {
     $schema += @{
-      "@context"="https://schema.org"; "@type"="WebSite";
-      name=$Brand; url=$HomeUrl; inLanguage="en"
-    }
-    $schema += @{
-      "@context"="https://schema.org"; "@type"="Organization";
-      name=$OrganizationName; alternateName=$Brand; url=$HomeUrl; logo="$BaseUrl/assets/site-icon.svg";
-      contactPoint=@{ "@type"="ContactPoint"; contactType="customer support"; email=$ContactEmail; availableLanguage=@("English") }
+      "@context"="https://schema.org"; "@type"="WebSite"; "@id"="$BaseUrl/#website";
+      name=$OrganizationName; alternateName=$Brand; url=$HomeUrl; inLanguage="en";
+      publisher=(OrganizationReference)
     }
   } else {
     $breadcrumbItems = @(@{ "@type"="ListItem"; position=1; name="Home"; item=$HomeUrl })
@@ -724,7 +739,12 @@ function Head($Title, $Desc, $Url, $Faq, $ExtraSchema = @(), $Robots = $null) {
       mainEntity=($Faq | ForEach-Object { @{ "@type"="Question"; name=$_[0]; acceptedAnswer=@{ "@type"="Answer"; text=$_[1] } } })
     }
   }
-  foreach ($item in $ExtraSchema) { $schema += $item }
+  if ($Url -in @('/', '/about-us/')) { $schema += (SiteOrganizationStructuredData) }
+  foreach ($item in $ExtraSchema) {
+    if ($item["@type"] -in @('CollectionPage','ContactPage','AboutPage','WebPage') -and $item.url -eq $CanonicalUrl) { continue }
+    if ($item["@type"] -eq 'Service') { $item.provider = OrganizationReference }
+    $schema += $item
+  }
   $ld = ($schema | ForEach-Object { "<script type=""application/ld+json"">$($_ | ConvertTo-Json -Depth 8 -Compress)</script>" }) -join "`n"
 @"
 <!doctype html>
@@ -764,14 +784,15 @@ function Page($Url, $Title, $Desc, $Body, $Faq = $null, $ExtraSchema = @(), $Rob
     $ExtraSchema = @(ArticleStructuredData $Url $Title $Desc)
   }
   $hasArticleSchema = @($ExtraSchema | Where-Object { $_["@type"] -in @("Article", "BlogPosting", "NewsArticle") }).Count -gt 0
-  $pageBody = $Body
+  $pageBody = SiteBodyEnhancements $Url $Body
   $breadcrumbParent = if ($Url -like "/blog/*/" -and $Url -ne "/blog/") { @{ Name="Blog"; Url="/blog/" } } else { $null }
   if ($breadcrumbParent) {
     $breadcrumb = '<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="' + $breadcrumbParent.Url + '">' + $breadcrumbParent.Name + '</a><span aria-hidden="true">/</span><span aria-current="page">' + (Escape-Html $Title) + '</span></nav>'
     $pageBody = "$breadcrumb`n$pageBody"
   }
   if ($hasArticleSchema) {
-    $byline = "<p class=""article-author"">By <a href=""/about-us/"">$ArticleAuthorName</a> <span aria-hidden=""true"">&middot;</span> Reviewed for B2B sticker sourcing.</p>"
+    $byline = "<p class=""article-author"">By <a href=""/about-us/#publisher-details"">$ArticleAuthorName</a> <span aria-hidden=""true"">&middot;</span> B2B procurement guide <span aria-hidden=""true"">&middot;</span> <a href=""/about-us/#editorial-standards"">Sources and editorial approach</a></p>"
+    $pageBody = ArticleSectionNavigation $pageBody
     $pageBody = $pageBody.Replace('<section class="subhero">', '<section class="subhero article-subhero">')
     $pageBody = $pageBody.Replace('<article class="section blog-article">', "<article class=""section blog-article"">`n  $byline")
   }
@@ -788,6 +809,10 @@ $(Footer)
   New-Item -ItemType Directory -Force -Path (Split-Path -Parent $path) | Out-Null
   Set-Content -LiteralPath $path -Value $full -Encoding UTF8
 }
+
+. (Join-Path $Root 'content/site-discovery-2026-10-22.ps1')
+$ModifiedDates['/'] = '2026-10-22'
+$ModifiedDates['/about-us/'] = '2026-10-22'
 
 $cards = Cards
 $formatCards = FormatCards
@@ -3957,11 +3982,16 @@ if ($BaseUrl) {
   [System.IO.File]::WriteAllLines((Join-Path $Root "feed.xml"), $rss, $utf8NoBom)
   $llmsUpdated = [DateTime]::ParseExact((PageModifiedDate "/blog/"), "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture).ToString("MMMM d, yyyy", [Globalization.CultureInfo]::InvariantCulture)
   $llms = @(
-    "# Custom Stickers & Decorative Labels",
+    "# ZC Labels - Custom Stickers & Decorative Labels",
     "",
     "Content updated: $llmsUpdated",
     "",
-    "Custom Stickers & Decorative Labels is a B2B custom sticker and decorative label website focused on inquiry-based manufacturing support.",
+    "ZC Labels publishes this B2B custom sticker and decorative label website for artwork, format, material, proof and packing decisions. Final specifications and availability require project-specific confirmation.",
+    "",
+    "Publisher and content approach:",
+    "- About ZC Labels: $BaseUrl/about-us/",
+    "- Sources, AI assistance and approval limits: $BaseUrl/about-us/#editorial-standards",
+    "- Contact and corrections: $BaseUrl/about-us/#publisher-contact",
     "",
     "Primary product categories:",
     "- Custom cartoon stickers: $BaseUrl/products/custom-cartoon-stickers/",

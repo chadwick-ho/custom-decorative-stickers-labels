@@ -161,6 +161,7 @@ if (Test-Path -LiteralPath $editorialFile) {
     $EditorialUpdates[$property.Name] = $property.Value
     $ModifiedDates[$property.Name] = $property.Value.Modified
     $PageOgImages[$property.Name] = $property.Value.Image
+    if ($property.Value.KnownPublished) { $FirstPublishedDates[$property.Name] = $property.Value.KnownPublished }
   }
   foreach ($article in $NewArticles) {
     if ($EditorialUpdates.ContainsKey($article.Url)) {

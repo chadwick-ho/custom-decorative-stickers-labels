@@ -394,6 +394,19 @@ $FormatPages = @(
   }
 )
 
+# Dated intent research config; public copy only, no API keys or private account data.
+$CommercialSearchConfig = Get-Content -LiteralPath (Join-Path $Root "content/search-intent-2026-10-24.json") -Raw -Encoding UTF8 | ConvertFrom-Json
+foreach ($format in $FormatPages) {
+  $formatUpdate = $CommercialSearchConfig.formats.PSObject.Properties[$format.Key].Value
+  if ($formatUpdate) {
+    $format.Meta = $formatUpdate.Meta
+    $format.Intro = $formatUpdate.Intro
+    if ($formatUpdate.Image) { $format.Image = $formatUpdate.Image; $PageOgImages[$format.Url] = $formatUpdate.Image }
+    if ($formatUpdate.Buyer) { $format.Buyer = $formatUpdate.Buyer }
+    if ($formatUpdate.Clarify) { $format.Clarify = @($formatUpdate.Clarify) }
+  }
+}
+
 function FormatCards {
   return ($FormatPages | ForEach-Object {
     $items = ($_.Clarify | Select-Object -First 3 | ForEach-Object { "<span>$_</span>" }) -join ""
@@ -785,6 +798,19 @@ function Page($Url, $Title, $Desc, $Body, $Faq = $null, $ExtraSchema = @(), $Rob
     $Faq = $null
     $ExtraSchema = @(ArticleStructuredData $Url $Title $Desc)
   }
+  $commercialProperty = $CommercialSearchConfig.pages.PSObject.Properties[$Url]
+  if ($commercialProperty) {
+    $commercial = $commercialProperty.Value
+    $ModifiedDates[$Url] = '2026-10-24'
+    $Title = $commercial.Title
+    $Desc = $commercial.Description
+    if ($commercial.H1Html) { $Body = [regex]::Replace($Body, '(?s)<h1>.*?</h1>', $commercial.H1Html) }
+    if ($commercial.HeroHtml) { $Body = [regex]::Replace($Body, '(?s)<div class="product-media"><img[^>]*></div>', $commercial.HeroHtml) }
+    if ($commercial.Section) {
+      $marker = if ($commercial.InsertBefore) { $commercial.InsertBefore } else { '<section class="final-cta">' }
+      if ($Body.Contains($marker)) { $Body = $Body.Replace($marker, "$($commercial.Section)`n$marker") } else { $Body += $commercial.Section }
+    }
+  }
   $hasArticleSchema = @($ExtraSchema | Where-Object { $_["@type"] -in @("Article", "BlogPosting", "NewsArticle") }).Count -gt 0
   $pageBody = SiteBodyEnhancements $Url $Body
   $breadcrumbParent = if ($Url -like "/blog/*/" -and $Url -ne "/blog/") { @{ Name="Blog"; Url="/blog/" } } else { $null }
@@ -905,12 +931,12 @@ $productsBody = @"
 <section class="subhero"><p class="eyebrow">Products</p><h1>Custom Sticker Products for B2B Projects</h1><p>Explore six focused sticker and decorative label directions, each built for inquiry-driven customization and artwork review.</p></section>
 <section class="section product-categories"><div class="cards">$cards</div></section>
 <section class="section related"><h2>See Stickers in Real Applications</h2><p>Compare how custom stickers are used across packaging, stationery, gift, seasonal and promotional projects before choosing a category.</p><div class="pill-row"><a class="pill-link" href="/gallery-applications/">View the Application Gallery</a></div></section>
-<section class="section"><div class="section-head"><p class="eyebrow">Format pages</p><h2>Custom Sticker Formats Buyers Search For</h2><p>These pages separate production format intent from application categories, so buyers can compare die-cut, kiss-cut, roll, sheet and holographic sticker options without mixing them into every category page.</p></div><div class="pill-row">$formatPills</div></section>
+<section class="section"><div class="section-head"><p class="eyebrow">Format pages</p><h2>Choose Your Sticker Supply Format</h2><p>Choose individual pieces for distribution, a shared sheet for multiple designs, or rolls for repeated application. Then review the cut, material and finish for the actual use.</p></div><div class="pill-row">$formatPills</div></section>
 <section class="home-products-showcase product-index-catalog" aria-label="Full custom sticker product catalog">
   <div class="home-products-head">
     <p class="home-kicker">FULL PRODUCT CATALOG</p>
     <h2><span>72+</span> Custom Sticker Directions by Category</h2>
-    <p>Browse real product directions first, then open the category page that matches your order type.</p>
+    <p>Browse design and application examples, then open the category that matches your project.</p>
   </div>
   $fullCatalog
 </section>

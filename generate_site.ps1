@@ -4074,7 +4074,16 @@ if ($BaseUrl) {
     "    <item><title>$(Escape-Xml $_[1])</title><link>$BaseUrl$($_[0])</link><guid>$BaseUrl$($_[0])</guid><description>$(Escape-Xml $_[2])</description><pubDate>$published</pubDate></item>"
   }
   $latestGuideDate = @($blogGuides | ForEach-Object { PageModifiedDate $_[0] } | Sort-Object -Descending)[0]
-  $rssLastBuildDate = [DateTime]::SpecifyKind([DateTime]::ParseExact($latestGuideDate, "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture), [DateTimeKind]::Utc).ToString("r")
+  # Derive RSS build time from actual item publication references; do not turn a local date into a future UTC midnight.
+  $rssPublicationTimes = foreach ($guide in $blogGuides) {
+    if ($EditorialUpdates.ContainsKey($guide[0]) -and $EditorialUpdates[$guide[0]].FeedPubDate) {
+      [DateTimeOffset]::Parse($EditorialUpdates[$guide[0]].FeedPubDate, [Globalization.CultureInfo]::InvariantCulture)
+    } else {
+      $guideDate = if ($FirstPublishedDates.ContainsKey($guide[0])) { $FirstPublishedDates[$guide[0]] } else { PageModifiedDate $guide[0] }
+      [DateTimeOffset]::ParseExact($guideDate, "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture, [Globalization.DateTimeStyles]::AssumeUniversal)
+    }
+  }
+  $rssLastBuildDate = ($rssPublicationTimes | Sort-Object -Descending | Select-Object -First 1).UtcDateTime.ToString("r")
   $rss = @(
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<rss version="2.0">',

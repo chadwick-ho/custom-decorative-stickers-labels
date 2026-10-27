@@ -1593,6 +1593,15 @@ $blogBody += '<section class="section"><h2>Eco-Friendly Sticker Claims: Ask What
 $blogBody += '<section class="section"><h2>Label Liner Recycling: Confirm the Collection Route First</h2><p>Identify spent label liner, confirm local collector acceptance and define separation before changing a label construction.</p><a href="/blog/label-liner-recycling-collection-check/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Label Roll Splices: Agree the Requirement Before Release</h2><p>Agree whether supplied label roll splices are allowed, how they are identified and who confirms line requirements before release.</p><a href="/blog/label-roll-splice-requirements/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Sticker Sheet Size: Approve the Whole Backing Before Layout</h2><p>Approve the finished backing outline, sleeve fit and sheet counting unit without shrinking already approved functional stickers.</p><a href="/blog/custom-sticker-sheet-size-backing/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Custom Sticker Lead Time: Separate Release, Dispatch and Receipt</h2><p>Separate artwork release, ready-to-dispatch and required receipt when discussing custom sticker lead time and unresolved dependencies.</p><a href="/blog/custom-sticker-lead-time-milestones/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Second-Source Label Suppliers: Qualify Against One Baseline</h2><p>Qualify a second-source label proposal against a buyer-controlled baseline, identified differences and the actual application evidence.</p><a href="/blog/second-source-label-supplier-baseline/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Overprint Review: Check the Output, Not Just the Screenshot</h2><p>Review the actual artwork export for overprint discrepancies and distinguish ordinary white objects from specified production white.</p><a href="/blog/sticker-overprint-output-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Print Acceptance: Agree Which Difference Matters</h2><p>Agree the feature, controlling reference and acceptance owner for sticker printing without inventing a universal defect rate or sampling plan.</p><a href="/blog/sticker-print-acceptance-reference/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Label Defect Reports: Preserve the Observation Before Naming a Cause</h2><p>Report a label issue with stock identity, observed stage, photographs and retained references before treating a suspected cause as fact.</p><a href="/blog/label-defect-report-evidence/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Bulk Sticker Quantities: Agree the Delivered Count Basis</h2><p>Confirm the delivered counting unit, design allocation and any proposed quantity condition before accepting a bulk sticker order.</p><a href="/blog/bulk-sticker-quantity-basis/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Labels for a Co-Packer: Assign the Release and Stock Owners</h2><p>Connect brand artwork approval, co-packer application requirements and label stock responsibility in one identified release record.</p><a href="/blog/labels-for-co-packer-release-owners/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Artwork Permissions: Separate a Reference from a Printable Asset</h2><p>Separate printable assets from reference images and keep owner-confirmed permission scope with the artwork supplied for custom stickers.</p><a href="/blog/sticker-artwork-permissions-handoff/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Custom Sticker Thickness: Name the Layers Being Measured</h2><p>Compare custom sticker thickness by naming the face, adhesive, protection and liner included, plus the value type and measurement basis.</p><a href="/blog/custom-sticker-thickness-layers/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3812,6 +3821,24 @@ Page "/blog/label-roll-splice-requirements/" "Label Roll Splices: Agree the Requ
 
 Page "/blog/custom-sticker-sheet-size-backing/" "Sticker Sheet Size: Approve the Whole Backing Before Layout" "Approve the finished backing outline, sleeve fit and sheet counting unit without shrinking already approved functional stickers." ""
 
+Page "/blog/custom-sticker-lead-time-milestones/" "Custom Sticker Lead Time: Separate Release, Dispatch and Receipt" "Separate artwork release, ready-to-dispatch and required receipt when discussing custom sticker lead time and unresolved dependencies." ""
+
+Page "/blog/second-source-label-supplier-baseline/" "Second-Source Label Suppliers: Qualify Against One Baseline" "Qualify a second-source label proposal against a buyer-controlled baseline, identified differences and the actual application evidence." ""
+
+Page "/blog/sticker-overprint-output-review/" "Sticker Overprint Review: Check the Output, Not Just the Screenshot" "Review the actual artwork export for overprint discrepancies and distinguish ordinary white objects from specified production white." ""
+
+Page "/blog/sticker-print-acceptance-reference/" "Sticker Print Acceptance: Agree Which Difference Matters" "Agree the feature, controlling reference and acceptance owner for sticker printing without inventing a universal defect rate or sampling plan." ""
+
+Page "/blog/label-defect-report-evidence/" "Label Defect Reports: Preserve the Observation Before Naming a Cause" "Report a label issue with stock identity, observed stage, photographs and retained references before treating a suspected cause as fact." ""
+
+Page "/blog/bulk-sticker-quantity-basis/" "Bulk Sticker Quantities: Agree the Delivered Count Basis" "Confirm the delivered counting unit, design allocation and any proposed quantity condition before accepting a bulk sticker order." ""
+
+Page "/blog/labels-for-co-packer-release-owners/" "Labels for a Co-Packer: Assign the Release and Stock Owners" "Connect brand artwork approval, co-packer application requirements and label stock responsibility in one identified release record." ""
+
+Page "/blog/sticker-artwork-permissions-handoff/" "Sticker Artwork Permissions: Separate a Reference from a Printable Asset" "Separate printable assets from reference images and keep owner-confirmed permission scope with the artwork supplied for custom stickers." ""
+
+Page "/blog/custom-sticker-thickness-layers/" "Custom Sticker Thickness: Name the Layers Being Measured" "Compare custom sticker thickness by naming the face, adhesive, protection and liner included, plus the value type and measurement basis." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -3927,6 +3954,24 @@ $blogGuides = @(,@("/blog/label-liner-recycling-collection-check/","Label Liner 
 $blogGuides = @(,@("/blog/label-roll-splice-requirements/","Label Roll Splices: Agree the Requirement Before Release","Agree whether supplied label roll splices are allowed, how they are identified and who confirms line requirements before release.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/custom-sticker-sheet-size-backing/","Sticker Sheet Size: Approve the Whole Backing Before Layout","Approve the finished backing outline, sleeve fit and sheet counting unit without shrinking already approved functional stickers.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/custom-sticker-lead-time-milestones/","Custom Sticker Lead Time: Separate Release, Dispatch and Receipt","Separate artwork release, ready-to-dispatch and required receipt when discussing custom sticker lead time and unresolved dependencies.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/second-source-label-supplier-baseline/","Second-Source Label Suppliers: Qualify Against One Baseline","Qualify a second-source label proposal against a buyer-controlled baseline, identified differences and the actual application evidence.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-overprint-output-review/","Sticker Overprint Review: Check the Output, Not Just the Screenshot","Review the actual artwork export for overprint discrepancies and distinguish ordinary white objects from specified production white.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-print-acceptance-reference/","Sticker Print Acceptance: Agree Which Difference Matters","Agree the feature, controlling reference and acceptance owner for sticker printing without inventing a universal defect rate or sampling plan.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/label-defect-report-evidence/","Label Defect Reports: Preserve the Observation Before Naming a Cause","Report a label issue with stock identity, observed stage, photographs and retained references before treating a suspected cause as fact.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/bulk-sticker-quantity-basis/","Bulk Sticker Quantities: Agree the Delivered Count Basis","Confirm the delivered counting unit, design allocation and any proposed quantity condition before accepting a bulk sticker order.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/labels-for-co-packer-release-owners/","Labels for a Co-Packer: Assign the Release and Stock Owners","Connect brand artwork approval, co-packer application requirements and label stock responsibility in one identified release record.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-artwork-permissions-handoff/","Sticker Artwork Permissions: Separate a Reference from a Printable Asset","Separate printable assets from reference images and keep owner-confirmed permission scope with the artwork supplied for custom stickers.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/custom-sticker-thickness-layers/","Custom Sticker Thickness: Name the Layers Being Measured","Compare custom sticker thickness by naming the face, adhesive, protection and liner included, plus the value type and measurement basis.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

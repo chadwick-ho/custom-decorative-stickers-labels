@@ -1587,6 +1587,7 @@ $archiveLinks = ($archive | ForEach-Object { '<li><a href="' + $_.Url + '">' + (
 $indexSections = '<section class="section blog-list">' + "`n" + (($featured | ForEach-Object { $_.Html }) -join "`n") + "`n</section>`n" + '<section class="section guide-directory" aria-labelledby="guide-directory-title"><div class="section-head"><p class="eyebrow">All buyer guides</p><h2 id="guide-directory-title">Browse the Full Guide Directory</h2><p>Explore the remaining packaging, artwork, material and production guides by title.</p></div><ul class="guide-directory-list">' + "`n" + $archiveLinks + "`n</ul></section>"
 $blogBody = $blogBody.Replace($listMatch.Value, $indexSections)
 $blogBody += '<section class="section"><h2>Label Roll Storage</h2><p>Plan how finished label rolls are received, protected and identified before use.</p><a href="/blog/how-to-store-label-rolls-before-use/">Read the label roll storage guide</a></section>'
+$blogBody += '<section class="section"><h2>Bulk Sticker Receiving</h2><p>Check delivered design allocation against the released order.</p><a href="/blog/bulk-sticker-order-receiving-check/">Read the receiving guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3794,6 +3795,8 @@ foreach ($article in $NewArticles) {
 
 Page "/blog/how-to-store-label-rolls-before-use/" "How to Store Label Rolls Before Use" "Plan how to receive, store and identify finished label rolls." ""
 
+Page "/blog/bulk-sticker-order-receiving-check/" "Bulk Sticker Orders: Check What Arrived by Design" "Check a bulk sticker order by design and supplied unit." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -3897,6 +3900,8 @@ $blogGuides = @(
 )
 
 $blogGuides = @(,@("/blog/how-to-store-label-rolls-before-use/","How to Store Label Rolls Before Use","Plan how to receive, store and identify finished label rolls.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/bulk-sticker-order-receiving-check/","Bulk Sticker Orders: Check What Arrived by Design","Check a bulk sticker order by design and supplied unit.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

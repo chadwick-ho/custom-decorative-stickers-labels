@@ -1589,6 +1589,10 @@ $blogBody = $blogBody.Replace($listMatch.Value, $indexSections)
 $blogBody += '<section class="section"><h2>Label Roll Storage</h2><p>Plan how finished label rolls are received, protected and identified before use.</p><a href="/blog/how-to-store-label-rolls-before-use/">Read the label roll storage guide</a></section>'
 $blogBody += '<section class="section"><h2>Bulk Sticker Receiving</h2><p>Check delivered design allocation against the released order.</p><a href="/blog/bulk-sticker-order-receiving-check/">Read the receiving guide</a></section>'
 $blogBody += '<section class="section"><h2>Labels per Roll</h2><p>Plan roll distribution and application constraints before ordering.</p><a href="/blog/how-many-labels-per-roll/">Read the roll split guide</a></section>'
+$blogBody += '<section class="section"><h2>Eco-Friendly Sticker Claims: Ask What the Evidence Covers</h2><p>Separate label component data, package assessments and marketing claims before approving eco-friendly sticker artwork.</p><a href="/blog/eco-friendly-sticker-evidence-check/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Label Liner Recycling: Confirm the Collection Route First</h2><p>Identify spent label liner, confirm local collector acceptance and define separation before changing a label construction.</p><a href="/blog/label-liner-recycling-collection-check/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Label Roll Splices: Agree the Requirement Before Release</h2><p>Agree whether supplied label roll splices are allowed, how they are identified and who confirms line requirements before release.</p><a href="/blog/label-roll-splice-requirements/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Sheet Size: Approve the Whole Backing Before Layout</h2><p>Approve the finished backing outline, sleeve fit and sheet counting unit without shrinking already approved functional stickers.</p><a href="/blog/custom-sticker-sheet-size-backing/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3800,6 +3804,14 @@ Page "/blog/bulk-sticker-order-receiving-check/" "Bulk Sticker Orders: Check Wha
 
 Page "/blog/how-many-labels-per-roll/" "Labels per Roll: Plan the Split Before Ordering" "Plan labels per roll around application and distribution." ""
 
+Page "/blog/eco-friendly-sticker-evidence-check/" "Eco-Friendly Sticker Claims: Ask What the Evidence Covers" "Separate label component data, package assessments and marketing claims before approving eco-friendly sticker artwork." ""
+
+Page "/blog/label-liner-recycling-collection-check/" "Label Liner Recycling: Confirm the Collection Route First" "Identify spent label liner, confirm local collector acceptance and define separation before changing a label construction." ""
+
+Page "/blog/label-roll-splice-requirements/" "Label Roll Splices: Agree the Requirement Before Release" "Agree whether supplied label roll splices are allowed, how they are identified and who confirms line requirements before release." ""
+
+Page "/blog/custom-sticker-sheet-size-backing/" "Sticker Sheet Size: Approve the Whole Backing Before Layout" "Approve the finished backing outline, sleeve fit and sheet counting unit without shrinking already approved functional stickers." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -3907,6 +3919,14 @@ $blogGuides = @(,@("/blog/how-to-store-label-rolls-before-use/","How to Store La
 $blogGuides = @(,@("/blog/bulk-sticker-order-receiving-check/","Bulk Sticker Orders: Check What Arrived by Design","Check a bulk sticker order by design and supplied unit.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/how-many-labels-per-roll/","Labels per Roll: Plan the Split Before Ordering","Plan labels per roll around application and distribution.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/eco-friendly-sticker-evidence-check/","Eco-Friendly Sticker Claims: Ask What the Evidence Covers","Separate label component data, package assessments and marketing claims before approving eco-friendly sticker artwork.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/label-liner-recycling-collection-check/","Label Liner Recycling: Confirm the Collection Route First","Identify spent label liner, confirm local collector acceptance and define separation before changing a label construction.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/label-roll-splice-requirements/","Label Roll Splices: Agree the Requirement Before Release","Agree whether supplied label roll splices are allowed, how they are identified and who confirms line requirements before release.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/custom-sticker-sheet-size-backing/","Sticker Sheet Size: Approve the Whole Backing Before Layout","Approve the finished backing outline, sleeve fit and sheet counting unit without shrinking already approved functional stickers.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

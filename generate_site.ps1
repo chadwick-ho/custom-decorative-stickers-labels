@@ -835,6 +835,19 @@ $(Footer)
 "@
   $path = if ($Url -eq "/") { Join-Path $Root "index.html" } else { Join-Path $Root (($Url.Trim("/") -replace "/", [IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar + "index.html") }
   New-Item -ItemType Directory -Force -Path (Split-Path -Parent $path) | Out-Null
+  # Retain independently merged page edits via tracked content fragments.
+  $remoteRulesPath = Join-Path $Root 'content/remote-page-adjustments-2026-10-29.json'
+  if (Test-Path -LiteralPath $remoteRulesPath) {
+    $remoteRules = Get-Content -LiteralPath $remoteRulesPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    $pageRule = $remoteRules.pages.PSObject.Properties[$Url]
+    if ($pageRule) {
+      $full = $full.Replace("`r`n", "`n")
+      foreach ($rule in $pageRule.Value) {
+        if ($full.Contains($rule.old)) { $full = $full.Replace($rule.old, $rule.new) }
+        elseif (-not $full.Contains($rule.new)) { throw "Preserved remote page fragment needs reconciliation: $Url" }
+      }
+    }
+  }
   Set-Content -LiteralPath $path -Value $full -Encoding UTF8
 }
 
@@ -1602,6 +1615,8 @@ $blogBody += '<section class="section"><h2>Bulk Sticker Quantities: Agree the De
 $blogBody += '<section class="section"><h2>Labels for a Co-Packer: Assign the Release and Stock Owners</h2><p>Connect brand artwork approval, co-packer application requirements and label stock responsibility in one identified release record.</p><a href="/blog/labels-for-co-packer-release-owners/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Sticker Artwork Permissions: Separate a Reference from a Printable Asset</h2><p>Separate printable assets from reference images and keep owner-confirmed permission scope with the artwork supplied for custom stickers.</p><a href="/blog/sticker-artwork-permissions-handoff/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Custom Sticker Thickness: Name the Layers Being Measured</h2><p>Compare custom sticker thickness by naming the face, adhesive, protection and liner included, plus the value type and measurement basis.</p><a href="/blog/custom-sticker-thickness-layers/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Direct Thermal vs Thermal Transfer Labels: Buyer Guide</h2><p>Choose a label printing route using the actual printer, consumables, required reading life and a representative review before ordering rolls.</p><a href="/blog/direct-thermal-vs-thermal-transfer-labels/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Static Cling vs Adhesive Window Stickers: Buyer Guide</h2><p>Specify the pane, campaign changeover, contact side and storage plan before comparing cling and removable adhesive window graphics.</p><a href="/blog/static-cling-vs-adhesive-window-stickers/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3839,6 +3854,10 @@ Page "/blog/sticker-artwork-permissions-handoff/" "Sticker Artwork Permissions: 
 
 Page "/blog/custom-sticker-thickness-layers/" "Custom Sticker Thickness: Name the Layers Being Measured" "Compare custom sticker thickness by naming the face, adhesive, protection and liner included, plus the value type and measurement basis." ""
 
+Page "/blog/direct-thermal-vs-thermal-transfer-labels/" "Direct Thermal vs Thermal Transfer Labels: Buyer Guide" "Choose a label printing route using the actual printer, consumables, required reading life and a representative review before ordering rolls." ""
+
+Page "/blog/static-cling-vs-adhesive-window-stickers/" "Static Cling vs Adhesive Window Stickers: Buyer Guide" "Specify the pane, campaign changeover, contact side and storage plan before comparing cling and removable adhesive window graphics." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -3972,6 +3991,10 @@ $blogGuides = @(,@("/blog/labels-for-co-packer-release-owners/","Labels for a Co
 $blogGuides = @(,@("/blog/sticker-artwork-permissions-handoff/","Sticker Artwork Permissions: Separate a Reference from a Printable Asset","Separate printable assets from reference images and keep owner-confirmed permission scope with the artwork supplied for custom stickers.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/custom-sticker-thickness-layers/","Custom Sticker Thickness: Name the Layers Being Measured","Compare custom sticker thickness by naming the face, adhesive, protection and liner included, plus the value type and measurement basis.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/direct-thermal-vs-thermal-transfer-labels/","Direct Thermal vs Thermal Transfer Labels: Buyer Guide","Choose a label printing route using the actual printer, consumables, required reading life and a representative review before ordering rolls.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/static-cling-vs-adhesive-window-stickers/","Static Cling vs Adhesive Window Stickers: Buyer Guide","Specify the pane, campaign changeover, contact side and storage plan before comparing cling and removable adhesive window graphics.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

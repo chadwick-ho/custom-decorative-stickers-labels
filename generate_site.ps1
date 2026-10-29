@@ -1618,6 +1618,8 @@ $blogBody += '<section class="section"><h2>Custom Sticker Thickness: Name the La
 $blogBody += '<section class="section"><h2>Direct Thermal vs Thermal Transfer Labels: Buyer Guide</h2><p>Choose a label printing route using the actual printer, consumables, required reading life and a representative review before ordering rolls.</p><a href="/blog/direct-thermal-vs-thermal-transfer-labels/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Static Cling vs Adhesive Window Stickers: Buyer Guide</h2><p>Specify the pane, campaign changeover, contact side and storage plan before comparing cling and removable adhesive window graphics.</p><a href="/blog/static-cling-vs-adhesive-window-stickers/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Transfer Tape Decals vs Printed Stickers: Buyer Guide</h2><p>Define the retained letters, temporary carrier and supplied state before comparing transfer-tape cut graphics with continuous printed stickers.</p><a href="/blog/transfer-tape-decals-vs-printed-stickers/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Linerless Labels: Check the Printer System First</h2><p>Review linerless media, the supported printer configuration, cut output and application route before replacing lined roll labels.</p><a href="/blog/linerless-labels-printer-system-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Piggyback Labels: Approve Both Attachment Stages</h2><p>Specify what moves, what stays and both contact surfaces before reviewing a piggyback label construction and its information handoff.</p><a href="/blog/piggyback-labels-two-stage-attachment/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3861,6 +3863,10 @@ Page "/blog/static-cling-vs-adhesive-window-stickers/" "Static Cling vs Adhesive
 
 Page "/blog/transfer-tape-decals-vs-printed-stickers/" "Transfer Tape Decals vs Printed Stickers: Buyer Guide" "Define the retained letters, temporary carrier and supplied state before comparing transfer-tape cut graphics with continuous printed stickers." ""
 
+Page "/blog/linerless-labels-printer-system-review/" "Linerless Labels: Check the Printer System First" "Review linerless media, the supported printer configuration, cut output and application route before replacing lined roll labels." ""
+
+Page "/blog/piggyback-labels-two-stage-attachment/" "Piggyback Labels: Approve Both Attachment Stages" "Specify what moves, what stays and both contact surfaces before reviewing a piggyback label construction and its information handoff." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4000,6 +4006,10 @@ $blogGuides = @(,@("/blog/direct-thermal-vs-thermal-transfer-labels/","Direct Th
 $blogGuides = @(,@("/blog/static-cling-vs-adhesive-window-stickers/","Static Cling vs Adhesive Window Stickers: Buyer Guide","Specify the pane, campaign changeover, contact side and storage plan before comparing cling and removable adhesive window graphics.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/transfer-tape-decals-vs-printed-stickers/","Transfer Tape Decals vs Printed Stickers: Buyer Guide","Define the retained letters, temporary carrier and supplied state before comparing transfer-tape cut graphics with continuous printed stickers.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/linerless-labels-printer-system-review/","Linerless Labels: Check the Printer System First","Review linerless media, the supported printer configuration, cut output and application route before replacing lined roll labels.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/piggyback-labels-two-stage-attachment/","Piggyback Labels: Approve Both Attachment Stages","Specify what moves, what stays and both contact surfaces before reviewing a piggyback label construction and its information handoff.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

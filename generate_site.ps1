@@ -1626,6 +1626,10 @@ $blogBody += '<section class="section"><h2>Expanded Content Labels: Map Access B
 $blogBody += '<section class="section"><h2>Floor Graphics: Approve the Installed System Before Use</h2><p>Connect floor finish, graphic construction, relevant slip evidence, placement and maintenance before releasing a floor sticker for use.</p><a href="/blog/floor-graphics-installation-release/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Fanfold vs Roll Labels: Check the Complete Feed Route</h2><p>Compare supported fanfold and roll presentation using the printer inlet, stock location, fold positions and output handling.</p><a href="/blog/fanfold-vs-roll-labels-feed-route/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Digital vs Flexo Labels: Quote the Version Plan</h2><p>Compare digital and flexographic label proposals against quantities by artwork, revision risk, finished construction and setup scope.</p><a href="/blog/digital-vs-flexo-labels-version-plan/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Food Packaging Labels: Define Contact Before Documents</h2><p>Map the actual food-contact route and intended conditions before requesting construction-specific documentation for a food label project.</p><a href="/blog/food-label-contact-scope-documents/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Wet-Glue vs Self-Adhesive Labels: Compare the Line Route</h2><p>Define delivered stock, adhesive application and equipment responsibilities before comparing wet-glue cut labels and self-adhesive labels.</p><a href="/blog/wet-glue-vs-self-adhesive-labels/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Scratch-Off Labels: Review Concealment and Reveal</h2><p>Separate the concealed field, intact handling and intended reveal from code validity and security claims when specifying scratch-off labels.</p><a href="/blog/scratch-off-labels-conceal-reveal-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Magnetic Labels vs Adhesive Stickers: Check the Contact</h2><p>Confirm the actual receptive surface, full contact, relocation and care before comparing magnetic identification and adhesive stickers.</p><a href="/blog/magnetic-labels-vs-adhesive-stickers/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3885,6 +3889,14 @@ Page "/blog/fanfold-vs-roll-labels-feed-route/" "Fanfold vs Roll Labels: Check t
 
 Page "/blog/digital-vs-flexo-labels-version-plan/" "Digital vs Flexo Labels: Quote the Version Plan" "Compare digital and flexographic label proposals against quantities by artwork, revision risk, finished construction and setup scope." ""
 
+Page "/blog/food-label-contact-scope-documents/" "Food Packaging Labels: Define Contact Before Documents" "Map the actual food-contact route and intended conditions before requesting construction-specific documentation for a food label project." ""
+
+Page "/blog/wet-glue-vs-self-adhesive-labels/" "Wet-Glue vs Self-Adhesive Labels: Compare the Line Route" "Define delivered stock, adhesive application and equipment responsibilities before comparing wet-glue cut labels and self-adhesive labels." ""
+
+Page "/blog/scratch-off-labels-conceal-reveal-review/" "Scratch-Off Labels: Review Concealment and Reveal" "Separate the concealed field, intact handling and intended reveal from code validity and security claims when specifying scratch-off labels." ""
+
+Page "/blog/magnetic-labels-vs-adhesive-stickers/" "Magnetic Labels vs Adhesive Stickers: Check the Contact" "Confirm the actual receptive surface, full contact, relocation and care before comparing magnetic identification and adhesive stickers." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4040,6 +4052,14 @@ $blogGuides = @(,@("/blog/floor-graphics-installation-release/","Floor Graphics:
 $blogGuides = @(,@("/blog/fanfold-vs-roll-labels-feed-route/","Fanfold vs Roll Labels: Check the Complete Feed Route","Compare supported fanfold and roll presentation using the printer inlet, stock location, fold positions and output handling.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/digital-vs-flexo-labels-version-plan/","Digital vs Flexo Labels: Quote the Version Plan","Compare digital and flexographic label proposals against quantities by artwork, revision risk, finished construction and setup scope.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/food-label-contact-scope-documents/","Food Packaging Labels: Define Contact Before Documents","Map the actual food-contact route and intended conditions before requesting construction-specific documentation for a food label project.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/wet-glue-vs-self-adhesive-labels/","Wet-Glue vs Self-Adhesive Labels: Compare the Line Route","Define delivered stock, adhesive application and equipment responsibilities before comparing wet-glue cut labels and self-adhesive labels.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/scratch-off-labels-conceal-reveal-review/","Scratch-Off Labels: Review Concealment and Reveal","Separate the concealed field, intact handling and intended reveal from code validity and security claims when specifying scratch-off labels.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/magnetic-labels-vs-adhesive-stickers/","Magnetic Labels vs Adhesive Stickers: Check the Contact","Confirm the actual receptive surface, full contact, relocation and care before comparing magnetic identification and adhesive stickers.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

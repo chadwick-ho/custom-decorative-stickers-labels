@@ -1620,6 +1620,9 @@ $blogBody += '<section class="section"><h2>Static Cling vs Adhesive Window Stick
 $blogBody += '<section class="section"><h2>Transfer Tape Decals vs Printed Stickers: Buyer Guide</h2><p>Define the retained letters, temporary carrier and supplied state before comparing transfer-tape cut graphics with continuous printed stickers.</p><a href="/blog/transfer-tape-decals-vs-printed-stickers/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Linerless Labels: Check the Printer System First</h2><p>Review linerless media, the supported printer configuration, cut output and application route before replacing lined roll labels.</p><a href="/blog/linerless-labels-printer-system-review/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Piggyback Labels: Approve Both Attachment Stages</h2><p>Specify what moves, what stays and both contact surfaces before reviewing a piggyback label construction and its information handoff.</p><a href="/blog/piggyback-labels-two-stage-attachment/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Embossed Labels: Approve Relief Separately from Shine</h2><p>Define raised or recessed detail, its physical reference and final package position before approving an embossed label or substituting a shiny finish.</p><a href="/blog/embossed-labels-relief-approval/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Double-Sided Window Stickers: Approve Two Readable Views</h2><p>Map the two audiences, artwork faces and show-through review before approving double-sided window graphics for an actual pane.</p><a href="/blog/double-sided-window-stickers-two-views/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Expanded Content Labels: Map Access Before Adding Panels</h2><p>Plan booklet or peel-back label panel order, opening access and version control before fitting more information onto a package.</p><a href="/blog/expanded-content-labels-panel-navigation/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3867,6 +3870,12 @@ Page "/blog/linerless-labels-printer-system-review/" "Linerless Labels: Check th
 
 Page "/blog/piggyback-labels-two-stage-attachment/" "Piggyback Labels: Approve Both Attachment Stages" "Specify what moves, what stays and both contact surfaces before reviewing a piggyback label construction and its information handoff." ""
 
+Page "/blog/embossed-labels-relief-approval/" "Embossed Labels: Approve Relief Separately from Shine" "Define raised or recessed detail, its physical reference and final package position before approving an embossed label or substituting a shiny finish." ""
+
+Page "/blog/double-sided-window-stickers-two-views/" "Double-Sided Window Stickers: Approve Two Readable Views" "Map the two audiences, artwork faces and show-through review before approving double-sided window graphics for an actual pane." ""
+
+Page "/blog/expanded-content-labels-panel-navigation/" "Expanded Content Labels: Map Access Before Adding Panels" "Plan booklet or peel-back label panel order, opening access and version control before fitting more information onto a package." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4010,6 +4019,12 @@ $blogGuides = @(,@("/blog/transfer-tape-decals-vs-printed-stickers/","Transfer T
 $blogGuides = @(,@("/blog/linerless-labels-printer-system-review/","Linerless Labels: Check the Printer System First","Review linerless media, the supported printer configuration, cut output and application route before replacing lined roll labels.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/piggyback-labels-two-stage-attachment/","Piggyback Labels: Approve Both Attachment Stages","Specify what moves, what stays and both contact surfaces before reviewing a piggyback label construction and its information handoff.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/embossed-labels-relief-approval/","Embossed Labels: Approve Relief Separately from Shine","Define raised or recessed detail, its physical reference and final package position before approving an embossed label or substituting a shiny finish.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/double-sided-window-stickers-two-views/","Double-Sided Window Stickers: Approve Two Readable Views","Map the two audiences, artwork faces and show-through review before approving double-sided window graphics for an actual pane.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/expanded-content-labels-panel-navigation/","Expanded Content Labels: Map Access Before Adding Panels","Plan booklet or peel-back label panel order, opening access and version control before fitting more information onto a package.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

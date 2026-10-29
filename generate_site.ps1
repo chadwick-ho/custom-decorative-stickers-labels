@@ -1623,6 +1623,9 @@ $blogBody += '<section class="section"><h2>Piggyback Labels: Approve Both Attach
 $blogBody += '<section class="section"><h2>Embossed Labels: Approve Relief Separately from Shine</h2><p>Define raised or recessed detail, its physical reference and final package position before approving an embossed label or substituting a shiny finish.</p><a href="/blog/embossed-labels-relief-approval/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Double-Sided Window Stickers: Approve Two Readable Views</h2><p>Map the two audiences, artwork faces and show-through review before approving double-sided window graphics for an actual pane.</p><a href="/blog/double-sided-window-stickers-two-views/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Expanded Content Labels: Map Access Before Adding Panels</h2><p>Plan booklet or peel-back label panel order, opening access and version control before fitting more information onto a package.</p><a href="/blog/expanded-content-labels-panel-navigation/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Floor Graphics: Approve the Installed System Before Use</h2><p>Connect floor finish, graphic construction, relevant slip evidence, placement and maintenance before releasing a floor sticker for use.</p><a href="/blog/floor-graphics-installation-release/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Fanfold vs Roll Labels: Check the Complete Feed Route</h2><p>Compare supported fanfold and roll presentation using the printer inlet, stock location, fold positions and output handling.</p><a href="/blog/fanfold-vs-roll-labels-feed-route/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Digital vs Flexo Labels: Quote the Version Plan</h2><p>Compare digital and flexographic label proposals against quantities by artwork, revision risk, finished construction and setup scope.</p><a href="/blog/digital-vs-flexo-labels-version-plan/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3876,6 +3879,12 @@ Page "/blog/double-sided-window-stickers-two-views/" "Double-Sided Window Sticke
 
 Page "/blog/expanded-content-labels-panel-navigation/" "Expanded Content Labels: Map Access Before Adding Panels" "Plan booklet or peel-back label panel order, opening access and version control before fitting more information onto a package." ""
 
+Page "/blog/floor-graphics-installation-release/" "Floor Graphics: Approve the Installed System Before Use" "Connect floor finish, graphic construction, relevant slip evidence, placement and maintenance before releasing a floor sticker for use." ""
+
+Page "/blog/fanfold-vs-roll-labels-feed-route/" "Fanfold vs Roll Labels: Check the Complete Feed Route" "Compare supported fanfold and roll presentation using the printer inlet, stock location, fold positions and output handling." ""
+
+Page "/blog/digital-vs-flexo-labels-version-plan/" "Digital vs Flexo Labels: Quote the Version Plan" "Compare digital and flexographic label proposals against quantities by artwork, revision risk, finished construction and setup scope." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4025,6 +4034,12 @@ $blogGuides = @(,@("/blog/embossed-labels-relief-approval/","Embossed Labels: Ap
 $blogGuides = @(,@("/blog/double-sided-window-stickers-two-views/","Double-Sided Window Stickers: Approve Two Readable Views","Map the two audiences, artwork faces and show-through review before approving double-sided window graphics for an actual pane.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/expanded-content-labels-panel-navigation/","Expanded Content Labels: Map Access Before Adding Panels","Plan booklet or peel-back label panel order, opening access and version control before fitting more information onto a package.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/floor-graphics-installation-release/","Floor Graphics: Approve the Installed System Before Use","Connect floor finish, graphic construction, relevant slip evidence, placement and maintenance before releasing a floor sticker for use.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/fanfold-vs-roll-labels-feed-route/","Fanfold vs Roll Labels: Check the Complete Feed Route","Compare supported fanfold and roll presentation using the printer inlet, stock location, fold positions and output handling.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/digital-vs-flexo-labels-version-plan/","Digital vs Flexo Labels: Quote the Version Plan","Compare digital and flexographic label proposals against quantities by artwork, revision risk, finished construction and setup scope.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

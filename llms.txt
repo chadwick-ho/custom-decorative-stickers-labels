@@ -38,20 +38,20 @@ Useful buyer guides:
 - Variable Data Labels: Release the File and Reconcile the Run: https://www.zclabels.com/blog/variable-data-batch-labels-small-runs/
 - Refillable Bottle Labels: Define What Stays Through Washing: https://www.zclabels.com/blog/refillable-glass-bottle-labels-guide/
 - Yogurt Cup Labels: Keep the Lid's Opening Path Clear: https://www.zclabels.com/blog/custom-yogurt-cup-labels-guide/
-- Board Game Stickers: Reconcile Components per Finished Set: https://www.zclabels.com/blog/board-game-component-stickers-guide/
+- Board Game Stickers: Reconcile Sets and Replacement Parts: https://www.zclabels.com/blog/board-game-component-stickers-guide/
 - Bookplate Stickers: Approve the Pen, Page and Closing Clearance: https://www.zclabels.com/blog/custom-bookplate-stickers-for-publishers/
 - Powder-Coated Metal Labels: Specify Finish and Cleaning: https://www.zclabels.com/blog/labels-for-powder-coated-metal-equipment/
 - Hotel Amenity Labels: Keep Housekeeping Selection Clear: https://www.zclabels.com/blog/custom-hotel-amenity-bottle-labels/
 - Jar Seals vs Shrink Bands: Compare the Closing-Line Route: https://www.zclabels.com/blog/jar-lid-tamper-seals-vs-shrink-bands/
 - Squeeze Tube Labels: Review Full and Used Tube States: https://www.zclabels.com/blog/custom-squeeze-tube-labels-guide/
-- Retail Barcode Labels: Decide What Evidence Counts as Approval: https://www.zclabels.com/blog/retail-barcode-labels-for-product-packaging/
+- Retail Barcode Labels: Close Identity Changes Before Print: https://www.zclabels.com/blog/retail-barcode-labels-for-product-packaging/
 - Cold Brew Labels: Separate Application and Condensation: https://www.zclabels.com/blog/cold-brew-bottle-labels-guide/
-- Instruction Stickers: Review the Real Point of Action: https://www.zclabels.com/blog/product-instruction-stickers-guide/
+- Instruction Stickers: Check the Action the Reader Takes: https://www.zclabels.com/blog/product-instruction-stickers-guide/
 - Shoe Box Labels: Match the Pair, Size System and Box: https://www.zclabels.com/blog/custom-shoe-box-size-labels-guide/
 - Subscription Box Stickers: Control Variant Substitutions: https://www.zclabels.com/blog/subscription-box-variant-stickers-guide/
 - Repair Status Labels: Retire the Previous State at Handoff: https://www.zclabels.com/blog/repair-status-stickers-equipment-guide/
 - Cable ID Labels: Choose Wrap or Flag for Installed Access: https://www.zclabels.com/blog/custom-cable-wrap-id-labels-guide/
-- Furniture Part Labels: Keep the ID Until the Last Needed Step: https://www.zclabels.com/blog/flat-pack-furniture-parts-stickers-guide/
+- Furniture Part Labels: Check Handed Parts Before Assembly: https://www.zclabels.com/blog/flat-pack-furniture-parts-stickers-guide/
 - Resealable Wipes Labels: Review Grip and Landing Area: https://www.zclabels.com/blog/resealable-wipes-pouch-labels-guide/
 - Correction Labels: Check Every Underlying Pack Version: https://www.zclabels.com/blog/opaque-correction-labels-packaging-guide/
 - Event Name Badges: Plan Corrections at the Registration Desk: https://www.zclabels.com/blog/custom-event-name-badge-stickers-guide/
@@ -68,7 +68,7 @@ Useful buyer guides:
 - Sample Sachet Labels: Keep the Seal and Tear Route Clear: https://www.zclabels.com/blog/cosmetic-sample-sachet-labels-guide/
 - Foil vs Metallic Ink Labels: Set a Physical Finish Reference: https://www.zclabels.com/blog/hot-foil-vs-metallic-ink-labels-guide/
 - Reverse Window Stickers: Approve the Viewing-Side Stack: https://www.zclabels.com/blog/reverse-printed-window-stickers-guide/
-- Easy-Peel Stickers: Decide Where the Buyer Can Lift the Edge: https://www.zclabels.com/blog/easy-peel-tab-stickers-guide/
+- Easy-Peel Labels: Approve the Backing Removal Sequence: https://www.zclabels.com/blog/easy-peel-tab-stickers-guide/
 - Paper vs Film Label Liners: Specify Release and Handling Together: https://www.zclabels.com/blog/label-liner-choice-guide/
 - Thermal Transfer Labels: Approve the Coding Combination: https://www.zclabels.com/blog/thermal-transfer-printable-labels-guide/
 - Egg Carton Labels: Fit the Formed Lid and Variable Data: https://www.zclabels.com/blog/custom-egg-carton-labels-guide/

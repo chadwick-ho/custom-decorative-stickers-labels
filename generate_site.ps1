@@ -1630,6 +1630,12 @@ $blogBody += '<section class="section"><h2>Food Packaging Labels: Define Contact
 $blogBody += '<section class="section"><h2>Wet-Glue vs Self-Adhesive Labels: Compare the Line Route</h2><p>Define delivered stock, adhesive application and equipment responsibilities before comparing wet-glue cut labels and self-adhesive labels.</p><a href="/blog/wet-glue-vs-self-adhesive-labels/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Scratch-Off Labels: Review Concealment and Reveal</h2><p>Separate the concealed field, intact handling and intended reveal from code validity and security claims when specifying scratch-off labels.</p><a href="/blog/scratch-off-labels-conceal-reveal-review/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Magnetic Labels vs Adhesive Stickers: Check the Contact</h2><p>Confirm the actual receptive surface, full contact, relocation and care before comparing magnetic identification and adhesive stickers.</p><a href="/blog/magnetic-labels-vs-adhesive-stickers/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Gap or Black Mark Labels: Confirm the Detection Route</h2><p>Connect the actual detector, label gap or backing mark and sensing path before releasing a roll-label construction for printing or application.</p><a href="/blog/label-gap-black-mark-sensor-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Laser vs Inkjet Label Sheets: Buy for the Actual Printer</h2><p>Confirm the installed printer, identified sheet material, full backing size and supported feed route before buying laser or inkjet labels.</p><a href="/blog/laser-vs-inkjet-label-sheets/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>RFID, NFC or QR Labels: Define the Capture Task First</h2><p>Compare optical scanning, NFC tapping and RFID capture using the object, reader, data owner and required system response before choosing a label.</p><a href="/blog/rfid-nfc-qr-labels-capture-task/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Domed Labels: Review the Resin Stack and Finished Fit</h2><p>Review the resin, printed surface, cured edge and mounted clearance before approving a domed label. Keep the completed sample and scope identifiable.</p><a href="/blog/domed-labels-resin-stack-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Kiss-Cut Label Depth: Review the Liner Before Release</h2><p>Separate artwork contour approval from converted face separation and retained liner integrity before releasing custom kiss-cut labels.</p><a href="/blog/kiss-cut-label-depth-liner-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Label Adhesion Reports: Compare Peel, Tack and Shear</h2><p>Read the method, sample, surface, conditions and endpoint before comparing adhesive reports. Keep peel, tack and shear evidence separate.</p><a href="/blog/label-adhesion-test-report-peel-tack-shear/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3897,6 +3903,18 @@ Page "/blog/scratch-off-labels-conceal-reveal-review/" "Scratch-Off Labels: Revi
 
 Page "/blog/magnetic-labels-vs-adhesive-stickers/" "Magnetic Labels vs Adhesive Stickers: Check the Contact" "Confirm the actual receptive surface, full contact, relocation and care before comparing magnetic identification and adhesive stickers." ""
 
+Page "/blog/label-gap-black-mark-sensor-review/" "Gap or Black Mark Labels: Confirm the Detection Route" "Connect the actual detector, label gap or backing mark and sensing path before releasing a roll-label construction for printing or application." ""
+
+Page "/blog/laser-vs-inkjet-label-sheets/" "Laser vs Inkjet Label Sheets: Buy for the Actual Printer" "Confirm the installed printer, identified sheet material, full backing size and supported feed route before buying laser or inkjet labels." ""
+
+Page "/blog/rfid-nfc-qr-labels-capture-task/" "RFID, NFC or QR Labels: Define the Capture Task First" "Compare optical scanning, NFC tapping and RFID capture using the object, reader, data owner and required system response before choosing a label." ""
+
+Page "/blog/domed-labels-resin-stack-review/" "Domed Labels: Review the Resin Stack and Finished Fit" "Review the resin, printed surface, cured edge and mounted clearance before approving a domed label. Keep the completed sample and scope identifiable." ""
+
+Page "/blog/kiss-cut-label-depth-liner-review/" "Kiss-Cut Label Depth: Review the Liner Before Release" "Separate artwork contour approval from converted face separation and retained liner integrity before releasing custom kiss-cut labels." ""
+
+Page "/blog/label-adhesion-test-report-peel-tack-shear/" "Label Adhesion Reports: Compare Peel, Tack and Shear" "Read the method, sample, surface, conditions and endpoint before comparing adhesive reports. Keep peel, tack and shear evidence separate." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4060,6 +4078,18 @@ $blogGuides = @(,@("/blog/wet-glue-vs-self-adhesive-labels/","Wet-Glue vs Self-A
 $blogGuides = @(,@("/blog/scratch-off-labels-conceal-reveal-review/","Scratch-Off Labels: Review Concealment and Reveal","Separate the concealed field, intact handling and intended reveal from code validity and security claims when specifying scratch-off labels.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/magnetic-labels-vs-adhesive-stickers/","Magnetic Labels vs Adhesive Stickers: Check the Contact","Confirm the actual receptive surface, full contact, relocation and care before comparing magnetic identification and adhesive stickers.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/label-gap-black-mark-sensor-review/","Gap or Black Mark Labels: Confirm the Detection Route","Connect the actual detector, label gap or backing mark and sensing path before releasing a roll-label construction for printing or application.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/laser-vs-inkjet-label-sheets/","Laser vs Inkjet Label Sheets: Buy for the Actual Printer","Confirm the installed printer, identified sheet material, full backing size and supported feed route before buying laser or inkjet labels.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/rfid-nfc-qr-labels-capture-task/","RFID, NFC or QR Labels: Define the Capture Task First","Compare optical scanning, NFC tapping and RFID capture using the object, reader, data owner and required system response before choosing a label.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/domed-labels-resin-stack-review/","Domed Labels: Review the Resin Stack and Finished Fit","Review the resin, printed surface, cured edge and mounted clearance before approving a domed label. Keep the completed sample and scope identifiable.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/kiss-cut-label-depth-liner-review/","Kiss-Cut Label Depth: Review the Liner Before Release","Separate artwork contour approval from converted face separation and retained liner integrity before releasing custom kiss-cut labels.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/label-adhesion-test-report-peel-tack-shear/","Label Adhesion Reports: Compare Peel, Tack and Shear","Read the method, sample, surface, conditions and endpoint before comparing adhesive reports. Keep peel, tack and shear evidence separate.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

@@ -1638,6 +1638,8 @@ $blogBody += '<section class="section"><h2>Kiss-Cut Label Depth: Review the Line
 $blogBody += '<section class="section"><h2>Label Adhesion Reports: Compare Peel, Tack and Shear</h2><p>Read the method, sample, surface, conditions and endpoint before comparing adhesive reports. Keep peel, tack and shear evidence separate.</p><a href="/blog/label-adhesion-test-report-peel-tack-shear/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Multi-Across Label Rolls: Agree the Web and Record Map</h2><p>Agree the complete web drawing, record-to-position map and quantity basis before ordering multi-across label rolls for the actual receiving workflow.</p><a href="/blog/multi-across-label-rolls-web-record-map/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Gift Tissue Sticker Seals: Plan the Fold and Opening</h2><p>Plan gift tissue sticker seals around the actual fold, packing route and opening experience, with a practical sample comparison checklist.</p><a href="/blog/gift-tissue-sticker-seals/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Printed Sticker Backing: Choose Where the Message Lives</h2><p>Choose liner back printing, a kiss-cut margin or a separate card by the intended reading moment, proof orientation and supplied product.</p><a href="/blog/printed-sticker-backing-message-location/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Random Sticker Packs: Define the Mix Before Packing</h2><p>Specify eligible designs, duplicate rules, category requirements and batch allocation before quoting and assembling random sticker assortments.</p><a href="/blog/random-sticker-packs-assortment-rules/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3921,6 +3923,10 @@ Page "/blog/multi-across-label-rolls-web-record-map/" "Multi-Across Label Rolls:
 
 Page "/blog/gift-tissue-sticker-seals/" "Gift Tissue Sticker Seals: Plan the Fold and Opening" "Plan gift tissue sticker seals around the actual fold, packing route and opening experience, with a practical sample comparison checklist." ""
 
+Page "/blog/printed-sticker-backing-message-location/" "Printed Sticker Backing: Choose Where the Message Lives" "Choose liner back printing, a kiss-cut margin or a separate card by the intended reading moment, proof orientation and supplied product." ""
+
+Page "/blog/random-sticker-packs-assortment-rules/" "Random Sticker Packs: Define the Mix Before Packing" "Specify eligible designs, duplicate rules, category requirements and batch allocation before quoting and assembling random sticker assortments." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4100,6 +4106,10 @@ $blogGuides = @(,@("/blog/label-adhesion-test-report-peel-tack-shear/","Label Ad
 $blogGuides = @(,@("/blog/multi-across-label-rolls-web-record-map/","Multi-Across Label Rolls: Agree the Web and Record Map","Agree the complete web drawing, record-to-position map and quantity basis before ordering multi-across label rolls for the actual receiving workflow.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/gift-tissue-sticker-seals/","Gift Tissue Sticker Seals: Plan the Fold and Opening","Plan gift tissue sticker seals around the actual fold, packing route and opening experience, with a practical sample comparison checklist.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/printed-sticker-backing-message-location/","Printed Sticker Backing: Choose Where the Message Lives","Choose liner back printing, a kiss-cut margin or a separate card by the intended reading moment, proof orientation and supplied product.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/random-sticker-packs-assortment-rules/","Random Sticker Packs: Define the Mix Before Packing","Specify eligible designs, duplicate rules, category requirements and batch allocation before quoting and assembling random sticker assortments.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

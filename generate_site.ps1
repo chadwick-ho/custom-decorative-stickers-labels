@@ -1640,6 +1640,18 @@ $blogBody += '<section class="section"><h2>Multi-Across Label Rolls: Agree the W
 $blogBody += '<section class="section"><h2>Gift Tissue Sticker Seals: Plan the Fold and Opening</h2><p>Plan gift tissue sticker seals around the actual fold, packing route and opening experience, with a practical sample comparison checklist.</p><a href="/blog/gift-tissue-sticker-seals/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Printed Sticker Backing: Choose Where the Message Lives</h2><p>Choose liner back printing, a kiss-cut margin or a separate card by the intended reading moment, proof orientation and supplied product.</p><a href="/blog/printed-sticker-backing-message-location/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Random Sticker Packs: Define the Mix Before Packing</h2><p>Specify eligible designs, duplicate rules, category requirements and batch allocation before quoting and assembling random sticker assortments.</p><a href="/blog/random-sticker-packs-assortment-rules/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Washi Stickers: Approve the Applied Page, Not Just the Sheet</h2><p>Review translucent paper stickers on intended page stocks, grids and overlaps, then confirm peel, writing and construction requirements.</p><a href="/blog/washi-stickers-page-background-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>UV DTF Transfers: Approve the Supplied and Applied Graphic</h2><p>Compare UV DTF with printed stickers using the actual hard surface, retained graphic, application responsibility and sample evidence.</p><a href="/blog/uv-dtf-hard-surface-transfer-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Lenticular Stickers: Approve the Viewing Movement</h2><p>Specify flip, motion or depth, viewing orientation and a physical effect proof before approving a lenticular collectible sticker.</p><a href="/blog/lenticular-sticker-viewing-effect-proof/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Glow Stickers: Define the Light-to-Dark Sequence</h2><p>Plan decorative glow stickers around charging conditions, printed coverage and the intended afterglow observation without unsupported duration claims.</p><a href="/blog/glow-stickers-charging-afterglow-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Reflective or Fluorescent Stickers: Specify the Light</h2><p>Compare decorative reflective, fluorescent and glow effects using actual lighting, viewing position and printed sample requirements.</p><a href="/blog/reflective-fluorescent-sticker-lighting-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Spot-Gloss Stickers: Release the Finish Map</h2><p>Specify selective clear-finish areas, alignment, final construction and physical sample review before approving spot-gloss sticker artwork.</p><a href="/blog/spot-gloss-stickers-finish-map/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Waterslide Decals or Stickers: Compare the Complete Job</h2><p>Compare water-release decoration and self-adhesive stickers using retained layers, operator work, object compatibility and care evidence.</p><a href="/blog/waterslide-decals-vs-adhesive-stickers/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Scented Labels: Approve Fragrance and Activation Separately</h2><p>Define fragrance references, activation areas, sample review and packing protection before releasing a scented promotional label.</p><a href="/blog/scented-labels-fragrance-activation-approval/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Perforated Window Graphics: Approve Both Viewing Tasks</h2><p>Plan perforated window graphics using outside readability, inside view, real lighting, glazing review and installation scope.</p><a href="/blog/perforated-window-graphics-viewing-brief/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Wall Decals: Review Paint Readiness and Removal</h2><p>Identify wall paint, readiness, trial scope and removal expectations before ordering a temporary decorative wall graphic.</p><a href="/blog/wall-decals-paint-readiness-removal/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Frosted Glass Film: Agree Coverage and Clear Openings</h2><p>Specify decorative frosted film, open cutouts, viewing expectations, glazing compatibility and eventual removal before approval.</p><a href="/blog/frosted-glass-film-coverage-openings/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Dry Rub-On Transfers: Check Access Before Artwork Release</h2><p>Review carrier access, fine retained details, actual surface and operator steps before approving dry rub-on decoration.</p><a href="/blog/dry-rub-on-transfers-application-access/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3927,6 +3939,30 @@ Page "/blog/printed-sticker-backing-message-location/" "Printed Sticker Backing:
 
 Page "/blog/random-sticker-packs-assortment-rules/" "Random Sticker Packs: Define the Mix Before Packing" "Specify eligible designs, duplicate rules, category requirements and batch allocation before quoting and assembling random sticker assortments." ""
 
+Page "/blog/washi-stickers-page-background-review/" "Washi Stickers: Approve the Applied Page, Not Just the Sheet" "Review translucent paper stickers on intended page stocks, grids and overlaps, then confirm peel, writing and construction requirements." ""
+
+Page "/blog/uv-dtf-hard-surface-transfer-review/" "UV DTF Transfers: Approve the Supplied and Applied Graphic" "Compare UV DTF with printed stickers using the actual hard surface, retained graphic, application responsibility and sample evidence." ""
+
+Page "/blog/lenticular-sticker-viewing-effect-proof/" "Lenticular Stickers: Approve the Viewing Movement" "Specify flip, motion or depth, viewing orientation and a physical effect proof before approving a lenticular collectible sticker." ""
+
+Page "/blog/glow-stickers-charging-afterglow-review/" "Glow Stickers: Define the Light-to-Dark Sequence" "Plan decorative glow stickers around charging conditions, printed coverage and the intended afterglow observation without unsupported duration claims." ""
+
+Page "/blog/reflective-fluorescent-sticker-lighting-review/" "Reflective or Fluorescent Stickers: Specify the Light" "Compare decorative reflective, fluorescent and glow effects using actual lighting, viewing position and printed sample requirements." ""
+
+Page "/blog/spot-gloss-stickers-finish-map/" "Spot-Gloss Stickers: Release the Finish Map" "Specify selective clear-finish areas, alignment, final construction and physical sample review before approving spot-gloss sticker artwork." ""
+
+Page "/blog/waterslide-decals-vs-adhesive-stickers/" "Waterslide Decals or Stickers: Compare the Complete Job" "Compare water-release decoration and self-adhesive stickers using retained layers, operator work, object compatibility and care evidence." ""
+
+Page "/blog/scented-labels-fragrance-activation-approval/" "Scented Labels: Approve Fragrance and Activation Separately" "Define fragrance references, activation areas, sample review and packing protection before releasing a scented promotional label." ""
+
+Page "/blog/perforated-window-graphics-viewing-brief/" "Perforated Window Graphics: Approve Both Viewing Tasks" "Plan perforated window graphics using outside readability, inside view, real lighting, glazing review and installation scope." ""
+
+Page "/blog/wall-decals-paint-readiness-removal/" "Wall Decals: Review Paint Readiness and Removal" "Identify wall paint, readiness, trial scope and removal expectations before ordering a temporary decorative wall graphic." ""
+
+Page "/blog/frosted-glass-film-coverage-openings/" "Frosted Glass Film: Agree Coverage and Clear Openings" "Specify decorative frosted film, open cutouts, viewing expectations, glazing compatibility and eventual removal before approval." ""
+
+Page "/blog/dry-rub-on-transfers-application-access/" "Dry Rub-On Transfers: Check Access Before Artwork Release" "Review carrier access, fine retained details, actual surface and operator steps before approving dry rub-on decoration." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4110,6 +4146,30 @@ $blogGuides = @(,@("/blog/gift-tissue-sticker-seals/","Gift Tissue Sticker Seals
 $blogGuides = @(,@("/blog/printed-sticker-backing-message-location/","Printed Sticker Backing: Choose Where the Message Lives","Choose liner back printing, a kiss-cut margin or a separate card by the intended reading moment, proof orientation and supplied product.")) + @($blogGuides)
 
 $blogGuides = @(,@("/blog/random-sticker-packs-assortment-rules/","Random Sticker Packs: Define the Mix Before Packing","Specify eligible designs, duplicate rules, category requirements and batch allocation before quoting and assembling random sticker assortments.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/washi-stickers-page-background-review/","Washi Stickers: Approve the Applied Page, Not Just the Sheet","Review translucent paper stickers on intended page stocks, grids and overlaps, then confirm peel, writing and construction requirements.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/uv-dtf-hard-surface-transfer-review/","UV DTF Transfers: Approve the Supplied and Applied Graphic","Compare UV DTF with printed stickers using the actual hard surface, retained graphic, application responsibility and sample evidence.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/lenticular-sticker-viewing-effect-proof/","Lenticular Stickers: Approve the Viewing Movement","Specify flip, motion or depth, viewing orientation and a physical effect proof before approving a lenticular collectible sticker.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/glow-stickers-charging-afterglow-review/","Glow Stickers: Define the Light-to-Dark Sequence","Plan decorative glow stickers around charging conditions, printed coverage and the intended afterglow observation without unsupported duration claims.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/reflective-fluorescent-sticker-lighting-review/","Reflective or Fluorescent Stickers: Specify the Light","Compare decorative reflective, fluorescent and glow effects using actual lighting, viewing position and printed sample requirements.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/spot-gloss-stickers-finish-map/","Spot-Gloss Stickers: Release the Finish Map","Specify selective clear-finish areas, alignment, final construction and physical sample review before approving spot-gloss sticker artwork.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/waterslide-decals-vs-adhesive-stickers/","Waterslide Decals or Stickers: Compare the Complete Job","Compare water-release decoration and self-adhesive stickers using retained layers, operator work, object compatibility and care evidence.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/scented-labels-fragrance-activation-approval/","Scented Labels: Approve Fragrance and Activation Separately","Define fragrance references, activation areas, sample review and packing protection before releasing a scented promotional label.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/perforated-window-graphics-viewing-brief/","Perforated Window Graphics: Approve Both Viewing Tasks","Plan perforated window graphics using outside readability, inside view, real lighting, glazing review and installation scope.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/wall-decals-paint-readiness-removal/","Wall Decals: Review Paint Readiness and Removal","Identify wall paint, readiness, trial scope and removal expectations before ordering a temporary decorative wall graphic.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/frosted-glass-film-coverage-openings/","Frosted Glass Film: Agree Coverage and Clear Openings","Specify decorative frosted film, open cutouts, viewing expectations, glazing compatibility and eventual removal before approval.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/dry-rub-on-transfers-application-access/","Dry Rub-On Transfers: Check Access Before Artwork Release","Review carrier access, fine retained details, actual surface and operator steps before approving dry rub-on decoration.")) + @($blogGuides)
 
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)

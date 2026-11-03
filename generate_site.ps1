@@ -1652,6 +1652,8 @@ $blogBody += '<section class="section"><h2>Perforated Window Graphics: Approve B
 $blogBody += '<section class="section"><h2>Wall Decals: Review Paint Readiness and Removal</h2><p>Identify wall paint, readiness, trial scope and removal expectations before ordering a temporary decorative wall graphic.</p><a href="/blog/wall-decals-paint-readiness-removal/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Frosted Glass Film: Agree Coverage and Clear Openings</h2><p>Specify decorative frosted film, open cutouts, viewing expectations, glazing compatibility and eventual removal before approval.</p><a href="/blog/frosted-glass-film-coverage-openings/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Dry Rub-On Transfers: Check Access Before Artwork Release</h2><p>Review carrier access, fine retained details, actual surface and operator steps before approving dry rub-on decoration.</p><a href="/blog/dry-rub-on-transfers-application-access/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Calendar Sticker Sheets: Approve Dates Before Print</h2><p>Define dated and undated calendar sticker contents, verify weekday and date relationships, and reconcile each sheet edition before approving a print run.</p><a href="/blog/calendar-sticker-date-content-approval/">Read the stationery procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Index Tab Stickers: Review the Page Edge and Both Faces</h2><p>Define the flat and applied views of custom index tab stickers, map section positions, and review the actual page, cover and complete tab set before release.</p><a href="/blog/index-tab-stickers-page-edge-views/">Read the stationery procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3963,6 +3965,10 @@ Page "/blog/frosted-glass-film-coverage-openings/" "Frosted Glass Film: Agree Co
 
 Page "/blog/dry-rub-on-transfers-application-access/" "Dry Rub-On Transfers: Check Access Before Artwork Release" "Review carrier access, fine retained details, actual surface and operator steps before approving dry rub-on decoration." ""
 
+Page "/blog/calendar-sticker-date-content-approval/" "Calendar Sticker Sheets: Approve Dates Before Print" "Define dated and undated calendar sticker contents, verify weekday and date relationships, and reconcile each sheet edition before approving a print run." ""
+
+Page "/blog/index-tab-stickers-page-edge-views/" "Index Tab Stickers: Review the Page Edge and Both Faces" "Define the flat and applied views of custom index tab stickers, map section positions, and review the actual page, cover and complete tab set before release." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4171,6 +4177,10 @@ $blogGuides = @(,@("/blog/frosted-glass-film-coverage-openings/","Frosted Glass 
 
 $blogGuides = @(,@("/blog/dry-rub-on-transfers-application-access/","Dry Rub-On Transfers: Check Access Before Artwork Release","Review carrier access, fine retained details, actual surface and operator steps before approving dry rub-on decoration.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/calendar-sticker-date-content-approval/","Calendar Sticker Sheets: Approve Dates Before Print","Define dated and undated calendar sticker contents, verify weekday and date relationships, and reconcile each sheet edition before approving a print run.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/index-tab-stickers-page-edge-views/","Index Tab Stickers: Review the Page Edge and Both Faces","Define the flat and applied views of custom index tab stickers, map section positions, and review the actual page, cover and complete tab set before release.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4325,7 +4335,9 @@ if ($BaseUrl) {
     "- Compliance and document review: $BaseUrl/compliance-and-document-review/",
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
-    "Useful buyer guides:"
+    "Useful buyer guides:",
+    "- Calendar content approval: $BaseUrl/blog/calendar-sticker-date-content-approval/",
+    "- Index tab applied views: $BaseUrl/blog/index-tab-stickers-page-edge-views/"
   ) + @($NewArticles | ForEach-Object { "- $($_.Title): $BaseUrl$($_.Url)" }) + @(
     "- Artwork preparation: $BaseUrl/blog/prepare-artwork-for-custom-stickers/",
     "- Sticker sheets vs die-cut stickers: $BaseUrl/blog/sticker-sheets-vs-die-cut-stickers/",

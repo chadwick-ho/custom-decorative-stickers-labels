@@ -1654,6 +1654,9 @@ $blogBody += '<section class="section"><h2>Frosted Glass Film: Agree Coverage an
 $blogBody += '<section class="section"><h2>Dry Rub-On Transfers: Check Access Before Artwork Release</h2><p>Review carrier access, fine retained details, actual surface and operator steps before approving dry rub-on decoration.</p><a href="/blog/dry-rub-on-transfers-application-access/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Calendar Sticker Sheets: Approve Dates Before Print</h2><p>Define dated and undated calendar sticker contents, verify weekday and date relationships, and reconcile each sheet edition before approving a print run.</p><a href="/blog/calendar-sticker-date-content-approval/">Read the stationery procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Index Tab Stickers: Review the Page Edge and Both Faces</h2><p>Define the flat and applied views of custom index tab stickers, map section positions, and review the actual page, cover and complete tab set before release.</p><a href="/blog/index-tab-stickers-page-edge-views/">Read the stationery procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Kids Sticker Orders: Define the Document Review Scope</h2><p>Define the intended users, market, finished pack and construction before matching supporting documents to a kids sticker order and its responsible reviewer.</p><a href="/blog/kids-sticker-document-review-scope/">Read the stationery procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Planner Sticker Overlays: Review the Complete Book</h2><p>Map repeated planner sticker placements and review the complete bound book, applied construction, cover and page-turning routine before approving an overlay collection.</p><a href="/blog/planner-sticker-overlays-whole-book-review/">Read the stationery procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Scrapbook Stickers: Separate Decoration from Photo Preservation</h2><p>Map decorative scrapbook sticker contact, separate originals from reproductions, and keep ordinary stationery use distinct from unsupported photo-safe or archival claims.</p><a href="/blog/scrapbook-stickers-photograph-contact-scope/">Read the stationery procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3969,6 +3972,12 @@ Page "/blog/calendar-sticker-date-content-approval/" "Calendar Sticker Sheets: A
 
 Page "/blog/index-tab-stickers-page-edge-views/" "Index Tab Stickers: Review the Page Edge and Both Faces" "Define the flat and applied views of custom index tab stickers, map section positions, and review the actual page, cover and complete tab set before release." ""
 
+Page "/blog/kids-sticker-document-review-scope/" "Kids Sticker Orders: Define the Document Review Scope" "Define the intended users, market, finished pack and construction before matching supporting documents to a kids sticker order and its responsible reviewer." ""
+
+Page "/blog/planner-sticker-overlays-whole-book-review/" "Planner Sticker Overlays: Review the Complete Book" "Map repeated planner sticker placements and review the complete bound book, applied construction, cover and page-turning routine before approving an overlay collection." ""
+
+Page "/blog/scrapbook-stickers-photograph-contact-scope/" "Scrapbook Stickers: Separate Decoration from Photo Preservation" "Map decorative scrapbook sticker contact, separate originals from reproductions, and keep ordinary stationery use distinct from unsupported photo-safe or archival claims." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4181,6 +4190,12 @@ $blogGuides = @(,@("/blog/calendar-sticker-date-content-approval/","Calendar Sti
 
 $blogGuides = @(,@("/blog/index-tab-stickers-page-edge-views/","Index Tab Stickers: Review the Page Edge and Both Faces","Define the flat and applied views of custom index tab stickers, map section positions, and review the actual page, cover and complete tab set before release.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/kids-sticker-document-review-scope/","Kids Sticker Orders: Define the Document Review Scope","Define the intended users, market, finished pack and construction before matching supporting documents to a kids sticker order and its responsible reviewer.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/planner-sticker-overlays-whole-book-review/","Planner Sticker Overlays: Review the Complete Book","Map repeated planner sticker placements and review the complete bound book, applied construction, cover and page-turning routine before approving an overlay collection.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/scrapbook-stickers-photograph-contact-scope/","Scrapbook Stickers: Separate Decoration from Photo Preservation","Map decorative scrapbook sticker contact, separate originals from reproductions, and keep ordinary stationery use distinct from unsupported photo-safe or archival claims.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4336,6 +4351,9 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Kids Sticker Orders: Define the Document Review Scope: $BaseUrl/blog/kids-sticker-document-review-scope/",
+    "- Planner Sticker Overlays: Review the Complete Book: $BaseUrl/blog/planner-sticker-overlays-whole-book-review/",
+    "- Scrapbook Stickers: Separate Decoration from Photo Preservation: $BaseUrl/blog/scrapbook-stickers-photograph-contact-scope/",
     "- Calendar content approval: $BaseUrl/blog/calendar-sticker-date-content-approval/",
     "- Index tab applied views: $BaseUrl/blog/index-tab-stickers-page-edge-views/"
   ) + @($NewArticles | ForEach-Object { "- $($_.Title): $BaseUrl$($_.Url)" }) + @(

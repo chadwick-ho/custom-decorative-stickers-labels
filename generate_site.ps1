@@ -1657,6 +1657,7 @@ $blogBody += '<section class="section"><h2>Index Tab Stickers: Review the Page E
 $blogBody += '<section class="section"><h2>Kids Sticker Orders: Define the Document Review Scope</h2><p>Define the intended users, market, finished pack and construction before matching supporting documents to a kids sticker order and its responsible reviewer.</p><a href="/blog/kids-sticker-document-review-scope/">Read the stationery procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Planner Sticker Overlays: Review the Complete Book</h2><p>Map repeated planner sticker placements and review the complete bound book, applied construction, cover and page-turning routine before approving an overlay collection.</p><a href="/blog/planner-sticker-overlays-whole-book-review/">Read the stationery procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Scrapbook Stickers: Separate Decoration from Photo Preservation</h2><p>Map decorative scrapbook sticker contact, separate originals from reproductions, and keep ordinary stationery use distinct from unsupported photo-safe or archival claims.</p><a href="/blog/scrapbook-stickers-photograph-contact-scope/">Read the stationery procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Personalized Sticker Lists: Share Only What the Review Needs</h2><p>Separate fictional layout data from an authorized personalization release, identify necessary fields, and agree the exchange and handling scope before sharing a real list.</p><a href="/blog/personalized-sticker-data-handoff-scope/">Read the stationery procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3978,6 +3979,8 @@ Page "/blog/planner-sticker-overlays-whole-book-review/" "Planner Sticker Overla
 
 Page "/blog/scrapbook-stickers-photograph-contact-scope/" "Scrapbook Stickers: Separate Decoration from Photo Preservation" "Map decorative scrapbook sticker contact, separate originals from reproductions, and keep ordinary stationery use distinct from unsupported photo-safe or archival claims." ""
 
+Page "/blog/personalized-sticker-data-handoff-scope/" "Personalized Sticker Lists: Share Only What the Review Needs" "Separate fictional layout data from an authorized personalization release, identify necessary fields, and agree the exchange and handling scope before sharing a real list." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4196,6 +4199,8 @@ $blogGuides = @(,@("/blog/planner-sticker-overlays-whole-book-review/","Planner 
 
 $blogGuides = @(,@("/blog/scrapbook-stickers-photograph-contact-scope/","Scrapbook Stickers: Separate Decoration from Photo Preservation","Map decorative scrapbook sticker contact, separate originals from reproductions, and keep ordinary stationery use distinct from unsupported photo-safe or archival claims.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/personalized-sticker-data-handoff-scope/","Personalized Sticker Lists: Share Only What the Review Needs","Separate fictional layout data from an authorized personalization release, identify necessary fields, and agree the exchange and handling scope before sharing a real list.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4351,6 +4356,7 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Personalized Sticker Lists: Share Only What the Review Needs: $BaseUrl/blog/personalized-sticker-data-handoff-scope/",
     "- Kids Sticker Orders: Define the Document Review Scope: $BaseUrl/blog/kids-sticker-document-review-scope/",
     "- Planner Sticker Overlays: Review the Complete Book: $BaseUrl/blog/planner-sticker-overlays-whole-book-review/",
     "- Scrapbook Stickers: Separate Decoration from Photo Preservation: $BaseUrl/blog/scrapbook-stickers-photograph-contact-scope/",

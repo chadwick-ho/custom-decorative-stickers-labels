@@ -1659,6 +1659,8 @@ $blogBody += '<section class="section"><h2>Planner Sticker Overlays: Review the 
 $blogBody += '<section class="section"><h2>Scrapbook Stickers: Separate Decoration from Photo Preservation</h2><p>Map decorative scrapbook sticker contact, separate originals from reproductions, and keep ordinary stationery use distinct from unsupported photo-safe or archival claims.</p><a href="/blog/scrapbook-stickers-photograph-contact-scope/">Read the stationery procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Personalized Sticker Lists: Share Only What the Review Needs</h2><p>Separate fictional layout data from an authorized personalization release, identify necessary fields, and agree the exchange and handling scope before sharing a real list.</p><a href="/blog/personalized-sticker-data-handoff-scope/">Read the stationery procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Gift Envelope Seals: Review the Mailing Layout</h2><p>Review both envelope faces, reserve the mailing areas, and check a packed sample before ordering decorative gift envelope seals in bulk.</p><a href="/blog/gift-envelope-seals-mailing-layout/">Read the gift envelope seal guide</a></section>'
+$blogBody += '<section class="section"><h2>Holiday Stickers: Plan What Can Carry Over</h2><p>Compare one dated seal with separate seasonal and event pieces. Check which leftover holiday stickers you can release for a confirmed next use.</p><a href="/blog/holiday-sticker-campaign-carryover/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Mini Cartoon Stickers: Keep Characters Recognizable</h2><p>Compare small cartoon sticker artwork with the original characters, check lookalike pairs at final size, and decide when to simplify the design.</p><a href="/blog/mini-cartoon-sticker-character-recognition/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3984,6 +3986,10 @@ Page "/blog/personalized-sticker-data-handoff-scope/" "Personalized Sticker List
 
 Page "/blog/gift-envelope-seals-mailing-layout/" "Gift Envelope Seals: Review the Mailing Layout" "Review both envelope faces, reserve the mailing areas, and check a packed sample before ordering decorative gift envelope seals in bulk." ""
 
+Page "/blog/holiday-sticker-campaign-carryover/" "Holiday Stickers: Plan What Can Carry Over" "Compare one dated seal with separate seasonal and event pieces. Check which leftover holiday stickers you can release for a confirmed next use." ""
+
+Page "/blog/mini-cartoon-sticker-character-recognition/" "Mini Cartoon Stickers: Keep Characters Recognizable" "Compare small cartoon sticker artwork with the original characters, check lookalike pairs at final size, and decide when to simplify the design." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4206,6 +4212,10 @@ $blogGuides = @(,@("/blog/personalized-sticker-data-handoff-scope/","Personalize
 
 $blogGuides = @(,@("/blog/gift-envelope-seals-mailing-layout/","Gift Envelope Seals: Review the Mailing Layout","Review both envelope faces, reserve the mailing areas, and check a packed sample before ordering decorative gift envelope seals in bulk.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/holiday-sticker-campaign-carryover/","Holiday Stickers: Plan What Can Carry Over","Compare one dated seal with separate seasonal and event pieces. Check which leftover holiday stickers you can release for a confirmed next use.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/mini-cartoon-sticker-character-recognition/","Mini Cartoon Stickers: Keep Characters Recognizable","Compare small cartoon sticker artwork with the original characters, check lookalike pairs at final size, and decide when to simplify the design.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4361,6 +4371,8 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Mini Cartoon Stickers: Keep Characters Recognizable: $BaseUrl/blog/mini-cartoon-sticker-character-recognition/",
+    "- Holiday Stickers: Plan What Can Carry Over: $BaseUrl/blog/holiday-sticker-campaign-carryover/",
     "- Gift Envelope Seals: Review the Mailing Layout: $BaseUrl/blog/gift-envelope-seals-mailing-layout/",
     "- Personalized Sticker Lists: Share Only What the Review Needs: $BaseUrl/blog/personalized-sticker-data-handoff-scope/",
     "- Kids Sticker Orders: Define the Document Review Scope: $BaseUrl/blog/kids-sticker-document-review-scope/",

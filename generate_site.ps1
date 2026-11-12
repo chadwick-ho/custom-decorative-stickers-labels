@@ -1662,6 +1662,7 @@ $blogBody += '<section class="section"><h2>Gift Envelope Seals: Review the Maili
 $blogBody += '<section class="section"><h2>Holiday Stickers: Plan What Can Carry Over</h2><p>Compare one dated seal with separate seasonal and event pieces. Check which leftover holiday stickers you can release for a confirmed next use.</p><a href="/blog/holiday-sticker-campaign-carryover/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Mini Cartoon Stickers: Keep Characters Recognizable</h2><p>Compare small cartoon sticker artwork with the original characters, check lookalike pairs at final size, and decide when to simplify the design.</p><a href="/blog/mini-cartoon-sticker-character-recognition/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Promotional Sticker Inserts: Count Orders or Parcels?</h2><p>Choose one sticker per order or per parcel, plan for split shipments and replacements, and turn the approved giveaway rule into a print quantity.</p><a href="/blog/promotional-sticker-inserts-order-vs-parcel/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Planner Sticker Sheets: Check Ring Binder Fit</h2><p>Review the binding area, peel access and cover closure on the actual organizer before buying planner sticker sheets that stay on the rings.</p><a href="/blog/planner-sticker-sheets-ring-binder-fit/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -3993,6 +3994,8 @@ Page "/blog/mini-cartoon-sticker-character-recognition/" "Mini Cartoon Stickers:
 
 Page "/blog/promotional-sticker-inserts-order-vs-parcel/" "Promotional Sticker Inserts: Count Orders or Parcels?" "Choose one sticker per order or per parcel, plan for split shipments and replacements, and turn the approved giveaway rule into a print quantity." ""
 
+Page "/blog/planner-sticker-sheets-ring-binder-fit/" "Planner Sticker Sheets: Check Ring Binder Fit" "Review the binding area, peel access and cover closure on the actual organizer before buying planner sticker sheets that stay on the rings." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4221,6 +4224,8 @@ $blogGuides = @(,@("/blog/mini-cartoon-sticker-character-recognition/","Mini Car
 
 $blogGuides = @(,@("/blog/promotional-sticker-inserts-order-vs-parcel/","Promotional Sticker Inserts: Count Orders or Parcels?","Choose one sticker per order or per parcel, plan for split shipments and replacements, and turn the approved giveaway rule into a print quantity.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/planner-sticker-sheets-ring-binder-fit/","Planner Sticker Sheets: Check Ring Binder Fit","Review the binding area, peel access and cover closure on the actual organizer before buying planner sticker sheets that stay on the rings.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4376,6 +4381,7 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Planner Sticker Sheets: Check Ring Binder Fit: $BaseUrl/blog/planner-sticker-sheets-ring-binder-fit/",
     "- Promotional Sticker Inserts: Count Orders or Parcels?: $BaseUrl/blog/promotional-sticker-inserts-order-vs-parcel/",
     "- Mini Cartoon Stickers: Keep Characters Recognizable: $BaseUrl/blog/mini-cartoon-sticker-character-recognition/",
     "- Holiday Stickers: Plan What Can Carry Over: $BaseUrl/blog/holiday-sticker-campaign-carryover/",

@@ -1665,6 +1665,8 @@ $blogBody += '<section class="section"><h2>Promotional Sticker Inserts: Count Or
 $blogBody += '<section class="section"><h2>Planner Sticker Sheets: Check Ring Binder Fit</h2><p>Review the binding area, peel access and cover closure on the actual organizer before buying planner sticker sheets that stay on the rings.</p><a href="/blog/planner-sticker-sheets-ring-binder-fit/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Retail Sticker Packs That Show What Is Inside</h2><p>Check which sticker designs a shopper can see through the sealed pack. Compare the display, contents panel and listing against the approved assortment.</p><a href="/blog/retail-sticker-pack-visible-contents/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Activity Sticker Sheets and Their Matching Page Layouts</h2><p>Match each required placement to a supplied sticker, review facing and repeat counts, and approve the activity page and sticker sheet as one kit.</p><a href="/blog/activity-sticker-sheets-placement-map/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Sheet Matrix: Keep or Remove the Surround?</h2><p>Specify whether surrounding face material stays on the sticker sheet or is removed, then compare the supplied appearance, handling and quoted work.</p><a href="/blog/sticker-sheet-matrix-retained-removed/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Event Sticker Orders: Confirm the Venue Receiving Handoff</h2><p>Plan the approved receiving route, collection owner and booth handoff before sending promotional stickers to an exhibition or event venue.</p><a href="/blog/event-stickers-venue-receiving-handoff/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -4002,6 +4004,10 @@ Page "/blog/retail-sticker-pack-visible-contents/" "Retail Sticker Packs That Sh
 
 Page "/blog/activity-sticker-sheets-placement-map/" "Activity Sticker Sheets and Their Matching Page Layouts" "Match each required placement to a supplied sticker, review facing and repeat counts, and approve the activity page and sticker sheet as one kit." ""
 
+Page "/blog/sticker-sheet-matrix-retained-removed/" "Sticker Sheet Matrix: Keep or Remove the Surround?" "Specify whether surrounding face material stays on the sticker sheet or is removed, then compare the supplied appearance, handling and quoted work." ""
+
+Page "/blog/event-stickers-venue-receiving-handoff/" "Event Sticker Orders: Confirm the Venue Receiving Handoff" "Plan the approved receiving route, collection owner and booth handoff before sending promotional stickers to an exhibition or event venue." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4236,6 +4242,10 @@ $blogGuides = @(,@("/blog/retail-sticker-pack-visible-contents/","Retail Sticker
 
 $blogGuides = @(,@("/blog/activity-sticker-sheets-placement-map/","Activity Sticker Sheets and Their Matching Page Layouts","Match each required placement to a supplied sticker, review facing and repeat counts, and approve the activity page and sticker sheet as one kit.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/sticker-sheet-matrix-retained-removed/","Sticker Sheet Matrix: Keep or Remove the Surround?","Specify whether surrounding face material stays on the sticker sheet or is removed, then compare the supplied appearance, handling and quoted work.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/event-stickers-venue-receiving-handoff/","Event Sticker Orders: Confirm the Venue Receiving Handoff","Plan the approved receiving route, collection owner and booth handoff before sending promotional stickers to an exhibition or event venue.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4391,6 +4401,8 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Event Sticker Orders: Confirm the Venue Receiving Handoff: $BaseUrl/blog/event-stickers-venue-receiving-handoff/",
+    "- Sticker Sheet Matrix: Keep or Remove the Surround?: $BaseUrl/blog/sticker-sheet-matrix-retained-removed/",
     "- Activity Sticker Sheets and Their Matching Page Layouts: $BaseUrl/blog/activity-sticker-sheets-placement-map/",
     "- Retail Sticker Packs That Show What Is Inside: $BaseUrl/blog/retail-sticker-pack-visible-contents/",
     "- Planner Sticker Sheets: Check Ring Binder Fit: $BaseUrl/blog/planner-sticker-sheets-ring-binder-fit/",

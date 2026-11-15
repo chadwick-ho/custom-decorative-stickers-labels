@@ -1667,6 +1667,9 @@ $blogBody += '<section class="section"><h2>Retail Sticker Packs That Show What I
 $blogBody += '<section class="section"><h2>Activity Sticker Sheets and Their Matching Page Layouts</h2><p>Match each required placement to a supplied sticker, review facing and repeat counts, and approve the activity page and sticker sheet as one kit.</p><a href="/blog/activity-sticker-sheets-placement-map/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Sticker Sheet Matrix: Keep or Remove the Surround?</h2><p>Specify whether surrounding face material stays on the sticker sheet or is removed, then compare the supplied appearance, handling and quoted work.</p><a href="/blog/sticker-sheet-matrix-retained-removed/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Event Sticker Orders: Confirm the Venue Receiving Handoff</h2><p>Plan the approved receiving route, collection owner and booth handoff before sending promotional stickers to an exhibition or event venue.</p><a href="/blog/event-stickers-venue-receiving-handoff/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Multi-Design Sticker Proofs: Plan Coverage by Artwork</h2><p>Map each sticker revision to a digital proof, shared print or finished sample and record what the available reference can approve.</p><a href="/blog/multi-design-sticker-proof-plan/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Retail Sticker Packs: Check the Hanger on the Store Hook</h2><p>Use the actual fixture and filled sticker pack to check hanger fit, display capacity and removal before buying retail packing.</p><a href="/blog/retail-sticker-pack-peg-hook-fit/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Sheets Sticking Together: Check the Packed Stack</h2><p>Review how complete sticker sheets separate in the supplied pack, preserve the touching pair and compare changes to the bundle.</p><a href="/blog/sticker-sheet-stack-separation-check/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -4008,6 +4011,12 @@ Page "/blog/sticker-sheet-matrix-retained-removed/" "Sticker Sheet Matrix: Keep 
 
 Page "/blog/event-stickers-venue-receiving-handoff/" "Event Sticker Orders: Confirm the Venue Receiving Handoff" "Plan the approved receiving route, collection owner and booth handoff before sending promotional stickers to an exhibition or event venue." ""
 
+Page "/blog/multi-design-sticker-proof-plan/" "Multi-Design Sticker Proofs: Plan Coverage by Artwork" "Map each sticker revision to a digital proof, shared print or finished sample and record what the available reference can approve." ""
+
+Page "/blog/retail-sticker-pack-peg-hook-fit/" "Retail Sticker Packs: Check the Hanger on the Store Hook" "Use the actual fixture and filled sticker pack to check hanger fit, display capacity and removal before buying retail packing." ""
+
+Page "/blog/sticker-sheet-stack-separation-check/" "Sticker Sheets Sticking Together: Check the Packed Stack" "Review how complete sticker sheets separate in the supplied pack, preserve the touching pair and compare changes to the bundle." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4246,6 +4255,12 @@ $blogGuides = @(,@("/blog/sticker-sheet-matrix-retained-removed/","Sticker Sheet
 
 $blogGuides = @(,@("/blog/event-stickers-venue-receiving-handoff/","Event Sticker Orders: Confirm the Venue Receiving Handoff","Plan the approved receiving route, collection owner and booth handoff before sending promotional stickers to an exhibition or event venue.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/multi-design-sticker-proof-plan/","Multi-Design Sticker Proofs: Plan Coverage by Artwork","Map each sticker revision to a digital proof, shared print or finished sample and record what the available reference can approve.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/retail-sticker-pack-peg-hook-fit/","Retail Sticker Packs: Check the Hanger on the Store Hook","Use the actual fixture and filled sticker pack to check hanger fit, display capacity and removal before buying retail packing.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-sheet-stack-separation-check/","Sticker Sheets Sticking Together: Check the Packed Stack","Review how complete sticker sheets separate in the supplied pack, preserve the touching pair and compare changes to the bundle.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4401,6 +4416,9 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Sticker Sheets Sticking Together: Check the Packed Stack: $BaseUrl/blog/sticker-sheet-stack-separation-check/",
+    "- Retail Sticker Packs: Check the Hanger on the Store Hook: $BaseUrl/blog/retail-sticker-pack-peg-hook-fit/",
+    "- Multi-Design Sticker Proofs: Plan Coverage by Artwork: $BaseUrl/blog/multi-design-sticker-proof-plan/",
     "- Event Sticker Orders: Confirm the Venue Receiving Handoff: $BaseUrl/blog/event-stickers-venue-receiving-handoff/",
     "- Sticker Sheet Matrix: Keep or Remove the Surround?: $BaseUrl/blog/sticker-sheet-matrix-retained-removed/",
     "- Activity Sticker Sheets and Their Matching Page Layouts: $BaseUrl/blog/activity-sticker-sheets-placement-map/",

@@ -1670,6 +1670,8 @@ $blogBody += '<section class="section"><h2>Event Sticker Orders: Confirm the Ven
 $blogBody += '<section class="section"><h2>Multi-Design Sticker Proofs: Plan Coverage by Artwork</h2><p>Map each sticker revision to a digital proof, shared print or finished sample and record what the available reference can approve.</p><a href="/blog/multi-design-sticker-proof-plan/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Retail Sticker Packs: Check the Hanger on the Store Hook</h2><p>Use the actual fixture and filled sticker pack to check hanger fit, display capacity and removal before buying retail packing.</p><a href="/blog/retail-sticker-pack-peg-hook-fit/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Sticker Sheets Sticking Together: Check the Packed Stack</h2><p>Review how complete sticker sheets separate in the supplied pack, preserve the touching pair and compare changes to the bundle.</p><a href="/blog/sticker-sheet-stack-separation-check/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Promotional Sticker Reprints: Plan the Quantity Needed First</h2><p>Calculate the accepted-stock gap by design and deadline, then compare a priority reprint, stock transfer or staggered rollout.</p><a href="/blog/promotional-sticker-priority-reprint-plan/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Co-Branded Promotional Stickers: Approve the Shared Layout</h2><p>Use one final-size proof to confirm the partner marks, clear space, finished contour and approvals before releasing the sticker order.</p><a href="/blog/co-branded-promotional-sticker-proof/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -4017,6 +4019,10 @@ Page "/blog/retail-sticker-pack-peg-hook-fit/" "Retail Sticker Packs: Check the 
 
 Page "/blog/sticker-sheet-stack-separation-check/" "Sticker Sheets Sticking Together: Check the Packed Stack" "Review how complete sticker sheets separate in the supplied pack, preserve the touching pair and compare changes to the bundle." ""
 
+Page "/blog/promotional-sticker-priority-reprint-plan/" "Promotional Sticker Reprints: Plan the Quantity Needed First" "Calculate the accepted-stock gap by design and deadline, then compare a priority reprint, stock transfer or staggered rollout." ""
+
+Page "/blog/co-branded-promotional-sticker-proof/" "Co-Branded Promotional Stickers: Approve the Shared Layout" "Use one final-size proof to confirm the partner marks, clear space, finished contour and approvals before releasing the sticker order." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4261,6 +4267,10 @@ $blogGuides = @(,@("/blog/retail-sticker-pack-peg-hook-fit/","Retail Sticker Pac
 
 $blogGuides = @(,@("/blog/sticker-sheet-stack-separation-check/","Sticker Sheets Sticking Together: Check the Packed Stack","Review how complete sticker sheets separate in the supplied pack, preserve the touching pair and compare changes to the bundle.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/promotional-sticker-priority-reprint-plan/","Promotional Sticker Reprints: Plan the Quantity Needed First","Calculate the accepted-stock gap by design and deadline, then compare a priority reprint, stock transfer or staggered rollout.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/co-branded-promotional-sticker-proof/","Co-Branded Promotional Stickers: Approve the Shared Layout","Use one final-size proof to confirm the partner marks, clear space, finished contour and approvals before releasing the sticker order.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4416,6 +4426,8 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Co-Branded Promotional Stickers: Approve the Shared Layout: $BaseUrl/blog/co-branded-promotional-sticker-proof/",
+    "- Promotional Sticker Reprints: Plan the Quantity Needed First: $BaseUrl/blog/promotional-sticker-priority-reprint-plan/",
     "- Sticker Sheets Sticking Together: Check the Packed Stack: $BaseUrl/blog/sticker-sheet-stack-separation-check/",
     "- Retail Sticker Packs: Check the Hanger on the Store Hook: $BaseUrl/blog/retail-sticker-pack-peg-hook-fit/",
     "- Multi-Design Sticker Proofs: Plan Coverage by Artwork: $BaseUrl/blog/multi-design-sticker-proof-plan/",

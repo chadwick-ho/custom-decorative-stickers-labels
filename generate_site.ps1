@@ -1672,6 +1672,8 @@ $blogBody += '<section class="section"><h2>Retail Sticker Packs: Check the Hange
 $blogBody += '<section class="section"><h2>Sticker Sheets Sticking Together: Check the Packed Stack</h2><p>Review how complete sticker sheets separate in the supplied pack, preserve the touching pair and compare changes to the bundle.</p><a href="/blog/sticker-sheet-stack-separation-check/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Promotional Sticker Reprints: Plan the Quantity Needed First</h2><p>Calculate the accepted-stock gap by design and deadline, then compare a priority reprint, stock transfer or staggered rollout.</p><a href="/blog/promotional-sticker-priority-reprint-plan/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Co-Branded Promotional Stickers: Approve the Shared Layout</h2><p>Use one final-size proof to confirm the partner marks, clear space, finished contour and approvals before releasing the sticker order.</p><a href="/blog/co-branded-promotional-sticker-proof/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Freight Quotes: Confirm the Packed Weight Basis</h2><p>Check carton dimensions, gross weight and chargeable-weight rules before accepting freight for a sticker order.</p><a href="/blog/sticker-freight-quote-packed-weight/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Scuff Resistance: Read the Rubbing Conditions</h2><p>Compare scuff-resistance evidence using an identified sticker construction, contacting surface, exposure and agreed appearance or readability requirement.</p><a href="/blog/sticker-scuff-resistance-rub-evidence/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -4023,6 +4025,10 @@ Page "/blog/promotional-sticker-priority-reprint-plan/" "Promotional Sticker Rep
 
 Page "/blog/co-branded-promotional-sticker-proof/" "Co-Branded Promotional Stickers: Approve the Shared Layout" "Use one final-size proof to confirm the partner marks, clear space, finished contour and approvals before releasing the sticker order." ""
 
+Page "/blog/sticker-freight-quote-packed-weight/" "Sticker Freight Quotes: Confirm the Packed Weight Basis" "Check carton dimensions, gross weight and chargeable-weight rules before accepting freight for a sticker order." ""
+
+Page "/blog/sticker-scuff-resistance-rub-evidence/" "Sticker Scuff Resistance: Read the Rubbing Conditions" "Compare scuff-resistance evidence using an identified sticker construction, contacting surface, exposure and agreed appearance or readability requirement." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4271,6 +4277,10 @@ $blogGuides = @(,@("/blog/promotional-sticker-priority-reprint-plan/","Promotion
 
 $blogGuides = @(,@("/blog/co-branded-promotional-sticker-proof/","Co-Branded Promotional Stickers: Approve the Shared Layout","Use one final-size proof to confirm the partner marks, clear space, finished contour and approvals before releasing the sticker order.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/sticker-freight-quote-packed-weight/","Sticker Freight Quotes: Confirm the Packed Weight Basis","Check carton dimensions, gross weight and chargeable-weight rules before accepting freight for a sticker order.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-scuff-resistance-rub-evidence/","Sticker Scuff Resistance: Read the Rubbing Conditions","Compare scuff-resistance evidence using an identified sticker construction, contacting surface, exposure and agreed appearance or readability requirement.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4426,6 +4436,8 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Sticker Scuff Resistance: Read the Rubbing Conditions: $BaseUrl/blog/sticker-scuff-resistance-rub-evidence/",
+    "- Sticker Freight Quotes: Confirm the Packed Weight Basis: $BaseUrl/blog/sticker-freight-quote-packed-weight/",
     "- Co-Branded Promotional Stickers: Approve the Shared Layout: $BaseUrl/blog/co-branded-promotional-sticker-proof/",
     "- Promotional Sticker Reprints: Plan the Quantity Needed First: $BaseUrl/blog/promotional-sticker-priority-reprint-plan/",
     "- Sticker Sheets Sticking Together: Check the Packed Stack: $BaseUrl/blog/sticker-sheet-stack-separation-check/",

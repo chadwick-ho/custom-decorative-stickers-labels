@@ -1676,6 +1676,9 @@ $blogBody += '<section class="section"><h2>Sticker Freight Quotes: Confirm the P
 $blogBody += '<section class="section"><h2>Sticker Scuff Resistance: Read the Rubbing Conditions</h2><p>Compare scuff-resistance evidence using an identified sticker construction, contacting surface, exposure and agreed appearance or readability requirement.</p><a href="/blog/sticker-scuff-resistance-rub-evidence/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Black Sticker Artwork: Review Fine Text and Solid Areas</h2><p>Review black artwork by feature: fine lettering, large solids and reversed details. Confirm the receiving print workflow before changing the file.</p><a href="/blog/black-sticker-artwork-fine-text-solid-areas/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Roll Label Dispensers: Check the Peel-and-Present Cycle</h2><p>Check the ready label, operator pickup and next-label presentation before approving printed rolls for a bench dispenser.</p><a href="/blog/roll-label-dispenser-peel-present-pickup/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Sample Shipments: Prepare the Goods and Invoice Record</h2><p>Connect a sticker sample list to the shipment purpose, counted units, value basis and required customs documents before dispatch.</p><a href="/blog/sticker-sample-shipment-invoice-record/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Delivery to a Third Party: Confirm the Import and Receipt Roles</h2><p>Separate the buyer, physical receiving site, importer and clearance contact before releasing an international sticker shipment to a packing partner.</p><a href="/blog/sticker-delivery-third-party-importer-roles/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Cutting Dies: Confirm Custody and Repeat-Order Access</h2><p>Identify whether a physical cutting die is part of the sticker offer, then confirm ownership terms, custody, condition and repeat-order access.</p><a href="/blog/sticker-cutting-die-custody-repeat-access/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -4035,6 +4038,12 @@ Page "/blog/black-sticker-artwork-fine-text-solid-areas/" "Black Sticker Artwork
 
 Page "/blog/roll-label-dispenser-peel-present-pickup/" "Roll Label Dispensers: Check the Peel-and-Present Cycle" "Check the ready label, operator pickup and next-label presentation before approving printed rolls for a bench dispenser." ""
 
+Page "/blog/sticker-sample-shipment-invoice-record/" "Sticker Sample Shipments: Prepare the Goods and Invoice Record" "Connect a sticker sample list to the shipment purpose, counted units, value basis and required customs documents before dispatch." ""
+
+Page "/blog/sticker-delivery-third-party-importer-roles/" "Sticker Delivery to a Third Party: Confirm the Import and Receipt Roles" "Separate the buyer, physical receiving site, importer and clearance contact before releasing an international sticker shipment to a packing partner." ""
+
+Page "/blog/sticker-cutting-die-custody-repeat-access/" "Sticker Cutting Dies: Confirm Custody and Repeat-Order Access" "Identify whether a physical cutting die is part of the sticker offer, then confirm ownership terms, custody, condition and repeat-order access." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4291,6 +4300,12 @@ $blogGuides = @(,@("/blog/black-sticker-artwork-fine-text-solid-areas/","Black S
 
 $blogGuides = @(,@("/blog/roll-label-dispenser-peel-present-pickup/","Roll Label Dispensers: Check the Peel-and-Present Cycle","Check the ready label, operator pickup and next-label presentation before approving printed rolls for a bench dispenser.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/sticker-sample-shipment-invoice-record/","Sticker Sample Shipments: Prepare the Goods and Invoice Record","Connect a sticker sample list to the shipment purpose, counted units, value basis and required customs documents before dispatch.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-delivery-third-party-importer-roles/","Sticker Delivery to a Third Party: Confirm the Import and Receipt Roles","Separate the buyer, physical receiving site, importer and clearance contact before releasing an international sticker shipment to a packing partner.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-cutting-die-custody-repeat-access/","Sticker Cutting Dies: Confirm Custody and Repeat-Order Access","Identify whether a physical cutting die is part of the sticker offer, then confirm ownership terms, custody, condition and repeat-order access.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4446,6 +4461,9 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Sticker Cutting Dies: Confirm Custody and Repeat-Order Access: $BaseUrl/blog/sticker-cutting-die-custody-repeat-access/",
+    "- Sticker Delivery to a Third Party: Confirm the Import and Receipt Roles: $BaseUrl/blog/sticker-delivery-third-party-importer-roles/",
+    "- Sticker Sample Shipments: Prepare the Goods and Invoice Record: $BaseUrl/blog/sticker-sample-shipment-invoice-record/",
     "- Roll Label Dispensers: Check the Peel-and-Present Cycle: $BaseUrl/blog/roll-label-dispenser-peel-present-pickup/",
     "- Black Sticker Artwork: Review Fine Text and Solid Areas: $BaseUrl/blog/black-sticker-artwork-fine-text-solid-areas/",
     "- Sticker Scuff Resistance: Read the Rubbing Conditions: $BaseUrl/blog/sticker-scuff-resistance-rub-evidence/",

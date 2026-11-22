@@ -1681,6 +1681,8 @@ $blogBody += '<section class="section"><h2>Sticker Delivery to a Third Party: Co
 $blogBody += '<section class="section"><h2>Sticker Cutting Dies: Confirm Custody and Repeat-Order Access</h2><p>Identify whether a physical cutting die is part of the sticker offer, then confirm ownership terms, custody, condition and repeat-order access.</p><a href="/blog/sticker-cutting-die-custody-repeat-access/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Sticker Size Inspection: Check the Measured Feature</h2><p>Read a sticker size inspection record by its defined edge, specimen, method, measured result and agreed acceptance rule.</p><a href="/blog/sticker-size-inspection-measured-feature/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Pausing a Sticker Order: Confirm What Has Actually Stopped</h2><p>Connect a sticker-order hold or cancellation request to the affected references, supplier acknowledgement, completed work and confirmed next disposition.</p><a href="/blog/sticker-order-hold-cancellation-confirmation/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Promotional Sticker Dishwasher Claims: Check the Evidence</h2><p>Review the finished sticker, host item, washing routine and acceptance record before relying on a dishwasher-use claim.</p><a href="/blog/promotional-sticker-dishwasher-evidence/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Printed Sticker Weathering Reports: Read the Exposure Basis</h2><p>Review specimen identity, light and moisture exposure, controls and observed results before comparing accelerated weathering reports for stickers.</p><a href="/blog/sticker-accelerated-weathering-report-review/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -4050,6 +4052,10 @@ Page "/blog/sticker-size-inspection-measured-feature/" "Sticker Size Inspection:
 
 Page "/blog/sticker-order-hold-cancellation-confirmation/" "Pausing a Sticker Order: Confirm What Has Actually Stopped" "Connect a sticker-order hold or cancellation request to the affected references, supplier acknowledgement, completed work and confirmed next disposition." ""
 
+Page "/blog/promotional-sticker-dishwasher-evidence/" "Promotional Sticker Dishwasher Claims: Check the Evidence" "Review the finished sticker, host item, washing routine and acceptance record before relying on a dishwasher-use claim." ""
+
+Page "/blog/sticker-accelerated-weathering-report-review/" "Printed Sticker Weathering Reports: Read the Exposure Basis" "Review specimen identity, light and moisture exposure, controls and observed results before comparing accelerated weathering reports for stickers." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4316,6 +4322,10 @@ $blogGuides = @(,@("/blog/sticker-size-inspection-measured-feature/","Sticker Si
 
 $blogGuides = @(,@("/blog/sticker-order-hold-cancellation-confirmation/","Pausing a Sticker Order: Confirm What Has Actually Stopped","Connect a sticker-order hold or cancellation request to the affected references, supplier acknowledgement, completed work and confirmed next disposition.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/promotional-sticker-dishwasher-evidence/","Promotional Sticker Dishwasher Claims: Check the Evidence","Review the finished sticker, host item, washing routine and acceptance record before relying on a dishwasher-use claim.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-accelerated-weathering-report-review/","Printed Sticker Weathering Reports: Read the Exposure Basis","Review specimen identity, light and moisture exposure, controls and observed results before comparing accelerated weathering reports for stickers.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4471,6 +4481,8 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Printed Sticker Weathering Reports: Read the Exposure Basis: $BaseUrl/blog/sticker-accelerated-weathering-report-review/",
+    "- Promotional Sticker Dishwasher Claims: Check the Evidence: $BaseUrl/blog/promotional-sticker-dishwasher-evidence/",
     "- Pausing a Sticker Order: Confirm What Has Actually Stopped: $BaseUrl/blog/sticker-order-hold-cancellation-confirmation/",
     "- Sticker Size Inspection: Check the Measured Feature: $BaseUrl/blog/sticker-size-inspection-measured-feature/",
     "- Sticker Cutting Dies: Confirm Custody and Repeat-Order Access: $BaseUrl/blog/sticker-cutting-die-custody-repeat-access/",

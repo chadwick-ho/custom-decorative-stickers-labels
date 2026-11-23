@@ -1683,6 +1683,8 @@ $blogBody += '<section class="section"><h2>Sticker Size Inspection: Check the Me
 $blogBody += '<section class="section"><h2>Pausing a Sticker Order: Confirm What Has Actually Stopped</h2><p>Connect a sticker-order hold or cancellation request to the affected references, supplier acknowledgement, completed work and confirmed next disposition.</p><a href="/blog/sticker-order-hold-cancellation-confirmation/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Promotional Sticker Dishwasher Claims: Check the Evidence</h2><p>Review the finished sticker, host item, washing routine and acceptance record before relying on a dishwasher-use claim.</p><a href="/blog/promotional-sticker-dishwasher-evidence/">Read the procurement guide</a></section>'
 $blogBody += '<section class="section"><h2>Printed Sticker Weathering Reports: Read the Exposure Basis</h2><p>Review specimen identity, light and moisture exposure, controls and observed results before comparing accelerated weathering reports for stickers.</p><a href="/blog/sticker-accelerated-weathering-report-review/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Label Roll Receiving: Review the Core and Wound Edges</h2><p>Record core damage, offset layers and wound-edge condition before treating a received label roll as ready for the intended application route.</p><a href="/blog/label-roll-receiving-core-edge-condition/">Read the procurement guide</a></section>'
+$blogBody += '<section class="section"><h2>Sticker Sheet Sets: Specify Collation and Opening Order</h2><p>Define sheet membership, top-to-bottom order, facing and the recipient opening route before approving a collated sticker sheet set.</p><a href="/blog/sticker-sheet-sets-collation-opening-order/">Read the procurement guide</a></section>'
 $blogTitle = "Custom Sticker Blog | B2B Artwork and Product Guides"
 $blogDesc = "Practical B2B guides for custom sticker artwork, sticker sheets, die-cut stickers, packaging stickers, gift labels and promotional sticker planning."
 Page "/blog/" $blogTitle $blogDesc $blogBody $null @(@{ "@context"="https://schema.org"; "@type"="Blog"; name=$blogTitle; description=$blogDesc; url="$BaseUrl/blog/" })
@@ -4056,6 +4058,10 @@ Page "/blog/promotional-sticker-dishwasher-evidence/" "Promotional Sticker Dishw
 
 Page "/blog/sticker-accelerated-weathering-report-review/" "Printed Sticker Weathering Reports: Read the Exposure Basis" "Review specimen identity, light and moisture exposure, controls and observed results before comparing accelerated weathering reports for stickers." ""
 
+Page "/blog/label-roll-receiving-core-edge-condition/" "Label Roll Receiving: Review the Core and Wound Edges" "Record core damage, offset layers and wound-edge condition before treating a received label roll as ready for the intended application route." ""
+
+Page "/blog/sticker-sheet-sets-collation-opening-order/" "Sticker Sheet Sets: Specify Collation and Opening Order" "Define sheet membership, top-to-bottom order, facing and the recipient opening route before approving a collated sticker sheet set." ""
+
 $contactBody = @"
 <section class="subhero"><p class="eyebrow">Contact</p><h1>Contact ZC Labels</h1><p>Use WhatsApp or email for a direct conversation about an existing inquiry, artwork question, document request or next step. Use the quote form when you are ready to send a structured new project.</p><div class="cta-row"><a class="solid-btn large" href="$WhatsAppUrl" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="ghost-btn large" href="$MailtoUrl">Email $ContactEmail</a></div></section>
 <section class="section two-col">
@@ -4326,6 +4332,10 @@ $blogGuides = @(,@("/blog/promotional-sticker-dishwasher-evidence/","Promotional
 
 $blogGuides = @(,@("/blog/sticker-accelerated-weathering-report-review/","Printed Sticker Weathering Reports: Read the Exposure Basis","Review specimen identity, light and moisture exposure, controls and observed results before comparing accelerated weathering reports for stickers.")) + @($blogGuides)
 
+$blogGuides = @(,@("/blog/label-roll-receiving-core-edge-condition/","Label Roll Receiving: Review the Core and Wound Edges","Record core damage, offset layers and wound-edge condition before treating a received label roll as ready for the intended application route.")) + @($blogGuides)
+
+$blogGuides = @(,@("/blog/sticker-sheet-sets-collation-opening-order/","Sticker Sheet Sets: Specify Collation and Opening Order","Define sheet membership, top-to-bottom order, facing and the recipient opening route before approving a collated sticker sheet set.")) + @($blogGuides)
+
 $newGuideEntries = foreach ($article in $NewArticles) { ,@($article.Url, $article.Title, $article.Description) }
 $blogGuides = @($newGuideEntries) + @($blogGuides)
 
@@ -4481,6 +4491,8 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Sticker Sheet Sets: Specify Collation and Opening Order: $BaseUrl/blog/sticker-sheet-sets-collation-opening-order/",
+    "- Label Roll Receiving: Review the Core and Wound Edges: $BaseUrl/blog/label-roll-receiving-core-edge-condition/",
     "- Printed Sticker Weathering Reports: Read the Exposure Basis: $BaseUrl/blog/sticker-accelerated-weathering-report-review/",
     "- Promotional Sticker Dishwasher Claims: Check the Evidence: $BaseUrl/blog/promotional-sticker-dishwasher-evidence/",
     "- Pausing a Sticker Order: Confirm What Has Actually Stopped: $BaseUrl/blog/sticker-order-hold-cancellation-confirmation/",

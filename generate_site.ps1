@@ -4491,6 +4491,8 @@ if ($BaseUrl) {
     "- Custom label specification planner: $BaseUrl/label-specification-planner/",
     "",
     "Useful buyer guides:",
+    "- Essential Oil Labels: Map the Panel and Dispensing Contact: $BaseUrl/blog/custom-essential-oil-labels-guide/",
+    "- Bulk Sticker Orders: Check What Arrived by Design: $BaseUrl/blog/bulk-sticker-order-receiving-check/",
     "- Sticker Sheet Sets: Specify Collation and Opening Order: $BaseUrl/blog/sticker-sheet-sets-collation-opening-order/",
     "- Label Roll Receiving: Review the Core and Wound Edges: $BaseUrl/blog/label-roll-receiving-core-edge-condition/",
     "- Printed Sticker Weathering Reports: Read the Exposure Basis: $BaseUrl/blog/sticker-accelerated-weathering-report-review/",
